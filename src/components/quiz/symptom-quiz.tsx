@@ -7,6 +7,7 @@ import { ProgressBar } from "@/components/quiz/progress-bar";
 import { QuestionStep } from "@/components/quiz/question-step";
 import { EmailGateStep } from "@/components/quiz/email-gate-step";
 import { ResultsStep } from "@/components/quiz/results-step";
+import { trackEvent } from "@/lib/analytics";
 import { submitToHubspot } from "@/lib/hubspot";
 import {
   computeQuizResult,
@@ -55,6 +56,8 @@ export function SymptomQuiz() {
     const computed = computeQuizResult(finalAnswers);
     setResult({ tier: computed.tier, topConditions: computed.topConditions });
     setPhase("results");
+    trackEvent("quiz_complete");
+    trackEvent("quiz_result_tier", { tier: computed.tier });
     // Make the result shareable without triggering a navigation.
     const url = new URL(window.location.href);
     url.searchParams.set("result", computed.tier);
@@ -72,6 +75,7 @@ export function SymptomQuiz() {
   };
 
   const handleSelect = (optionIndex: number) => {
+    if (Object.keys(answers).length === 0) trackEvent("quiz_start");
     const nextAnswers = { ...answers, [question.id]: optionIndex };
     setAnswers(nextAnswers);
     // Brief pause so the selection state is visible before the transition.

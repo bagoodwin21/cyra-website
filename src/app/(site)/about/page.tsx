@@ -7,12 +7,15 @@ import { FadeUp } from "@/components/ui/fade-up";
 import { Badge } from "@/components/ui/badge";
 import { Divider } from "@/components/ui/divider";
 import { buttonVariants } from "@/components/ui/button";
+import { JsonLd } from "@/components/seo/json-ld";
+import { physicianSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
 export function generateMetadata(): Metadata {
   return buildMetadata({
-    title: "About Dr. Mondona Goodwin",
+    title: "About Dr. Mondona Goodwin, DO | CYRA Wellness Menopause Specialist",
+    absoluteTitle: true,
     description:
       "Meet Dr. Mondona Goodwin, DO — the board-certified physician behind CYRA Wellness, a California cash-pay telemedicine practice for perimenopause, menopause, HRT, and midlife weight management.",
     path: "/about",
@@ -55,6 +58,8 @@ const trustItems = [
 export default function AboutPage() {
   return (
     <>
+      <JsonLd data={physicianSchema()} />
+
       {/* Hero */}
       <Section>
         <FadeUp className="mx-auto max-w-3xl py-4 text-center md:py-8">

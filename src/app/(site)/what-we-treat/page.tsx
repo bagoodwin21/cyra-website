@@ -13,7 +13,9 @@ import { cn } from "@/lib/utils";
 
 export function generateMetadata(): Metadata {
   return buildMetadata({
-    title: "What We Treat",
+    title:
+      "What We Treat | Perimenopause, Menopause, HRT, Testosterone | CYRA Wellness",
+    absoluteTitle: true,
     description:
       "Perimenopause, menopause, testosterone therapy, estrogen and progesterone, thyroid and adrenal health, and midlife weight management — physician-led telehealth for California women.",
     path: "/what-we-treat",

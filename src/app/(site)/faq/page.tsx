@@ -8,12 +8,15 @@ import {
   type FAQCategory,
 } from "@/components/ui/faq-categories";
 import { buttonVariants } from "@/components/ui/button";
+import { JsonLd } from "@/components/seo/json-ld";
+import { faqPageSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
 export function generateMetadata(): Metadata {
   return buildMetadata({
-    title: "FAQ",
+    title: "FAQs | CYRA Wellness Menopause Telehealth",
+    absoluteTitle: true,
     description:
       "Answers to common questions about CYRA Wellness: getting started, the Start Visit, care plans and pricing, treatment questions like HRT and testosterone, and telehealth logistics.",
     path: "/faq",
@@ -184,6 +187,8 @@ const categories: FAQCategory[] = [
 export default function FAQPage() {
   return (
     <>
+      <JsonLd data={faqPageSchema(categories.flatMap((c) => c.faqs))} />
+
       <Section>
         <FadeUp className="mx-auto max-w-3xl py-4 text-center md:py-8">
           <SectionLabel>FAQ</SectionLabel>

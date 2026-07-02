@@ -17,13 +17,16 @@ import { Section } from "@/components/ui/section";
 import { SectionLabel } from "@/components/ui/section-label";
 import { Divider } from "@/components/ui/divider";
 import { FAQItem } from "@/components/ui/faq-item";
+import { TrackPageView } from "@/components/analytics/track-page-view";
 import { buildMetadata } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 import { ComparisonTable } from "./comparison-table";
 
 export function generateMetadata(): Metadata {
   return buildMetadata({
-    title: "Compare Menopause Telehealth Platforms",
+    title:
+      "Menopause Telehealth Comparison: CYRA vs Midi, Alloy, Evernow, Winona | 2026",
+    absoluteTitle: true,
     description:
       "How does CYRA Wellness compare to Midi, Alloy, Evernow, Winona, and Hers? A detailed comparison of menopause telehealth platforms including provider type, testosterone access, care structure, and financing options.",
     path: "/compare",
@@ -115,6 +118,8 @@ const questionsToAsk = [
 export default function ComparePage() {
   return (
     <>
+      <TrackPageView event="compare_page_view" />
+
       {/* Hero */}
       <Section>
         <div className="mx-auto max-w-3xl py-4 text-center md:py-8">

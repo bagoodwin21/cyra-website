@@ -26,12 +26,15 @@ import {
   TestimonialCarousel,
   type Testimonial,
 } from "@/components/ui/testimonial-carousel";
+import testimonialsData from "@/data/testimonials.json";
+import { JsonLd } from "@/components/seo/json-ld";
+import { medicalBusinessSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
 export function generateMetadata(): Metadata {
   return buildMetadata({
-    title: "California Menopause & Hormone Telehealth",
+    title: "Physician-Led Menopause & Hormone Care | California Telehealth",
     description:
       "Physician-led perimenopause, menopause, HRT, and midlife weight management care via telemedicine in California. Cash-pay practice of Dr. Mondona Goodwin, DO.",
     path: "/",
@@ -143,30 +146,13 @@ const steps = [
   },
 ];
 
-const testimonials: Testimonial[] = [
-  {
-    quote:
-      "After two years of being told my symptoms were 'normal,' Dr. Mondona had answers in our very first visit. I finally feel like myself again.",
-    name: "Sarah M.",
-    location: "Thousand Oaks, CA",
-  },
-  {
-    quote:
-      "I didn't expect to be able to afford hormone care, but the Cherry financing made it completely manageable. Best investment I've made in myself.",
-    name: "Jennifer K.",
-    location: "San Diego, CA",
-  },
-  {
-    quote:
-      "She actually listens. Not 15 minutes and out the door — a real conversation about what was happening to my body and what we were going to do about it.",
-    name: "Michelle R.",
-    location: "Los Angeles, CA",
-  },
-];
+const testimonials: Testimonial[] = testimonialsData;
 
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={medicalBusinessSchema()} />
+
       {/* Section 1 — Hero */}
       <section className="hero-gradient flex min-h-[calc(100vh-4.5rem)] items-center">
         <div className="mx-auto grid w-full max-w-content items-center gap-12 px-6 py-16 lg:grid-cols-2 lg:px-8">
@@ -414,6 +400,7 @@ export default function HomePage() {
           <div className="flex shrink-0 flex-wrap items-center justify-center gap-4">
             <Link
               href="/book"
+              data-analytics-event="financing_check_rate_click"
               className={cn(
                 buttonVariants({ variant: "primary" }),
                 "bg-white text-accent hover:bg-white/90"

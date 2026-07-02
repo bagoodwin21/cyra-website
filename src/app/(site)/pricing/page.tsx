@@ -13,7 +13,9 @@ import { cn } from "@/lib/utils";
 
 export function generateMetadata(): Metadata {
   return buildMetadata({
-    title: "Pricing",
+    title:
+      "CYRA Wellness Pricing & Care Plans | Cherry Financing | Cash-Pay Hormone Care",
+    absoluteTitle: true,
     description:
       "Transparent cash-pay pricing for physician-led menopause and hormone telehealth in California. Start Visit, 12-month care plans, and Cherry financing — no insurance billing, no surprise statements.",
     path: "/pricing",

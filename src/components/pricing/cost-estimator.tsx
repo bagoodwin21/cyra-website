@@ -182,7 +182,11 @@ export function CostEstimator() {
               <div className="mt-5">
                 {/* Cherry rate-check link placeholder — point at the
                     practice's Cherry application URL once available. */}
-                <Button variant="accent" className="gap-2">
+                <Button
+                  variant="accent"
+                  className="gap-2"
+                  data-analytics-event="financing_check_rate_click"
+                >
                   <Wallet className="h-4 w-4" aria-hidden />
                   Check Your Rate with Cherry
                 </Button>

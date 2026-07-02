@@ -6,7 +6,8 @@ import { buildMetadata } from "@/lib/seo";
 
 export function generateMetadata(): Metadata {
   return buildMetadata({
-    title: "Book Your Free Discovery Call",
+    title: "Book a Free Discovery Call | CYRA Wellness",
+    absoluteTitle: true,
     description:
       "Book a free 15-minute discovery call with CYRA Wellness — physician-led menopause and hormone telehealth in California. No charge, no commitment.",
     path: "/book",

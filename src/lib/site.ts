@@ -12,12 +12,13 @@ export const siteConfig = {
 
 /**
  * HubSpot Forms API destination for lead-capture tools (quiz email gate).
- * Fill in the real portal/form IDs from the HubSpot account, then the
- * submission in src/lib/hubspot.ts will start posting for real.
+ * Set NEXT_PUBLIC_HUBSPOT_PORTAL_ID / NEXT_PUBLIC_HUBSPOT_FORM_ID (see
+ * .env.example) and the submission in src/lib/hubspot.ts starts posting
+ * for real; until then it degrades to a silent no-op.
  */
 export const hubspotConfig = {
-  portalId: "[HUBSPOT_PORTAL_ID]",
-  formId: "[HUBSPOT_FORM_ID]",
+  portalId: process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID ?? "[HUBSPOT_PORTAL_ID]",
+  formId: process.env.NEXT_PUBLIC_HUBSPOT_FORM_ID ?? "[HUBSPOT_FORM_ID]",
 };
 
 /** Real dollar total for the 12-month care plan. Placeholder pending pricing confirmation. */
