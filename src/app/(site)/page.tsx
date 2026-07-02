@@ -250,6 +250,28 @@ export default function HomePage() {
             CYRA was built for the women who are done settling.
           </p>
         </FadeUp>
+
+        {/* Quiz teaser */}
+        <FadeUp delay={0.4}>
+          <div className="mt-12 rounded-card bg-gradient-to-br from-warm/60 via-background to-accent-light/25 p-8 text-center shadow-card md:p-10">
+            <h3 className="font-heading text-xl font-semibold text-foreground md:text-2xl">
+              Not sure if it&rsquo;s your hormones?
+            </h3>
+            <p className="text-body-copy mx-auto mt-3 max-w-xl">
+              Take our free 2-minute symptom assessment and get a personalized
+              read on what your symptoms might mean — and whether physician-led
+              care could help.
+            </p>
+            <div className="mt-6">
+              <Link
+                href="/quiz"
+                className={cn(buttonVariants({ variant: "accent" }))}
+              >
+                Take the Symptom Quiz
+              </Link>
+            </div>
+          </div>
+        </FadeUp>
       </Section>
 
       {/* Section 3 — How CYRA is different */}

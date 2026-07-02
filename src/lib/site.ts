@@ -10,6 +10,19 @@ export const siteConfig = {
     "CYRA Wellness provides cash-pay telemedicine services. We do not accept insurance.",
 };
 
+/**
+ * HubSpot Forms API destination for lead-capture tools (quiz email gate).
+ * Fill in the real portal/form IDs from the HubSpot account, then the
+ * submission in src/lib/hubspot.ts will start posting for real.
+ */
+export const hubspotConfig = {
+  portalId: "[HUBSPOT_PORTAL_ID]",
+  formId: "[HUBSPOT_FORM_ID]",
+};
+
+/** Real dollar total for the 12-month care plan. Placeholder pending pricing confirmation. */
+export const carePlanTotal = "[CARE_PLAN_TOTAL]";
+
 export interface NavLink {
   label: string;
   href: string;
@@ -18,7 +31,7 @@ export interface NavLink {
 export const navLinks: NavLink[] = [
   { label: "How It Works", href: "/how-it-works" },
   { label: "What We Treat", href: "/what-we-treat" },
-  { label: "Why CYRA", href: "/why-cyra" },
+  { label: "About Us", href: "/about" },
   { label: "Pricing", href: "/pricing" },
   { label: "Compare", href: "/compare" },
   { label: "FAQ", href: "/faq" },
@@ -26,7 +39,7 @@ export const navLinks: NavLink[] = [
 
 /** Pages linked from the footer (and sitemap) but not the main nav. */
 export const secondaryLinks: NavLink[] = [
-  { label: "About", href: "/about" },
+  { label: "Symptom Quiz", href: "/quiz" },
   { label: "Patient Resources", href: "/patient-resources" },
 ];
 
