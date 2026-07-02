@@ -7,12 +7,15 @@ import { FadeUp } from "@/components/ui/fade-up";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
+import { CostEstimator } from "@/components/pricing/cost-estimator";
 import { buildMetadata } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
 export function generateMetadata(): Metadata {
   return buildMetadata({
-    title: "Pricing",
+    title:
+      "CYRA Wellness Pricing & Care Plans | Cherry Financing | Cash-Pay Hormone Care",
+    absoluteTitle: true,
     description:
       "Transparent cash-pay pricing for physician-led menopause and hormone telehealth in California. Start Visit, 12-month care plans, and Cherry financing — no insurance billing, no surprise statements.",
     path: "/pricing",
@@ -133,8 +136,24 @@ export default function PricingPage() {
         </div>
       </Section>
 
+      {/* Cost estimator */}
+      <Section id="estimator" className="scroll-mt-20">
+        <FadeUp className="mx-auto max-w-3xl text-center">
+          <SectionLabel>Cost Estimator</SectionLabel>
+          <h2 className="heading-section">See what your care plan could cost</h2>
+          <p className="text-subheadline mt-6">
+            Two quick questions, and we&rsquo;ll break your care plan
+            investment into monthly Cherry payments — or show you the
+            pay-in-full option.
+          </p>
+        </FadeUp>
+        <FadeUp delay={0.15} className="mt-10">
+          <CostEstimator />
+        </FadeUp>
+      </Section>
+
       {/* Financing */}
-      <Section>
+      <Section tone="surface">
         <FadeUp className="mx-auto max-w-3xl text-center">
           <SectionLabel>Financing</SectionLabel>
           <h2 className="heading-section">
@@ -162,7 +181,7 @@ export default function PricingPage() {
       </Section>
 
       {/* What's not included */}
-      <Section tone="surface">
+      <Section>
         <FadeUp className="mx-auto max-w-3xl">
           <SectionLabel>Full Transparency</SectionLabel>
           <h2 className="heading-section">What&rsquo;s not included</h2>

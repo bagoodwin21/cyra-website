@@ -7,8 +7,11 @@ import { SectionLabel } from "@/components/ui/section-label";
 import { FadeUp } from "@/components/ui/fade-up";
 import { FAQItem } from "@/components/ui/faq-item";
 import { buttonVariants } from "@/components/ui/button";
+import { TrackPageView } from "@/components/analytics/track-page-view";
+import { JsonLd } from "@/components/seo/json-ld";
 import { conditions } from "@/lib/conditions";
 import { conditionIcons } from "@/lib/condition-icons";
+import { conditionSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
@@ -26,7 +29,8 @@ export function generateMetadata({ params }: PageProps): Metadata {
   const info = conditions[params.condition];
   if (!info) return {};
   return buildMetadata({
-    title: info.title,
+    title: `${info.title} Care Online | California Telehealth | CYRA Wellness`,
+    absoluteTitle: true,
     description: `${info.tagline} Physician-led ${info.title.toLowerCase()} care via telemedicine in California from CYRA Wellness.`,
     path: `/what-we-treat/${params.condition}`,
   });
@@ -40,6 +44,12 @@ export default function ConditionPage({ params }: PageProps) {
 
   return (
     <>
+      <JsonLd data={conditionSchema(params.condition, info)} />
+      <TrackPageView
+        event="condition_page_view"
+        params={{ condition: params.condition }}
+      />
+
       {/* Hero */}
       <Section>
         <FadeUp className="mx-auto max-w-3xl py-4 text-center md:py-8">

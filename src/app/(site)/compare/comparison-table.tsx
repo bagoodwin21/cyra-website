@@ -3,7 +3,9 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 import { Check, Minus, X } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
+import comparisonData from "@/data/comparison.json";
 
 type Verdict = "yes" | "no" | "partial";
 
@@ -17,127 +19,9 @@ interface Row {
   cells: Cell[]; // order matches PLATFORMS
 }
 
-const PLATFORMS = [
-  "CYRA Wellness",
-  "Midi Health",
-  "Alloy",
-  "Evernow",
-  "Winona",
-  "Hers",
-];
-
-const ROWS: Row[] = [
-  {
-    criterion: "Prescribing Provider Type",
-    cells: [
-      { note: "Board-Certified DO (Physician)" },
-      { note: "Nurse Practitioner (primary)" },
-      { note: "Physician-designed / NP delivery" },
-      { note: "Physician review / NP primary" },
-      { note: "Physician" },
-      { note: "NP / PA" },
-    ],
-  },
-  {
-    criterion: "Testosterone for Women Included",
-    cells: [
-      { verdict: "yes", note: "Standard part of care" },
-      { verdict: "partial", note: "Available, not emphasized" },
-      { verdict: "no", note: "Not standard" },
-      { verdict: "partial", note: "Limited" },
-      { verdict: "partial", note: "Add-on" },
-      { verdict: "no" },
-    ],
-  },
-  {
-    criterion: "Personalized Protocol vs. Standardized",
-    cells: [
-      { verdict: "yes", note: "Fully personalized" },
-      { verdict: "partial", note: "Protocol-based" },
-      { verdict: "partial", note: "Algorithm-assisted" },
-      { verdict: "partial", note: "App-driven" },
-      { verdict: "partial", note: "Standardized tiers" },
-      { verdict: "no", note: "Standardized" },
-    ],
-  },
-  {
-    criterion: "Continuity (Same Provider Every Visit)",
-    cells: [
-      { verdict: "yes", note: "Always Dr. Mondona" },
-      { verdict: "no", note: "Rotating providers" },
-      { verdict: "partial", note: "Not guaranteed" },
-      { verdict: "no", note: "Rotating" },
-      { verdict: "partial", note: "Not guaranteed" },
-      { verdict: "no", note: "Rotating" },
-    ],
-  },
-  {
-    criterion: "Care Plan vs. Subscription Model",
-    cells: [
-      { verdict: "yes", note: "12-month care plan" },
-      { verdict: "no", note: "Monthly subscription" },
-      { verdict: "no", note: "Monthly subscription" },
-      { verdict: "no", note: "Monthly subscription" },
-      { verdict: "no", note: "Monthly subscription" },
-      { verdict: "no", note: "Monthly subscription" },
-    ],
-  },
-  {
-    criterion: "Financing Available (Cherry)",
-    cells: [
-      { verdict: "yes", note: "Cherry financing" },
-      { verdict: "no" },
-      { verdict: "no" },
-      { verdict: "no" },
-      { verdict: "no" },
-      { verdict: "no" },
-    ],
-  },
-  {
-    criterion: "Labs Ordered & Reviewed by Same Provider",
-    cells: [
-      { verdict: "yes" },
-      { verdict: "partial" },
-      { verdict: "partial" },
-      { verdict: "partial" },
-      { verdict: "partial" },
-      { verdict: "no" },
-    ],
-  },
-  {
-    criterion: "Thyroid & Adrenal in Scope",
-    cells: [
-      { verdict: "yes" },
-      { verdict: "partial" },
-      { verdict: "no" },
-      { verdict: "no" },
-      { verdict: "no" },
-      { verdict: "no" },
-    ],
-  },
-  {
-    criterion: "Superbill for OON Reimbursement",
-    cells: [
-      { verdict: "yes" },
-      { verdict: "partial" },
-      { verdict: "no" },
-      { verdict: "no" },
-      { verdict: "no" },
-      { verdict: "no" },
-    ],
-  },
-  {
-    criterion: "California Telehealth",
-    cells: [
-      { verdict: "yes" },
-      { verdict: "yes" },
-      { verdict: "yes" },
-      { verdict: "yes" },
-      { verdict: "yes" },
-      { verdict: "yes" },
-    ],
-  },
-];
+// Table contents are maintained in src/data/comparison.json.
+const PLATFORMS: string[] = comparisonData.platforms;
+const ROWS: Row[] = comparisonData.rows as Row[];
 
 const VERDICT_META: Record<
   Verdict,
@@ -190,9 +74,20 @@ function CellContent({ cell, isCyra }: { cell: Cell; isCyra: boolean }) {
 }
 
 export function ComparisonTable() {
+  const scrollTracked = React.useRef(false);
+
+  const onScroll = () => {
+    if (scrollTracked.current) return;
+    scrollTracked.current = true;
+    trackEvent("compare_table_scroll");
+  };
+
   return (
     <div>
-      <div className="overflow-x-auto rounded-card border border-border bg-surface shadow-card">
+      <div
+        className="overflow-x-auto rounded-card border border-border bg-surface shadow-card"
+        onScroll={onScroll}
+      >
         <table className="w-full min-w-[880px] border-collapse">
           <caption className="sr-only">
             Comparison of menopause telehealth platforms by provider type,

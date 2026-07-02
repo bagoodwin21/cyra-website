@@ -10,6 +10,20 @@ export const siteConfig = {
     "CYRA Wellness provides cash-pay telemedicine services. We do not accept insurance.",
 };
 
+/**
+ * HubSpot Forms API destination for lead-capture tools (quiz email gate).
+ * Set NEXT_PUBLIC_HUBSPOT_PORTAL_ID / NEXT_PUBLIC_HUBSPOT_FORM_ID (see
+ * .env.example) and the submission in src/lib/hubspot.ts starts posting
+ * for real; until then it degrades to a silent no-op.
+ */
+export const hubspotConfig = {
+  portalId: process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID ?? "[HUBSPOT_PORTAL_ID]",
+  formId: process.env.NEXT_PUBLIC_HUBSPOT_FORM_ID ?? "[HUBSPOT_FORM_ID]",
+};
+
+/** Real dollar total for the 12-month care plan. Placeholder pending pricing confirmation. */
+export const carePlanTotal = "[CARE_PLAN_TOTAL]";
+
 export interface NavLink {
   label: string;
   href: string;
@@ -18,7 +32,7 @@ export interface NavLink {
 export const navLinks: NavLink[] = [
   { label: "How It Works", href: "/how-it-works" },
   { label: "What We Treat", href: "/what-we-treat" },
-  { label: "Why CYRA", href: "/why-cyra" },
+  { label: "About Us", href: "/about" },
   { label: "Pricing", href: "/pricing" },
   { label: "Compare", href: "/compare" },
   { label: "FAQ", href: "/faq" },
@@ -26,7 +40,7 @@ export const navLinks: NavLink[] = [
 
 /** Pages linked from the footer (and sitemap) but not the main nav. */
 export const secondaryLinks: NavLink[] = [
-  { label: "About", href: "/about" },
+  { label: "Symptom Quiz", href: "/quiz" },
   { label: "Patient Resources", href: "/patient-resources" },
 ];
 
