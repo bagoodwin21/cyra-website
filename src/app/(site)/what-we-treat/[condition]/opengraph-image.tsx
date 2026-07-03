@@ -49,7 +49,7 @@ export default function OpengraphImage({
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#364954",
+          backgroundColor: "#506C7C",
           color: "#FAF7F4",
           fontFamily: "Georgia, serif",
           padding: "0 80px",
