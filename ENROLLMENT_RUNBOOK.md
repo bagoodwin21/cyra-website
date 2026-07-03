@@ -81,10 +81,21 @@ plan figures and `/enroll` shows a not-for-patients banner.
   then the handoff step tells the patient the care coordinator will text
   the link. The `/pricing` page also has a slot for Cherry's rate-check
   widget embed (`NEXT_PUBLIC_CHERRY_MERCHANT_ID`).
-- `[HUMAN]` Cherry application outcomes (approved / declined / abandoned)
-  are visible in the Cherry dashboard — there is **no webhook into this
-  repo**. Brandon checks the dashboard same-day and follows up on
-  abandoned applications.
+- `[HUMAN]` **Cherry emails the practice when a patient is approved** —
+  act on that email same-day (confirm the plan is active, move to
+  consent/scheduling). No email is sent for declined or abandoned
+  applications, so absence of an approval email is not a decline: if a
+  patient chose Cherry and no email arrives by end of day, check the
+  Cherry dashboard and follow up with the patient (resume the
+  application or switch them to pay-in-full — the `/enroll` flow
+  supports both).
+- `[SAAS]` Cherry's practice portal has an "Integrations & Apps" page
+  for API keys used by Cherry-approved third-party software. That key is
+  a credential — never put it in this repo or any `NEXT_PUBLIC_` env
+  var. If OptiMantra or an automation tool (Zapier/Make) appears on
+  Cherry's approved list, wiring it there could surface application
+  status inside the EHR or push outcomes to HubSpot automatically;
+  check the list and document what it offers before creating a key.
 
 ## Stage 4 — Care plan agreement
 
@@ -97,6 +108,13 @@ plan figures and `/enroll` shows a not-for-patients banner.
   OptiMantra: upload the care plan agreement as a consent form there and
   send it in the new-patient packet. The web flow's acknowledgment is the
   patient-experience layer, not the signature of record.
+- ⚠️ **Agreement change procedure** — the agreement text exists in TWO
+  places that must stay in sync: the repo template
+  (`buildAgreementSections` in `src/lib/enrollment.ts`, pulling terms
+  and figures from `src/lib/carePlans.ts`) and the OptiMantra consent
+  document patients actually sign. Any wording or terms change updates
+  both in the same sitting; git history is the audit trail of what the
+  web version said on any given date.
 - `[HUMAN]` Brandon charges the deposit to the card on file (in
   OptiMantra's payment processing) once the agreement is signed.
 - ⚠️ `[CODE]` Acknowledgments are currently **client-side state only** —
@@ -137,6 +155,15 @@ plan figures and `/enroll` shows a not-for-patients banner.
   off the Calendly/Cherry integrations) moves the contact's lifecycle
   stage to `customer` and enrolls them in the post-enrollment sequence;
   non-enrolling leads go to the nurture sequence.
+- `[SAAS]` **Automation option:** OptiMantra supports outbound webhooks
+  (Settings → Marketing → CRM Integration → "Add New Out-Bound
+  Webhook"), e.g. trigger "When an Appointment is Booked" → HubSpot,
+  which can flip the lifecycle stage and start the sequence with no
+  human step. Send the **minimum** fields (name, email, appointment
+  type/status) — no clinical data into the CRM, and any middleman
+  (Zapier/Make) needs a BAA. While configuring, check whether a
+  consent-signed or tag-based trigger exists: that would give HubSpot a
+  timestamped record of the signed agreement too.
 - `[CODE]` Nothing in the repo writes lifecycle stages today. If/when
   built, it must sit behind a config flag, default-off, sandbox-first —
   same policy as every SaaS integration here.
