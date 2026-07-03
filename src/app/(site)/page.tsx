@@ -391,7 +391,8 @@ export default function HomePage() {
       </Section>
 
       {/* Section 8 — Financing banner */}
-      <section className="bg-accent">
+      {/* Pale rose tint so the buttons carry the color, not the band. */}
+      <section className="bg-accent/15">
         <FadeUp className="mx-auto flex max-w-content flex-col items-center gap-6 px-6 py-12 text-center md:py-14 lg:flex-row lg:justify-between lg:px-8 lg:text-left">
           <p className="max-w-2xl font-body text-subhead-mobile font-medium text-foreground md:text-subhead">
             Care plan financing available through Cherry. Monthly payments
@@ -401,16 +402,13 @@ export default function HomePage() {
             <Link
               href="/book"
               data-analytics-event="financing_check_rate_click"
-              className={cn(buttonVariants({ variant: "primary" }))}
+              className={cn(buttonVariants({ variant: "accent" }))}
             >
               Check Your Rate
             </Link>
             <Link
               href="/pricing"
-              className={cn(
-                buttonVariants({ variant: "secondary" }),
-                "hover:bg-primary hover:text-white"
-              )}
+              className={cn(buttonVariants({ variant: "secondary" }))}
             >
               Learn More
             </Link>
