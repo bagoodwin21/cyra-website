@@ -16,6 +16,7 @@ import { FAQItem } from "@/components/ui/faq-item";
 import { CalendlyPlaceholder } from "@/components/ui/calendly-placeholder";
 import { buttonVariants } from "@/components/ui/button";
 import { buildMetadata } from "@/lib/seo";
+import { startVisit, startVisitPriceLabel } from "@/lib/carePlans";
 import { cn } from "@/lib/utils";
 
 export function generateMetadata(): Metadata {
@@ -51,7 +52,7 @@ const steps: Step[] = [
   {
     Icon: Video,
     title: "Your Start Visit",
-    meta: "$399 · 60 min",
+    meta: `${startVisitPriceLabel} · ${startVisit.durationMinutes} min`,
     body: "A 60-minute video visit with Dr. Mondona. This is your comprehensive evaluation — she'll review your history, discuss your symptoms in depth, order labs appropriate for your situation, and outline what a care plan might look like for you.",
   },
   {

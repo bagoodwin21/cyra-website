@@ -10,6 +10,7 @@ import {
 import { buttonVariants } from "@/components/ui/button";
 import { JsonLd } from "@/components/seo/json-ld";
 import { faqPageSchema } from "@/lib/schema";
+import { startVisitPriceLabel } from "@/lib/carePlans";
 import { buildMetadata } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
@@ -58,7 +59,7 @@ const categories: FAQCategory[] = [
     name: "The Start Visit",
     faqs: [
       {
-        question: "What does the $399 Start Visit include?",
+        question: `What does the ${startVisitPriceLabel} Start Visit include?`,
         answer:
           "A 60-minute comprehensive evaluation with Dr. Mondona: your full history and symptoms reviewed in depth, lab orders tailored to your presentation, initial protocol recommendations, and a written care plan proposal. It's the foundation everything else is built on.",
       },

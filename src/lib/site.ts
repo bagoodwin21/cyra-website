@@ -21,8 +21,8 @@ export const hubspotConfig = {
   formId: process.env.NEXT_PUBLIC_HUBSPOT_FORM_ID ?? "[HUBSPOT_FORM_ID]",
 };
 
-/** Real dollar total for the 12-month care plan. Placeholder pending pricing confirmation. */
-export const carePlanTotal = "[CARE_PLAN_TOTAL]";
+// Care plan pricing lives exclusively in src/lib/carePlans.ts — the single
+// source of truth for all plan definitions, payment terms, and money math.
 
 export interface NavLink {
   label: string;

@@ -30,6 +30,7 @@ import testimonialsData from "@/data/testimonials.json";
 import { JsonLd } from "@/components/seo/json-ld";
 import { medicalBusinessSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
+import { startVisitPriceLabel } from "@/lib/carePlans";
 import { cn } from "@/lib/utils";
 
 export function generateMetadata(): Metadata {
@@ -131,7 +132,7 @@ const steps = [
   },
   {
     title: "Start Visit",
-    meta: "$399",
+    meta: startVisitPriceLabel,
     body: "Your comprehensive intake with Dr. Mondona — labs ordered, history reviewed, questions answered.",
   },
   {

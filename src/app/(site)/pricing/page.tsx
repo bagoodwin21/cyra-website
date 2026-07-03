@@ -9,6 +9,12 @@ import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { CostEstimator } from "@/components/pricing/cost-estimator";
 import { buildMetadata } from "@/lib/seo";
+import {
+  carePlan12Month,
+  cherryPerPaymentCents,
+  displayPrice,
+  startVisitPriceLabel,
+} from "@/lib/carePlans";
 import { cn } from "@/lib/utils";
 
 export function generateMetadata(): Metadata {
@@ -23,9 +29,9 @@ export function generateMetadata(): Metadata {
 }
 
 /*
- * NOTE: Care plan dollar amounts are intentionally placeholders.
- * Confirm current care plan tiers and pricing before replacing
- * the [PLACEHOLDER] strings below.
+ * All dollar amounts derive from src/lib/carePlans.ts — the single source
+ * of truth for plan pricing. Care plan figures render a visible placeholder
+ * until pricing is confirmed there (see that module's banner comment).
  */
 
 interface PricingTier {
@@ -40,7 +46,7 @@ interface PricingTier {
 const tiers: PricingTier[] = [
   {
     name: "Start Visit",
-    price: "$399",
+    price: startVisitPriceLabel,
     priceDetail: "one time",
     includes: [
       "60-minute comprehensive evaluation with Dr. Mondona",
@@ -51,18 +57,15 @@ const tiers: PricingTier[] = [
     note: "Required before enrolling in a care plan",
   },
   {
-    name: "12-Month Care Plan",
-    price: "[PLACEHOLDER]",
+    name: carePlan12Month.name,
+    price: displayPrice(
+      cherryPerPaymentCents(carePlan12Month),
+      carePlan12Month.confirmed
+    ),
     priceDetail: "per month via Cherry or card on file",
     featured: true,
-    includes: [
-      "Ongoing physician management by Dr. Mondona",
-      "Quarterly follow-up visits (minimum)",
-      "Lab review and protocol adjustments",
-      "Patient portal messaging access",
-      "Prescription management",
-    ],
-    note: "Medication costs are separate through your pharmacy",
+    includes: carePlan12Month.includes,
+    note: carePlan12Month.note,
   },
 ];
 

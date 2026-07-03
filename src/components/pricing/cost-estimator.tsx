@@ -4,7 +4,13 @@ import * as React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { BadgeDollarSign, Info, Wallet } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { carePlanTotal } from "@/lib/site";
+import {
+  carePlans,
+  cherryPerPaymentCents,
+  displayPrice,
+  formatUSD,
+  payInFullTotalCents,
+} from "@/lib/carePlans";
 import { cn } from "@/lib/utils";
 
 type FinancingChoice = "yes" | "no" | "info";
@@ -15,26 +21,6 @@ const financingOptions: { value: FinancingChoice; label: string }[] = [
   { value: "info", label: "Tell me more about financing" },
 ];
 
-/** Care plan lengths on offer. Extend this array as new tiers launch. */
-const planLengths = [{ months: 12, label: "12 months" }];
-
-/** Cherry splits a 12-month plan into 13 equal payments. */
-const cherryPaymentCount = (months: number) => months + 1;
-
-/**
- * Formats the monthly Cherry payment. While the care plan total is still
- * the [CARE_PLAN_TOTAL] placeholder this returns a visible [X] placeholder;
- * once a real number (e.g. "$4,800") lands in src/lib/site.ts the split
- * computes automatically.
- */
-function monthlyPayment(total: string, payments: number): string {
-  const numeric = Number(total.replace(/[^0-9.]/g, ""));
-  if (total.startsWith("[") || !Number.isFinite(numeric) || numeric <= 0) {
-    return "[X]";
-  }
-  return `$${Math.ceil(numeric / payments).toLocaleString()}`;
-}
-
 const panelMotion = {
   initial: { opacity: 0, height: 0 },
   animate: { opacity: 1, height: "auto" },
@@ -44,10 +30,16 @@ const panelMotion = {
 
 export function CostEstimator() {
   const [financing, setFinancing] = React.useState<FinancingChoice | null>(null);
-  const [months, setMonths] = React.useState(12);
+  const [planId, setPlanId] = React.useState(carePlans[0].id);
 
-  const payments = cherryPaymentCount(months);
-  const perMonth = monthlyPayment(carePlanTotal, payments);
+  // All figures derive from src/lib/carePlans.ts; unconfirmed pricing
+  // renders visible placeholders instead of numbers.
+  const plan = carePlans.find((p) => p.id === planId) ?? carePlans[0];
+  const payments = plan.cherry.paymentCount;
+  const perMonth = plan.confirmed
+    ? formatUSD(cherryPerPaymentCents(plan))
+    : "[X]";
+  const fullTotal = displayPrice(payInFullTotalCents(plan), plan.confirmed);
 
   return (
     <div className="mx-auto max-w-2xl rounded-card border border-border bg-surface p-6 shadow-card md:p-10">
@@ -116,20 +108,20 @@ export function CostEstimator() {
                 How many months is your care plan?
               </h3>
               <div className="mt-4 flex flex-wrap gap-3">
-                {planLengths.map((plan) => (
+                {carePlans.map((option) => (
                   <button
-                    key={plan.months}
+                    key={option.id}
                     type="button"
-                    onClick={() => setMonths(plan.months)}
-                    aria-pressed={months === plan.months}
+                    onClick={() => setPlanId(option.id)}
+                    aria-pressed={planId === option.id}
                     className={cn(
                       "rounded-full border-2 px-5 py-2.5 text-small font-medium transition-colors",
-                      months === plan.months
+                      planId === option.id
                         ? "border-primary bg-primary text-white"
                         : "border-border bg-surface text-foreground-secondary hover:border-primary/40"
                     )}
                   >
-                    {plan.label}
+                    {option.months} months
                   </button>
                 ))}
               </div>
@@ -159,14 +151,14 @@ export function CostEstimator() {
                     payments, with approved credit
                   </p>
                   <p className="mt-1 text-small text-white/80">
-                    Or pay in full: {carePlanTotal} — with an upfront-payment
+                    Or pay in full: {fullTotal} — with an upfront-payment
                     discount available
                   </p>
                 </>
               ) : (
                 <>
                   <p className="mt-4 font-heading text-3xl font-bold text-white md:text-4xl">
-                    {carePlanTotal}
+                    {fullTotal}
                   </p>
                   <p className="mt-2 text-small text-white/80">
                     Paid in full — ask about the discount for paying upfront.
