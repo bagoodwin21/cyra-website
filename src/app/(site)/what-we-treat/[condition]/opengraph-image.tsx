@@ -56,7 +56,7 @@ export default function OpengraphImage({
           textAlign: "center",
         }}
       >
-        <div style={{ fontSize: 30, color: "#C9878A", letterSpacing: 4 }}>
+        <div style={{ fontSize: 30, color: "#DEB5B6", letterSpacing: 4 }}>
           CYRA WELLNESS
         </div>
         <div style={{ marginTop: 28, fontSize: 76, fontWeight: 700 }}>
