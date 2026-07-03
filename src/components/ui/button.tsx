@@ -11,7 +11,8 @@ const buttonVariants = cva(
         secondary:
           "border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-white",
         ghost: "bg-transparent text-primary hover:bg-primary/10",
-        accent: "bg-accent text-white hover:bg-accent-light",
+        // Dark ink text — white on coral fails WCAG contrast.
+        accent: "bg-accent text-foreground hover:bg-accent-light",
       },
       size: {
         default: "h-12 px-8",

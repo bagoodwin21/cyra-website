@@ -78,7 +78,7 @@ export default function AboutPage() {
           <FadeUp>
             {/* Professional headshot placeholder — replace with photography:
                 warm and approachable, not stiff clinical. */}
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-card bg-gradient-to-br from-warm via-[#F2DFCB] to-accent-light/50 shadow-card">
+            <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-card bg-gradient-to-br from-warm via-[#F3DFDD] to-accent-light/50 shadow-card">
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 p-8 text-center">
                 <span className="flex h-20 w-20 items-center justify-center rounded-full bg-surface/60 font-heading text-2xl font-bold text-primary">
                   MG

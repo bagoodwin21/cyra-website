@@ -53,7 +53,7 @@ function VerdictMark({ verdict }: { verdict: Verdict }) {
 
 // Solid tint (not translucent) so the sticky CYRA column fully covers
 // content scrolling beneath it on mobile.
-const CYRA_BG = "bg-[#F1F6F7]";
+const CYRA_BG = "bg-[#EEF3F6]";
 
 function CellContent({ cell, isCyra }: { cell: Cell; isCyra: boolean }) {
   return (

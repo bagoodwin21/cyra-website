@@ -12,6 +12,7 @@ const config: Config = {
         accent: {
           DEFAULT: "var(--color-accent)",
           light: "var(--color-accent-light)",
+          dark: "var(--color-accent-dark)",
         },
         warm: "var(--color-warm)",
         background: "var(--color-background)",
