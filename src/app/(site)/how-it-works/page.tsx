@@ -131,7 +131,7 @@ export default function HowItWorksPage() {
                       {step.title}
                     </h2>
                     {step.meta && (
-                      <span className="text-small font-semibold text-accent">
+                      <span className="text-small font-semibold text-accent-dark">
                         {step.meta}
                       </span>
                     )}

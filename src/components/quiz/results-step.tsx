@@ -40,7 +40,7 @@ export function ResultsStep({ tier, topConditions, onRetake }: ResultsStepProps)
       transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
     >
       <div className="text-center">
-        <p className="mb-3 text-small font-semibold uppercase tracking-[0.18em] text-accent">
+        <p className="mb-3 text-small font-semibold uppercase tracking-[0.18em] text-accent-dark">
           Your Results
         </p>
         <h2 className="font-heading text-section-mobile text-foreground md:text-section">

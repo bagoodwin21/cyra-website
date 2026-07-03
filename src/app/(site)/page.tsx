@@ -196,7 +196,7 @@ export default function HomePage() {
           <FadeUp delay={0.15} className="hidden justify-self-center lg:block">
             {/* Lifestyle image placeholder — replace with photography:
                 woman in her 40s–50s, active, confident (not clinical). */}
-            <div className="relative aspect-[4/5] w-[26rem] max-w-full overflow-hidden rounded-card bg-gradient-to-br from-warm via-[#F2DFCB] to-accent-light/50 shadow-card-hover">
+            <div className="relative aspect-[4/5] w-[26rem] max-w-full overflow-hidden rounded-card bg-gradient-to-br from-warm via-[#F3DFDD] to-accent-light/50 shadow-card-hover">
               <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-surface/40" aria-hidden />
               <div className="absolute -bottom-20 -left-10 h-64 w-64 rounded-full bg-primary/10" aria-hidden />
               <div className="absolute inset-0 flex items-end p-8">
@@ -335,7 +335,7 @@ export default function HomePage() {
                     <h3 className="font-heading text-lg font-semibold text-foreground">
                       {step.title}
                     </h3>
-                    <span className="text-small font-semibold text-accent">
+                    <span className="text-small font-semibold text-accent-dark">
                       {step.meta}
                     </span>
                   </div>
@@ -391,9 +391,10 @@ export default function HomePage() {
       </Section>
 
       {/* Section 8 — Financing banner */}
-      <section className="bg-accent">
+      {/* Pale rose tint so the buttons carry the color, not the band. */}
+      <section className="bg-accent/15">
         <FadeUp className="mx-auto flex max-w-content flex-col items-center gap-6 px-6 py-12 text-center md:py-14 lg:flex-row lg:justify-between lg:px-8 lg:text-left">
-          <p className="max-w-2xl font-body text-subhead-mobile font-medium text-white md:text-subhead">
+          <p className="max-w-2xl font-body text-subhead-mobile font-medium text-foreground md:text-subhead">
             Care plan financing available through Cherry. Monthly payments
             with approved credit — or save with a single upfront payment.
           </p>
@@ -401,19 +402,13 @@ export default function HomePage() {
             <Link
               href="/book"
               data-analytics-event="financing_check_rate_click"
-              className={cn(
-                buttonVariants({ variant: "primary" }),
-                "bg-white text-accent hover:bg-white/90"
-              )}
+              className={cn(buttonVariants({ variant: "accent" }))}
             >
               Check Your Rate
             </Link>
             <Link
               href="/pricing"
-              className={cn(
-                buttonVariants({ variant: "secondary" }),
-                "border-white text-white hover:bg-white hover:text-accent"
-              )}
+              className={cn(buttonVariants({ variant: "secondary" }))}
             >
               Learn More
             </Link>
