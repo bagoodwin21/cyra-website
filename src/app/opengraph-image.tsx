@@ -18,7 +18,7 @@ export default function OpengraphImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#2F5061",
+          backgroundColor: "#364954",
           color: "#FAF7F4",
           fontFamily: "Georgia, serif",
         }}
@@ -28,7 +28,7 @@ export default function OpengraphImage() {
           style={{
             marginTop: 24,
             fontSize: 34,
-            color: "#E57F84",
+            color: "#C9878A",
           }}
         >
           Physician-led hormone care, built around you

@@ -4,13 +4,13 @@
 
 :root {
   /* CYRA Wellness design system — Mist Blue / Coral Pink / Ivory */
-  --color-primary: #2f5061;
-  --color-primary-light: #41708a;
-  --color-accent: #e57f84;
-  --color-accent-light: #f0a3a7;
-  /* Darker coral for text/icons on light backgrounds, where the bright
-     accent coral doesn't have enough contrast. */
-  --color-accent-dark: #c05159;
+  --color-primary: #364954;
+  --color-primary-light: #4e6979;
+  --color-accent: #c9878a;
+  --color-accent-light: #dca8aa;
+  /* Darker, muted rose for text/icons on light backgrounds, where the
+     lighter accent doesn't have enough contrast. */
+  --color-accent-dark: #a8575b;
   --color-warm: #e8c4c4;
   --color-background: #faf7f4;
   --color-surface: #ffffff;
