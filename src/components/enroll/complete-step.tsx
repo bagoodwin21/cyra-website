@@ -9,10 +9,10 @@ export function CompleteStep({ method }: CompleteStepProps) {
   const nextSteps = [
     method === "cherry"
       ? "We confirm your Cherry approval (usually same day)."
-      : "We confirm your card on file (usually same day).",
-    "You'll receive your consent packet through our patient portal (OptiMantra) to sign.",
-    "We schedule your comprehensive visit with Dr. Mondona.",
-    "After your visit, we can provide a superbill for potential out-of-network reimbursement.",
+      : "We confirm your card on file and your care plan payment (usually same day).",
+    "You'll sign your care plan agreement through our patient portal (OptiMantra) — that signed copy is your official record.",
+    "Your care plan begins and we schedule your first follow-up with Dr. Mondona.",
+    "After visits, we can provide superbills for potential out-of-network reimbursement.",
   ];
 
   return (

@@ -105,6 +105,10 @@ export function PaymentSelectionStep({
         Checking your rate with Cherry doesn&rsquo;t affect your credit score.
         Either way, your next step is reviewing your care plan agreement.
       </p>
+      <p className="mt-2 text-center text-small text-foreground-muted">
+        Your initial consultation fee was charged at booking and is separate
+        from your care plan total.
+      </p>
     </div>
   );
 }

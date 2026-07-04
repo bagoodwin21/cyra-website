@@ -35,10 +35,18 @@ export interface CherryTerms {
 
 export interface DepositPolicy {
   /**
-   * Deposit collected at care plan agreement. `null` = amount not yet
-   * confirmed by Brandon; agreement UI renders a visible placeholder.
+   * The initial consultation fee doubles as the marketing "deposit".
+   * It is charged at booking — BEFORE the care plan agreement exists.
    */
-  amountCents: number | null;
+  amountCents: number;
+  /**
+   * Confirmed by Brandon 2026-07-04: the consult fee is an additional
+   * charge, NOT applied toward the care plan total, and NOT included in
+   * Cherry financing. (Financing it through Cherry was considered and
+   * parked: it would require refunding the booking charge — a problem
+   * with Fiserv — or not charging at booking, which raises no-show risk.)
+   */
+  creditedTowardPlanTotal: boolean;
   /** Patient-facing forfeiture terms shown in the care plan agreement. */
   forfeitureTerms: string;
 }
@@ -91,7 +99,8 @@ export const startVisit: StartVisit = {
 /**
  * The 12-month care plan. $2,275 via Cherry's 13-payment structure
  * (= $175/payment exactly) is the last referenced figure — UNCONFIRMED,
- * see module banner.
+ * see module banner. The total is IN ADDITION to the Start Visit fee,
+ * which is paid at booking and never credited toward this total.
  */
 export const carePlan12Month: CarePlan = {
   id: "care-plan-12-month",
@@ -104,12 +113,14 @@ export const carePlan12Month: CarePlan = {
     merchantFeeRate: 0.06,
   },
   deposit: {
-    amountCents: null,
+    amountCents: startVisit.priceCents,
+    creditedTowardPlanTotal: false,
     forfeitureTerms:
-      "Your deposit reserves your enrollment and Dr. Mondona's clinical " +
-      "time. If you cancel enrollment before your first clinical visit, " +
-      "your deposit is forfeited. Once your care plan begins, the deposit " +
-      "is applied toward your care plan total.",
+      "This fee was charged when you booked your initial consultation and " +
+      "is non-refundable. It covers your comprehensive consultation with " +
+      "Dr. Mondona whether or not you enroll in a care plan — completing " +
+      "the consultation carries no obligation to continue. It is not " +
+      "applied toward your care plan total.",
   },
   confirmed: false,
   includes: [
@@ -181,7 +192,11 @@ export function splitIntoPayments(totalCents: number, count: number): number[] {
   );
 }
 
-/** Per-payment schedule for a plan financed through Cherry. */
+/**
+ * Per-payment schedule for a plan financed through Cherry. Cherry
+ * finances the care plan total only — the initial consultation fee is
+ * charged by card at booking and is never part of the financed amount.
+ */
 export function cherryPaymentSchedule(plan: CarePlan): number[] {
   return splitIntoPayments(plan.totalCents, plan.cherry.paymentCount);
 }
@@ -260,4 +275,10 @@ export const handoffConfig = {
   /** OptiMantra patient portal / consent packet link. */
   optiMantraPortalUrl:
     process.env.NEXT_PUBLIC_OPTIMANTRA_PORTAL_URL || null,
+  /**
+   * Online-booking link for the paid initial consultation (used by the
+   * pre-booking eligibility check at /eligibility).
+   */
+  optiMantraBookingUrl:
+    process.env.NEXT_PUBLIC_OPTIMANTRA_BOOKING_URL || null,
 };

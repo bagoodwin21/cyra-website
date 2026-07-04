@@ -95,17 +95,17 @@ describe("12-month care plan config", () => {
 });
 
 describe("pricing confirmation gate", () => {
-  it("no plan may be confirmed while its deposit amount is unknown", () => {
-    for (const plan of carePlans) {
-      if (plan.confirmed) {
-        expect(plan.deposit.amountCents).not.toBeNull();
-      }
-    }
+  it("the deposit IS the initial consultation fee, never credited toward the total", () => {
+    // Confirmed by Brandon 2026-07-04: the $399 consult fee is charged at
+    // booking, doubles as the marketing "deposit", is not applied to the
+    // care plan total, and is not part of the Cherry-financed amount.
+    expect(carePlan12Month.deposit.amountCents).toBe(startVisit.priceCents);
+    expect(carePlan12Month.deposit.creditedTowardPlanTotal).toBe(false);
   });
 
   it("care plan pricing is still flagged unconfirmed (flip only after Brandon verifies)", () => {
     // If this test starts failing because you confirmed pricing: also set
-    // the deposit amount and pay-in-full discount, then update this test.
+    // the pay-in-full discount, then update this test.
     expect(carePlan12Month.confirmed).toBe(false);
     expect(startVisit.confirmed).toBe(false);
   });

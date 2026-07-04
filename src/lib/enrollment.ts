@@ -118,8 +118,11 @@ export interface AgreementSection {
 
 /**
  * Builds the three agreement sections for a plan + selected payment method.
- * Dollar figures come from plan config; unconfirmed amounts render the
- * visible pending placeholder rather than a guessed number.
+ * Presented AFTER the initial consultation, when Dr. Mondona has proposed
+ * the care plan and the consultation fee has already been charged.
+ * The unconfirmed care plan total renders a visible pending placeholder;
+ * the deposit (= the consultation fee) renders its real figure because it
+ * was already published and already charged at booking.
  */
 export function buildAgreementSections(
   plan: CarePlan,
@@ -128,10 +131,11 @@ export function buildAgreementSections(
   const total = plan.confirmed
     ? formatUSD(plan.totalCents)
     : PRICE_PENDING_PLACEHOLDER;
-  const deposit =
-    plan.deposit.amountCents !== null && plan.confirmed
-      ? formatUSD(plan.deposit.amountCents)
-      : "[DEPOSIT AMOUNT PENDING CONFIRMATION]";
+  const deposit = formatUSD(plan.deposit.amountCents);
+  const notCredited = plan.deposit.creditedTowardPlanTotal
+    ? ""
+    : " This total is in addition to your initial consultation fee, " +
+      "which is not applied toward it.";
 
   const paymentDescription =
     method === "cherry"
@@ -146,7 +150,7 @@ export function buildAgreementSections(
       body:
         `You are enrolling in the ${plan.name} (${plan.months} months of ` +
         `physician-led care) for a total investment of ${total}, ` +
-        `${paymentDescription}. Your care plan includes: ` +
+        `${paymentDescription}.${notCredited} Your care plan includes: ` +
         plan.includes.join("; ") +
         `. ${plan.note}. CYRA Wellness is a cash-pay practice and does not ` +
         "bill insurance; superbills are available for potential " +
@@ -157,7 +161,9 @@ export function buildAgreementSections(
     {
       id: "deposit-forfeiture",
       title: "Deposit & Forfeiture Terms",
-      body: `Your enrollment deposit is ${deposit}. ${plan.deposit.forfeitureTerms}`,
+      body:
+        `Your enrollment deposit is the ${deposit} initial consultation ` +
+        `fee. ${plan.deposit.forfeitureTerms}`,
       acknowledgment:
         "I understand and accept the deposit and forfeiture terms.",
     },
@@ -169,9 +175,11 @@ export function buildAgreementSections(
         "file and to charge it for the amounts you agree to in this " +
         "enrollment" +
         (method === "cherry"
-          ? " (your enrollment deposit; your care plan payments are made " +
-            "to Cherry under your Cherry payment plan)"
-          : " (your enrollment deposit and your care plan total)") +
+          ? " (your care plan payments are made to Cherry under your " +
+            "Cherry payment plan; your initial consultation fee was " +
+            "already charged when you booked)"
+          : " (your care plan total; your initial consultation fee was " +
+            "already charged when you booked)") +
         ". You may update your card at any time by contacting the practice.",
       acknowledgment:
         "I authorize CYRA Wellness to charge my card on file as described.",

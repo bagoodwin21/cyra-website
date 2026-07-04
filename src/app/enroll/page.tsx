@@ -12,8 +12,9 @@ export function generateMetadata(): Metadata {
         "Complete your CYRA Wellness care plan enrollment: choose your payment option and review your care plan agreement.",
       path: "/enroll",
     }),
-    // Unlinked, post-discovery-call flow — keep out of search results,
-    // especially while pricing is pending confirmation.
+    // Unlinked, post-consultation flow (sent once Dr. Mondona has proposed
+    // a care plan) — keep out of search results, especially while pricing
+    // is pending confirmation.
     robots: { index: false, follow: false },
   };
 }

@@ -105,22 +105,33 @@ describe("agreement sections", () => {
     expect(full[0].body).toContain("charged in full to your card on file");
   });
 
-  it("renders visible placeholders, never guessed figures, while unconfirmed", () => {
+  it("renders a visible placeholder for the unconfirmed total, never a guessed figure", () => {
     const sections = buildAgreementSections(carePlan12Month, "pay-in-full");
     expect(sections[0].body).toContain("[PRICE PENDING CONFIRMATION]");
-    expect(sections[1].body).toContain("[DEPOSIT AMOUNT PENDING CONFIRMATION]");
     expect(sections[0].body).not.toContain("$2,275");
   });
 
-  it("shows real figures once the plan is confirmed with a deposit", () => {
-    const confirmed = {
-      ...carePlan12Month,
-      confirmed: true,
-      deposit: { ...carePlan12Month.deposit, amountCents: 50_000 },
-    };
+  it("describes the deposit as the already-charged $399 consultation fee, not credited", () => {
+    const sections = buildAgreementSections(carePlan12Month, "pay-in-full");
+    expect(sections[1].body).toContain("$399 initial consultation fee");
+    expect(sections[1].body).toContain("non-refundable");
+    expect(sections[1].body).toContain("not applied toward your care plan total");
+    // The consent section states the total excludes the consult fee.
+    expect(sections[0].body).toContain(
+      "in addition to your initial consultation fee"
+    );
+    // Card-on-file: consult fee already charged at booking, both methods.
+    for (const method of ["pay-in-full", "cherry"] as const) {
+      expect(buildAgreementSections(carePlan12Month, method)[2].body).toContain(
+        "already charged when you booked"
+      );
+    }
+  });
+
+  it("shows the real total once the plan is confirmed", () => {
+    const confirmed = { ...carePlan12Month, confirmed: true };
     const sections = buildAgreementSections(confirmed, "pay-in-full");
     expect(sections[0].body).toContain("$2,275");
-    expect(sections[1].body).toContain("$500");
   });
 
   it("allSectionsAcknowledged requires every box", () => {
