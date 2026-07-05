@@ -63,6 +63,12 @@ plan figures and `/enroll` shows a not-for-patients banner.
 - `[SAAS]` Create the HubSpot form, note portal + form IDs, set the env
   vars in Vercel. Map the form to create/update a Contact.
 - `[SAAS]` HubSpot lifecycle stage on capture: `lead`.
+- `[SAAS]` All automated email sequences (nurture, call prep, booking
+  invitation, enrollment follow-through, onboarding) are drafted with
+  triggers, timing, and full copy in **`HUBSPOT_AUTOMATION.md`** —
+  including the `enrollment_status` property that drives them and the
+  deliverability setup (domain authentication, 1:1 sends, text-first for
+  the booking link).
 
 ## Stage 2 — Discovery / enrollment call (Brandon)
 
