@@ -11,10 +11,7 @@ const buttonVariants = cva(
         secondary:
           "border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-white",
         ghost: "bg-transparent text-primary hover:bg-primary/10",
-        // Dark ink text (white on the blush fill fails WCAG contrast);
-        // slate stroke keeps the light fill defined against ivory.
-        accent:
-          "border-2 border-primary bg-accent text-foreground hover:bg-accent-light",
+        accent: "bg-accent text-white hover:bg-accent-light",
       },
       size: {
         default: "h-12 px-8",

@@ -37,7 +37,7 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 bg-surface transition-shadow duration-300",
+        "sticky top-0 z-50 bg-background transition-shadow duration-300",
         scrolled ? "shadow-nav" : "shadow-none"
       )}
     >
@@ -101,7 +101,7 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-50 flex flex-col bg-surface lg:hidden"
+            className="fixed inset-0 z-50 flex flex-col bg-background lg:hidden"
           >
             <div className="flex h-18 items-center justify-between px-6 py-4">
               <span className="font-heading text-2xl font-bold text-primary">

@@ -8,8 +8,11 @@ const badgeVariants = cva(
     variants: {
       variant: {
         primary: "bg-primary/10 text-primary",
-        accent: "bg-accent/15 text-accent-dark",
-        warm: "bg-warm/40 text-foreground-secondary",
+        // A pale-blue chip reads against both white and blush sections;
+        // blush-on-blush loses all contrast, so accent/warm route through
+        // the same blue tint rather than the blush token.
+        accent: "bg-primary/10 text-primary",
+        warm: "bg-primary/10 text-foreground-secondary",
         success: "bg-success/10 text-success",
         outline: "border border-border bg-surface text-foreground-secondary",
       },

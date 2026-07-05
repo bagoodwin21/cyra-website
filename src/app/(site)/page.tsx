@@ -196,7 +196,7 @@ export default function HomePage() {
           <FadeUp delay={0.15} className="hidden justify-self-center lg:block">
             {/* Lifestyle image placeholder — replace with photography:
                 woman in her 40s–50s, active, confident (not clinical). */}
-            <div className="relative aspect-[4/5] w-[26rem] max-w-full overflow-hidden rounded-card bg-gradient-to-br from-warm via-[#F3DFDD] to-accent-light/50 shadow-card-hover">
+            <div className="relative aspect-[4/5] w-[26rem] max-w-full overflow-hidden rounded-card bg-gradient-to-br from-warm via-white to-accent-light/50 shadow-card-hover">
               <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-surface/40" aria-hidden />
               <div className="absolute -bottom-20 -left-10 h-64 w-64 rounded-full bg-primary/10" aria-hidden />
               <div className="absolute inset-0 flex items-end p-8">
@@ -391,8 +391,8 @@ export default function HomePage() {
       </Section>
 
       {/* Section 8 — Financing banner */}
-      {/* Pale rose tint so the buttons carry the color, not the band. */}
-      <section className="bg-accent/15">
+      {/* Blush band — a "smaller area" per the brand guide; blue carries the CTAs. */}
+      <section className="bg-warm">
         <FadeUp className="mx-auto flex max-w-content flex-col items-center gap-6 px-6 py-12 text-center md:py-14 lg:flex-row lg:justify-between lg:px-8 lg:text-left">
           <p className="max-w-2xl font-body text-subhead-mobile font-medium text-foreground md:text-subhead">
             Care plan financing available through Cherry. Monthly payments

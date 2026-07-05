@@ -11,7 +11,7 @@ export default function BookLayout({
 }>) {
   return (
     <>
-      <header className="bg-surface shadow-nav">
+      <header className="bg-background shadow-nav">
         <div className="mx-auto flex h-18 max-w-content items-center px-6 py-4 lg:px-8">
           <Link
             href="/"

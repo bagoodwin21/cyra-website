@@ -27,7 +27,7 @@ const config: Config = {
       },
       fontFamily: {
         heading: ["var(--font-playfair)", "Georgia", "serif"],
-        body: ["var(--font-inter)", "system-ui", "sans-serif"],
+        body: ["var(--font-quicksand)", "system-ui", "sans-serif"],
       },
       fontSize: {
         // Typography scale — mobile sizes; pair with md: variants for desktop
