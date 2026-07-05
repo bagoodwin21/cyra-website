@@ -19,7 +19,7 @@ const Section = React.forwardRef<HTMLElement, SectionProps>(
       className={cn(
         "py-12 md:py-20",
         tone === "surface" && "bg-surface",
-        tone === "primary" && "bg-primary text-white",
+        tone === "primary" && "bg-ink text-white",
         className
       )}
       {...props}

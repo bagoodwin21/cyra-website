@@ -4,7 +4,7 @@ import { legalLinks, navLinks, secondaryLinks, siteConfig } from "@/lib/site";
 
 export function Footer() {
   return (
-    <footer className="bg-primary text-white">
+    <footer className="bg-ink text-white">
       <div className="mx-auto grid max-w-content gap-12 px-6 py-14 md:grid-cols-3 lg:px-8">
         {/* Col 1: brand */}
         <div>

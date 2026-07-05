@@ -7,11 +7,12 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: "bg-primary text-white hover:bg-primary-light",
+        // Slate fills take dark ink text — white on #8FA5B3 fails WCAG.
+        primary: "bg-accent text-foreground hover:bg-accent-light",
         secondary:
           "border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-white",
         ghost: "bg-transparent text-primary hover:bg-primary/10",
-        accent: "bg-accent text-white hover:bg-accent-light",
+        accent: "bg-accent text-foreground hover:bg-accent-light",
       },
       size: {
         default: "h-12 px-8",

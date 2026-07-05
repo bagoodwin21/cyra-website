@@ -3,24 +3,26 @@
 @tailwind utilities;
 
 :root {
-  /* CYRA Wellness design system — Dusty Blue / Blush / White (Mondona brand) */
-  --color-primary: #6d8794;
+  /* CYRA Wellness design system — warm neutrals + slate blue accent.
+     Section-band hierarchy: charcoal (ink) > taupe (ink-soft) >
+     slate blue accents > cool blue-gray (surface) > warm gray (warm)
+     > warm cream (background). */
+  --color-primary: #6d8794; /* deep slate for text/links/logo (contrast-safe) */
   --color-primary-light: #8fa5b3;
-  /* Single brand hue — accent mirrors primary rather than a second color,
-     since CTAs and section fills should read as the same blue. */
-  --color-accent: #6d8794;
-  --color-accent-light: #8fa5b3;
-  --color-accent-dark: #5c727d;
-  /* Blush — reserved for small areas (chips, cards, thin bands), never
-     the dominant page background. */
-  --color-warm: #fbf3f1;
-  --color-background: #ffffff;
-  --color-surface: #fbf3f1;
+  --color-accent: #8fa5b3; /* literal brand slate — button fills (dark ink text) */
+  --color-accent-light: #a7bac6;
+  --color-accent-dark: #5c727d; /* small accent text on light backgrounds */
+  --color-ink: #333333; /* dark section bg (footer, primary-tone sections) */
+  --color-ink-soft: #635f5c; /* mid taupe section bg (financing band) */
+  --color-warm: #e2dede; /* warm gray — chips, soft small areas */
+  --color-background: #ede9e1; /* warm cream — the page ground */
+  --color-surface: #e8edf0; /* cool blue-gray — cards, alternate bands */
   --color-text-primary: #1a1a1a;
   --color-text-secondary: #5c5c5c;
   --color-text-muted: #8a8a8a;
+  --color-text-on-dark: #e8e4df;
   --color-success: #2d7d4f;
-  --color-border: #e8e4e0;
+  --color-border: #d9d2c7;
 }
 
 html {
@@ -31,14 +33,14 @@ body {
   @apply bg-background font-body text-body text-foreground antialiased;
 }
 
-/* Subtle animated dusty-blue-to-white-to-blush gradient for the home hero */
+/* Subtle animated blue-gray-to-cream gradient for the home hero */
 .hero-gradient {
   background: linear-gradient(
     120deg,
-    #eaf0f2 0%,
-    #ffffff 38%,
-    #fbf3f1 70%,
-    #eaf0f2 100%
+    #e8edf0 0%,
+    #ede9e1 38%,
+    #e2dede 70%,
+    #e8edf0 100%
   );
   background-size: 300% 300%;
   animation: hero-gradient-shift 16s ease-in-out infinite;

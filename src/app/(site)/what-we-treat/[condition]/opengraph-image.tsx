@@ -49,14 +49,14 @@ export default function OpengraphImage({
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#6D8794",
-          color: "#FAF7F4",
+          backgroundColor: "#333333",
+          color: "#E8E4DF",
           fontFamily: "Georgia, serif",
           padding: "0 80px",
           textAlign: "center",
         }}
       >
-        <div style={{ fontSize: 30, color: "#FBF3F1", letterSpacing: 4 }}>
+        <div style={{ fontSize: 30, color: "#8FA5B3", letterSpacing: 4 }}>
           CYRA WELLNESS
         </div>
         <div style={{ marginTop: 28, fontSize: 76, fontWeight: 700 }}>

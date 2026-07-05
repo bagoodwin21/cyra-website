@@ -15,12 +15,17 @@ const config: Config = {
           dark: "var(--color-accent-dark)",
         },
         warm: "var(--color-warm)",
+        ink: {
+          DEFAULT: "var(--color-ink)",
+          soft: "var(--color-ink-soft)",
+        },
         background: "var(--color-background)",
         surface: "var(--color-surface)",
         foreground: {
           DEFAULT: "var(--color-text-primary)",
           secondary: "var(--color-text-secondary)",
           muted: "var(--color-text-muted)",
+          "on-dark": "var(--color-text-on-dark)",
         },
         success: "var(--color-success)",
         border: "var(--color-border)",
