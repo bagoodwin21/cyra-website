@@ -20,7 +20,15 @@ warm, direct, physician-led, honest about money.
    consultation fee appears in Workflow 3 (patients must know the charge
    before booking). If that fee ever changes, HubSpot is now a place to
    update — it's flagged in the runbook pricing checklist.
-3. **Marketing vs. transactional.** Workflows 1 and the re-engagement
+3. **Form links come from OptiMantra, never HubSpot.** Consent packets
+   and intake forms are patient-specific secure links — they belong in
+   OptiMantra's own transactional emails, which also track completion in
+   the chart. HubSpot's job is the *heads-up*: every email that precedes
+   an OptiMantra send names the sender ("watch for an email from
+   OptiMantra — that's our patient portal") so the unfamiliar sender
+   doesn't get ignored or spam-foldered. Two emails, two jobs: HubSpot
+   sets expectations, OptiMantra delivers the secure link.
+4. **Marketing vs. transactional.** Workflows 1 and the re-engagement
    emails are marketing (unsubscribe required, marketing-contact status).
    Workflows 2–7 are operational/transactional follow-ups to an active
    patient relationship — still include an unsubscribe, but send from the
@@ -299,8 +307,10 @@ Hi {{contact.firstname}},
 Your initial consultation is confirmed. This is a real, unhurried
 60-minute visit — here's how to make it count:
 
-1. **Complete your intake forms** in the patient portal before your
-   visit (link comes from our care coordinator). Dr. Mondona reads
+1. **Complete your intake forms.** You'll get a separate email from
+   **OptiMantra** — that's our patient portal, and it's really us. It
+   holds your secure forms link; if you don't see it within the hour,
+   check spam or reply here and we'll resend. Dr. Mondona reads
    everything in advance — the more you share, the deeper the visit goes.
 2. **Upload any past labs or records** you have, even old ones. They
    help establish your baseline.
@@ -407,9 +417,11 @@ Hi {{contact.firstname}},
 You're officially enrolled — welcome. Dr. Mondona and the team are
 genuinely glad you're here. Your next steps, in order:
 
-1. **Sign your care plan agreement** in the patient portal (OptiMantra) —
-   it's the same agreement you reviewed at enrollment; the portal copy is
-   your official signed record.
+1. **Sign your care plan agreement.** A separate email from
+   **OptiMantra** (our patient portal — it's really us) has your secure
+   signing link. It's the same agreement you reviewed at enrollment; the
+   portal copy is your official signed record. Don't see it within the
+   hour? Check spam, or reply here and we'll resend.
 2. **Watch for your care plan schedule** — we'll set your first
    follow-up with Dr. Mondona and map out your labs.
 3. **Use the portal messaging** anytime — questions between visits are
