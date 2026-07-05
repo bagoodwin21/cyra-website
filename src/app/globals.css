@@ -15,14 +15,14 @@
   --color-ink: #333333; /* dark section bg (footer, primary-tone sections) */
   --color-ink-soft: #635f5c; /* mid taupe section bg (financing band) */
   --color-warm: #e2dede; /* warm gray — chips, soft small areas */
-  --color-background: #ede9e1; /* warm cream — the page ground */
+  --color-background: #ffffff; /* white — the page ground */
   --color-surface: #e8edf0; /* cool blue-gray — cards, alternate bands */
   --color-text-primary: #1a1a1a;
   --color-text-secondary: #5c5c5c;
   --color-text-muted: #8a8a8a;
   --color-text-on-dark: #e8e4df;
   --color-success: #2d7d4f;
-  --color-border: #d9d2c7;
+  --color-border: #e5e1db;
 }
 
 html {
@@ -38,7 +38,7 @@ body {
   background: linear-gradient(
     120deg,
     #e8edf0 0%,
-    #ede9e1 38%,
+    #ffffff 38%,
     #e2dede 70%,
     #e8edf0 100%
   );
