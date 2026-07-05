@@ -4,7 +4,7 @@ import {
   GoogleTagManager,
   GoogleTagManagerNoScript,
 } from "@/components/analytics/google-tag-manager";
-import { playfair, quicksand } from "@/lib/fonts";
+import { alexBrush, playfair, quicksand } from "@/lib/fonts";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
@@ -41,7 +41,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${quicksand.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${quicksand.variable} ${alexBrush.variable}`}>
       <head>
         {/* Fonts are self-hosted via next/font; these preconnects cover
             the third-party embeds (Calendly scheduling, Cherry financing)

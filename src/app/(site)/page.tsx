@@ -390,10 +390,10 @@ export default function HomePage() {
         </FadeUp>
       </Section>
 
-      {/* Section 8 — Financing banner (mid taupe band in the section hierarchy) */}
-      <section className="bg-ink-soft">
+      {/* Section 8 — Financing banner (soft neutral band; slate CTAs carry it) */}
+      <section className="bg-warm">
         <FadeUp className="mx-auto flex max-w-content flex-col items-center gap-6 px-6 py-12 text-center md:py-14 lg:flex-row lg:justify-between lg:px-8 lg:text-left">
-          <p className="max-w-2xl font-body text-subhead-mobile font-medium text-foreground-on-dark md:text-subhead">
+          <p className="max-w-2xl font-body text-subhead-mobile font-medium text-foreground md:text-subhead">
             Care plan financing available through Cherry. Monthly payments
             with approved credit — or save with a single upfront payment.
           </p>
@@ -407,10 +407,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="/pricing"
-              className={cn(
-                buttonVariants({ variant: "secondary" }),
-                "border-white/80 text-white hover:bg-white hover:text-foreground"
-              )}
+              className={cn(buttonVariants({ variant: "secondary" }))}
             >
               Learn More
             </Link>

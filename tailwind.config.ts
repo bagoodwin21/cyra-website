@@ -33,6 +33,7 @@ const config: Config = {
       fontFamily: {
         heading: ["var(--font-playfair)", "Georgia", "serif"],
         body: ["var(--font-quicksand)", "system-ui", "sans-serif"],
+        script: ["var(--font-script)", "cursive"],
       },
       fontSize: {
         // Typography scale — mobile sizes; pair with md: variants for desktop

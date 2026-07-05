@@ -114,8 +114,11 @@ export default function AboutPage() {
             50s being told their symptoms were &lsquo;normal.&rsquo; They
             weren&rsquo;t. And there was something we could do about it.&rdquo;
           </blockquote>
-          <p className="mt-5 text-small font-semibold uppercase tracking-[0.18em] text-foreground-muted">
-            Dr. Mondona Goodwin, DO
+          <p className="mt-6 font-script text-3xl text-primary md:text-4xl">
+            Dr. Mondona
+          </p>
+          <p className="mt-1 text-small font-semibold uppercase tracking-[0.18em] text-foreground-muted">
+            Mondona Goodwin, DO
           </p>
         </FadeUp>
       </Section>

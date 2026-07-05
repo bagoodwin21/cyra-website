@@ -7,22 +7,25 @@
      Section-band hierarchy: charcoal (ink) > taupe (ink-soft) >
      slate blue accents > cool blue-gray (surface) > warm gray (warm)
      > warm cream (background). */
+  /* Approved 4-color system: #FFFFFF / #E5E1DE / #8FA5B3 / #1A1A1A.
+     Deep slate (#6d8794) is the text-safe shade of the brand slate;
+     everything else is a tint of the four. */
   --color-primary: #6d8794; /* deep slate for text/links/logo (contrast-safe) */
   --color-primary-light: #8fa5b3;
   --color-accent: #8fa5b3; /* literal brand slate — button fills (dark ink text) */
   --color-accent-light: #a7bac6;
   --color-accent-dark: #5c727d; /* small accent text on light backgrounds */
-  --color-ink: #333333; /* dark section bg (footer, primary-tone sections) */
-  --color-ink-soft: #635f5c; /* mid taupe section bg (financing band) */
-  --color-warm: #e2dede; /* warm gray — chips, soft small areas */
+  --color-ink: #1a1a1a; /* dark section bg (footer, primary-tone sections) */
+  --color-ink-soft: #1a1a1a; /* deprecated — collapsed into ink */
+  --color-warm: #e5e1de; /* the soft neutral — chips, bands, cards */
   --color-background: #ffffff; /* white — the page ground */
-  --color-surface: #e8edf0; /* cool blue-gray — cards, alternate bands */
+  --color-surface: #e5e1de; /* same soft neutral for cards/alternate bands */
   --color-text-primary: #1a1a1a;
   --color-text-secondary: #5c5c5c;
   --color-text-muted: #8a8a8a;
-  --color-text-on-dark: #e8e4df;
+  --color-text-on-dark: #e5e1de;
   --color-success: #2d7d4f;
-  --color-border: #e5e1db;
+  --color-border: #d6d1cb;
 }
 
 html {
@@ -37,10 +40,10 @@ body {
 .hero-gradient {
   background: linear-gradient(
     120deg,
-    #e8edf0 0%,
+    #eef2f4 0%,
     #ffffff 38%,
-    #e2dede 70%,
-    #e8edf0 100%
+    #e5e1de 70%,
+    #eef2f4 100%
   );
   background-size: 300% 300%;
   animation: hero-gradient-shift 16s ease-in-out infinite;
