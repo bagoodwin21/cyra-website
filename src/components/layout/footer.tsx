@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MapPin, Mail } from "lucide-react";
+import { MapPin, Mail, MessageCircle } from "lucide-react";
 import { legalLinks, navLinks, secondaryLinks, siteConfig } from "@/lib/site";
 
 export function Footer() {
@@ -47,6 +47,15 @@ export function Footer() {
             <Mail className="h-4 w-4" aria-hidden />
             hello@drmondona.com
           </a>
+          {/^\+\d{7,15}$/.test(siteConfig.smsNumber) && (
+            <a
+              href={`sms:${siteConfig.smsNumber}`}
+              className="mt-2 flex items-center gap-2 text-small text-white/80 transition-colors hover:text-white"
+            >
+              <MessageCircle className="h-4 w-4" aria-hidden />
+              Prefer to text? Message us
+            </a>
+          )}
           <p className="mt-4 text-small font-medium text-white/90">
             {siteConfig.licensedStates}
           </p>

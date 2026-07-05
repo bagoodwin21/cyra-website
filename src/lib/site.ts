@@ -6,6 +6,11 @@ export const siteConfig = {
     "CYRA Wellness is a California cash-pay telemedicine practice specializing in perimenopause, menopause, hormone replacement therapy (including testosterone), and midlife weight management. Led by Dr. Mondona Goodwin, DO.",
   physician: "Dr. Mondona Goodwin, DO",
   licensedStates: "Licensed in California",
+  /**
+   * Practice SMS number for "text us" links (E.164, e.g. +18055551234).
+   * Set NEXT_PUBLIC_SMS_NUMBER; text-us UI stays hidden until it's real.
+   */
+  smsNumber: process.env.NEXT_PUBLIC_SMS_NUMBER ?? "",
   disclaimer:
     "CYRA Wellness provides cash-pay telemedicine services. We do not accept insurance.",
 };

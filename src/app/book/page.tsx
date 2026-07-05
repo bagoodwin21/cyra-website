@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Check } from "lucide-react";
 import { Section } from "@/components/ui/section";
 import { CalendlyPlaceholder } from "@/components/ui/calendly-placeholder";
+import { QuizHandoffNote } from "@/components/book/quiz-handoff-note";
 import { buildMetadata } from "@/lib/seo";
 
 export function generateMetadata(): Metadata {
@@ -29,6 +31,9 @@ export default function BookPage() {
           15 minutes. No charge. Just a conversation about whether CYRA is
           right for you.
         </p>
+        <Suspense>
+          <QuizHandoffNote />
+        </Suspense>
         <ul className="mx-auto mt-8 flex max-w-2xl flex-col items-start gap-3 sm:mx-auto sm:items-center">
           {reassurances.map((point) => (
             <li key={point} className="flex items-start gap-3 text-left">

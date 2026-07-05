@@ -94,7 +94,11 @@ export function ResultsStep({ tier, topConditions, onRetake }: ResultsStepProps)
         </p>
         <div className="mt-6">
           <Link
-            href="/book"
+            href={`/book?quiz=${tier}${
+              topConditions.length > 0
+                ? `&focus=${topConditions.join(",")}`
+                : ""
+            }`}
             className={cn(buttonVariants({ variant: "accent", size: "lg" }))}
           >
             Book Free Discovery Call
