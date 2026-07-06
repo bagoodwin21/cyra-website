@@ -15,7 +15,7 @@ export default function BookLayout({
         <div className="mx-auto flex h-18 max-w-content items-center px-6 py-4 lg:px-8">
           <Link
             href="/"
-            className="font-heading text-2xl font-bold text-primary"
+            className="font-script text-3xl text-foreground"
             aria-label="CYRA Wellness home"
           >
             CYRA Wellness

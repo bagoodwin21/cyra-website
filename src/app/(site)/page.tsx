@@ -153,20 +153,23 @@ export default function HomePage() {
     <>
       <JsonLd data={medicalBusinessSchema()} />
 
-      {/* Section 1 — Hero */}
-      <section className="hero-gradient flex min-h-[calc(100vh-4.5rem)] items-center">
-        <div className="mx-auto grid w-full max-w-content items-center gap-12 px-6 py-16 lg:grid-cols-2 lg:px-8">
+      {/* Section 1 — Hero (centered, editorial; script eyebrow + italic accent) */}
+      <section className="flex min-h-[calc(100vh-4.5rem)] items-center bg-background">
+        <div className="mx-auto w-full max-w-3xl px-6 py-24 text-center lg:px-8">
           <FadeUp>
-            <h1 className="heading-hero">
-              Finally, hormone care that actually listens.
-            </h1>
-            <p className="text-subheadline mt-6">
-              CYRA Wellness is a physician-led, cash-pay telemedicine practice
-              specializing in perimenopause, menopause, HRT, and weight
-              management. No insurance red tape. No rushed appointments. Just
-              you and a board-certified DO who takes the time.
+            <p className="font-script text-3xl text-primary md:text-4xl">
+              physician-led hormone care
             </p>
-            <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+            <h1 className="heading-hero mt-4">
+              Finally, hormone care that{" "}
+              <em className="italic text-primary">actually listens</em>.
+            </h1>
+            <p className="text-subheadline mx-auto mt-7 max-w-xl">
+              Evidence-based care for perimenopause, menopause, HRT, and
+              midlife weight management — finally made personal. No insurance
+              red tape. No rushed appointments.
+            </p>
+            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link
                 href="/book"
                 className={cn(buttonVariants({ variant: "accent", size: "lg" }))}
@@ -180,7 +183,7 @@ export default function HomePage() {
                 See How It Works
               </Link>
             </div>
-            <ul className="mt-10 flex flex-wrap gap-x-7 gap-y-3">
+            <ul className="mt-12 flex flex-wrap justify-center gap-x-7 gap-y-3">
               {trustBar.map(({ Icon, label }) => (
                 <li
                   key={label}
@@ -191,21 +194,6 @@ export default function HomePage() {
                 </li>
               ))}
             </ul>
-          </FadeUp>
-
-          <FadeUp delay={0.15} className="hidden justify-self-center lg:block">
-            {/* Lifestyle image placeholder — replace with photography:
-                woman in her 40s–50s, active, confident (not clinical). */}
-            <div className="relative aspect-[4/5] w-[26rem] max-w-full overflow-hidden rounded-card bg-gradient-to-br from-warm via-white to-accent-light/50 shadow-card-hover">
-              <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-surface/40" aria-hidden />
-              <div className="absolute -bottom-20 -left-10 h-64 w-64 rounded-full bg-primary/10" aria-hidden />
-              <div className="absolute inset-0 flex items-end p-8">
-                <p className="text-small font-medium text-foreground-secondary/80">
-                  Lifestyle image placeholder — active, confident woman in her
-                  40s–50s
-                </p>
-              </div>
-            </div>
           </FadeUp>
         </div>
       </section>

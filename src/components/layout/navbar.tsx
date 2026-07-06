@@ -44,7 +44,7 @@ export function Navbar() {
       <div className="mx-auto flex h-18 max-w-content items-center justify-between px-6 py-4 lg:px-8">
         <Link
           href="/"
-          className="font-heading text-2xl font-bold text-primary"
+          className="font-script text-3xl text-foreground"
           aria-label="CYRA Wellness home"
         >
           CYRA Wellness
@@ -60,10 +60,10 @@ export function Navbar() {
                 href={link.href}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "relative py-1 text-small font-medium transition-colors",
+                  "relative py-1 text-[12px] font-semibold uppercase tracking-[0.15em] transition-colors",
                   active
-                    ? "text-primary after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:rounded-full after:bg-primary"
-                    : "text-foreground-secondary hover:text-primary"
+                    ? "text-foreground after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:rounded-full after:bg-primary"
+                    : "text-foreground-muted hover:text-foreground"
                 )}
               >
                 {link.label}
@@ -104,7 +104,7 @@ export function Navbar() {
             className="fixed inset-0 z-50 flex flex-col bg-background lg:hidden"
           >
             <div className="flex h-18 items-center justify-between px-6 py-4">
-              <span className="font-heading text-2xl font-bold text-primary">
+              <span className="font-script text-3xl text-foreground">
                 CYRA Wellness
               </span>
               <button

@@ -3,21 +3,22 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full font-body text-cta font-semibold uppercase tracking-wide transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap font-body text-cta font-bold uppercase tracking-[0.17em] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
-        // Slate fills take dark ink text — white on #8FA5B3 fails WCAG.
-        primary: "bg-accent text-foreground hover:bg-accent-light",
+        // Rectangular slate fills (brand mockup); white text per the
+        // approved design — deepened slate keeps it readable.
+        primary: "rounded-[3px] bg-primary text-white hover:bg-accent",
         secondary:
-          "border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-white",
-        ghost: "bg-transparent text-primary hover:bg-primary/10",
-        accent: "bg-accent text-foreground hover:bg-accent-light",
+          "rounded-full border-2 border-foreground bg-transparent text-foreground hover:bg-foreground hover:text-white",
+        ghost: "rounded-[3px] bg-transparent text-primary hover:bg-primary/10",
+        accent: "rounded-[3px] bg-primary text-white hover:bg-accent",
       },
       size: {
-        default: "h-12 px-8",
-        sm: "h-10 px-6 text-small",
-        lg: "h-14 px-10",
+        default: "h-12 px-10",
+        sm: "h-10 px-6",
+        lg: "h-14 px-12",
       },
     },
     defaultVariants: {

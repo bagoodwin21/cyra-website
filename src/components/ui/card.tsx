@@ -16,7 +16,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
       whileHover={lift ? { y: -6 } : undefined}
       transition={{ type: "spring", stiffness: 300, damping: 24 }}
       className={cn(
-        "rounded-card border border-border bg-surface p-6 shadow-card transition-shadow duration-300 md:p-8",
+        "rounded-[3px] border border-border border-t-[3px] border-t-primary-light bg-background p-6 shadow-card transition-shadow duration-300 md:p-8",
         lift && "hover:shadow-card-hover",
         className
       )}

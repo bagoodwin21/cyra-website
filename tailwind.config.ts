@@ -37,16 +37,16 @@ const config: Config = {
       },
       fontSize: {
         // Typography scale — mobile sizes; pair with md: variants for desktop
-        "hero-mobile": ["2.5rem", { lineHeight: "1.1", fontWeight: "700" }], // 40px
-        hero: ["4rem", { lineHeight: "1.08", fontWeight: "700" }], // 64px
-        "section-mobile": ["2rem", { lineHeight: "1.15", fontWeight: "600" }], // 32px
-        section: ["3rem", { lineHeight: "1.12", fontWeight: "600" }], // 48px
+        "hero-mobile": ["2.5rem", { lineHeight: "1.15", fontWeight: "400" }], // 40px
+        hero: ["4.375rem", { lineHeight: "1.1", fontWeight: "400" }], // 64px
+        "section-mobile": ["2rem", { lineHeight: "1.2", fontWeight: "500" }], // 32px
+        section: ["2.875rem", { lineHeight: "1.15", fontWeight: "500" }], // 48px
         "subhead-mobile": ["1.125rem", { lineHeight: "1.5", fontWeight: "500" }], // 18px
         subhead: ["1.25rem", { lineHeight: "1.5", fontWeight: "500" }], // 20px
         "body-mobile": ["0.9375rem", { lineHeight: "1.65", fontWeight: "400" }], // 15px
         body: ["1rem", { lineHeight: "1.65", fontWeight: "400" }], // 16px
         small: ["0.875rem", { lineHeight: "1.55", fontWeight: "400" }], // 14px
-        cta: ["1rem", { lineHeight: "1.2", fontWeight: "600" }], // 16px
+        cta: ["0.75rem", { lineHeight: "1.2", fontWeight: "700" }], // 16px
       },
       maxWidth: {
         content: "1200px",
