@@ -50,7 +50,7 @@ export function MobileBookBar() {
                 "h-11 flex-1"
               )}
             >
-              Book Free Consult
+              Request More Information
             </Link>
             {hasSms && (
               <a

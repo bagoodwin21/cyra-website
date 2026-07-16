@@ -64,7 +64,7 @@ export default function ConditionPage({ params }: PageProps) {
               href="/book"
               className={cn(buttonVariants({ variant: "accent", size: "lg" }))}
             >
-              Book Free Consult
+              Request More Information
             </Link>
           </div>
         </FadeUp>
@@ -191,7 +191,7 @@ export default function ConditionPage({ params }: PageProps) {
               href="/book"
               className={cn(buttonVariants({ variant: "accent", size: "lg" }))}
             >
-              Book Free Consult
+              Request More Information
             </Link>
           </div>
         </FadeUp>

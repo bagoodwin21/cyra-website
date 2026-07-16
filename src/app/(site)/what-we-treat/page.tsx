@@ -69,7 +69,7 @@ export default function WhatWeTreatPage() {
             href="/book"
             className={cn(buttonVariants({ variant: "accent", size: "lg" }))}
           >
-            Book Your Free Consult
+            Request More Information
           </Link>
         </FadeUp>
       </Section>

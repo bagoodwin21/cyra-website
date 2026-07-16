@@ -202,7 +202,7 @@ export default function AboutPage() {
               href="/book"
               className={cn(buttonVariants({ variant: "accent", size: "lg" }))}
             >
-              Book Free Discovery Call
+              Request More Information
             </Link>
           </div>
         </FadeUp>

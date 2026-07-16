@@ -17,7 +17,7 @@ export function PagePlaceholder({ label, title, description }: PagePlaceholderPr
         <h1 className="heading-section">{title}</h1>
         <p className="text-subheadline mt-6">{description}</p>
         <div className="mt-8">
-          <Button variant="accent">Book Free Consult</Button>
+          <Button variant="accent">Request More Information</Button>
         </div>
       </div>
     </Section>

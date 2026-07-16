@@ -174,7 +174,7 @@ export default function HomePage() {
                 href="/book"
                 className={cn(buttonVariants({ variant: "accent", size: "lg" }))}
               >
-                Book Your Free Consult
+                Request More Information
               </Link>
               <Link
                 href="/how-it-works"
@@ -338,7 +338,7 @@ export default function HomePage() {
             href="/book"
             className={cn(buttonVariants({ variant: "accent" }))}
           >
-            Book Your Free Consult
+            Request More Information
           </Link>
         </FadeUp>
       </Section>
@@ -418,7 +418,7 @@ export default function HomePage() {
               href="/book"
               className={cn(buttonVariants({ variant: "accent", size: "lg" }))}
             >
-              Book Free Consult
+              Request More Information
             </Link>
           </div>
           <p className="mt-8 text-small text-white/70">

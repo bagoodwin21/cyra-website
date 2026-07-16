@@ -101,7 +101,7 @@ export function ResultsStep({ tier, topConditions, onRetake }: ResultsStepProps)
             }`}
             className={cn(buttonVariants({ variant: "accent", size: "lg" }))}
           >
-            Book Free Discovery Call
+            Request More Information
           </Link>
         </div>
         <p className="mt-5 text-small text-white/70">

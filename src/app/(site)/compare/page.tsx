@@ -11,7 +11,7 @@ import {
   Stethoscope,
   UserCheck,
 } from "lucide-react";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 import { Section } from "@/components/ui/section";
 import { SectionLabel } from "@/components/ui/section-label";
@@ -255,9 +255,12 @@ export default function ComparePage() {
             pressure to enroll. Just a conversation.
           </p>
           <div className="mt-8">
-            <Button variant="accent" size="lg">
-              Book Free Discovery Call
-            </Button>
+            <Link
+              href="/book"
+              className={cn(buttonVariants({ variant: "accent", size: "lg" }))}
+            >
+              Request More Information
+            </Link>
           </div>
           <Link
             href="/how-it-works"

@@ -77,7 +77,7 @@ export function Navbar() {
             href="/book"
             className={buttonVariants({ variant: "accent", size: "sm" })}
           >
-            Book Free Consult
+            Request More Information
           </Link>
         </div>
 
@@ -153,7 +153,7 @@ export function Navbar() {
                   href="/book"
                   className={buttonVariants({ variant: "accent" })}
                 >
-                  Book Free Consult
+                  Request More Information
                 </Link>
               </motion.div>
             </nav>
