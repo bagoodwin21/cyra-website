@@ -4,7 +4,12 @@ import * as React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { BadgeDollarSign, Info, Wallet } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { carePlanTotal } from "@/lib/site";
+import {
+  carePlanPricing,
+  carePlanTotal,
+  carePlanUpfrontTotal,
+  formatUsd,
+} from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 type FinancingChoice = "yes" | "no" | "info";
@@ -18,23 +23,6 @@ const financingOptions: { value: FinancingChoice; label: string }[] = [
 /** Care plan lengths on offer. Extend this array as new tiers launch. */
 const planLengths = [{ months: 12, label: "12 months" }];
 
-/** Cherry splits a 12-month plan into 13 equal payments. */
-const cherryPaymentCount = (months: number) => months + 1;
-
-/**
- * Formats the monthly Cherry payment. While the care plan total is still
- * the [CARE_PLAN_TOTAL] placeholder this returns a visible [X] placeholder;
- * once a real number (e.g. "$4,800") lands in src/lib/site.ts the split
- * computes automatically.
- */
-function monthlyPayment(total: string, payments: number): string {
-  const numeric = Number(total.replace(/[^0-9.]/g, ""));
-  if (total.startsWith("[") || !Number.isFinite(numeric) || numeric <= 0) {
-    return "[X]";
-  }
-  return `$${Math.ceil(numeric / payments).toLocaleString()}`;
-}
-
 const panelMotion = {
   initial: { opacity: 0, height: 0 },
   animate: { opacity: 1, height: "auto" },
@@ -46,8 +34,10 @@ export function CostEstimator() {
   const [financing, setFinancing] = React.useState<FinancingChoice | null>(null);
   const [months, setMonths] = React.useState(12);
 
-  const payments = cherryPaymentCount(months);
-  const perMonth = monthlyPayment(carePlanTotal, payments);
+  // Cherry pricing is currently confirmed only for the 12-month plan;
+  // planLengths has just the one option until additional tiers launch.
+  const payments = carePlanPricing.paymentCount;
+  const perMonth = formatUsd(carePlanPricing.monthlyPayment);
 
   return (
     <div className="mx-auto max-w-2xl rounded-card border border-border bg-surface p-6 shadow-card md:p-10">
@@ -90,12 +80,12 @@ export function CostEstimator() {
                     How Cherry financing works
                   </p>
                   <p className="text-body-copy mt-2">
-                    Cherry is a patient financing partner that splits your care
-                    plan into equal monthly payments with approved credit —
-                    no lump sum required. Checking your rate takes about a
+                    Cherry splits your care plan into {payments} equal
+                    monthly payments of {perMonth} with approved credit — no
+                    lump sum required. Checking your rate takes about a
                     minute and doesn&rsquo;t affect your credit score. Prefer
-                    to pay upfront instead? A discount is available for paying
-                    in full.
+                    to pay upfront instead? Paying in full saves you{" "}
+                    {carePlanPricing.upfrontDiscountPercent}%.
                   </p>
                 </div>
               </div>
@@ -159,25 +149,28 @@ export function CostEstimator() {
                     payments, with approved credit
                   </p>
                   <p className="mt-1 text-small text-white/80">
-                    Or pay in full: {carePlanTotal} — with an upfront-payment
-                    discount available
+                    Or pay in full: {formatUsd(carePlanUpfrontTotal)} — a{" "}
+                    {carePlanPricing.upfrontDiscountPercent}% savings off the{" "}
+                    {formatUsd(carePlanTotal)} total
                   </p>
                 </>
               ) : (
                 <>
                   <p className="mt-4 font-heading text-3xl font-bold text-white md:text-4xl">
-                    {carePlanTotal}
+                    {formatUsd(carePlanUpfrontTotal)}
                   </p>
                   <p className="mt-2 text-small text-white/80">
-                    Paid in full — ask about the discount for paying upfront.
-                    Cherry monthly payments remain available if you change
-                    your mind.
+                    Paid in full — a {carePlanPricing.upfrontDiscountPercent}%
+                    savings off the {formatUsd(carePlanTotal)} total. Cherry
+                    monthly payments remain available if you change your
+                    mind.
                   </p>
                 </>
               )}
               <p className="mt-5 border-t border-white/15 pt-4 text-small text-white/70">
-                Rate may vary based on Cherry credit approval. Check your rate
-                without affecting your credit score.
+                Both options are available after your initial consultation.
+                Cherry rate may vary based on credit approval and won&rsquo;t
+                affect your credit score to check.
               </p>
               <div className="mt-5">
                 {/* Cherry rate-check link placeholder — point at the

@@ -106,7 +106,7 @@ const categories: FAQCategory[] = [
       {
         question: "How does Cherry financing work?",
         answer:
-          "Cherry lets you split your care plan into monthly payments with approved credit. You can check your rate in about a minute without affecting your credit score, and if approved, payments are set up before your plan begins. If you'd like to talk through the numbers first, bring it up in your free discovery call.",
+          "Once your Start Visit is complete, your 12-month care plan is $175/month for 13 payments through Cherry with approved credit — or you can save 5% by paying the full amount upfront. Checking your Cherry rate takes about a minute and doesn't affect your credit score. If you'd like to talk through the numbers first, bring it up in your free discovery call.",
       },
       {
         question: "What if I want to stop my care plan early?",

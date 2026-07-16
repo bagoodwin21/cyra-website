@@ -67,9 +67,11 @@ The home page carousel picks them up automatically.
 
 Constants live in two places:
 
-- `src/lib/site.ts` — `carePlanTotal` (the 12-month care plan total; currently
-  the `[CARE_PLAN_TOTAL]` placeholder). Setting a real value like `"$4,800"`
-  automatically activates the monthly-payment math in the pricing estimator.
+- `src/lib/site.ts` — `carePlanPricing` (monthly payment, Cherry payment
+  count, upfront discount percent). `carePlanTotal` and
+  `carePlanUpfrontTotal` derive from it automatically, and both the
+  pricing page cards and the `/pricing#estimator` calculator read from
+  this single source — change the numbers once, they update everywhere.
 - `src/app/(site)/pricing/page.tsx` — the `tiers` array (Start Visit price,
   monthly care plan price, included features).
 
@@ -119,7 +121,8 @@ the dataLayer (see `src/lib/analytics.ts`): `book_consult_click`,
 ## Open placeholders
 
 Calendly embed (`src/components/ui/calendly-placeholder.tsx`), Cherry
-rate-check widget (`/pricing`), care plan pricing, HubSpot portal/form IDs,
-professional membership badges, patient portal URL, new-patient checklist
-PDF, photography, and full content for `/why-cyra`, `/privacy-policy`, and
-`/terms-of-service`.
+rate-check widget (`/pricing`), HubSpot portal/form IDs, professional
+membership badges, patient portal URL, new-patient checklist PDF,
+photography, and full content for `/why-cyra`, `/privacy-policy`, and
+`/terms-of-service`. Care plan pricing is confirmed (see `carePlanPricing`
+in `src/lib/site.ts`).

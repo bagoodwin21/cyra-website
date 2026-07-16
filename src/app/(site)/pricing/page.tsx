@@ -9,6 +9,12 @@ import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { CostEstimator } from "@/components/pricing/cost-estimator";
 import { buildMetadata } from "@/lib/seo";
+import {
+  carePlanPricing,
+  carePlanTotal,
+  carePlanUpfrontTotal,
+  formatUsd,
+} from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export function generateMetadata(): Metadata {
@@ -21,12 +27,6 @@ export function generateMetadata(): Metadata {
     path: "/pricing",
   });
 }
-
-/*
- * NOTE: Care plan dollar amounts are intentionally placeholders.
- * Confirm current care plan tiers and pricing before replacing
- * the [PLACEHOLDER] strings below.
- */
 
 interface PricingTier {
   name: string;
@@ -50,20 +50,28 @@ const tiers: PricingTier[] = [
     ],
     note: "Required before enrolling in a care plan",
   },
+];
+
+/** Both options for the 12-month care plan, shown after the Start Visit card. */
+const carePlanOptions = [
   {
-    name: "12-Month Care Plan",
-    price: "[PLACEHOLDER]",
-    priceDetail: "per month via Cherry or card on file",
-    featured: true,
-    includes: [
-      "Ongoing physician management by Dr. Mondona",
-      "Quarterly follow-up visits (minimum)",
-      "Lab review and protocol adjustments",
-      "Patient portal messaging access",
-      "Prescription management",
-    ],
-    note: "Medication costs are separate through your pharmacy",
+    label: "Cherry Financing",
+    price: `${formatUsd(carePlanPricing.monthlyPayment)}/mo`,
+    detail: `${carePlanPricing.paymentCount} payments, with approved credit`,
   },
+  {
+    label: "Pay in Full",
+    price: formatUsd(carePlanUpfrontTotal),
+    detail: `${carePlanPricing.upfrontDiscountPercent}% savings off ${formatUsd(carePlanTotal)}`,
+  },
+];
+
+const carePlanIncludes = [
+  "Ongoing physician management by Dr. Mondona",
+  "Quarterly follow-up visits (minimum)",
+  "Lab review and protocol adjustments",
+  "Patient portal messaging access",
+  "Prescription management",
 ];
 
 const notIncluded = [
@@ -91,17 +99,9 @@ export default function PricingPage() {
       {/* Pricing cards */}
       <Section tone="surface" className="pt-0 md:pt-0">
         <div className="mx-auto grid max-w-4xl gap-8 pt-12 md:grid-cols-2 md:pt-20">
-          {tiers.map((tier, i) => (
-            <FadeUp key={tier.name} delay={i * 0.12}>
-              <Card
-                className={cn(
-                  "flex h-full flex-col",
-                  tier.featured && "border-2 border-primary"
-                )}
-              >
-                {tier.featured && (
-                  <Badge className="mb-4 self-start">Structured as a care plan, not a subscription</Badge>
-                )}
+          {tiers.map((tier) => (
+            <FadeUp key={tier.name}>
+              <Card className="flex h-full flex-col">
                 <h2 className="font-heading text-2xl font-semibold text-foreground">
                   {tier.name}
                 </h2>
@@ -133,6 +133,53 @@ export default function PricingPage() {
               </Card>
             </FadeUp>
           ))}
+
+          {/* Care Plan — two payment options, both after the initial consultation */}
+          <FadeUp delay={0.12}>
+            <Card className="flex h-full flex-col border-2 border-primary">
+              <Badge className="mb-4 self-start">
+                Structured as a care plan, not a subscription
+              </Badge>
+              <h2 className="font-heading text-2xl font-semibold text-foreground">
+                12-Month Care Plan
+              </h2>
+              <p className="text-body-copy mt-2">
+                Available after your Start Visit. Choose how you&rsquo;d like
+                to pay:
+              </p>
+              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                {carePlanOptions.map((option) => (
+                  <div
+                    key={option.label}
+                    className="rounded-card border border-border bg-background p-4"
+                  >
+                    <p className="text-small font-semibold uppercase tracking-[0.1em] text-primary">
+                      {option.label}
+                    </p>
+                    <p className="mt-2 font-heading text-2xl font-bold text-foreground">
+                      {option.price}
+                    </p>
+                    <p className="mt-1 text-small text-foreground-muted">
+                      {option.detail}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <ul className="mt-6 flex-1 space-y-3">
+                {carePlanIncludes.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                      <Check className="h-3.5 w-3.5" strokeWidth={3} aria-hidden />
+                    </span>
+                    <span className="text-body-copy">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-6 border-t border-border pt-5 text-small text-foreground-muted">
+                Medication costs are separate through your pharmacy
+              </p>
+            </Card>
+          </FadeUp>
         </div>
       </Section>
 

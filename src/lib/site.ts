@@ -26,8 +26,32 @@ export const hubspotConfig = {
   formId: process.env.NEXT_PUBLIC_HUBSPOT_FORM_ID ?? "[HUBSPOT_FORM_ID]",
 };
 
-/** Real dollar total for the 12-month care plan. Placeholder pending pricing confirmation. */
-export const carePlanTotal = "[CARE_PLAN_TOTAL]";
+/**
+ * 12-month care plan pricing, confirmed: 13 payments of $175 via Cherry
+ * (12 months + 1, per Cherry's standard split), or a 5% discount for
+ * paying the full amount upfront. Both options are available only after
+ * the $399 Start Visit / initial consultation.
+ */
+export const carePlanPricing = {
+  monthlyPayment: 175,
+  paymentCount: 13,
+  upfrontDiscountPercent: 5,
+} as const;
+
+export const carePlanTotal = carePlanPricing.monthlyPayment * carePlanPricing.paymentCount; // 2275
+export const carePlanUpfrontTotal =
+  carePlanTotal * (1 - carePlanPricing.upfrontDiscountPercent / 100); // 2161.25
+
+/** Formats a dollar amount, keeping cents only when they're non-zero (e.g. the upfront discount total). */
+export function formatUsd(amount: number): string {
+  const hasCents = Math.round(amount * 100) % 100 !== 0;
+  return amount.toLocaleString("en-US", {
+    style: "currency",
+    currency: "USD",
+    minimumFractionDigits: hasCents ? 2 : 0,
+    maximumFractionDigits: 2,
+  });
+}
 
 export interface NavLink {
   label: string;
