@@ -26,6 +26,7 @@ export const carePlanPricing = {
   monthlyPayment: 175, // Care plan: dollars per monthly Cherry payment
   paymentCount: 13, // Number of monthly payments (Cherry splits 12 months into 13)
   upfrontDiscountPercent: 5, // Percent saved when the plan is paid in full upfront
+  consultFee: 399, // One-hour initial consult fee (charged once, before enrolling)
 } as const;
 
 // Derived totals — you do NOT need to edit these; they update on their own.
@@ -82,6 +83,7 @@ export const content = {
       { label: "About", href: "/about" },
       { label: "How to Join", href: "/#how-to-join" },
       { label: "Care Plan", href: "/#care-plan" },
+      { label: "Compare", href: "/compare" },
     ],
     // The words on the main action button (top-right and mobile bar)
     cta: "Request More Information",
@@ -200,7 +202,8 @@ export const content = {
         },
         {
           title: "Your one-hour consult",
-          meta: "60 minutes",
+          // Shows the length and the one-time consult fee (from carePlanPricing.consultFee)
+          meta: `60 minutes · ${formatUsd(carePlanPricing.consultFee)}`,
           body: "A comprehensive review of your history, your symptoms, and your goals with Dr. Goodwin — resulting in a personalized treatment plan built for you.",
         },
         {
@@ -248,13 +251,19 @@ export const content = {
           )} total when you pay upfront`,
         },
       },
-      // Small print under the pricing box.
-      // Dr. Goodwin: replace [CONSULT FEE] below with the confirmed price for
-      // the one-hour consult (e.g. "$399"). The previous version of the site
-      // listed the initial visit at $399 — that was confirmed then, but the
-      // funnel has since changed, so please confirm the current fee before
-      // publishing. Keep the "[CONSULT FEE]" placeholder visible until then.
-      note: "The one-hour consult is a separate, one-time fee of [CONSULT FEE] and is required before enrolling in a care plan. Medication and lab costs are billed separately.",
+      // Small print under the pricing box. The consult price is pulled from
+      // carePlanPricing.consultFee at the top of this file — change it there.
+      note: `The one-hour consult is a separate, one-time fee of ${formatUsd(
+        carePlanPricing.consultFee,
+      )} and is required before enrolling in a care plan. Medication and lab costs are billed separately.`,
+    },
+
+    // ---- COMPARE TEASER: small link on the home page to the /compare page ----
+    compareTeaser: {
+      // The sentence shown above the link
+      text: "Weighing CYRA against online HRT platforms and conventional care?",
+      // The link words (the link always points to the Compare page)
+      cta: "See how CYRA compares to other options",
     },
 
     // ---- TESTIMONIALS: short patient quotes ----
@@ -386,6 +395,281 @@ export const content = {
       heading: "Meet her yourself.",
       body: "The easiest way to know if CYRA is right for you is to start the conversation.",
       button: "Request More Information",
+    },
+  },
+
+  /* =======================================================================
+     COMPARE PAGE  (/compare)
+     The page that shows how CYRA differs from other providers — online HRT
+     platforms, conventional OB/GYN, and the big menopause telehealth brands.
+     Every word on that page is below. The little check / X / dash marks in the
+     table come from the "verdict" values (see the note above the table data).
+     ======================================================================= */
+  compare: {
+    // ---- HERO: top of the Compare page ----
+    hero: {
+      label: "Compare", // Small label above the headline
+      heading:
+        "Not all menopause telehealth is the same. Here's what to look for.",
+      subheadline:
+        "The growth of online hormone care has been great for women. But there are meaningful differences in who delivers your care, what's included in your fees, and how your treatment is structured. Here's an honest look.",
+      jumpCta: "Jump to comparison", // The button that scrolls down to the table
+    },
+
+    // ---- WHAT DIFFERS: the six cards explaining what to compare on ----
+    dimensions: {
+      label: "Choosing a Platform",
+      heading: "What actually differs between platforms",
+      intro:
+        "Before you compare names, compare on the dimensions that shape your care. These six matter most.",
+      // Each card: a short title and a description.
+      items: [
+        {
+          title: "Who delivers your care",
+          body: "Is your prescribing provider a physician, nurse practitioner, or PA? This affects scope of practice, clinical judgment, and what they can prescribe.",
+        },
+        {
+          title: "Testosterone access",
+          body: "Many platforms either don't offer testosterone for women, require a separate add-on fee, or treat it as secondary. For many women, it's the missing piece.",
+        },
+        {
+          title: "How treatment is structured",
+          body: "Month-to-month subscriptions create financial flexibility but also incentivize platforms to retain subscribers rather than graduate them. Care plans create a different dynamic.",
+        },
+        {
+          title: "What's included vs. billed separately",
+          body: "Some platforms advertise low monthly costs but charge separately for labs, medications, and follow-ups. Understand total cost of care, not just the subscription fee.",
+        },
+        {
+          title: "Financing options",
+          body: "If a care plan or subscription is a financial stretch, does the platform offer financing? A Cherry integration matters for accessibility.",
+        },
+        {
+          title: "Continuity of care",
+          body: "Do you see the same provider each time, or rotate through whoever is available? Continuity matters in hormone care where your provider needs to know your history and trajectory.",
+        },
+      ],
+    },
+
+    // ---- THE TABLE: heading, intro, and the fine print under the table ----
+    comparison: {
+      label: "Side by Side",
+      heading: "The comparison",
+      intro:
+        "How CYRA Wellness compares with the major menopause telehealth platforms, criterion by criterion.",
+      // The small print shown directly beneath the table
+      footnote:
+        "Table reflects publicly available information as of July 2026. Platform offerings change. We encourage you to verify directly with any provider before making your decision.",
+    },
+
+    // ---- TABLE DATA ----
+    // This is the grid itself. "platforms" is the row of column headings
+    // (CYRA must stay first — it's the highlighted column). "rows" is one entry
+    // per criterion; each has a "criterion" label and a "cells" list with one
+    // cell PER PLATFORM, in the same left-to-right order as "platforms".
+    //
+    // In each cell you can set:
+    //   "verdict": "yes"      → green check
+    //             "no"        → red X
+    //             "partial"   → amber dash
+    //   "note":   optional short text shown under the mark
+    // A cell may have a verdict, a note, or both. Keep the number of cells in
+    // every row equal to the number of platforms.
+    table: {
+      platforms: [
+        "CYRA Wellness",
+        "Midi Health",
+        "Alloy",
+        "Evernow",
+        "Winona",
+        "Hers",
+      ],
+      rows: [
+        {
+          criterion: "Prescribing Provider Type",
+          cells: [
+            { note: "Board-Certified DO (Physician)" },
+            { note: "Nurse Practitioner (primary)" },
+            { note: "Physician-designed / NP delivery" },
+            { note: "Physician review / NP primary" },
+            { note: "Physician" },
+            { note: "NP / PA" },
+          ],
+        },
+        {
+          criterion: "Testosterone for Women Included",
+          cells: [
+            { verdict: "yes", note: "Standard part of care" },
+            { verdict: "partial", note: "Available, not emphasized" },
+            { verdict: "no", note: "Not standard" },
+            { verdict: "partial", note: "Limited" },
+            { verdict: "partial", note: "Add-on" },
+            { verdict: "no" },
+          ],
+        },
+        {
+          criterion: "Personalized Protocol vs. Standardized",
+          cells: [
+            { verdict: "yes", note: "Fully personalized" },
+            { verdict: "partial", note: "Protocol-based" },
+            { verdict: "partial", note: "Algorithm-assisted" },
+            { verdict: "partial", note: "App-driven" },
+            { verdict: "partial", note: "Standardized tiers" },
+            { verdict: "no", note: "Standardized" },
+          ],
+        },
+        {
+          criterion: "Continuity (Same Provider Every Visit)",
+          cells: [
+            { verdict: "yes", note: "Always Dr. Goodwin" },
+            { verdict: "no", note: "Rotating providers" },
+            { verdict: "partial", note: "Not guaranteed" },
+            { verdict: "no", note: "Rotating" },
+            { verdict: "partial", note: "Not guaranteed" },
+            { verdict: "no", note: "Rotating" },
+          ],
+        },
+        {
+          criterion: "Care Plan vs. Subscription Model",
+          cells: [
+            { verdict: "yes", note: "12-month care plan" },
+            { verdict: "no", note: "Monthly subscription" },
+            { verdict: "no", note: "Monthly subscription" },
+            { verdict: "no", note: "Monthly subscription" },
+            { verdict: "no", note: "Monthly subscription" },
+            { verdict: "no", note: "Monthly subscription" },
+          ],
+        },
+        {
+          criterion: "Financing Available (Cherry)",
+          cells: [
+            { verdict: "yes", note: "Cherry financing" },
+            { verdict: "no" },
+            { verdict: "no" },
+            { verdict: "no" },
+            { verdict: "no" },
+            { verdict: "no" },
+          ],
+        },
+        {
+          criterion: "Labs Ordered & Reviewed by Same Provider",
+          cells: [
+            { verdict: "yes" },
+            { verdict: "partial" },
+            { verdict: "partial" },
+            { verdict: "partial" },
+            { verdict: "partial" },
+            { verdict: "no" },
+          ],
+        },
+        {
+          criterion: "Thyroid & Adrenal in Scope",
+          cells: [
+            { verdict: "yes" },
+            { verdict: "partial" },
+            { verdict: "no" },
+            { verdict: "no" },
+            { verdict: "no" },
+            { verdict: "no" },
+          ],
+        },
+        {
+          criterion: "Superbill for OON Reimbursement",
+          cells: [
+            { verdict: "yes" },
+            { verdict: "partial" },
+            { verdict: "no" },
+            { verdict: "no" },
+            { verdict: "no" },
+            { verdict: "no" },
+          ],
+        },
+        {
+          criterion: "California Telehealth",
+          cells: [
+            { verdict: "yes" },
+            { verdict: "yes" },
+            { verdict: "yes" },
+            { verdict: "yes" },
+            { verdict: "yes" },
+            { verdict: "yes" },
+          ],
+        },
+      ],
+    },
+
+    // ---- DEEPER DIVES: the expandable notes on each platform ----
+    deeperDives: {
+      label: "Deeper Dives",
+      heading: "A closer, honest look at each platform",
+      intro:
+        "These platforms have helped many women access care. Here's what each does well, who it fits, and where CYRA differs.",
+      // Each item: the platform "name" (the question you click to open) and its
+      // "paragraphs" (one or more paragraphs of text).
+      items: [
+        {
+          name: "Midi Health",
+          paragraphs: [
+            "Midi has built one of the largest menopause telehealth networks in the country, and their NPs are focused specifically on this phase of life — that focus matters.",
+            "Where CYRA differs: your care at Midi will primarily be delivered by nurse practitioners rather than a physician, and you may see different providers across visits. For women who want a specific physician who knows their history and can draw on the full scope of a DO's training, that difference is worth considering.",
+          ],
+        },
+        {
+          name: "Alloy Women's Health",
+          paragraphs: [
+            "Alloy offers physician-designed protocols at an accessible price point, making them a good entry point for women exploring HRT for the first time. Their approach is protocol-driven rather than fully individualized, which works well for straightforward presentations.",
+            "Where CYRA differs: if your situation is more complex — multiple symptoms, thyroid involvement, weight management alongside hormone care — CYRA's fully personalized approach and physician continuity offer more flexibility.",
+          ],
+        },
+        {
+          name: "Evernow",
+          paragraphs: [
+            "Evernow has invested heavily in their app experience and data-driven approach. For women who prefer a tech-forward, app-centric workflow, it's a solid option.",
+            "Where CYRA differs: Evernow's care is primarily delivered through NPs and is more algorithmically structured — which trades some personalization for scale and consistency.",
+          ],
+        },
+        {
+          name: "Winona",
+          paragraphs: [
+            "Winona focuses specifically on compounded bioidentical hormone therapy and has developed a clear, streamlined process for women who already know they want BHRT.",
+            "Where CYRA differs: CYRA isn't compounded-only — Dr. Goodwin works with both FDA-approved and compounded options based on what's clinically appropriate for you, rather than defaulting to one category.",
+          ],
+        },
+        {
+          name: "Hers",
+          paragraphs: [
+            "Hers is a broad women's health platform covering everything from skincare to mental health — hormone care is one of many offerings.",
+            "For women specifically navigating perimenopause and menopause, a menopause-specialist practice offers more focused expertise and a provider whose entire clinical focus is this phase of life.",
+          ],
+        },
+      ],
+    },
+
+    // ---- CHECKLIST: questions to ask any provider ----
+    questions: {
+      label: "Your Checklist",
+      heading: "Before you choose any platform, ask these questions.",
+      intro:
+        "Take this list to every consult — including ours. A platform that's confident in its care will welcome all of them.",
+      items: [
+        "Who will actually be delivering my care — physician, NP, or PA?",
+        "Will I see the same provider at every visit?",
+        "Is testosterone included or is it an add-on?",
+        "What's the total monthly cost including labs and medications?",
+        "Can I get a superbill for potential insurance reimbursement?",
+        "What happens if I want to pause or cancel?",
+        "Who do I contact between visits if I have a question?",
+        "How are my labs reviewed — by my prescribing provider or a separate reviewer?",
+      ],
+    },
+
+    // ---- FINAL CALL TO ACTION at the bottom of the Compare page ----
+    finalCta: {
+      heading: "Want to see if CYRA is the right fit?",
+      body: "Reach out to learn more about the practice, or book your consult with Dr. Goodwin — no pressure to enroll.",
+      cta: "Request More Information", // Main button
+      // The quieter link under the button (always points to the Care Plan section)
+      secondaryLink: "Or read more about how our care plans work",
     },
   },
 

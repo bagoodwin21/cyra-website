@@ -4,7 +4,7 @@ import { legalLinks, navLinks, siteConfig } from "@/lib/site";
 /** Priority scheme: 1.0 home, 0.7 about/book, 0.5 legal pages. */
 function priorityFor(path: string): number {
   if (path === "/") return 1.0;
-  if (path === "/about" || path === "/book") return 0.7;
+  if (path === "/about" || path === "/book" || path === "/compare") return 0.7;
   return 0.5;
 }
 
@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       "/",
       "/about",
       "/book",
+      "/compare",
       ...navLinks.map((l) => l.href),
       ...legalLinks.map((l) => l.href),
     ]),

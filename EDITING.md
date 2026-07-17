@@ -107,7 +107,7 @@ site. Here's the map:
 
 | In the file (look for this label) | Where it shows up on the site |
 | --- | --- |
-| `carePlanPricing` (very top) | The care-plan **prices** ($175/month, 13 payments, 5% upfront discount). These are **numbers**, so change only the number — no quotes, no `$`. |
+| `carePlanPricing` (very top) | The care-plan **prices** ($175/month, 13 payments, 5% upfront discount) **and the $399 one-hour consult fee**. These are **numbers**, so change only the number — no quotes, no `$`. |
 | `brand` | Practice name, tagline, description, email, and the fine print in the footer |
 | `nav` | The menu links at the top and the main button text |
 | `home.hero` | The big headline and buttons at the very top of the home page |
@@ -116,10 +116,12 @@ site. Here's the map:
 | `home.testosterone` | The "women need testosterone too" section |
 | `home.howToJoin` | The **3 steps** to join |
 | `home.carePlan` | What's included in the care plan **and** the pricing box |
+| `home.compareTeaser` | The little "see how CYRA compares" link on the home page |
 | `home.testimonials` | The patient quotes that rotate near the bottom |
 | `home.faq` | The frequently asked questions |
 | `home.finalCta` | The closing call-to-action band |
 | `about` | Everything on the About page (bio, quote, credentials) |
+| `compare` | Everything on the **Compare page** (`/compare`): the headline, the six "what differs" cards, the side-by-side **table** (see the note above the table data for how the check / X / dash marks work), the per-platform notes, the checklist, and the closing call-to-action |
 | `book` | The "Request More Information" / booking page |
 | `footer` | The small headings in the footer |
 | `legalPages` | The words shown on the Privacy Policy and Terms of Service pages |

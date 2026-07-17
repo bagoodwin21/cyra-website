@@ -6,6 +6,8 @@
  * Event names in use:
  * - book_consult_click        (any CTA leading to /book; auto-tracked)
  * - financing_check_rate_click (the care-plan CTA)
+ * - compare_page_view          (the /compare page, fired on mount)
+ * - compare_table_scroll       (first horizontal scroll of the comparison table)
  */
 export function trackEvent(
   event: string,

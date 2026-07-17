@@ -33,15 +33,18 @@ npm run dev                  # http://localhost:3000
 npm run build                # production build
 ```
 
-## Site structure (4 pages)
+## Site structure (6 pages)
 
 ```
 /                    Long-form home page. Sections:
                        hero · philosophy ("more than hot flashes") ·
                        what we treat · testosterone · How to Join (3 steps,
                        #how-to-join) · Care Plan inclusions + pricing
-                       (#care-plan) · testimonials · FAQ · final CTA
+                       (#care-plan) · compare teaser · testimonials · FAQ ·
+                       final CTA
 /about               Dr. Goodwin bio, philosophy, credentials
+/compare             How CYRA compares to other menopause/HRT platforms —
+                       dimensions, side-by-side table, deeper dives, checklist
 /book                Distraction-free "Request More Information" page
                        (Calendly placeholder), own minimal layout
 /privacy-policy      Placeholder (content to be finalized)
@@ -53,10 +56,10 @@ src/
   content/
     site-content.ts       ← THE ONE FILE to edit for all copy + pricing
   app/
-    (site)/               Shared Navbar/Footer layout (home, about, legal)
+    (site)/               Shared Navbar/Footer layout (home, about, compare, legal)
     book/                 Booking page (own minimal layout)
     layout.tsx            Fonts, metadata defaults, GTM, preconnects
-    sitemap.ts            Static: /, /about, /book, legal pages
+    sitemap.ts            Static: /, /about, /compare, /book, legal pages
     robots.ts             Allow all, disallow /api/
     opengraph-image.tsx   Branded OG card (next/og)
   components/
@@ -72,8 +75,9 @@ src/
 
 The one-year care plan is **$175 × 13 monthly payments through Cherry** (with
 approved credit) **or 5% off when paid upfront** ($2,161.25 vs. the $2,275
-total). The numbers live in `carePlanPricing` at the top of
-`src/content/site-content.ts`; all displayed dollar amounts derive from them.
+total). The one-time **one-hour initial consult fee is $399** (charged once,
+before enrolling). All four numbers live in `carePlanPricing` at the top of
+`src/content/site-content.ts`; every displayed dollar amount derives from them.
 Cherry is the only financing partner. Never phrase as "from $X/month".
 
 ## Standing content rules
@@ -90,7 +94,9 @@ Cherry is the only financing partner. Never phrase as "from $X/month".
 
 GTM loads from `NEXT_PUBLIC_GTM_ID` (disabled until set). Events pushed to the
 dataLayer (see `src/lib/analytics.ts`): `book_consult_click` (any CTA to
-`/book`, auto-tracked) and `financing_check_rate_click` (the care-plan CTA).
+`/book`, auto-tracked), `financing_check_rate_click` (the care-plan CTA),
+`compare_page_view` (the /compare page), and `compare_table_scroll` (first
+horizontal scroll of the comparison table).
 
 ## Deployment (Vercel)
 
@@ -102,9 +108,7 @@ dataLayer (see `src/lib/analytics.ts`): `book_consult_click` (any CTA to
 
 ## Open placeholders
 
-Calendly embed (`src/components/ui/calendly-placeholder.tsx`), the one-hour
-consult fee (shown as the visible `[CONSULT FEE]` placeholder in
-`home.carePlan.note` — the prior site listed the initial visit at $399, but the
-funnel changed, so confirm before replacing the placeholder), professional
+Calendly embed (`src/components/ui/calendly-placeholder.tsx`), professional
 headshot photography, patient portal URL, and full content for
-`/privacy-policy` and `/terms-of-service`.
+`/privacy-policy` and `/terms-of-service`. (The one-hour consult fee is now
+confirmed at $399 — `carePlanPricing.consultFee`.)

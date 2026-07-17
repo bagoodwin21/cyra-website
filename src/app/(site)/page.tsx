@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   Activity,
+  ArrowRight,
   Baby,
   Bone,
   Brain,
@@ -301,6 +302,16 @@ export default function HomePage() {
             </div>
           </FadeUp>
         </div>
+        <FadeUp delay={0.2} className="mt-12 text-center">
+          <p className="text-body-copy">{home.compareTeaser.text}</p>
+          <Link
+            href="/compare"
+            className="mt-2 inline-flex items-center gap-1.5 font-body text-cta font-bold uppercase tracking-[0.15em] text-primary transition-colors hover:text-primary-light"
+          >
+            {home.compareTeaser.cta}
+            <ArrowRight className="h-4 w-4" aria-hidden />
+          </Link>
+        </FadeUp>
       </Section>
 
       {/* Section 7 — Testimonials */}
