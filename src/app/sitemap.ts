@@ -1,25 +1,25 @@
 import type { MetadataRoute } from "next";
-import { conditions } from "@/lib/conditions";
-import { legalLinks, navLinks, secondaryLinks, siteConfig } from "@/lib/site";
+import { legalLinks, navLinks, siteConfig } from "@/lib/site";
 
-/** Priority scheme: 1.0 home, 0.8 condition pages + /compare, 0.6 the rest. */
+/** Priority scheme: 1.0 home, 0.7 about/book, 0.5 legal pages. */
 function priorityFor(path: string): number {
   if (path === "/") return 1.0;
-  if (path.startsWith("/what-we-treat/") || path === "/compare") return 0.8;
-  return 0.6;
+  if (path === "/about" || path === "/book") return 0.7;
+  return 0.5;
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  // Only real, indexable pages. Nav "#" anchors point at home-page
+  // sections, so we filter them out and index the pages themselves.
   const routes = Array.from(
     new Set([
       "/",
+      "/about",
       "/book",
       ...navLinks.map((l) => l.href),
-      ...secondaryLinks.map((l) => l.href),
-      ...Object.keys(conditions).map((slug) => `/what-we-treat/${slug}`),
       ...legalLinks.map((l) => l.href),
-    ])
-  );
+    ]),
+  ).filter((path) => path.startsWith("/") && !path.includes("#"));
 
   return routes.map((path) => ({
     url: `${siteConfig.url}${path === "/" ? "" : path}`,

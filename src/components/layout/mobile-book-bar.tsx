@@ -2,10 +2,10 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
+import { content } from "@/content/site-content";
 import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -13,12 +13,10 @@ import { cn } from "@/lib/utils";
  * Slim bottom bar on mobile with the primary booking CTA (and a
  * "text us" shortcut when the practice SMS number is configured).
  * Appears once the visitor scrolls past the hero so it never covers
- * above-the-fold CTAs; hidden on /quiz, where it would sit on top of
- * the quiz's own controls. /book is excluded automatically (it has its
- * own layout outside the (site) group).
+ * above-the-fold CTAs. /book is excluded automatically (it has its own
+ * layout outside the (site) group).
  */
 export function MobileBookBar() {
-  const pathname = usePathname();
   const [visible, setVisible] = React.useState(false);
 
   React.useEffect(() => {
@@ -27,8 +25,6 @@ export function MobileBookBar() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  if (pathname.startsWith("/quiz")) return null;
 
   const hasSms = /^\+\d{7,15}$/.test(siteConfig.smsNumber);
 
@@ -50,7 +46,7 @@ export function MobileBookBar() {
                 "h-11 flex-1"
               )}
             >
-              Request More Information
+              {content.nav.cta}
             </Link>
             {hasSms && (
               <a

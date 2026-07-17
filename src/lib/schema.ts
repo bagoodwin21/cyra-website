@@ -1,19 +1,20 @@
-import { conditions, type ConditionInfo } from "@/lib/conditions";
+import { content } from "@/content/site-content";
 import { siteConfig } from "@/lib/site";
 
 /**
  * JSON-LD builders for the schema.org markup used across the site.
  * Note: CYRA serves California only — keep areaServed in sync with
- * siteConfig.licensedStates.
+ * siteConfig.licensedStates. All human-readable copy comes from the
+ * editable content file (src/content/site-content.ts).
  */
 
 const physicianEntity = {
   "@type": "Physician",
-  name: "Dr. Mondona Goodwin, DO",
+  name: siteConfig.physician,
   honorificSuffix: "DO",
-  medicalSpecialty: ["Endocrinology", "PrimaryCare"],
+  medicalSpecialty: ["Gynecologic", "Endocrinology", "PrimaryCare"],
   description:
-    "Board-certified DO specializing in perimenopause, menopause, hormone replacement therapy (including testosterone for women), thyroid health, and midlife weight management.",
+    "Board-certified DO specializing in women's hormonal and metabolic health — perimenopause, menopause, PMDD, PMS, postpartum depression, sexual health, testosterone for women, and weight management.",
   url: `${siteConfig.url}/about`,
   worksFor: {
     "@type": "MedicalBusiness",
@@ -31,7 +32,7 @@ export function medicalBusinessSchema() {
     url: siteConfig.url,
     description: siteConfig.description,
     slogan: siteConfig.tagline,
-    email: "hello@drmondona.com",
+    email: siteConfig.email,
     priceRange: "$$",
     areaServed: {
       "@type": "State",
@@ -40,11 +41,10 @@ export function medicalBusinessSchema() {
     // Telehealth-only practice — no physical patient location.
     serviceType: "Telemedicine",
     employee: physicianEntity,
-    availableService: Object.entries(conditions).map(([slug, info]) => ({
+    availableService: content.home.whatWeTreat.items.map((item) => ({
       "@type": "MedicalTherapy",
-      name: `${info.title} Care`,
-      url: `${siteConfig.url}/what-we-treat/${slug}`,
-      description: info.description,
+      name: `${item.title} Care`,
+      description: item.body,
     })),
   };
 }
@@ -63,7 +63,7 @@ export interface SchemaFAQ {
 }
 
 /** FAQPage schema from a flat list of Q&As. */
-export function faqPageSchema(faqs: SchemaFAQ[]) {
+export function faqPageSchema(faqs: readonly SchemaFAQ[]) {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -75,40 +75,5 @@ export function faqPageSchema(faqs: SchemaFAQ[]) {
         text: faq.answer,
       },
     })),
-  };
-}
-
-/** MedicalCondition + MedicalTherapy schema pair for a condition page. */
-export function conditionSchema(slug: string, info: ConditionInfo) {
-  const url = `${siteConfig.url}/what-we-treat/${slug}`;
-  return {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "MedicalCondition",
-        name: info.title,
-        url,
-        description: info.summary,
-        signOrSymptom: info.symptoms.map((symptom) => ({
-          "@type": "MedicalSymptom",
-          name: symptom,
-        })),
-        possibleTreatment: {
-          "@type": "MedicalTherapy",
-          name: `${info.title} Treatment at CYRA Wellness`,
-        },
-      },
-      {
-        "@type": "MedicalTherapy",
-        name: `${info.title} Treatment at CYRA Wellness`,
-        url,
-        description: info.treatment.join(" "),
-        provider: {
-          "@type": "MedicalBusiness",
-          name: siteConfig.name,
-          url: siteConfig.url,
-        },
-      },
-    ],
   };
 }

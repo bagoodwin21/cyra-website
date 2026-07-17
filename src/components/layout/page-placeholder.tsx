@@ -1,6 +1,10 @@
+import Link from "next/link";
 import { Section } from "@/components/ui/section";
 import { SectionLabel } from "@/components/ui/section-label";
-import { Button } from "@/components/ui/button";
+import { FadeUp } from "@/components/ui/fade-up";
+import { buttonVariants } from "@/components/ui/button";
+import { content } from "@/content/site-content";
+import { cn } from "@/lib/utils";
 
 interface PagePlaceholderProps {
   label: string;
@@ -8,18 +12,32 @@ interface PagePlaceholderProps {
   description: string;
 }
 
-/** Temporary page stub used while full page content is being built out. */
+/**
+ * Simple centered placeholder for pages whose full content is still being
+ * finalized (privacy policy, terms of service).
+ */
 export function PagePlaceholder({ label, title, description }: PagePlaceholderProps) {
   return (
     <Section>
-      <div className="mx-auto max-w-3xl py-10 text-center md:py-16">
+      <FadeUp className="mx-auto max-w-2xl py-8 text-center md:py-16">
         <SectionLabel>{label}</SectionLabel>
-        <h1 className="heading-section">{title}</h1>
+        <h1 className="heading-hero">{title}</h1>
         <p className="text-subheadline mt-6">{description}</p>
-        <div className="mt-8">
-          <Button variant="accent">Request More Information</Button>
+        <div className="mt-10">
+          <Link href="/" className={cn(buttonVariants({ variant: "secondary" }))}>
+            Back to Home
+          </Link>
         </div>
-      </div>
+        <p className="mt-8 text-small text-foreground-muted">
+          Questions? Email us at{" "}
+          <a
+            href={`mailto:${content.brand.email}`}
+            className="font-medium text-primary hover:text-primary-light"
+          >
+            {content.brand.email}
+          </a>
+        </p>
+      </FadeUp>
     </Section>
   );
 }

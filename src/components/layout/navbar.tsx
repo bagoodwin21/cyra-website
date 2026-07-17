@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
+import { content } from "@/content/site-content";
 import { navLinks } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -45,9 +46,9 @@ export function Navbar() {
         <Link
           href="/"
           className="font-script text-3xl text-foreground"
-          aria-label="CYRA Wellness home"
+          aria-label={`${content.brand.name} home`}
         >
-          CYRA Wellness
+          {content.brand.name}
         </Link>
 
         {/* Desktop nav */}
@@ -77,7 +78,7 @@ export function Navbar() {
             href="/book"
             className={buttonVariants({ variant: "accent", size: "sm" })}
           >
-            Request More Information
+            {content.nav.cta}
           </Link>
         </div>
 
@@ -105,7 +106,7 @@ export function Navbar() {
           >
             <div className="flex h-18 items-center justify-between px-6 py-4">
               <span className="font-script text-3xl text-foreground">
-                CYRA Wellness
+                {content.brand.name}
               </span>
               <button
                 type="button"
@@ -153,7 +154,7 @@ export function Navbar() {
                   href="/book"
                   className={buttonVariants({ variant: "accent" })}
                 >
-                  Request More Information
+                  {content.nav.cta}
                 </Link>
               </motion.div>
             </nav>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { content } from "@/content/site-content";
 
 /**
  * Minimal distraction-free layout for the booking page:
@@ -16,9 +17,9 @@ export default function BookLayout({
           <Link
             href="/"
             className="font-script text-3xl text-foreground"
-            aria-label="CYRA Wellness home"
+            aria-label={`${content.brand.name} home`}
           >
-            CYRA Wellness
+            {content.brand.name}
           </Link>
         </div>
       </header>

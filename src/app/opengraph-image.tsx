@@ -23,7 +23,7 @@ export default function OpengraphImage() {
           fontFamily: "Georgia, serif",
         }}
       >
-        <div style={{ fontSize: 88, fontWeight: 700 }}>CYRA Wellness</div>
+        <div style={{ fontSize: 88, fontWeight: 700 }}>{siteConfig.name}</div>
         <div
           style={{
             marginTop: 24,
@@ -31,7 +31,7 @@ export default function OpengraphImage() {
             color: "#8FA5B3",
           }}
         >
-          Physician-led hormone care, built around you
+          {siteConfig.tagline}
         </div>
         <div
           style={{
@@ -40,7 +40,7 @@ export default function OpengraphImage() {
             color: "rgba(250, 247, 244, 0.75)",
           }}
         >
-          California Menopause &amp; Hormone Telehealth · drmondona.com
+          California Women&apos;s Hormone Telehealth · drmondona.com
         </div>
       </div>
     ),

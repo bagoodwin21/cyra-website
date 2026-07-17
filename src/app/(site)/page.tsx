@@ -2,288 +2,154 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   Activity,
-  Atom,
-  CalendarCheck,
-  Copy,
-  CreditCard,
+  Baby,
+  Bone,
+  Brain,
+  CalendarClock,
+  Check,
   Droplets,
-  FileX,
   Flower2,
-  MapPin,
-  Pill,
+  Heart,
+  HeartPulse,
   Scale,
-  ShieldCheck,
-  Stethoscope,
   Sunrise,
-  UserX,
+  type LucideIcon,
 } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 import { Section } from "@/components/ui/section";
 import { SectionLabel } from "@/components/ui/section-label";
 import { FadeUp } from "@/components/ui/fade-up";
+import { FAQItem } from "@/components/ui/faq-item";
 import {
   TestimonialCarousel,
   type Testimonial,
 } from "@/components/ui/testimonial-carousel";
-import testimonialsData from "@/data/testimonials.json";
 import { JsonLd } from "@/components/seo/json-ld";
-import { medicalBusinessSchema } from "@/lib/schema";
+import { medicalBusinessSchema, faqPageSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
+import { content } from "@/content/site-content";
 import { cn } from "@/lib/utils";
+
+const { home } = content;
 
 export function generateMetadata(): Metadata {
   return buildMetadata({
-    title: "Physician-Led Menopause & Hormone Care | California Telehealth",
-    description:
-      "Physician-led perimenopause, menopause, HRT, and midlife weight management care via telemedicine in California. Cash-pay practice of Dr. Mondona Goodwin, DO.",
+    title:
+      "Women's Hormonal Health | Perimenopause, Menopause & More | California Telehealth",
+    description: content.brand.description,
     path: "/",
   });
 }
 
-const trustBar = [
-  { Icon: ShieldCheck, label: "Board-Certified DO" },
-  { Icon: Droplets, label: "Testosterone Included" },
-  { Icon: CreditCard, label: "Cherry Financing Available" },
-  { Icon: MapPin, label: "California Telehealth" },
+/* Icons pair with the content lists below, matched by position. Icons are
+   layout, not copy — they live here so the content file stays plain text. */
+const trustIcons: LucideIcon[] = [Flower2, Droplets, CalendarClock, Heart];
+const affectIcons: LucideIcon[] = [Bone, Scale, HeartPulse, Droplets, Brain, Heart];
+const treatIcons: LucideIcon[] = [
+  Sunrise,
+  Flower2,
+  CalendarClock,
+  Baby,
+  Droplets,
+  HeartPulse,
+  Scale,
+  Activity,
 ];
 
-const painPoints = [
-  {
-    Icon: UserX,
-    title: "Told “it’s just aging”",
-    body: "Dismissive PCP visits where your symptoms are brushed aside instead of investigated.",
-  },
-  {
-    Icon: FileX,
-    title: "Insurance won’t cover it",
-    body: "Denied HRT, limits on the labs that matter, and rushed 15-minute appointment slots.",
-  },
-  {
-    Icon: Copy,
-    title: "Generic protocols",
-    body: "One-size-fits-all dosing that doesn’t account for your body, your labs, or your history.",
-  },
-];
+const testimonials: Testimonial[] = home.testimonials.items.map((t) => ({ ...t }));
 
-const differencePillars = [
-  {
-    Icon: Stethoscope,
-    title: "Your Physician, Not an Algorithm",
-    body: "Dr. Mondona Goodwin is a board-certified DO who personally reviews your labs, designs your protocol, and is your point of contact — not a rotating roster of NPs.",
-  },
-  {
-    Icon: Atom,
-    title: "Testosterone Isn’t an Afterthought",
-    body: "Most telehealth platforms treat testosterone as an add-on. We include it as a core part of care when clinically appropriate — because your symptoms deserve a complete picture.",
-  },
-  {
-    Icon: CalendarCheck,
-    title: "A Care Plan, Not a Subscription",
-    body: "No month-to-month uncertainty. Your 12-month care plan is structured around your goals with flexible financing through Cherry — so you can commit to your health without committing to a lump sum.",
-  },
-];
-
-const conditions = [
-  {
-    Icon: Sunrise,
-    title: "Perimenopause",
-    body: "Years before your last period, your hormones start shifting. We catch it early.",
-    href: "/what-we-treat/perimenopause",
-  },
-  {
-    Icon: Flower2,
-    title: "Menopause",
-    body: "Comprehensive HRT management tailored to your labs and your life.",
-    href: "/what-we-treat/menopause",
-  },
-  {
-    Icon: Droplets,
-    title: "Testosterone Therapy",
-    body: "Low libido, fatigue, brain fog? Testosterone could be the missing piece.",
-    href: "/what-we-treat/testosterone-therapy",
-  },
-  {
-    Icon: Pill,
-    title: "Estrogen & Progesterone",
-    body: "Bioidentical and conventional HRT options, explained and personalized.",
-    href: "/what-we-treat/estrogen-progesterone",
-  },
-  {
-    Icon: Activity,
-    title: "Thyroid & Adrenal",
-    body: "Hormones don’t work in isolation. We look at the full picture.",
-    href: "/what-we-treat/thyroid-adrenal",
-  },
-  {
-    Icon: Scale,
-    title: "Midlife Weight Management",
-    body: "Metabolic changes are real. We address the root cause, not just calories.",
-    href: "/what-we-treat/weight-management",
-  },
-];
-
-const steps = [
-  {
-    title: "Free Discovery Call",
-    meta: "15 min",
-    body: "Tell us what’s going on. We’ll tell you if we’re a fit.",
-  },
-  {
-    title: "Start Visit",
-    meta: "$399",
-    body: "Your comprehensive intake with Dr. Mondona — labs ordered, history reviewed, questions answered.",
-  },
-  {
-    title: "Your Care Plan",
-    meta: "12 months",
-    body: "A 12-month personalized protocol, financed monthly through Cherry or charged to your card on file.",
-  },
-  {
-    title: "Ongoing Care",
-    meta: "Continuous",
-    body: "Follow-up visits, lab reviews, and protocol adjustments as your body responds and your needs evolve.",
-  },
-];
-
-const testimonials: Testimonial[] = testimonialsData;
+/** Renders a headline where text wrapped in *asterisks* becomes an italic accent. */
+function AccentHeadline({ text, className }: { text: string; className?: string }) {
+  const parts = text.split("*");
+  return (
+    <h1 className={className}>
+      {parts.map((part, i) =>
+        i % 2 === 1 ? (
+          <em key={i} className="italic text-primary">
+            {part}
+          </em>
+        ) : (
+          <span key={i}>{part}</span>
+        ),
+      )}
+    </h1>
+  );
+}
 
 export default function HomePage() {
   return (
     <>
       <JsonLd data={medicalBusinessSchema()} />
+      <JsonLd data={faqPageSchema(home.faq.items)} />
 
-      {/* Section 1 — Hero (centered, editorial; script eyebrow + italic accent) */}
-      <section className="flex min-h-[calc(100vh-4.5rem)] items-center bg-background">
+      {/* Section 1 — Hero */}
+      <section className="flex min-h-[calc(100vh-4.5rem)] items-center hero-gradient">
         <div className="mx-auto w-full max-w-3xl px-6 py-24 text-center lg:px-8">
           <FadeUp>
             <p className="font-script text-3xl text-primary md:text-4xl">
-              physician-led hormone care
+              {home.hero.eyebrow}
             </p>
-            <h1 className="heading-hero mt-4">
-              Finally, hormone care that{" "}
-              <em className="italic text-primary">actually listens</em>.
-            </h1>
+            <AccentHeadline text={home.hero.headline} className="heading-hero mt-4" />
             <p className="text-subheadline mx-auto mt-7 max-w-xl">
-              Evidence-based care for perimenopause, menopause, HRT, and
-              midlife weight management — finally made personal. No insurance
-              red tape. No rushed appointments.
+              {home.hero.subheadline}
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link
                 href="/book"
                 className={cn(buttonVariants({ variant: "accent", size: "lg" }))}
               >
-                Request More Information
+                {home.hero.primaryCta}
               </Link>
               <Link
-                href="/how-it-works"
+                href="/#how-to-join"
                 className={cn(buttonVariants({ variant: "secondary" }))}
               >
-                See How It Works
+                {home.hero.secondaryCta}
               </Link>
             </div>
             <ul className="mt-12 flex flex-wrap justify-center gap-x-7 gap-y-3">
-              {trustBar.map(({ Icon, label }) => (
-                <li
-                  key={label}
-                  className="flex items-center gap-2 text-small font-medium text-foreground-secondary"
-                >
-                  <Icon className="h-4 w-4 text-primary" aria-hidden />
-                  {label}
-                </li>
-              ))}
+              {home.hero.trustPoints.map((label, i) => {
+                const Icon = trustIcons[i % trustIcons.length];
+                return (
+                  <li
+                    key={label}
+                    className="flex items-center gap-2 text-small font-medium text-foreground-secondary"
+                  >
+                    <Icon className="h-4 w-4 text-primary" aria-hidden />
+                    {label}
+                  </li>
+                );
+              })}
             </ul>
           </FadeUp>
         </div>
       </section>
 
-      {/* Section 2 — The problem we solve */}
+      {/* Section 2 — Philosophy: more than hot flashes */}
       <Section>
         <FadeUp className="mx-auto max-w-3xl text-center">
-          <SectionLabel>You Deserve Better</SectionLabel>
-          <h2 className="heading-section">
-            Most women spend years being dismissed.
-          </h2>
-        </FadeUp>
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {painPoints.map(({ Icon, title, body }, i) => (
-            <FadeUp key={title} delay={i * 0.12}>
-              <Card className="h-full">
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-warm/50 text-primary">
-                  <Icon className="h-6 w-6" aria-hidden />
-                </span>
-                <CardTitle className="mt-4">{title}</CardTitle>
-                <CardDescription>{body}</CardDescription>
-              </Card>
-            </FadeUp>
-          ))}
-        </div>
-        <FadeUp delay={0.3}>
-          <p className="mt-12 text-center font-heading text-xl font-semibold text-primary md:text-2xl">
-            CYRA was built for the women who are done settling.
-          </p>
-        </FadeUp>
-
-        {/* Quiz teaser */}
-        <FadeUp delay={0.4}>
-          <div className="mt-12 rounded-card bg-gradient-to-br from-warm/60 via-background to-accent-light/25 p-8 text-center shadow-card md:p-10">
-            <h3 className="font-heading text-xl font-semibold text-foreground md:text-2xl">
-              Not sure if it&rsquo;s your hormones?
-            </h3>
-            <p className="text-body-copy mx-auto mt-3 max-w-xl">
-              Take our free 2-minute symptom assessment and get a personalized
-              read on what your symptoms might mean — and whether physician-led
-              care could help.
-            </p>
-            <div className="mt-6">
-              <Link
-                href="/quiz"
-                className={cn(buttonVariants({ variant: "accent" }))}
-              >
-                Take the Symptom Quiz
-              </Link>
-            </div>
+          <SectionLabel>{home.philosophy.label}</SectionLabel>
+          <h2 className="heading-section">{home.philosophy.heading}</h2>
+          <div className="mt-7 space-y-5 text-left sm:text-center">
+            {home.philosophy.body.map((paragraph) => (
+              <p key={paragraph.slice(0, 40)} className="text-body-copy">
+                {paragraph}
+              </p>
+            ))}
           </div>
         </FadeUp>
-      </Section>
-
-      {/* Section 3 — How CYRA is different */}
-      <Section tone="surface">
-        <FadeUp className="mx-auto max-w-3xl text-center">
-          <SectionLabel>The CYRA Difference</SectionLabel>
-          <h2 className="heading-section">
-            Physician-led. Personalized. Built around you.
-          </h2>
-        </FadeUp>
-        <div className="mt-12 grid gap-10 md:grid-cols-3">
-          {differencePillars.map(({ Icon, title, body }, i) => (
-            <FadeUp key={title} delay={i * 0.12} className="text-center">
-              <span className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
-                <Icon className="h-8 w-8" aria-hidden />
-              </span>
-              <h3 className="mt-5 font-heading text-xl font-semibold text-foreground md:text-2xl">
-                {title}
-              </h3>
-              <p className="text-body-copy mt-3">{body}</p>
-            </FadeUp>
-          ))}
-        </div>
-      </Section>
-
-      {/* Section 4 — What we treat */}
-      <Section>
-        <FadeUp className="mx-auto max-w-3xl text-center">
-          <SectionLabel>What We Treat</SectionLabel>
-          <h2 className="heading-section">
-            Comprehensive care for midlife women&rsquo;s health.
-          </h2>
+        <FadeUp delay={0.15}>
+          <p className="mx-auto mt-10 max-w-2xl text-center font-heading text-xl font-semibold text-primary md:text-2xl">
+            {home.philosophy.pullQuote}
+          </p>
         </FadeUp>
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {conditions.map(({ Icon, title, body, href }, i) => (
-            <FadeUp key={title} delay={(i % 3) * 0.1}>
-              <Link href={href} className="block h-full">
-                <Card className="h-full">
+          {home.philosophy.affects.map(({ title, body }, i) => {
+            const Icon = affectIcons[i % affectIcons.length];
+            return (
+              <FadeUp key={title} delay={(i % 3) * 0.1}>
+                <Card lift={false} className="h-full">
                   <div className="flex items-center gap-3">
                     <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
                       <Icon className="h-5 w-5" aria-hidden />
@@ -292,138 +158,195 @@ export default function HomePage() {
                   </div>
                   <CardDescription className="mt-3">{body}</CardDescription>
                 </Card>
-              </Link>
-            </FadeUp>
-          ))}
+              </FadeUp>
+            );
+          })}
         </div>
       </Section>
 
-      {/* Section 5 — How it works */}
+      {/* Section 3 — What we treat */}
       <Section tone="surface">
         <FadeUp className="mx-auto max-w-3xl text-center">
-          <SectionLabel>The Process</SectionLabel>
-          <h2 className="heading-section">
-            From your couch to a care plan in days.
-          </h2>
+          <SectionLabel>{home.whatWeTreat.label}</SectionLabel>
+          <h2 className="heading-section">{home.whatWeTreat.heading}</h2>
         </FadeUp>
-        <ol className="relative mt-14 grid gap-10 lg:grid-cols-4 lg:gap-6">
-          {/* Connecting line (desktop) */}
-          <div
-            className="absolute left-0 right-0 top-6 hidden h-px bg-border lg:block"
-            aria-hidden
-          />
-          {steps.map((step, i) => (
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {home.whatWeTreat.items.map(({ title, body }, i) => {
+            const Icon = treatIcons[i % treatIcons.length];
+            return (
+              <FadeUp key={title} delay={(i % 4) * 0.08}>
+                <Card className="h-full">
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <Icon className="h-5 w-5" aria-hidden />
+                  </span>
+                  <CardTitle className="mt-4 text-lg md:text-xl">{title}</CardTitle>
+                  <CardDescription className="mt-2">{body}</CardDescription>
+                </Card>
+              </FadeUp>
+            );
+          })}
+        </div>
+      </Section>
+
+      {/* Section 4 — Testosterone */}
+      <Section>
+        <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-2">
+          <FadeUp>
+            <SectionLabel>{home.testosterone.label}</SectionLabel>
+            <h2 className="heading-section">{home.testosterone.heading}</h2>
+          </FadeUp>
+          <FadeUp delay={0.12} className="space-y-5">
+            {home.testosterone.body.map((paragraph) => (
+              <p key={paragraph.slice(0, 40)} className="text-body-copy">
+                {paragraph}
+              </p>
+            ))}
+          </FadeUp>
+        </div>
+      </Section>
+
+      {/* Section 5 — How to join (3 steps) */}
+      <Section tone="surface" id="how-to-join" className="scroll-mt-24">
+        <FadeUp className="mx-auto max-w-3xl text-center">
+          <SectionLabel>{home.howToJoin.label}</SectionLabel>
+          <h2 className="heading-section">{home.howToJoin.heading}</h2>
+          <p className="text-subheadline mt-5">{home.howToJoin.intro}</p>
+        </FadeUp>
+        <ol className="mx-auto mt-14 grid max-w-5xl gap-8 md:grid-cols-3">
+          {home.howToJoin.steps.map((step, i) => (
             <FadeUp key={step.title} delay={i * 0.12}>
-              <li className="relative flex gap-5 lg:block">
-                <span className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary font-heading text-lg font-bold text-white">
+              <li className="flex h-full flex-col rounded-[3px] border border-border border-t-[3px] border-t-primary-light bg-background p-6 shadow-card md:p-8">
+                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-primary font-heading text-lg font-bold text-white">
                   {i + 1}
                 </span>
-                <div className="lg:mt-5">
-                  <div className="flex flex-wrap items-baseline gap-x-2.5">
-                    <h3 className="font-heading text-lg font-semibold text-foreground">
-                      {step.title}
-                    </h3>
-                    <span className="text-small font-semibold text-accent-dark">
-                      {step.meta}
-                    </span>
-                  </div>
-                  <p className="text-body-copy mt-2">{step.body}</p>
-                </div>
+                <h3 className="mt-5 font-heading text-xl font-semibold text-foreground">
+                  {step.title}
+                </h3>
+                <span className="mt-1 text-small font-semibold text-accent-dark">
+                  {step.meta}
+                </span>
+                <p className="text-body-copy mt-3">{step.body}</p>
               </li>
             </FadeUp>
           ))}
         </ol>
-        <FadeUp delay={0.3} className="mt-14 text-center">
-          <Link
-            href="/book"
-            className={cn(buttonVariants({ variant: "accent" }))}
-          >
-            Request More Information
+        <FadeUp delay={0.3} className="mt-12 text-center">
+          <Link href="/book" className={cn(buttonVariants({ variant: "accent" }))}>
+            {content.nav.cta}
           </Link>
         </FadeUp>
       </Section>
 
-      {/* Section 6 — Testimonials */}
-      <Section>
+      {/* Section 6 — Care plan inclusions + pricing */}
+      <Section id="care-plan" className="scroll-mt-24">
         <FadeUp className="mx-auto max-w-3xl text-center">
-          <SectionLabel>Patient Stories</SectionLabel>
-          <h2 className="heading-section">Real women. Real results.</h2>
+          <SectionLabel>{home.carePlan.label}</SectionLabel>
+          <h2 className="heading-section">{home.carePlan.heading}</h2>
+          <p className="text-subheadline mt-5">{home.carePlan.intro}</p>
+        </FadeUp>
+        <div className="mx-auto mt-12 grid max-w-5xl gap-8 lg:grid-cols-2">
+          {/* Inclusions */}
+          <FadeUp>
+            <ul className="h-full space-y-3.5 rounded-[3px] border border-border bg-background p-6 shadow-card md:p-8">
+              {home.carePlan.includes.map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <Check className="h-3.5 w-3.5" strokeWidth={3} aria-hidden />
+                  </span>
+                  <span className="text-body-copy">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </FadeUp>
+
+          {/* Pricing */}
+          <FadeUp delay={0.12}>
+            <div className="flex h-full flex-col rounded-[3px] border-2 border-primary bg-background p-6 shadow-card md:p-8">
+              <h3 className="font-heading text-2xl font-semibold text-foreground">
+                {home.carePlan.pricingHeading}
+              </h3>
+              <p className="text-body-copy mt-2">{home.carePlan.pricingSubhead}</p>
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                {[home.carePlan.options.financing, home.carePlan.options.upfront].map(
+                  (option) => (
+                    <div
+                      key={option.label}
+                      className="rounded-[3px] border border-border bg-surface/60 p-4"
+                    >
+                      <p className="text-small font-semibold uppercase tracking-[0.1em] text-primary">
+                        {option.label}
+                      </p>
+                      <p className="mt-2 font-heading text-2xl font-bold text-foreground">
+                        {option.price}
+                      </p>
+                      <p className="mt-1 text-small text-foreground-muted">
+                        {option.detail}
+                      </p>
+                    </div>
+                  ),
+                )}
+              </div>
+              <p className="mt-6 border-t border-border pt-5 text-small text-foreground-muted">
+                {home.carePlan.note}
+              </p>
+              <div className="mt-6">
+                <Link
+                  href="/book"
+                  data-analytics-event="financing_check_rate_click"
+                  className={cn(buttonVariants({ variant: "accent" }), "w-full")}
+                >
+                  {content.nav.cta}
+                </Link>
+              </div>
+            </div>
+          </FadeUp>
+        </div>
+      </Section>
+
+      {/* Section 7 — Testimonials */}
+      <Section tone="surface">
+        <FadeUp className="mx-auto max-w-3xl text-center">
+          <SectionLabel>{home.testimonials.label}</SectionLabel>
+          <h2 className="heading-section">{home.testimonials.heading}</h2>
         </FadeUp>
         <FadeUp delay={0.15} className="mt-12">
           <TestimonialCarousel items={testimonials} />
         </FadeUp>
       </Section>
 
-      {/* Section 7 — Comparison teaser */}
-      <Section tone="surface">
-        <FadeUp className="mx-auto max-w-3xl text-center">
-          <SectionLabel>How We Compare</SectionLabel>
-          <h2 className="heading-section">
-            Not all menopause telehealth is the same.
-          </h2>
-          <p className="text-subheadline mt-5">
-            Platforms like Midi, Alloy, and Evernow have made hormone care more
-            accessible — but there are meaningful differences in who delivers
-            your care, what&rsquo;s included, and how your treatment is
-            structured.
-          </p>
-          <div className="mt-8">
-            <Link
-              href="/compare"
-              className={cn(buttonVariants({ variant: "secondary" }))}
-            >
-              See Full Comparison
-            </Link>
-          </div>
-        </FadeUp>
+      {/* Section 8 — FAQ */}
+      <Section>
+        <div className="mx-auto max-w-3xl">
+          <FadeUp className="text-center">
+            <SectionLabel>{home.faq.label}</SectionLabel>
+            <h2 className="heading-section">{home.faq.heading}</h2>
+          </FadeUp>
+          <FadeUp delay={0.1} className="mt-10">
+            {home.faq.items.map((faq) => (
+              <FAQItem key={faq.question} question={faq.question} answer={faq.answer} />
+            ))}
+          </FadeUp>
+        </div>
       </Section>
-
-      {/* Section 8 — Financing banner (soft neutral band; slate CTAs carry it) */}
-      <section className="bg-warm">
-        <FadeUp className="mx-auto flex max-w-content flex-col items-center gap-6 px-6 py-12 text-center md:py-14 lg:flex-row lg:justify-between lg:px-8 lg:text-left">
-          <p className="max-w-2xl font-body text-subhead-mobile font-medium text-foreground md:text-subhead">
-            Care plan financing available through Cherry. Monthly payments
-            with approved credit — or save with a single upfront payment.
-          </p>
-          <div className="flex shrink-0 flex-wrap items-center justify-center gap-4">
-            <Link
-              href="/book"
-              data-analytics-event="financing_check_rate_click"
-              className={cn(buttonVariants({ variant: "accent" }))}
-            >
-              Check Your Rate
-            </Link>
-            <Link
-              href="/pricing"
-              className={cn(buttonVariants({ variant: "secondary" }))}
-            >
-              Learn More
-            </Link>
-          </div>
-        </FadeUp>
-      </section>
 
       {/* Section 9 — Final CTA */}
       <Section tone="primary">
         <FadeUp className="mx-auto max-w-2xl py-4 text-center md:py-8">
           <h2 className="font-heading text-section-mobile text-white md:text-section">
-            Your next chapter starts with one conversation.
+            {home.finalCta.heading}
           </h2>
           <p className="mt-5 font-body text-subhead-mobile font-medium text-white/80 md:text-subhead">
-            The free discovery call is 15 minutes. No pressure, no commitment —
-            just answers.
+            {home.finalCta.body}
           </p>
           <div className="mt-8">
             <Link
               href="/book"
               className={cn(buttonVariants({ variant: "accent", size: "lg" }))}
             >
-              Request More Information
+              {home.finalCta.cta}
             </Link>
           </div>
-          <p className="mt-8 text-small text-white/70">
-            California | Cash-Pay Telehealth | Board-Certified Physician
-          </p>
+          <p className="mt-8 text-small text-white/70">{home.finalCta.footnote}</p>
         </FadeUp>
       </Section>
     </>
