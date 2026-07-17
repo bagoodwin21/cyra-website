@@ -25,11 +25,11 @@ export function PagePlaceholder({ label, title, description }: PagePlaceholderPr
         <p className="text-subheadline mt-6">{description}</p>
         <div className="mt-10">
           <Link href="/" className={cn(buttonVariants({ variant: "secondary" }))}>
-            Back to Home
+            {content.placeholderPage.backToHome}
           </Link>
         </div>
         <p className="mt-8 text-small text-foreground-muted">
-          Questions? Email us at{" "}
+          {content.placeholderPage.questionsPrompt}{" "}
           <a
             href={`mailto:${content.brand.email}`}
             className="font-medium text-primary hover:text-primary-light"

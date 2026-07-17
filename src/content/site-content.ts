@@ -219,7 +219,7 @@ export const content = {
         "Your care plan is a full year of close, personalized support — not a subscription you have to think about. Here's what's included:",
       // The checklist of what's included
       includes: [
-        "Follow-up visits — as many as you need",
+        "Unlimited follow-up visits — as many as you need",
         "Unlimited direct messaging with Dr. Goodwin",
         "35% off professional-grade supplements",
         "Personalized nutrition guidance",
@@ -248,8 +248,13 @@ export const content = {
           )} total when you pay upfront`,
         },
       },
-      // Small print under the pricing box
-      note: "The one-hour consult is a separate, one-time fee and is required before enrolling in a care plan. Medication and lab costs are billed separately.",
+      // Small print under the pricing box.
+      // Dr. Goodwin: replace [CONSULT FEE] below with the confirmed price for
+      // the one-hour consult (e.g. "$399"). The previous version of the site
+      // listed the initial visit at $399 — that was confirmed then, but the
+      // funnel has since changed, so please confirm the current fee before
+      // publishing. Keep the "[CONSULT FEE]" placeholder visible until then.
+      note: "The one-hour consult is a separate, one-time fee of [CONSULT FEE] and is required before enrolling in a care plan. Medication and lab costs are billed separately.",
     },
 
     // ---- TESTIMONIALS: short patient quotes ----
@@ -410,6 +415,40 @@ export const content = {
     quickLinksHeading: "Quick Links",
     contactHeading: "Contact",
     locationChip: "California Telehealth",
+  },
+
+  /* =======================================================================
+     LEGAL PAGES (the Privacy Policy and Terms of Service pages themselves)
+     The words shown on each legal page. These are placeholder pages until the
+     full policy text is finalized — change the "title" and "description" here
+     to update what visitors see on those pages.
+     ======================================================================= */
+  legalPages: {
+    privacy: {
+      label: "Legal", // Small label above the page heading
+      title: "Privacy Policy", // The page heading
+      // The paragraph shown while the full policy is being written
+      description:
+        "Our privacy policy is being finalized and will be published here.",
+    },
+    terms: {
+      label: "Legal", // Small label above the page heading
+      title: "Terms of Service", // The page heading
+      // The paragraph shown while the full terms are being written
+      description:
+        "Our terms of service are being finalized and will be published here.",
+    },
+  },
+
+  /* =======================================================================
+     PLACEHOLDER PAGE — shared bits on the Privacy/Terms placeholder pages
+     The "back to home" button and the "questions?" email line that appear at
+     the bottom of every placeholder legal page.
+     ======================================================================= */
+  placeholderPage: {
+    backToHome: "Back to Home", // The button that returns to the home page
+    // The text before the email address at the bottom of the page
+    questionsPrompt: "Questions? Email us at",
   },
 
   /* =======================================================================

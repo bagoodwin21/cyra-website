@@ -103,7 +103,8 @@ dataLayer (see `src/lib/analytics.ts`): `book_consult_click` (any CTA to
 ## Open placeholders
 
 Calendly embed (`src/components/ui/calendly-placeholder.tsx`), the one-hour
-consult fee (not yet published as a number — referenced only as a separate
-one-time fee in `home.carePlan.note`), professional headshot photography,
-patient portal URL, and full content for `/privacy-policy` and
-`/terms-of-service`.
+consult fee (shown as the visible `[CONSULT FEE]` placeholder in
+`home.carePlan.note` — the prior site listed the initial visit at $399, but the
+funnel changed, so confirm before replacing the placeholder), professional
+headshot photography, patient portal URL, and full content for
+`/privacy-policy` and `/terms-of-service`.

@@ -2,7 +2,7 @@ import { CalendarClock } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface CalendlyPlaceholderProps {
-  label?: string;
+  label: string;
   className?: string;
 }
 
@@ -12,7 +12,7 @@ interface CalendlyPlaceholderProps {
  * once the scheduling link is ready.
  */
 export function CalendlyPlaceholder({
-  label = "Calendly embed — free discovery call scheduling",
+  label,
   className,
 }: CalendlyPlaceholderProps) {
   return (

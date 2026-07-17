@@ -5,13 +5,7 @@
  *
  * Event names in use:
  * - book_consult_click        (any CTA leading to /book; auto-tracked)
- * - quiz_start                (first quiz answer selected)
- * - quiz_complete             (quiz results reached)
- * - quiz_result_tier          ({ tier })
- * - compare_page_view
- * - compare_table_scroll      (first horizontal scroll of the table)
- * - financing_check_rate_click
- * - condition_page_view       ({ condition })
+ * - financing_check_rate_click (the care-plan CTA)
  */
 export function trackEvent(
   event: string,

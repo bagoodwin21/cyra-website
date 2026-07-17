@@ -122,6 +122,8 @@ site. Here's the map:
 | `about` | Everything on the About page (bio, quote, credentials) |
 | `book` | The "Request More Information" / booking page |
 | `footer` | The small headings in the footer |
+| `legalPages` | The words shown on the Privacy Policy and Terms of Service pages |
+| `placeholderPage` | The "Back to Home" button and "Questions?" email line on those legal pages |
 | `legalLinks` | The Privacy Policy and Terms links at the very bottom |
 
 ---
