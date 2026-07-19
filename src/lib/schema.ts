@@ -14,7 +14,19 @@ const physicianEntity = {
   honorificSuffix: "DO",
   medicalSpecialty: ["Gynecologic", "Endocrinology", "PrimaryCare"],
   description:
-    "Board-certified DO specializing in women's hormonal and metabolic health — perimenopause, menopause, PMDD, PMS, postpartum depression, sexual health, testosterone for women, and weight management.",
+    "Board-certified in Internal Medicine and a Menopause Society Certified Practitioner (MSCP), specializing in women's hormonal and metabolic health — perimenopause, menopause, PMDD, PMS, postpartum depression, sexual health, testosterone for women, and weight management.",
+  hasCredential: [
+    {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "Board Certification",
+      name: "Board-Certified in Internal Medicine",
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "Certification",
+      name: "Menopause Society Certified Practitioner (MSCP)",
+    },
+  ],
   url: `${siteConfig.url}/about`,
   worksFor: {
     "@type": "MedicalBusiness",

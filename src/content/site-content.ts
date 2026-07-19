@@ -23,7 +23,7 @@
    are calculated from these automatically.
    ------------------------------------------------------------------------- */
 export const carePlanPricing = {
-  monthlyPayment: 175, // Care plan: dollars per monthly Cherry payment
+  monthlyPayment: 175, // Membership: dollars per monthly Cherry payment
   paymentCount: 13, // Number of monthly payments (Cherry splits 12 months into 13)
   upfrontDiscountPercent: 5, // Percent saved when the plan is paid in full upfront
   consultFee: 399, // One-hour initial consult fee (charged once, before enrolling)
@@ -59,7 +59,7 @@ export const content = {
     tagline: "Proactive, personalized care for women's hormonal health",
     // One-sentence description used by Google and social media previews
     description:
-      "CYRA Wellness is a California telemedicine practice for women's hormonal and metabolic health — perimenopause, menopause, PMDD, PMS, postpartum depression, sexual health, and weight — led by Dr. Mondona Goodwin, DO.",
+      "CYRA Wellness is a California membership-based telemedicine practice for women's hormonal conditions throughout life — perimenopause, menopause, PMS/PMDD, postpartum depression, sexual health, and metabolic health — led by Dr. Mondona Goodwin, DO, a Menopause Society Certified Practitioner.",
     website: "https://drmondona.com", // Live website address (leave as-is unless the domain changes)
     physician: "Dr. Mondona Goodwin, DO", // Full name + credentials
     licensedStates: "Licensed in California", // Where care is offered — California only
@@ -67,7 +67,7 @@ export const content = {
     email: "hello@drmondona.com",
     // Fine-print line at the bottom of the site
     disclaimer:
-      "CYRA Wellness provides cash-pay telemedicine to patients located in California. We do not accept insurance.",
+      "CYRA Wellness is a membership-based, cash-pay practice serving patients located in California. Membership is not billed to insurance, though your insurance is used whenever possible for laboratory testing and prescriptions.",
     // Copyright line at the very bottom
     copyright: "© 2025 CYRA Wellness",
   },
@@ -82,7 +82,7 @@ export const content = {
       { label: "Home", href: "/" },
       { label: "About", href: "/about" },
       { label: "How to Join", href: "/#how-to-join" },
-      { label: "Care Plan", href: "/#care-plan" },
+      { label: "Membership", href: "/#membership" },
       { label: "Compare", href: "/compare" },
     ],
     // The words on the main action button (top-right and mobile bar)
@@ -101,7 +101,7 @@ export const content = {
       headline: "Hormone care that takes control of your *whole* health.",
       // Supporting paragraph under the headline
       subheadline:
-        "Proactive, preventative care for perimenopause, menopause, and the hormonal shifts that shape how you feel. Longer appointments, a plan built around you, and a physician who follows closely — by secure video across California.",
+        "A membership-based practice for women navigating hormonal conditions throughout life — not just menopause. Longer appointments, a plan built around you, and a physician who follows closely, by secure video across California.",
       primaryCta: "Request More Information", // Main button text
       secondaryCta: "How to Join", // Second button text (jumps to the steps)
       // Short trust points shown as a row under the buttons
@@ -119,12 +119,12 @@ export const content = {
       heading: "Hormone health is about far more than hot flashes.",
       // Main paragraphs of the philosophy section
       body: [
-        "Your hormones don't just affect how you feel day to day — they shape your bones, your weight, your heart health, your risk of insulin resistance and diabetes, your cholesterol, and even your memory and focus. When we treat them thoughtfully, we're protecting all of it.",
-        "That's why CYRA is built around a proactive, preventative approach: longer appointments, careful follow-up, and a plan designed for your long-term health, not just the symptom in front of us. We're not just treating symptoms — we're taking control of your health.",
+        "Your hormones don't just affect how you feel day to day — they shape your bones, your weight, your heart health, your risk of insulin resistance and diabetes, your cholesterol, and even your memory and focus. My goal isn't simply to prescribe hormones; it's to help you feel better today while protecting your long-term health.",
+        "That's why I built CYRA around a proactive, evidence-based approach: longer appointments, careful follow-up, and a plan designed for your long-term cardiometabolic health, not just the symptom in front of us. I'm not just treating symptoms — together we take control of your whole health.",
       ],
       // The pull-quote in larger text
       pullQuote:
-        "We're not just treating symptoms — we're taking control of your health.",
+        "I'm not just treating symptoms — together we take control of your whole health.",
       // The grid of what hormone health touches (short labels)
       affects: [
         { title: "Bone strength", body: "Protecting bone density as hormones shift." },
@@ -136,10 +136,21 @@ export const content = {
       ],
     },
 
+    // ---- COLLABORATIVE APPROACH: works alongside your PCP and OB/GYN ----
+    collaborative: {
+      label: "Working Together",
+      heading: "A collaborative approach to your care.",
+      // First-person paragraphs from Dr. Goodwin
+      body: [
+        "Think of me as your women's hormone specialist — someone who works alongside your primary care physician and OB/GYN, not in place of them. Your PCP remains essential for routine and preventive care and other conditions, and your OB/GYN continues your gynecologic care and screenings.",
+        "When it's helpful, I'm glad to communicate and coordinate directly with your physicians, so your care stays seamless, connected, and centered around you.",
+      ],
+    },
+
     // ---- WHAT WE TREAT: the simple grid of conditions ----
     whatWeTreat: {
       label: "What We Treat",
-      heading: "Comprehensive care for women's hormonal and metabolic health.",
+      heading: "Care for hormonal conditions throughout life — not just menopause.",
       // Each card: a title and a one-line description
       items: [
         {
@@ -151,7 +162,7 @@ export const content = {
           body: "Personalized hormone therapy and support for this next chapter of your health.",
         },
         {
-          title: "PMDD & PMS",
+          title: "PMS & PMDD",
           body: "Real relief for the mood, physical, and cyclical symptoms that disrupt your month.",
         },
         {
@@ -159,11 +170,11 @@ export const content = {
           body: "Thoughtful, hormone-informed care during one of the most demanding times in your life.",
         },
         {
-          title: "Vaginal Pain & Dryness",
+          title: "Vaginal Dryness & Pain",
           body: "Effective treatment for discomfort that too often goes unaddressed.",
         },
         {
-          title: "Women's Sexual Health",
+          title: "Sexual Health & Libido",
           body: "Libido, energy, and intimacy — discussed openly and treated seriously.",
         },
         {
@@ -174,6 +185,18 @@ export const content = {
           title: "Metabolic Health",
           body: "Insulin resistance, cholesterol, and long-term prevention as part of your whole picture.",
         },
+        {
+          title: "Fatigue",
+          body: "Persistent low energy that hormones, sleep, and metabolism can all drive — evaluated as a whole, not dismissed.",
+        },
+        {
+          title: "Sleep Issues",
+          body: "Trouble falling or staying asleep, addressed as part of your hormonal and metabolic picture.",
+        },
+        {
+          title: "Contraception",
+          body: "Guidance on contraception that fits your health, your stage of life, and your goals.",
+        },
       ],
     },
 
@@ -183,7 +206,22 @@ export const content = {
       heading: "Yes, women need testosterone too.",
       body: [
         "It's rarely discussed, but women have testosterone — and it matters. Levels decline steadily across a woman's lifetime, and that decline can quietly affect your mood, your energy, and your libido.",
-        "When your symptoms and labs support it, Dr. Goodwin includes testosterone as a core part of your care, with careful dosing and monitoring. It's one of the most underused tools in women's hormone health.",
+        "When your symptoms and labs support it, I include testosterone as a core part of your care, with careful dosing and monitoring. It's one of the most underused tools in women's hormone health.",
+      ],
+    },
+
+    // ---- IS CYRA RIGHT FOR YOU: the six differentiators ----
+    rightForYou: {
+      label: "Is CYRA Right for You?",
+      heading: "Built for women who want more from their care.",
+      intro: "You'll feel at home here if you're looking for:",
+      items: [
+        "Specialized expertise in women's hormone health",
+        "Longer, thoughtful appointments",
+        "Direct access to your physician",
+        "Personalized care — not one-size-fits-all protocols",
+        "Close follow-up throughout your treatment",
+        "A focus on both symptom relief and long-term prevention",
       ],
     },
 
@@ -195,44 +233,47 @@ export const content = {
         "Joining is simple and unhurried. Here's exactly what to expect from your first conversation to lasting change.",
       steps: [
         {
-          title: "Start the conversation",
+          title: "Start with a free Discovery Call",
           // Optional short label shown next to the step title
-          meta: "Free call or book directly",
-          body: "Schedule a call with our patient coordinator to learn how the practice works — or, if you're ready, book your one-hour consult directly.",
+          meta: "Free — or book your consult directly",
+          body: "Book a free Discovery Call with our Patient Care Coordinator to learn how the practice, membership, and pricing work. It's a conversation about the practice — not a medical appointment, and no medical advice is given. If you have questions best answered by me personally, the coordinator can arrange that. Already know you're ready? You can book your consultation directly.",
         },
         {
-          title: "Your one-hour consult",
+          title: "Your comprehensive consultation",
           // Shows the length and the one-time consult fee (from carePlanPricing.consultFee)
           meta: `60 minutes · ${formatUsd(carePlanPricing.consultFee)}`,
-          body: "A comprehensive review of your history, your symptoms, and your goals with Dr. Goodwin — resulting in a personalized treatment plan built for you.",
+          body: "A completely nonbinding 60-minute consultation with me — no obligation to join afterward. Together we'll review your medical history, current symptoms, previous treatments, lifestyle, goals, and lab history, answer your questions, and walk through evidence-based treatment options. You'll leave with a clear understanding of my recommendations and can then decide whether membership is right for you.",
         },
         {
-          title: "Begin your care plan",
-          meta: "1 year",
-          body: "Hormone changes are gradual — most take 8 to 12 weeks to take full effect — so your care plan runs a full year to create real, lasting change. Once enrolled, you'll have follow-up appointments every 4 to 6 weeks (sooner if needed) and direct communication with Dr. Goodwin between visits.",
+          title: "Begin your membership",
+          meta: "1-year model",
+          body: "Hormone therapy is rarely fixed in one visit — most adjustments take 8 to 12 weeks to show their full effect — so membership follows a one-year model built for real, lasting change. You'll have follow-up appointments every 4 to 6 weeks (sooner if needed) and direct messaging with me between visits.",
         },
       ],
     },
 
-    // ---- CARE PLAN: what's included + pricing ----
+    // ---- MEMBERSHIP: what's included + pricing ----
+    // (Section shows on the home page as "Membership" at the #membership anchor.
+    //  The key is still named "carePlan" in code — leave it; only the words matter.)
     carePlan: {
-      label: "The Care Plan",
-      heading: "Everything your year of care includes.",
+      label: "Membership",
+      heading: "Everything your membership includes.",
       intro:
-        "Your care plan is a full year of close, personalized support — not a subscription you have to think about. Here's what's included:",
+        "Your membership is a full year of close, personalized support — direct access to me, not a subscription you have to think about. Here's what's included:",
       // The checklist of what's included
       includes: [
-        "Unlimited follow-up visits — as many as you need",
-        "Unlimited direct messaging with Dr. Goodwin",
-        "35% off professional-grade supplements",
-        "Personalized nutrition guidance",
+        "Unlimited follow-up appointments — as many as you need",
+        "Direct messaging with me — not intermediate staff",
+        "Ongoing treatment adjustments as your body responds",
+        "Support between visits",
+        "Personalized nutrition counseling",
         "Strength training guidance",
-        "Lifestyle recommendations",
+        "Personalized exercise recommendations",
       ],
       // Pricing box heading
       pricingHeading: "Simple, transparent pricing",
       pricingSubhead:
-        "Your one-year care plan, with two ways to pay. Financing is available through Cherry.",
+        "Your one-year membership, with two ways to pay. Financing is available through Cherry.",
       // The two payment options. The prices are calculated from the numbers
       // at the top of this file — you don't type them here.
       options: {
@@ -253,9 +294,28 @@ export const content = {
       },
       // Small print under the pricing box. The consult price is pulled from
       // carePlanPricing.consultFee at the top of this file — change it there.
-      note: `The one-hour consult is a separate, one-time fee of ${formatUsd(
+      note: `The comprehensive consultation is a separate, one-time fee of ${formatUsd(
         carePlanPricing.consultFee,
-      )} and is required before enrolling in a care plan. Medication and lab costs are billed separately.`,
+      )} and is required before enrolling in membership. Medication and lab costs are billed separately.`,
+    },
+
+    // ---- INSURANCE & COST SAVINGS: membership is cash-pay, but costs are kept down ----
+    insurance: {
+      label: "Insurance & Cost Savings",
+      heading: "Membership is cash-pay — but I work to keep your other costs down.",
+      intro:
+        "Membership itself is a flat, cash-pay fee, with financing available through Cherry. But whenever possible, I use your insurance for laboratory testing and prescriptions, and I look for every opportunity to lower your medication costs.",
+      // The savings tools (these reduce medication and supplement costs — they are
+      // NOT financing; Cherry remains the only way to finance membership itself)
+      items: [
+        "Your insurance used whenever possible for labs and prescriptions",
+        "GoodRx and pharmacy coupons",
+        "Manufacturer savings programs",
+        "Specialty pharmacy options",
+        "35% off professional-grade supplements",
+      ],
+      // Keeps the financing-vs-savings distinction clean
+      note: "Cherry finances your membership; GoodRx, coupons, and savings programs simply reduce what you pay for medications and supplements.",
     },
 
     // ---- COMPARE TEASER: small link on the home page to the /compare page ----
@@ -308,22 +368,22 @@ export const content = {
         {
           question: "How do I get started?",
           answer:
-            "Two ways: schedule a call with our patient coordinator to learn how the practice works, or book your one-hour consult with Dr. Goodwin directly. From there, you'll receive a personalized treatment plan and can begin your care plan.",
+            "Two ways: book a free Discovery Call with our Patient Care Coordinator to learn how the practice, membership, and pricing work, or book your comprehensive consultation with Dr. Goodwin directly. The Discovery Call is about the practice — it isn't a medical appointment and no medical advice is given, but the coordinator can arrange for practice-related questions to reach Dr. Goodwin.",
         },
         {
-          question: "What happens during the one-hour consult?",
+          question: "Is the consultation binding?",
           answer:
-            "Dr. Goodwin does a comprehensive review of your health history, your symptoms, and your goals, then builds a personalized treatment plan. A full hour means nothing gets rushed.",
+            "No. The 60-minute comprehensive consultation is completely nonbinding, with no obligation to join afterward. Dr. Goodwin reviews your history, symptoms, and goals and walks through your options, and you'll leave with a clear understanding of her recommendations — then you decide whether membership is right for you.",
         },
         {
-          question: "Why does the care plan run a full year?",
+          question: "Why does membership run a full year?",
           answer:
-            "Hormone changes are gradual — most treatments take 8 to 12 weeks to take full effect. A full year gives your body the time it needs to reach real, lasting change, with close follow-up along the way.",
+            "Hormone therapy is rarely fixed in one visit — most adjustments take 8 to 12 weeks to show their full effect. A one-year membership gives your body the time it needs for real, lasting change, with close follow-up along the way: appointments every 4 to 6 weeks (sooner if needed) and direct messaging with Dr. Goodwin between visits.",
         },
         {
-          question: "How often will I see Dr. Goodwin?",
+          question: "Do I keep my primary care doctor and OB/GYN?",
           answer:
-            "Once you're enrolled, you'll have follow-up appointments every 4 to 6 weeks — sooner if you need them — plus direct messaging with Dr. Goodwin between visits.",
+            "Yes — please do. Dr. Goodwin is your women's hormone specialist, working alongside your PCP and OB/GYN, not replacing them. Your PCP continues your routine and preventive care, your OB/GYN continues your gynecologic care and screenings, and Dr. Goodwin is glad to coordinate with them when it's helpful.",
         },
         {
           question: "Do you prescribe testosterone for women?",
@@ -332,16 +392,18 @@ export const content = {
         },
         {
           question: "How does payment and financing work?",
-          answer: `The one-year care plan is ${formatUsd(
+          answer: `Membership is ${formatUsd(
             carePlanPricing.monthlyPayment,
           )} per month for ${carePlanPricing.paymentCount} payments through Cherry with approved credit, or ${formatUsd(
             carePlanUpfrontTotal,
-          )} when you pay in full (a ${carePlanPricing.upfrontDiscountPercent}% savings). Cherry is our financing partner; checking your rate doesn't affect your credit score.`,
+          )} when you pay in full (a ${carePlanPricing.upfrontDiscountPercent}% savings). Cherry is our financing partner; checking your rate doesn't affect your credit score. The comprehensive consultation is a separate, one-time ${formatUsd(
+            carePlanPricing.consultFee,
+          )} fee.`,
         },
         {
           question: "Do you take insurance?",
           answer:
-            "No — CYRA is a cash-pay practice by design, which is what makes longer appointments and truly personalized care possible. Care plan services are often eligible for HSA and FSA funds; we can provide documentation on request.",
+            "Membership is cash-pay by design — that's what makes longer appointments and truly personalized care possible. But Dr. Goodwin uses your insurance whenever possible for laboratory testing and prescriptions, and works to lower medication costs through GoodRx, manufacturer savings programs, specialty pharmacies, and pharmacy coupons, plus 35% off professional-grade supplements. Membership fees are often eligible for HSA and FSA funds; we can provide documentation on request.",
         },
       ],
     },
@@ -349,10 +411,11 @@ export const content = {
     // ---- FINAL CALL TO ACTION at the bottom of the home page ----
     finalCta: {
       heading: "Your best health starts with one conversation.",
-      body: "Reach out to learn more about the practice, or book your consult with Dr. Goodwin.",
+      body: "Reach out to learn more about the practice, or book your consultation with me.",
       cta: "Request More Information",
       // Small line beneath the button
-      footnote: "California | Cash-Pay Telehealth | Board-Certified Physician",
+      footnote:
+        "California | Membership-Based Telehealth | Menopause Society Certified Practitioner (MSCP)",
     },
   },
 
@@ -367,32 +430,35 @@ export const content = {
     // Name and credential badges next to the bio
     name: "Dr. Mondona Goodwin, DO",
     badges: [
-      "Board-Certified Physician",
+      "Board-Certified in Internal Medicine",
+      "Menopause Society Certified Practitioner (MSCP)",
       "Doctor of Osteopathic Medicine",
       "Licensed in California",
     ],
     // The label under the photo placeholder (replace the image later)
     photoCaption: "Professional headshot placeholder — warm and approachable",
-    // The bio paragraphs
+    // The bio paragraphs (Dr. Goodwin's own first-person voice)
     bio: [
-      "Dr. Mondona Goodwin trained as a Doctor of Osteopathic Medicine — a path she chose because osteopathic medicine starts from the premise that the body is one interconnected system, not a collection of separate complaints. Through her board certification and years of practice, one pattern kept repeating: women arriving with real, life-altering symptoms and leaving with a shrug or the words 'that's just part of getting older.'",
-      "Women's hormonal health became her focus because it sits exactly where that dismissal is most common — and where good medicine can change the most. Hormones touch sleep, mood, weight, bones, heart health, and identity all at once, yet the average visit gives them fifteen rushed minutes and a single lab value.",
-      "Her approach is proactive and preventative. She doesn't treat a hot flash; she treats a woman — her metabolism and her mood alongside her hormones, her long-term risks alongside her symptoms, her goals alongside her labs. Longer appointments and close follow-up aren't a luxury in her practice; they're how good hormone care actually works.",
-      "What she wants every patient to feel when a visit ends is simple: heard, taken seriously, and clear on the plan — with a physician who will still be there at the next visit, and the one after that.",
+      "I'm Dr. Mondona Goodwin, a board-certified Internal Medicine physician with more than ten years of clinical experience. I trained as a Doctor of Osteopathic Medicine — a path I chose because osteopathic medicine starts from the premise that the body is one interconnected system, not a collection of separate complaints.",
+      "Over the years I've pursued extensive additional training in perimenopause, menopause, hormone therapy, metabolic health, and women's midlife health, and I'm a Menopause Society Certified Practitioner (MSCP). One pattern kept repeating in my practice: women arriving with real, life-altering symptoms and leaving with a shrug, or the words 'that's just part of getting older.'",
+      "My approach is proactive and evidence-based. I don't treat a hot flash; I treat a woman — her metabolism and her mood alongside her hormones, her long-term risks alongside her symptoms, her goals alongside her labs. And I work as your women's hormone specialist alongside your primary care physician and OB/GYN, coordinating with them so your care stays seamless.",
+      "What I want every patient to feel when a visit ends is simple: heard, taken seriously, and clear on the plan — with a physician who will still be there at the next visit, and the one after that.",
     ],
-    // The pull-quote and signature
+    // The pull-quote and signature (Dr. Goodwin's personal story)
     quote:
-      "I kept seeing women being told their symptoms were 'normal.' They weren't. And there was so much we could do about it.",
+      "Creating CYRA Wellness was deeply personal. My own hormonal and weight journey inspired me to build the practice I always wished existed — one centered on personalized, evidence-based care and long-term partnerships with patients.",
     signature: "Dr. Goodwin",
     // Credential chips shown in a row
     credentials: [
       "Doctor of Osteopathic Medicine (DO)",
-      "Board-Certified Physician",
+      "Board-Certified in Internal Medicine",
+      "Menopause Society Certified Practitioner (MSCP)",
+      "10+ Years of Clinical Experience",
       "California Medical License",
     ],
     // The call-to-action band at the bottom of the About page
     cta: {
-      heading: "Meet her yourself.",
+      heading: "Meet me yourself.",
       body: "The easiest way to know if CYRA is right for you is to start the conversation.",
       button: "Request More Information",
     },
@@ -434,7 +500,7 @@ export const content = {
         },
         {
           title: "How treatment is structured",
-          body: "Month-to-month subscriptions create financial flexibility but also incentivize platforms to retain subscribers rather than graduate them. Care plans create a different dynamic.",
+          body: "Month-to-month subscriptions create financial flexibility but also incentivize platforms to retain subscribers rather than graduate them. A one-year membership creates a different dynamic.",
         },
         {
           title: "What's included vs. billed separately",
@@ -442,7 +508,7 @@ export const content = {
         },
         {
           title: "Financing options",
-          body: "If a care plan or subscription is a financial stretch, does the platform offer financing? A Cherry integration matters for accessibility.",
+          body: "If a membership or subscription is a financial stretch, does the platform offer financing? A Cherry integration matters for accessibility.",
         },
         {
           title: "Continuity of care",
@@ -488,7 +554,7 @@ export const content = {
         {
           criterion: "Prescribing Provider Type",
           cells: [
-            { note: "Board-Certified DO (Physician)" },
+            { note: "Board-Certified DO, MSCP (Physician)" },
             { note: "Nurse Practitioner (primary)" },
             { note: "Physician-designed / NP delivery" },
             { note: "Physician review / NP primary" },
@@ -530,9 +596,9 @@ export const content = {
           ],
         },
         {
-          criterion: "Care Plan vs. Subscription Model",
+          criterion: "Membership vs. Subscription Model",
           cells: [
-            { verdict: "yes", note: "12-month care plan" },
+            { verdict: "yes", note: "12-month membership" },
             { verdict: "no", note: "Monthly subscription" },
             { verdict: "no", note: "Monthly subscription" },
             { verdict: "no", note: "Monthly subscription" },
@@ -666,10 +732,10 @@ export const content = {
     // ---- FINAL CALL TO ACTION at the bottom of the Compare page ----
     finalCta: {
       heading: "Want to see if CYRA is the right fit?",
-      body: "Reach out to learn more about the practice, or book your consult with Dr. Goodwin — no pressure to enroll.",
+      body: "Reach out to learn more about the practice — including how CYRA works alongside your existing PCP and OB/GYN — or book your consultation with Dr. Goodwin. No pressure to enroll.",
       cta: "Request More Information", // Main button
-      // The quieter link under the button (always points to the Care Plan section)
-      secondaryLink: "Or read more about how our care plans work",
+      // The quieter link under the button (always points to the Membership section)
+      secondaryLink: "Or read more about how membership works",
     },
   },
 
@@ -679,15 +745,15 @@ export const content = {
   book: {
     heading: "Request More Information",
     subheadline:
-      "Tell us a little about you and what you're hoping to change. Our patient coordinator will reach out to help you schedule a call or book your one-hour consult with Dr. Goodwin.",
+      "Tell us a little about you and what you're hoping to change. Our Patient Care Coordinator will reach out to help you schedule a free Discovery Call or book your comprehensive consultation with Dr. Goodwin.",
     // Short reassurance points
     reassurances: [
-      "No commitment required",
-      "Speak with our patient coordinator first, or book your consult directly",
+      "No commitment required — the consultation is completely nonbinding",
+      "Start with a free Discovery Call, or book your consultation directly",
       "Get your questions answered before enrolling",
     ],
     // The label inside the scheduling placeholder box
-    schedulerLabel: "Scheduling embed — request info or book your consult",
+    schedulerLabel: "Scheduling embed — request info or book your consultation",
     // The line under the scheduler
     emailPrompt: "Prefer to reach out directly? Email us at",
   },

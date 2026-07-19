@@ -11,9 +11,15 @@ import {
   Droplets,
   Flower2,
   Heart,
+  HeartHandshake,
   HeartPulse,
+  Moon,
+  PiggyBank,
+  Pill,
   Scale,
+  Sparkles,
   Sunrise,
+  Zap,
   type LucideIcon,
 } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
@@ -56,6 +62,9 @@ const treatIcons: LucideIcon[] = [
   HeartPulse,
   Scale,
   Activity,
+  Zap,
+  Moon,
+  Pill,
 ];
 
 const testimonials: Testimonial[] = home.testimonials.items.map((t) => ({ ...t }));
@@ -165,8 +174,28 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Section 3 — What we treat */}
+      {/* Section 3 — Collaborative approach */}
       <Section tone="surface">
+        <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
+          <FadeUp>
+            <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+              <HeartHandshake className="h-6 w-6" aria-hidden />
+            </span>
+            <SectionLabel className="mt-5">{home.collaborative.label}</SectionLabel>
+            <h2 className="heading-section">{home.collaborative.heading}</h2>
+          </FadeUp>
+          <FadeUp delay={0.12} className="space-y-5">
+            {home.collaborative.body.map((paragraph) => (
+              <p key={paragraph.slice(0, 40)} className="text-body-copy">
+                {paragraph}
+              </p>
+            ))}
+          </FadeUp>
+        </div>
+      </Section>
+
+      {/* Section 4 — What we treat */}
+      <Section>
         <FadeUp className="mx-auto max-w-3xl text-center">
           <SectionLabel>{home.whatWeTreat.label}</SectionLabel>
           <h2 className="heading-section">{home.whatWeTreat.heading}</h2>
@@ -189,8 +218,8 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Section 4 — Testosterone */}
-      <Section>
+      {/* Section 5 — Testosterone */}
+      <Section tone="surface">
         <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-2">
           <FadeUp>
             <SectionLabel>{home.testosterone.label}</SectionLabel>
@@ -206,7 +235,33 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Section 5 — How to join (3 steps) */}
+      {/* Section 6 — Is CYRA right for you? */}
+      <Section>
+        <div className="mx-auto max-w-3xl">
+          <FadeUp className="text-center">
+            <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+              <Sparkles className="h-6 w-6" aria-hidden />
+            </span>
+            <SectionLabel className="mt-5">{home.rightForYou.label}</SectionLabel>
+            <h2 className="heading-section">{home.rightForYou.heading}</h2>
+            <p className="text-subheadline mt-5">{home.rightForYou.intro}</p>
+          </FadeUp>
+          <FadeUp delay={0.12} className="mx-auto mt-10 max-w-xl">
+            <ul className="grid gap-x-8 gap-y-3.5 sm:grid-cols-2">
+              {home.rightForYou.items.map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <Check className="h-3.5 w-3.5" strokeWidth={3} aria-hidden />
+                  </span>
+                  <span className="text-body-copy">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </FadeUp>
+        </div>
+      </Section>
+
+      {/* Section 7 — How to join (3 steps) */}
       <Section tone="surface" id="how-to-join" className="scroll-mt-24">
         <FadeUp className="mx-auto max-w-3xl text-center">
           <SectionLabel>{home.howToJoin.label}</SectionLabel>
@@ -238,8 +293,8 @@ export default function HomePage() {
         </FadeUp>
       </Section>
 
-      {/* Section 6 — Care plan inclusions + pricing */}
-      <Section id="care-plan" className="scroll-mt-24">
+      {/* Section 8 — Membership inclusions + pricing */}
+      <Section id="membership" className="scroll-mt-24">
         <FadeUp className="mx-auto max-w-3xl text-center">
           <SectionLabel>{home.carePlan.label}</SectionLabel>
           <h2 className="heading-section">{home.carePlan.heading}</h2>
@@ -314,8 +369,37 @@ export default function HomePage() {
         </FadeUp>
       </Section>
 
-      {/* Section 7 — Testimonials */}
+      {/* Section 9 — Insurance & cost savings */}
       <Section tone="surface">
+        <div className="mx-auto max-w-3xl">
+          <FadeUp className="text-center">
+            <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+              <PiggyBank className="h-6 w-6" aria-hidden />
+            </span>
+            <SectionLabel className="mt-5">{home.insurance.label}</SectionLabel>
+            <h2 className="heading-section">{home.insurance.heading}</h2>
+            <p className="text-subheadline mt-5">{home.insurance.intro}</p>
+          </FadeUp>
+          <FadeUp delay={0.12} className="mt-10">
+            <ul className="mx-auto max-w-xl space-y-3.5 rounded-[3px] border border-border bg-background p-6 shadow-card md:p-8">
+              {home.insurance.items.map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <Check className="h-3.5 w-3.5" strokeWidth={3} aria-hidden />
+                  </span>
+                  <span className="text-body-copy">{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mx-auto mt-6 max-w-xl text-center text-small text-foreground-muted">
+              {home.insurance.note}
+            </p>
+          </FadeUp>
+        </div>
+      </Section>
+
+      {/* Section 10 — Testimonials */}
+      <Section>
         <FadeUp className="mx-auto max-w-3xl text-center">
           <SectionLabel>{home.testimonials.label}</SectionLabel>
           <h2 className="heading-section">{home.testimonials.heading}</h2>
@@ -325,8 +409,8 @@ export default function HomePage() {
         </FadeUp>
       </Section>
 
-      {/* Section 8 — FAQ */}
-      <Section>
+      {/* Section 11 — FAQ */}
+      <Section tone="surface">
         <div className="mx-auto max-w-3xl">
           <FadeUp className="text-center">
             <SectionLabel>{home.faq.label}</SectionLabel>
@@ -340,7 +424,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Section 9 — Final CTA */}
+      {/* Section 12 — Final CTA */}
       <Section tone="primary">
         <FadeUp className="mx-auto max-w-2xl py-4 text-center md:py-8">
           <h2 className="font-heading text-section-mobile text-white md:text-section">

@@ -168,7 +168,7 @@ export default function ComparePage() {
             </Link>
           </div>
           <Link
-            href="/#care-plan"
+            href="/#membership"
             className="mt-6 inline-flex items-center gap-1.5 text-small font-medium text-primary hover:text-primary-light"
           >
             {compare.finalCta.secondaryLink}

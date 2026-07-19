@@ -107,15 +107,18 @@ site. Here's the map:
 
 | In the file (look for this label) | Where it shows up on the site |
 | --- | --- |
-| `carePlanPricing` (very top) | The care-plan **prices** ($175/month, 13 payments, 5% upfront discount) **and the $399 one-hour consult fee**. These are **numbers**, so change only the number — no quotes, no `$`. |
+| `carePlanPricing` (very top) | The **membership prices** ($175/month, 13 payments, 5% upfront discount) **and the $399 consultation fee**. These are **numbers**, so change only the number — no quotes, no `$`. (The key name still reads `carePlanPricing` in code — leave it as-is; only the numbers matter.) |
 | `brand` | Practice name, tagline, description, email, and the fine print in the footer |
 | `nav` | The menu links at the top and the main button text |
 | `home.hero` | The big headline and buttons at the very top of the home page |
 | `home.philosophy` | The "more than hot flashes" section and its grid |
+| `home.collaborative` | The "A collaborative approach" section (working alongside your PCP and OB/GYN) |
 | `home.whatWeTreat` | The grid of conditions you treat |
 | `home.testosterone` | The "women need testosterone too" section |
-| `home.howToJoin` | The **3 steps** to join |
-| `home.carePlan` | What's included in the care plan **and** the pricing box |
+| `home.rightForYou` | The "Is CYRA right for you?" checklist of what makes the practice different |
+| `home.howToJoin` | The **3 steps** to join (free Discovery Call · consultation · membership) |
+| `home.carePlan` | The **Membership** section — what's included **and** the pricing box (the code label still reads `carePlan`, but everything shown says "membership"; it lives at the `#membership` link) |
+| `home.insurance` | The "Insurance & cost savings" section (membership is cash-pay; insurance + savings programs for labs, meds, and supplements) |
 | `home.compareTeaser` | The little "see how CYRA compares" link on the home page |
 | `home.testimonials` | The patient quotes that rotate near the bottom |
 | `home.faq` | The frequently asked questions |
@@ -132,12 +135,18 @@ site. Here's the map:
 
 ## A few notes specific to your practice
 
-- **Prices:** The care-plan pricing shown on the site is calculated from the
+- **Prices:** The membership pricing shown on the site is calculated from the
   three numbers at the very top of the file (`monthlyPayment`, `paymentCount`,
   `upfrontDiscountPercent`). Change the number there and every price on the site
   updates automatically — you don't type dollar amounts anywhere else.
 - **Financing:** Cherry is the only financing partner mentioned. Please keep it
-  that way in any copy you write.
+  that way in any copy you write. The savings programs in the "Insurance & cost
+  savings" section (GoodRx, coupons, manufacturer programs, supplement discounts)
+  lower **medication** costs — they are not financing for your membership, and
+  should stay described that way so the distinction stays clear.
+- **Membership vs. insurance:** Membership itself is cash-pay and is not billed
+  to insurance, but your insurance **is** used when possible for labs and
+  prescriptions. Please keep both halves of that true.
 - **California only:** The practice serves patients located in California.
   Please don't add other states.
 - **Placeholders:** Anything written in `[SQUARE BRACKETS AND CAPITALS]` is a
@@ -150,7 +159,7 @@ site. Here's the map:
 
 ## Adding or removing list items (optional, slightly advanced)
 
-Some sections are **lists** — like the conditions you treat, the care-plan
+Some sections are **lists** — like the conditions you treat, the membership
 inclusions, or the FAQ. Each item sits between `{ }` and ends with a comma.
 To **remove** one, delete the whole `{ ... },` block (including its comma). To
 **add** one, copy an existing block, paste it right after, and change the text.
