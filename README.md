@@ -121,5 +121,5 @@ horizontal scroll of the comparison table).
 
 Calendly embed (`src/components/ui/calendly-placeholder.tsx`), professional
 headshot photography, patient portal URL, and full content for
-`/privacy-policy` and `/terms-of-service`. (The one-hour consult fee is now
-confirmed at $399 — `carePlanPricing.consultFee`.)
+`/privacy-policy` and `/terms-of-service`. (The comprehensive consultation
+fee is confirmed at $399 — `carePlanPricing.consultFee`.)

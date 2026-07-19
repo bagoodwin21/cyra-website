@@ -14,7 +14,7 @@ const physicianEntity = {
   honorificSuffix: "DO",
   medicalSpecialty: ["Gynecologic", "Endocrinology", "PrimaryCare"],
   description:
-    "Board-certified in Internal Medicine and a Menopause Society Certified Practitioner (MSCP), specializing in women's hormonal and metabolic health — perimenopause, menopause, PMDD, PMS, postpartum depression, sexual health, testosterone for women, and weight management.",
+    "Board-certified in Internal Medicine and a Menopause Society Certified Practitioner (MSCP), specializing in women's hormonal and metabolic health — perimenopause, menopause, PMS/PMDD, postpartum depression, sexual health, testosterone for women, and weight management.",
   hasCredential: [
     {
       "@type": "EducationalOccupationalCredential",

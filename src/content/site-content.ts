@@ -368,27 +368,27 @@ export const content = {
         {
           question: "How do I get started?",
           answer:
-            "Two ways: book a free Discovery Call with our Patient Care Coordinator to learn how the practice, membership, and pricing work, or book your comprehensive consultation with Dr. Goodwin directly. The Discovery Call is about the practice — it isn't a medical appointment and no medical advice is given, but the coordinator can arrange for practice-related questions to reach Dr. Goodwin.",
+            "Two ways: book a free Discovery Call with our Patient Care Coordinator to learn how the practice, membership, and pricing work, or book your comprehensive consultation with me directly. The Discovery Call is about the practice — it isn't a medical appointment and no medical advice is given, but the coordinator can arrange for practice-related questions to reach me.",
         },
         {
           question: "Is the consultation binding?",
           answer:
-            "No. The 60-minute comprehensive consultation is completely nonbinding, with no obligation to join afterward. Dr. Goodwin reviews your history, symptoms, and goals and walks through your options, and you'll leave with a clear understanding of her recommendations — then you decide whether membership is right for you.",
+            "No. The 60-minute comprehensive consultation is completely nonbinding, with no obligation to join afterward. I review your history, symptoms, and goals and walk through your options, and you'll leave with a clear understanding of my recommendations — then you decide whether membership is right for you.",
         },
         {
           question: "Why does membership run a full year?",
           answer:
-            "Hormone therapy is rarely fixed in one visit — most adjustments take 8 to 12 weeks to show their full effect. A one-year membership gives your body the time it needs for real, lasting change, with close follow-up along the way: appointments every 4 to 6 weeks (sooner if needed) and direct messaging with Dr. Goodwin between visits.",
+            "Hormone therapy is rarely fixed in one visit — most adjustments take 8 to 12 weeks to show their full effect. A one-year membership gives your body the time it needs for real, lasting change, with close follow-up along the way: appointments every 4 to 6 weeks (sooner if needed) and direct messaging with me between visits.",
         },
         {
           question: "Do I keep my primary care doctor and OB/GYN?",
           answer:
-            "Yes — please do. Dr. Goodwin is your women's hormone specialist, working alongside your PCP and OB/GYN, not replacing them. Your PCP continues your routine and preventive care, your OB/GYN continues your gynecologic care and screenings, and Dr. Goodwin is glad to coordinate with them when it's helpful.",
+            "Yes — please do. Think of me as your women's hormone specialist, working alongside your PCP and OB/GYN, not replacing them. Your PCP continues your routine and preventive care, your OB/GYN continues your gynecologic care and screenings, and I'm glad to coordinate with them when it's helpful.",
         },
         {
           question: "Do you prescribe testosterone for women?",
           answer:
-            "Yes. Women have testosterone, and it affects mood, energy, and libido. When your labs and symptoms support it, Dr. Goodwin includes testosterone as a core part of your care, with careful dosing and monitoring.",
+            "Yes. Women have testosterone, and it affects mood, energy, and libido. When your labs and symptoms support it, I include testosterone as a core part of your care, with careful dosing and monitoring.",
         },
         {
           question: "How does payment and financing work?",
@@ -403,7 +403,7 @@ export const content = {
         {
           question: "Do you take insurance?",
           answer:
-            "Membership is cash-pay by design — that's what makes longer appointments and truly personalized care possible. But Dr. Goodwin uses your insurance whenever possible for laboratory testing and prescriptions, and works to lower medication costs through GoodRx, manufacturer savings programs, specialty pharmacies, and pharmacy coupons, plus 35% off professional-grade supplements. Membership fees are often eligible for HSA and FSA funds; we can provide documentation on request.",
+            "Membership is cash-pay by design — that's what makes longer appointments and truly personalized care possible. But I use your insurance whenever possible for laboratory testing and prescriptions, and I work to lower medication costs through GoodRx, manufacturer savings programs, specialty pharmacies, and pharmacy coupons, plus 35% off professional-grade supplements. Membership fees are often eligible for HSA and FSA funds; we can provide documentation on request.",
         },
       ],
     },
