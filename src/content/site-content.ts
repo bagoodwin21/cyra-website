@@ -296,7 +296,7 @@ export const content = {
       // carePlanPricing.consultFee at the top of this file — change it there.
       note: `The comprehensive consultation is a separate, one-time fee of ${formatUsd(
         carePlanPricing.consultFee,
-      )} and is required before enrolling in membership. Medication and lab costs are billed separately.`,
+      )} and is required before enrolling in membership — and it's credited toward your membership when you enroll within 14 days of your consultation. Medication and lab costs are billed separately.`,
     },
 
     // ---- INSURANCE & COST SAVINGS: membership is cash-pay, but costs are kept down ----
@@ -309,10 +309,13 @@ export const content = {
       // NOT financing; Cherry remains the only way to finance membership itself)
       items: [
         "Your insurance used whenever possible for labs and prescriptions",
+        "Convenient blood draws at Quest locations near you",
         "GoodRx and pharmacy coupons",
         "Manufacturer savings programs",
         "Specialty pharmacy options",
         "35% off professional-grade supplements",
+        "HSA and FSA funds accepted for membership",
+        "Superbills provided for possible out-of-network reimbursement",
       ],
       // Keeps the financing-vs-savings distinction clean
       note: "Cherry finances your membership; GoodRx, coupons, and savings programs simply reduce what you pay for medications and supplements.",
@@ -398,12 +401,17 @@ export const content = {
             carePlanUpfrontTotal,
           )} when you pay in full (a ${carePlanPricing.upfrontDiscountPercent}% savings). Cherry is our financing partner; checking your rate doesn't affect your credit score. The comprehensive consultation is a separate, one-time ${formatUsd(
             carePlanPricing.consultFee,
-          )} fee.`,
+          )} fee — credited toward your membership when you enroll within 14 days of your consultation.`,
         },
         {
           question: "Do you take insurance?",
           answer:
-            "Membership is cash-pay by design — that's what makes longer appointments and truly personalized care possible. But I use your insurance whenever possible for laboratory testing and prescriptions, and I work to lower medication costs through GoodRx, manufacturer savings programs, specialty pharmacies, and pharmacy coupons, plus 35% off professional-grade supplements. Membership fees are often eligible for HSA and FSA funds; we can provide documentation on request.",
+            "Membership is cash-pay by design — that's what makes longer appointments and truly personalized care possible. But I use your insurance whenever possible for laboratory testing and prescriptions — blood draws happen at a Quest location near you — and I work to lower medication costs through GoodRx, manufacturer savings programs, specialty pharmacies, and pharmacy coupons, plus 35% off professional-grade supplements. We accept HSA and FSA funds for membership, and we provide superbills you can submit to your insurance for possible out-of-network reimbursement.",
+        },
+        {
+          question: "What if I need to pause or cancel my membership?",
+          answer:
+            "Life happens — if your circumstances change mid-year, reach out and we'll work with you to find a fair path forward. Because your care plan is delivered continuously across the year, refunds aren't guaranteed, but you'll never be navigating it alone.",
         },
       ],
     },
