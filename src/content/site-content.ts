@@ -748,7 +748,10 @@ export const content = {
       "Start with a free Discovery Call, or book your consultation directly",
       "Get your questions answered before enrolling",
     ],
-    // The label inside the scheduling placeholder box
+    // The live Calendly scheduling link embedded on this page.
+    calendlyUrl: "https://calendly.com/hello-drmondona/15min",
+    // The label inside the scheduling placeholder box (shown only if
+    // calendlyUrl above is ever emptied out)
     schedulerLabel: "Scheduling embed — request info or book your consultation",
     // The line under the scheduler
     emailPrompt: "Prefer to reach out directly? Email us at",

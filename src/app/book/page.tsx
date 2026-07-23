@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Check } from "lucide-react";
 import { Section } from "@/components/ui/section";
-import { CalendlyPlaceholder } from "@/components/ui/calendly-placeholder";
+import { CalendlyEmbed } from "@/components/ui/calendly-embed";
 import { buildMetadata } from "@/lib/seo";
 import { content } from "@/content/site-content";
 import { siteConfig } from "@/lib/site";
@@ -36,7 +36,11 @@ export default function BookPage() {
         </ul>
       </div>
       <div className="mx-auto mt-12 max-w-4xl">
-        <CalendlyPlaceholder label={book.schedulerLabel} className="min-h-[480px]" />
+        <CalendlyEmbed
+          url={book.calendlyUrl}
+          fallbackLabel={book.schedulerLabel}
+          className="min-h-[700px]"
+        />
       </div>
       <p className="mt-8 text-center text-small text-foreground-muted">
         {book.emailPrompt}{" "}
