@@ -137,7 +137,31 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Section 2 — Philosophy: more than hot flashes */}
+      {/* Section 2 — What we treat */}
+      <Section>
+        <FadeUp className="mx-auto max-w-3xl text-center">
+          <SectionLabel>{home.whatWeTreat.label}</SectionLabel>
+          <h2 className="heading-section">{home.whatWeTreat.heading}</h2>
+        </FadeUp>
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {home.whatWeTreat.items.map(({ title, body }, i) => {
+            const Icon = treatIcons[i % treatIcons.length];
+            return (
+              <FadeUp key={title} delay={(i % 4) * 0.08}>
+                <Card className="h-full">
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <Icon className="h-5 w-5" aria-hidden />
+                  </span>
+                  <CardTitle className="mt-4 text-lg md:text-xl">{title}</CardTitle>
+                  <CardDescription className="mt-2">{body}</CardDescription>
+                </Card>
+              </FadeUp>
+            );
+          })}
+        </div>
+      </Section>
+
+      {/* Section 3 — Philosophy: more than hot flashes */}
       <Section>
         <FadeUp className="mx-auto max-w-3xl text-center">
           <SectionLabel>{home.philosophy.label}</SectionLabel>
@@ -175,7 +199,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Section 3 — Collaborative approach */}
+      {/* Section 4 — Collaborative approach */}
       <Section tone="surface">
         <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
           <FadeUp>
@@ -192,30 +216,6 @@ export default function HomePage() {
               </p>
             ))}
           </FadeUp>
-        </div>
-      </Section>
-
-      {/* Section 4 — What we treat */}
-      <Section>
-        <FadeUp className="mx-auto max-w-3xl text-center">
-          <SectionLabel>{home.whatWeTreat.label}</SectionLabel>
-          <h2 className="heading-section">{home.whatWeTreat.heading}</h2>
-        </FadeUp>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {home.whatWeTreat.items.map(({ title, body }, i) => {
-            const Icon = treatIcons[i % treatIcons.length];
-            return (
-              <FadeUp key={title} delay={(i % 4) * 0.08}>
-                <Card className="h-full">
-                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-primary/10 text-primary">
-                    <Icon className="h-5 w-5" aria-hidden />
-                  </span>
-                  <CardTitle className="mt-4 text-lg md:text-xl">{title}</CardTitle>
-                  <CardDescription className="mt-2">{body}</CardDescription>
-                </Card>
-              </FadeUp>
-            );
-          })}
         </div>
       </Section>
 
