@@ -514,7 +514,7 @@ export const content = {
       items: [
         {
           title: "Who delivers your care",
-          body: "Is your prescribing provider a physician, nurse practitioner, or PA? This affects scope of practice, clinical judgment, and what they can prescribe.",
+          body: "At CYRA Wellness, it's always the same Board-Certified physician and Menopause Society Certified Practitioner (MSCP) — one who gets to know your history, not a rotating cast of providers.",
         },
         {
           title: "Testosterone access",
@@ -576,12 +576,12 @@ export const content = {
         {
           criterion: "Prescribing Provider Type",
           cells: [
-            { note: "Board-Certified DO, MSCP (Physician)" },
-            { note: "Nurse Practitioner (primary)" },
-            { note: "Physician-designed / NP delivery" },
-            { note: "Physician review / NP primary" },
-            { note: "Physician" },
-            { note: "NP / PA" },
+            { note: "The same Board-Certified MSCP Physician" },
+            { note: "Rotating Provider" },
+            { note: "Continuity Not Guaranteed" },
+            { note: "Rotating Provider" },
+            { note: "Continuity Not Guaranteed" },
+            { note: "Rotating Provider" },
           ],
         },
         {
