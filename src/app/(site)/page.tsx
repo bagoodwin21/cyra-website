@@ -32,6 +32,7 @@ import {
   TestimonialCarousel,
   type Testimonial,
 } from "@/components/ui/testimonial-carousel";
+import { CherryCalculator } from "@/components/pricing/cherry-calculator";
 import { JsonLd } from "@/components/seo/json-ld";
 import { medicalBusinessSchema, faqPageSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
@@ -357,6 +358,9 @@ export default function HomePage() {
             </div>
           </FadeUp>
         </div>
+        <FadeUp delay={0.16} className="mx-auto mt-8 max-w-5xl">
+          <CherryCalculator />
+        </FadeUp>
         <FadeUp delay={0.2} className="mt-12 text-center">
           <p className="text-body-copy">{home.compareTeaser.text}</p>
           <Link

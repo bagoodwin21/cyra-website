@@ -298,6 +298,17 @@ export const content = {
       note: `The comprehensive consultation is a separate, one-time fee of ${formatUsd(
         carePlanPricing.consultFee,
       )} and is required before enrolling in membership — and it's credited toward your membership when you enroll within 14 days of your consultation. Medication and lab costs are billed separately. After your first year, most patients transition to a lower-cost maintenance membership to keep their results going.`,
+      // ---- Cherry payment calculator (interactive box under the pricing cards) ----
+      calculator: {
+        heading: "Estimate your monthly payment", // Title above the calculator
+        // Line under the title
+        subhead:
+          "See what membership looks like month to month with Cherry — checking your rate takes about a minute and doesn't affect your credit score.",
+        // Your practice's Cherry account ID (from the Cherry dashboard).
+        // Only change these if Cherry gives you new account details.
+        slug: "cyra-wellness-pc",
+        accountName: "CYRA Wellness PC",
+      },
     },
 
     // ---- INSURANCE & COST SAVINGS: membership is cash-pay, but costs are kept down ----
