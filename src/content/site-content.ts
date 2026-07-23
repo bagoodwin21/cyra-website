@@ -121,6 +121,7 @@ export const content = {
       body: [
         "Your hormones don't just affect how you feel day to day — they shape your bones, your weight, your heart health, your risk of insulin resistance and diabetes, your cholesterol, and even your memory and focus. My goal isn't simply to prescribe hormones; it's to help you feel better today while protecting your long-term health.",
         "That's why I built CYRA around a proactive, evidence-based approach: longer appointments, careful follow-up, and a plan designed for your long-term cardiometabolic health, not just the symptom in front of us. I'm not just treating symptoms — together we take control of your whole health.",
+        "This is care for every stage of your hormonal life — your 30s, 40s, 50s, and beyond. Whether it's PMDD in your cycling years, the hormonal shifts that can linger after having a baby, perimenopause, or menopause, these are chapters of one story. When it's the right fit, that means full hormone therapy — estrogen, progesterone, and testosterone when appropriate — tailored to you.",
       ],
       // The pull-quote in larger text
       pullQuote:
@@ -159,15 +160,15 @@ export const content = {
         },
         {
           title: "Menopause",
-          body: "Personalized hormone therapy and support for this next chapter of your health.",
+          body: "Personalized hormone therapy — estrogen, progesterone, and testosterone when appropriate — for this next chapter of your health.",
         },
         {
           title: "PMS & PMDD",
-          body: "Real relief for the mood, physical, and cyclical symptoms that disrupt your month.",
+          body: "PMDD is a real, treatable condition — severe mood symptoms like rage, despair, or anxiety in the week or two before your period that lift once it starts. I treat it seriously, alongside the physical and cyclical symptoms that disrupt your month.",
         },
         {
-          title: "Postpartum Depression",
-          body: "Thoughtful, hormone-informed care during one of the most demanding times in your life.",
+          title: "Postpartum & Beyond",
+          body: "Postpartum depression and the hormonal changes that follow having a baby — shifts that can linger for months or even years. If you've never quite felt like yourself since the baby, you belong here.",
         },
         {
           title: "Vaginal Dryness & Pain",
@@ -205,7 +206,7 @@ export const content = {
       label: "Often Overlooked",
       heading: "Yes, women need testosterone too.",
       body: [
-        "It's rarely discussed, but women have testosterone — and it matters. Levels decline steadily across a woman's lifetime, and that decline can quietly affect your mood, your energy, and your libido.",
+        "Full hormone therapy for women centers on estrogen and progesterone — and I use both as core parts of care when they're right for you. But there's a third hormone that's rarely discussed: women have testosterone too, and it matters. Levels decline steadily across a woman's lifetime, and that decline can quietly affect your mood, your energy, and your libido.",
         "When your symptoms and labs support it, I include testosterone as a core part of your care, with careful dosing and monitoring. It's one of the most underused tools in women's hormone health.",
       ],
     },
@@ -242,7 +243,7 @@ export const content = {
           title: "Your comprehensive consultation",
           // Shows the length and the one-time consult fee (from carePlanPricing.consultFee)
           meta: `60 minutes · ${formatUsd(carePlanPricing.consultFee)}`,
-          body: "A completely nonbinding 60-minute consultation with me — no obligation to join afterward. Together we'll review your medical history, current symptoms, previous treatments, lifestyle, goals, and lab history, answer your questions, and walk through evidence-based treatment options. You'll leave with a clear understanding of my recommendations and can then decide whether membership is right for you.",
+          body: "A completely nonbinding 60-minute consultation with me — most patients are seen within the same week, with no obligation to join afterward. Together we'll review your medical history, current symptoms, previous treatments, lifestyle, goals, and lab history, answer your questions, and walk through evidence-based treatment options. You'll leave with a clear understanding of my recommendations and can then decide whether membership is right for you.",
         },
         {
           title: "Begin your membership",
@@ -263,7 +264,7 @@ export const content = {
       // The checklist of what's included
       includes: [
         "Unlimited follow-up appointments — as many as you need",
-        "Direct messaging with me — not intermediate staff",
+        "Direct messaging with me, not intermediate staff — I usually reply within a few hours",
         "Ongoing treatment adjustments as your body responds",
         "Support between visits",
         "Personalized nutrition counseling",
@@ -296,7 +297,7 @@ export const content = {
       // carePlanPricing.consultFee at the top of this file — change it there.
       note: `The comprehensive consultation is a separate, one-time fee of ${formatUsd(
         carePlanPricing.consultFee,
-      )} and is required before enrolling in membership — and it's credited toward your membership when you enroll within 14 days of your consultation. Medication and lab costs are billed separately.`,
+      )} and is required before enrolling in membership — and it's credited toward your membership when you enroll within 14 days of your consultation. Medication and lab costs are billed separately. After your first year, most patients transition to a lower-cost maintenance membership to keep their results going.`,
     },
 
     // ---- INSURANCE & COST SAVINGS: membership is cash-pay, but costs are kept down ----
@@ -304,21 +305,22 @@ export const content = {
       label: "Insurance & Cost Savings",
       heading: "Membership is cash-pay — but I work to keep your other costs down.",
       intro:
-        "Membership itself is a flat, cash-pay fee, with financing available through Cherry. But whenever possible, I use your insurance for laboratory testing and prescriptions, and I look for every opportunity to lower your medication costs.",
+        "Membership itself is a flat, cash-pay fee, with financing available through Cherry. But whenever possible, I use your insurance for laboratory testing and prescriptions — most labs are covered just as they would be if your PCP ordered them, so they're not an extra expense to worry about, and most hormone medications are covered too. When something isn't, I look for every opportunity to lower the cost.",
       // The savings tools (these reduce medication and supplement costs — they are
       // NOT financing; Cherry remains the only way to finance membership itself)
       items: [
-        "Your insurance used whenever possible for labs and prescriptions",
+        "Most labs covered by your insurance — the same cost as if your PCP ordered them, not an extra expense",
+        "Most hormone medications covered by insurance too",
+        "About $20–30 per month per hormone through GoodRx if you're paying without insurance",
+        "HRT Club — an affordable pharmacy option with cash pricing that doesn't use insurance",
         "Convenient blood draws at Quest locations near you",
-        "GoodRx and pharmacy coupons",
-        "Manufacturer savings programs",
-        "Specialty pharmacy options",
+        "Manufacturer savings programs and pharmacy coupons",
         "35% off professional-grade supplements",
         "HSA and FSA funds accepted for membership",
         "Superbills provided for possible out-of-network reimbursement",
       ],
       // Keeps the financing-vs-savings distinction clean
-      note: "Cherry finances your membership; GoodRx, coupons, and savings programs simply reduce what you pay for medications and supplements.",
+      note: "Cherry finances your membership. GoodRx, HRT Club, coupons, and savings programs are pharmacy and cost-saving options that simply reduce what you pay for medications and supplements — they aren't financing.",
     },
 
     // ---- COMPARE TEASER: small link on the home page to the /compare page ----
@@ -361,7 +363,7 @@ export const content = {
     faq: {
       label: "Questions & Answers",
       heading: "Frequently asked questions",
-      // Each item: a question and its answer. Keep it to 6-8.
+      // Each item: a question and its answer. Keep it to a maximum of 10.
       items: [
         {
           question: "Where do you provide care?",
@@ -384,6 +386,11 @@ export const content = {
             "Hormone therapy is rarely fixed in one visit — most adjustments take 8 to 12 weeks to show their full effect. A one-year membership gives your body the time it needs for real, lasting change, with close follow-up along the way: appointments every 4 to 6 weeks (sooner if needed) and direct messaging with me between visits.",
         },
         {
+          question: "What happens after my first year?",
+          answer:
+            "Most patients don't need that same intensity of visits forever. After your first year of close follow-up and fine-tuning, most transition to a lower-cost maintenance membership that keeps your results going with continued access and monitoring. We'll talk through the details as your first year wraps up, once we know what your ongoing care looks like.",
+        },
+        {
           question: "Do I keep my primary care doctor and OB/GYN?",
           answer:
             "Yes — please do. Think of me as your women's hormone specialist, working alongside your PCP and OB/GYN, not replacing them. Your PCP continues your routine and preventive care, your OB/GYN continues your gynecologic care and screenings, and I'm glad to coordinate with them when it's helpful.",
@@ -391,22 +398,22 @@ export const content = {
         {
           question: "Do you prescribe testosterone for women?",
           answer:
-            "Yes. Women have testosterone, and it affects mood, energy, and libido. When your labs and symptoms support it, I include testosterone as a core part of your care, with careful dosing and monitoring.",
+            "Yes. Full hormone therapy centers on estrogen and progesterone when they're right for you, and women have testosterone too — it affects mood, energy, and libido. When your labs and symptoms support it, I include testosterone as a core part of your care, with careful dosing and monitoring.",
         },
         {
-          question: "How does payment and financing work?",
-          answer: `Membership is ${formatUsd(
+          question: "Do you treat PMDD?",
+          answer:
+            "Yes. PMDD (premenstrual dysphoric disorder) is a real, treatable condition — not “just PMS.” If severe mood symptoms like rage, despair, or anxiety show up in the week or two before your period and lift once it starts, that cyclical pattern is exactly what I evaluate and treat with a hormone-informed approach, rather than dismissing it.",
+        },
+        {
+          question: "What does it cost, and do you take insurance?",
+          answer: `Membership itself is cash-pay by design — that's what makes longer appointments and truly personalized care possible. It's ${formatUsd(
             carePlanPricing.monthlyPayment,
           )} per month for ${carePlanPricing.paymentCount} payments through Cherry with approved credit, or ${formatUsd(
             carePlanUpfrontTotal,
-          )} when you pay in full (a ${carePlanPricing.upfrontDiscountPercent}% savings). Cherry is our financing partner; checking your rate doesn't affect your credit score. The comprehensive consultation is a separate, one-time ${formatUsd(
+          )} paid in full (a ${carePlanPricing.upfrontDiscountPercent}% savings). Cherry is our financing partner, and checking your rate doesn't affect your credit score. The comprehensive consultation is a separate, one-time ${formatUsd(
             carePlanPricing.consultFee,
-          )} fee — credited toward your membership when you enroll within 14 days of your consultation.`,
-        },
-        {
-          question: "Do you take insurance?",
-          answer:
-            "Membership is cash-pay by design — that's what makes longer appointments and truly personalized care possible. But I use your insurance whenever possible for laboratory testing and prescriptions — blood draws happen at a Quest location near you — and I work to lower medication costs through GoodRx, manufacturer savings programs, specialty pharmacies, and pharmacy coupons, plus 35% off professional-grade supplements. We accept HSA and FSA funds for membership, and we provide superbills you can submit to your insurance for possible out-of-network reimbursement.",
+          )} fee, credited toward your membership when you enroll within 14 days. Beyond membership, I work to keep your other costs low: I use your insurance whenever possible for labs and prescriptions — most labs are covered just as if your PCP ordered them, so they aren't an extra expense, and most hormone medications are covered too. Without insurance, hormones typically run about $20–30 per month each through GoodRx, and I can also send prescriptions through HRT Club, a pharmacy with affordable cash pricing. Blood draws happen at a Quest location near you, we accept HSA and FSA funds for membership, and we provide superbills for possible out-of-network reimbursement.`,
         },
         {
           question: "What if I need to pause or cancel my membership?",
@@ -449,7 +456,7 @@ export const content = {
     bio: [
       "I'm Dr. Mondona Goodwin, a board-certified Internal Medicine physician with more than ten years of clinical experience. I trained as a Doctor of Osteopathic Medicine — a path I chose because osteopathic medicine starts from the premise that the body is one interconnected system, not a collection of separate complaints.",
       "Over the years I've pursued extensive additional training in perimenopause, menopause, hormone therapy, metabolic health, and women's midlife health, and I'm a Menopause Society Certified Practitioner (MSCP). One pattern kept repeating in my practice: women arriving with real, life-altering symptoms and leaving with a shrug, or the words 'that's just part of getting older.'",
-      "My approach is proactive and evidence-based. I don't treat a hot flash; I treat a woman — her metabolism and her mood alongside her hormones, her long-term risks alongside her symptoms, her goals alongside her labs. And I work as your women's hormone specialist alongside your primary care physician and OB/GYN, coordinating with them so your care stays seamless.",
+      "My approach is proactive and evidence-based. I don't treat a hot flash; I treat a woman — her metabolism and her mood alongside her hormones, her long-term risks alongside her symptoms, her goals alongside her labs. When it fits your health, that includes full hormone therapy — estrogen, progesterone, and testosterone when appropriate. And I work as your women's hormone specialist alongside your primary care physician and OB/GYN, coordinating with them so your care stays seamless.",
       "What I want every patient to feel when a visit ends is simple: heard, taken seriously, and clear on the plan — with a physician who will still be there at the next visit, and the one after that.",
     ],
     // The pull-quote and signature (Dr. Goodwin's personal story)
