@@ -45,7 +45,7 @@ export function Navbar() {
       <div className="mx-auto flex h-18 max-w-content items-center justify-between px-6 py-4 lg:px-8">
         <Link
           href="/"
-          className="font-script text-3xl text-foreground"
+          className="font-heading text-3xl font-bold text-foreground"
           aria-label={`${content.brand.name} home`}
         >
           {content.brand.name}
@@ -105,7 +105,7 @@ export function Navbar() {
             className="fixed inset-0 z-50 flex flex-col bg-background lg:hidden"
           >
             <div className="flex h-18 items-center justify-between px-6 py-4">
-              <span className="font-script text-3xl text-foreground">
+              <span className="font-heading text-3xl font-bold text-foreground">
                 {content.brand.name}
               </span>
               <button

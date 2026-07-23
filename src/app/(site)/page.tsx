@@ -98,10 +98,7 @@ export default function HomePage() {
       <section className="flex min-h-[calc(100vh-4.5rem)] items-center hero-gradient">
         <div className="mx-auto w-full max-w-3xl px-6 py-24 text-center lg:px-8">
           <FadeUp>
-            <p className="font-script text-3xl text-primary md:text-4xl">
-              {home.hero.eyebrow}
-            </p>
-            <AccentHeadline text={home.hero.headline} className="heading-hero mt-4" />
+            <AccentHeadline text={home.hero.headline} className="heading-hero" />
             <p className="text-subheadline mx-auto mt-7 max-w-xl">
               {home.hero.subheadline}
             </p>

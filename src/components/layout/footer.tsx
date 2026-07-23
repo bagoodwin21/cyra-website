@@ -9,7 +9,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-content gap-12 px-6 py-14 md:grid-cols-3 lg:px-8">
         {/* Col 1: brand */}
         <div>
-          <p className="font-script text-4xl text-foreground">
+          <p className="font-heading text-4xl font-bold text-foreground">
             {content.brand.name}
           </p>
           <p className="mt-3 text-small text-foreground-secondary">

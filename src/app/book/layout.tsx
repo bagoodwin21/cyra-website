@@ -16,7 +16,7 @@ export default function BookLayout({
         <div className="mx-auto flex h-18 max-w-content items-center px-6 py-4 lg:px-8">
           <Link
             href="/"
-            className="font-script text-3xl text-foreground"
+            className="font-heading text-3xl font-bold text-foreground"
             aria-label={`${content.brand.name} home`}
           >
             {content.brand.name}

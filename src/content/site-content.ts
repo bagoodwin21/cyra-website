@@ -95,7 +95,6 @@ export const content = {
   home: {
     // ---- HERO: the very top of the home page ----
     hero: {
-      eyebrow: "women's hormonal health", // Small script line above the headline
       // The big headline. The word(s) inside the *asterisks* are shown in
       // an italic accent color — keep the asterisks around them.
       headline: "Personalized hormone care for women in *midlife*.",
