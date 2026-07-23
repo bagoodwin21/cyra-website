@@ -32,7 +32,7 @@ export function generateMetadata(): Metadata {
       "Menopause Telehealth Comparison: CYRA vs Midi, Alloy, Evernow, Winona | 2026",
     absoluteTitle: true,
     description:
-      "How does CYRA Wellness compare to Midi, Alloy, Evernow, Winona, and Hers? A detailed comparison of menopause telehealth platforms including provider type, testosterone access, care structure, and financing options.",
+      "How does CYRA Wellness compare to Midi, Alloy, Evernow, and Winona? A detailed comparison of menopause telehealth platforms including provider type, testosterone access, care structure, and financing options.",
     path: "/compare",
   });
 }

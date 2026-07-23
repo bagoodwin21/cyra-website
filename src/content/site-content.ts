@@ -570,7 +570,6 @@ export const content = {
         "Alloy",
         "Evernow",
         "Winona",
-        "Hers",
       ],
       rows: [
         {
@@ -581,7 +580,6 @@ export const content = {
             { verdict: "no", note: "Not standard" },
             { verdict: "partial", note: "Limited" },
             { verdict: "partial", note: "Add-on" },
-            { verdict: "no" },
           ],
         },
         {
@@ -592,7 +590,6 @@ export const content = {
             { verdict: "partial", note: "Algorithm-assisted" },
             { verdict: "partial", note: "App-driven" },
             { verdict: "partial", note: "Standardized tiers" },
-            { verdict: "no", note: "Standardized" },
           ],
         },
         {
@@ -603,14 +600,12 @@ export const content = {
             { verdict: "partial", note: "Not guaranteed" },
             { verdict: "no", note: "Rotating" },
             { verdict: "partial", note: "Not guaranteed" },
-            { verdict: "no", note: "Rotating" },
           ],
         },
         {
           criterion: "Membership vs. Subscription Model",
           cells: [
             { verdict: "yes", note: "12-month membership" },
-            { verdict: "no", note: "Monthly subscription" },
             { verdict: "no", note: "Monthly subscription" },
             { verdict: "no", note: "Monthly subscription" },
             { verdict: "no", note: "Monthly subscription" },
@@ -625,7 +620,6 @@ export const content = {
             { verdict: "no" },
             { verdict: "no" },
             { verdict: "no" },
-            { verdict: "no" },
           ],
         },
         {
@@ -636,7 +630,6 @@ export const content = {
             { verdict: "partial" },
             { verdict: "partial" },
             { verdict: "partial" },
-            { verdict: "no" },
           ],
         },
         {
@@ -644,7 +637,6 @@ export const content = {
           cells: [
             { verdict: "yes" },
             { verdict: "partial" },
-            { verdict: "no" },
             { verdict: "no" },
             { verdict: "no" },
             { verdict: "no" },
@@ -658,13 +650,11 @@ export const content = {
             { verdict: "no" },
             { verdict: "no" },
             { verdict: "no" },
-            { verdict: "no" },
           ],
         },
         {
           criterion: "California Telehealth",
           cells: [
-            { verdict: "yes" },
             { verdict: "yes" },
             { verdict: "yes" },
             { verdict: "yes" },
@@ -687,8 +677,8 @@ export const content = {
         {
           name: "Midi Health",
           paragraphs: [
-            "Midi has built one of the largest menopause telehealth networks in the country, and their NPs are focused specifically on this phase of life — that focus matters.",
-            "Where CYRA differs: your care at Midi will primarily be delivered by nurse practitioners rather than a physician, and you may see different providers across visits. For women who want a specific physician who knows their history and can draw on the full scope of a DO's training, that difference is worth considering.",
+            "Midi has built one of the largest menopause telehealth networks in the country, and their providers are focused specifically on this phase of life — that focus matters.",
+            "Where CYRA differs: your care at Midi may not be delivered by the same physician each visit, and you may see different providers across visits. For women who want a specific physician who knows their history and can draw on the full scope of a DO's training, that difference is worth considering.",
           ],
         },
         {
@@ -702,7 +692,7 @@ export const content = {
           name: "Evernow",
           paragraphs: [
             "Evernow has invested heavily in their app experience and data-driven approach. For women who prefer a tech-forward, app-centric workflow, it's a solid option.",
-            "Where CYRA differs: Evernow's care is primarily delivered through NPs and is more algorithmically structured — which trades some personalization for scale and consistency.",
+            "Where CYRA differs: Evernow's care is primarily delivered through providers rather than a physician, and is more algorithmically structured — which trades some personalization for scale and consistency.",
           ],
         },
         {
@@ -710,13 +700,6 @@ export const content = {
           paragraphs: [
             "Winona focuses specifically on compounded bioidentical hormone therapy and has developed a clear, streamlined process for women who already know they want BHRT.",
             "Where CYRA differs: CYRA isn't compounded-only — Dr. Goodwin works with both FDA-approved and compounded options based on what's clinically appropriate for you, rather than defaulting to one category.",
-          ],
-        },
-        {
-          name: "Hers",
-          paragraphs: [
-            "Hers is a broad women's health platform covering everything from skincare to mental health — hormone care is one of many offerings.",
-            "For women specifically navigating perimenopause and menopause, a menopause-specialist practice offers more focused expertise and a provider whose entire clinical focus is this phase of life.",
           ],
         },
       ],
@@ -729,7 +712,7 @@ export const content = {
       intro:
         "Take this list to every consult — including ours. A platform that's confident in its care will welcome all of them.",
       items: [
-        "Who will actually be delivering my care — physician, NP, or PA?",
+        "Who will actually be delivering my care?",
         "Will I see the same provider at every visit?",
         "Is testosterone included or is it an add-on?",
         "What's the total monthly cost including labs and medications?",
