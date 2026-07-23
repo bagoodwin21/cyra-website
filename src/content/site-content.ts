@@ -468,7 +468,7 @@ export const content = {
     ],
     // The pull-quote and signature (Dr. Goodwin's personal story)
     quote:
-      "Creating CYRA Wellness was deeply personal. My own hormonal and weight journey inspired me to build the practice I always wished existed — one centered on personalized, evidence-based care and long-term partnerships with patients.",
+      "Creating CYRA Wellness was deeply personal. My own hormonal and weight journey inspired me to build the practice I always wished existed — one centered on personalized, evidence-based care and long-term partnerships with patients. The name is a dedication to my two children — Cyrus and Lily Cyra — and to every woman I care for since.",
     signature: "Dr. Goodwin",
     // Credential chips shown in a row
     credentials: [
