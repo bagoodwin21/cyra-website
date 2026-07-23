@@ -426,11 +426,6 @@ export const content = {
             carePlanPricing.consultFee,
           )} fee, credited toward your membership when you enroll within 14 days. Beyond membership, I work to keep your other costs low: I use your insurance whenever possible for labs and prescriptions — most labs are covered just as if your PCP ordered them, so they aren't an extra expense, and most hormone medications are covered too. Without insurance, hormones typically run about $20–30 per month each through GoodRx, and I can also send prescriptions through HRT Club, a pharmacy with affordable cash pricing. Blood draws happen at a Quest location near you, we accept HSA and FSA funds for membership, and we provide superbills for possible out-of-network reimbursement.`,
         },
-        {
-          question: "What if I need to pause or cancel my membership?",
-          answer:
-            "Life happens — if your circumstances change mid-year, reach out and we'll work with you to find a fair path forward. Because your care plan is delivered continuously across the year, refunds aren't guaranteed, but you'll never be navigating it alone.",
-        },
       ],
     },
 
