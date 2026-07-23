@@ -574,17 +574,6 @@ export const content = {
       ],
       rows: [
         {
-          criterion: "Prescribing Provider Type",
-          cells: [
-            { note: "The same Board-Certified MSCP Physician" },
-            { note: "Rotating Provider" },
-            { note: "Continuity Not Guaranteed" },
-            { note: "Rotating Provider" },
-            { note: "Continuity Not Guaranteed" },
-            { note: "Rotating Provider" },
-          ],
-        },
-        {
           criterion: "Testosterone for Women Included",
           cells: [
             { verdict: "yes", note: "Standard part of care" },
@@ -609,7 +598,7 @@ export const content = {
         {
           criterion: "Continuity (Same Provider Every Visit)",
           cells: [
-            { verdict: "yes", note: "Always Dr. Goodwin" },
+            { verdict: "yes", note: "Always the same Board-Certified MSCP Physician" },
             { verdict: "no", note: "Rotating providers" },
             { verdict: "partial", note: "Not guaranteed" },
             { verdict: "no", note: "Rotating" },
