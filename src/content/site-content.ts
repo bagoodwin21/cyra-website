@@ -65,6 +65,8 @@ export const content = {
     licensedStates: "Licensed in California", // Where care is offered — California only
     // Contact email shown in the footer and on the booking page
     email: "hello@drmondona.com",
+    // Instagram profile link shown in the footer
+    instagramUrl: "https://www.instagram.com/drmondona/",
     // Fine-print line at the bottom of the site
     disclaimer:
       "CYRA Wellness is a membership-based, cash-pay practice serving patients located in California. Membership is not billed to insurance, though your insurance is used whenever possible for laboratory testing and prescriptions.",

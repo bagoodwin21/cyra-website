@@ -23,6 +23,7 @@ export const siteConfig = {
   physician: content.brand.physician,
   licensedStates: content.brand.licensedStates,
   email: content.brand.email,
+  instagramUrl: content.brand.instagramUrl,
   disclaimer: content.brand.disclaimer,
   /**
    * Practice SMS number for "text us" links (E.164, e.g. +18055551234).

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MapPin, Mail, MessageCircle } from "lucide-react";
+import { MapPin, Mail, MessageCircle, Instagram } from "lucide-react";
 import { content } from "@/content/site-content";
 import { legalLinks, navLinks, siteConfig } from "@/lib/site";
 
@@ -59,6 +59,17 @@ export function Footer() {
             >
               <MessageCircle className="h-4 w-4" aria-hidden />
               Prefer to text? Message us
+            </a>
+          )}
+          {siteConfig.instagramUrl && (
+            <a
+              href={siteConfig.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 flex items-center gap-2 text-small text-foreground-secondary transition-colors hover:text-foreground"
+            >
+              <Instagram className="h-4 w-4" aria-hidden />
+              Follow on Instagram
             </a>
           )}
           <p className="mt-4 text-small font-medium text-foreground">
