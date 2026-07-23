@@ -262,6 +262,7 @@ export const content = {
         "Your membership is a full year of close, personalized support — direct access to me, not a subscription you have to think about. Here's what's included:",
       // The checklist of what's included
       includes: [
+        "A personalized hormone treatment plan tailored to you",
         "Unlimited follow-up appointments — as many as you need",
         "Direct messaging with me, not intermediate staff — I usually reply within a few hours",
         "Ongoing treatment adjustments as your body responds",
@@ -269,6 +270,7 @@ export const content = {
         "Personalized nutrition counseling",
         "Strength training guidance",
         "Personalized exercise recommendations",
+        "35% off professional-grade supplements",
       ],
       // Pricing box heading
       pricingHeading: "Simple, transparent pricing",
