@@ -98,7 +98,7 @@ export const content = {
       eyebrow: "women's hormonal health", // Small script line above the headline
       // The big headline. The word(s) inside the *asterisks* are shown in
       // an italic accent color — keep the asterisks around them.
-      headline: "Hormone care that takes control of your *whole* health.",
+      headline: "Personalized hormone care for women in *midlife*.",
       // Supporting paragraph under the headline
       subheadline:
         "A membership-based practice for women navigating hormonal conditions throughout life — not just menopause. Longer appointments, a plan built around you, and a physician who follows closely, by secure video across California.",
@@ -107,7 +107,7 @@ export const content = {
       // Short trust points shown as a row under the buttons
       trustPoints: [
         "Women's Hormonal Health",
-        "Testosterone Included",
+        "Estrogen, Progesterone & Testosterone",
         "Longer Appointments",
         "California Telehealth",
       ],
