@@ -640,7 +640,7 @@ export const content = {
           ],
         },
         {
-          criterion: "Thyroid & Adrenal in Scope",
+          criterion: "Thyroid in Scope",
           cells: [
             { verdict: "yes" },
             { verdict: "partial" },
