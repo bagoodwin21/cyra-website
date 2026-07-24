@@ -79,8 +79,8 @@ src/
 ## Pricing (confirmed)
 
 The one-year membership is **$175 × 13 monthly payments through Cherry** (with
-approved credit) **or 5% off when paid upfront** ($2,161.25 vs. the $2,275
-total). The one-time **comprehensive consultation fee is $399** (charged once,
+approved credit) **or a flat $2,160 when paid upfront** (vs. the $2,275 total;
+the ~5% savings figure shown on the site is derived automatically). The one-time **comprehensive consultation fee is $399** (charged once,
 before enrolling). All four numbers live in `carePlanPricing` at the top of
 `src/content/site-content.ts` (the key name is unchanged; every displayed dollar
 amount derives from them). Cherry is the only financing partner. Never phrase as
