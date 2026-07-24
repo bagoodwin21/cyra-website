@@ -24,11 +24,16 @@ export function CalendlyEmbed({ url, fallbackLabel, className }: CalendlyEmbedPr
     return <CalendlyPlaceholder label={fallbackLabel} className={className} />;
   }
 
+  // Calendly's widget script sizes its iframe from the inline height of this
+  // div, so an explicit height is required — CSS min-height classes alone
+  // leave the iframe at a tiny default. data-resize lets newer versions of
+  // the widget grow beyond it to fit content.
   return (
     <div
       className={cn("calendly-inline-widget", className)}
       data-url={url}
-      style={{ minWidth: "320px" }}
+      data-resize="true"
+      style={{ minWidth: "320px", height: "760px" }}
     />
   );
 }
