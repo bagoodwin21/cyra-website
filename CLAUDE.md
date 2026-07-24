@@ -36,9 +36,17 @@ the previous version), but do not push a broken build.
   membership if enrolling within 14 days); membership $175 × 13 monthly
   Cherry payments, or 5% off paid upfront. Never phrase pricing as
   "from $X/month".
-- Primary booking CTAs say **"Request More Information"**.
+- Primary booking CTAs say **"Get Started"** (the /book page heading is
+  "Book Your Visit"). Both booking paths — free Discovery Call and the
+  $399 consultation — must stay visible on /book.
+- The $399 consultation is the PRIMARY booking path ("most patients
+  start here"); the free Discovery Call is the optional, secondary
+  on-ramp — never frame it as a required first step.
 - The free Discovery Call is about the practice — it is NOT a medical
-  appointment and no medical advice is given. Keep that framing.
+  appointment and no medical advice is given. It is with the Patient
+  Care Coordinator, never Dr. Goodwin. Keep that framing.
+- Practice texting number: 805-387-9078 (editable in the content file
+  as brand.smsNumber/smsDisplay).
 - **Never invent facts**: no made-up prices, phone numbers, addresses,
   credentials, statistics, medical claims, or testimonials. Unconfirmed
   values stay as visible [PLACEHOLDER] text until Dr. Goodwin confirms

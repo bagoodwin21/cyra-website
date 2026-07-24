@@ -65,6 +65,10 @@ export const content = {
     licensedStates: "Licensed in California", // Where care is offered — California only
     // Contact email shown in the footer and on the booking page
     email: "hello@drmondona.com",
+    // Practice texting number. smsNumber is the machine format (keep the +1
+    // and no spaces); smsDisplay is how it reads on the site.
+    smsNumber: "+18053879078",
+    smsDisplay: "805-387-9078",
     // Instagram profile link shown in the footer
     instagramUrl: "https://www.instagram.com/drmondona/",
     // Fine-print line at the bottom of the site
@@ -88,7 +92,7 @@ export const content = {
       { label: "Compare", href: "/compare" },
     ],
     // The words on the main action button (top-right and mobile bar)
-    cta: "Request More Information",
+    cta: "Get Started",
   },
 
   /* =======================================================================
@@ -103,7 +107,7 @@ export const content = {
       // Supporting paragraph under the headline
       subheadline:
         "A membership-based practice for women navigating hormonal conditions throughout life — not just menopause. Longer appointments, a plan built around you, and a physician who follows closely, by secure video across California.",
-      primaryCta: "Request More Information", // Main button text
+      primaryCta: "Get Started", // Main button text
       secondaryCta: "How to Join", // Second button text (jumps to the steps)
       // Short trust points shown as a row under the buttons
       trustPoints: [
@@ -122,7 +126,7 @@ export const content = {
       body: [
         "Your hormones don't just affect how you feel day to day — they shape your bones, your weight, your heart health, your risk of insulin resistance and diabetes, your cholesterol, and even your memory and focus. My goal isn't simply to prescribe hormones; it's to help you feel better today while protecting your long-term health.",
         "That's why I built CYRA around a proactive, evidence-based approach: longer appointments, careful follow-up, and a plan designed for your long-term cardiometabolic health, not just the symptom in front of us. I'm not just treating symptoms — together we take control of your whole health.",
-        "This is care for every stage of your hormonal life — your 30s, 40s, 50s, and beyond. Whether it's PMDD in your cycling years, the hormonal shifts that can linger after having a baby, perimenopause, or menopause, these are chapters of one story. When it's the right fit, that means full hormone therapy — estrogen, progesterone, and testosterone when appropriate — tailored to you.",
+        "This is care for every stage of your hormonal life — your 30s, 40s, 50s, and beyond. Whether it's PMDD in your cycling years, the hormonal shifts that can linger after having a baby, perimenopause, or menopause, these are chapters of one story. When it's the right fit, that means full bioidentical hormone therapy — estrogen, progesterone, and testosterone when appropriate — tailored to you.",
       ],
       // The pull-quote in larger text
       pullQuote:
@@ -161,7 +165,7 @@ export const content = {
         },
         {
           title: "Menopause",
-          body: "Personalized hormone therapy — estrogen, progesterone, and testosterone when appropriate — for this next chapter of your health.",
+          body: "Personalized bioidentical hormone therapy — estrogen, progesterone, and testosterone when appropriate — for this next chapter of your health.",
         },
         {
           title: "PMS & PMDD",
@@ -207,7 +211,7 @@ export const content = {
       label: "Often Overlooked",
       heading: "Yes, women need testosterone too.",
       body: [
-        "Full hormone therapy for women centers on estrogen and progesterone — and I use both as core parts of care when they're right for you. But there's a third hormone that's rarely discussed: women have testosterone too, and it matters. Levels decline steadily across a woman's lifetime, and that decline can quietly affect your mood, your energy, and your libido.",
+        "Full bioidentical hormone therapy for women centers on estrogen and progesterone — and I use both as core parts of care when they're right for you. But there's a third hormone that's rarely discussed: women have testosterone too, and it matters. Levels decline steadily across a woman's lifetime, and that decline can quietly affect your mood, your energy, and your libido.",
         "When your symptoms and labs support it, I include testosterone as a core part of your care, with careful dosing and monitoring. It's one of the most underused tools in women's hormone health.",
       ],
     },
@@ -235,16 +239,16 @@ export const content = {
         "Joining is simple and unhurried. Here's exactly what to expect from your first conversation to lasting change.",
       steps: [
         {
-          title: "Start with a free Discovery Call",
+          title: "Book your consultation",
           // Optional short label shown next to the step title
-          meta: "Free — or book your consult directly",
-          body: "Book a free Discovery Call with our Patient Care Coordinator to learn how the practice, membership, and pricing work. It's a conversation about the practice — not a medical appointment, and no medical advice is given. If you have questions best answered by me personally, the coordinator can arrange that. Already know you're ready? You can book your consultation directly.",
+          meta: "Most patients start here",
+          body: "Book your 60-minute comprehensive consultation with me directly — most patients are seen within the same week. Want to learn about the practice, membership, or pricing first? Schedule a free Discovery Call with our Patient Care Coordinator, or text us at 805-387-9078. The Discovery Call is about the practice — not a medical appointment, and no medical advice is given.",
         },
         {
           title: "Your comprehensive consultation",
           // Shows the length and the one-time consult fee (from carePlanPricing.consultFee)
           meta: `60 minutes · ${formatUsd(carePlanPricing.consultFee)}`,
-          body: "A completely nonbinding 60-minute consultation with me — most patients are seen within the same week, with no obligation to join afterward. Together we'll review your medical history, current symptoms, previous treatments, lifestyle, goals, and lab history, answer your questions, and walk through evidence-based treatment options. You'll leave with a clear understanding of my recommendations and can then decide whether membership is right for you.",
+          body: "A completely nonbinding hour with me, with no obligation to join afterward. Together we'll review your medical history, current symptoms, previous treatments, lifestyle, goals, and lab history, answer your questions, and walk through evidence-based treatment options. You'll leave with a clear understanding of my recommendations — and the fee is credited toward your membership when you enroll within 14 days.",
         },
         {
           title: "Begin your membership",
@@ -417,7 +421,7 @@ export const content = {
         {
           question: "Do you prescribe testosterone for women?",
           answer:
-            "Yes. Full hormone therapy centers on estrogen and progesterone when they're right for you, and women have testosterone too — it affects mood, energy, and libido. When your labs and symptoms support it, I include testosterone as a core part of your care, with careful dosing and monitoring.",
+            "Yes. Full bioidentical hormone therapy centers on estrogen and progesterone when they're right for you, and women have testosterone too — it affects mood, energy, and libido. When your labs and symptoms support it, I include testosterone as a core part of your care, with careful dosing and monitoring.",
         },
         {
           question: "Do you treat PMDD?",
@@ -441,7 +445,7 @@ export const content = {
     finalCta: {
       heading: "Your best health starts with one conversation.",
       body: "Reach out to learn more about the practice, or book your consultation with me.",
-      cta: "Request More Information",
+      cta: "Get Started",
       // Small line beneath the button
       footnote:
         "California | Membership-Based Telehealth | Menopause Society Certified Practitioner (MSCP)",
@@ -489,7 +493,7 @@ export const content = {
     cta: {
       heading: "Meet me yourself.",
       body: "The easiest way to know if CYRA is right for you is to start the conversation.",
-      button: "Request More Information",
+      button: "Get Started",
     },
   },
 
@@ -734,7 +738,7 @@ export const content = {
     finalCta: {
       heading: "Want to see if CYRA is the right fit?",
       body: "Reach out to learn more about the practice — including how CYRA works alongside your existing PCP and OB/GYN — or book your consultation with Dr. Goodwin. No pressure to enroll.",
-      cta: "Request More Information", // Main button
+      cta: "Get Started", // Main button
       // The quieter link under the button (always points to the Membership section)
       secondaryLink: "Or read more about how membership works",
     },
@@ -744,22 +748,42 @@ export const content = {
      BOOK / CONTACT PAGE
      ======================================================================= */
   book: {
-    heading: "Request More Information",
+    heading: "Book Your Visit",
     subheadline:
-      "Tell us a little about you and what you're hoping to change. Our Patient Care Coordinator will reach out to help you schedule a free Discovery Call or book your comprehensive consultation with Dr. Goodwin.",
+      "Book your comprehensive consultation with Dr. Goodwin — or, if you'd like to learn about the practice first, start with a free Discovery Call or a text.",
     // Short reassurance points
     reassurances: [
       "No commitment required — the consultation is completely nonbinding",
       "Start with a free Discovery Call, or book your consultation directly",
       "Get your questions answered before enrolling",
     ],
-    // The live Calendly scheduling link embedded on this page.
+    // ---- The two booking options shown side by side ----
+    discovery: {
+      title: "Not ready to book? Start with a free Discovery Call",
+      meta: "15 minutes · Free",
+      body: "A short call with our Patient Care Coordinator about how the practice, membership, and pricing work. It's about the practice — not a medical appointment, and no medical advice is given.",
+      ctaLabel: "Schedule Your Call", // Jumps to the scheduler below
+    },
+    consult: {
+      title: "Comprehensive Consultation",
+      meta: "60 minutes · $399",
+      body: "Your full one-hour visit with Dr. Goodwin — history, symptoms, goals, and an evidence-based plan. Completely nonbinding, and credited toward membership when you enroll within 14 days.",
+      ctaLabel: "Book the Consultation",
+      // Direct Calendly link for booking the consultation. This currently
+      // points to the Calendly page listing all appointment types — replace
+      // it with the consultation event's own link (from Calendly, click the
+      // event > Copy Link) for one-click booking.
+      calendlyUrl: "https://calendly.com/hello-drmondona",
+    },
+    // The live Calendly scheduling link embedded on this page (Discovery Call).
     calendlyUrl: "https://calendly.com/hello-drmondona/15min",
     // The label inside the scheduling placeholder box (shown only if
     // calendlyUrl above is ever emptied out)
     schedulerLabel: "Scheduling embed — request info or book your consultation",
     // The line under the scheduler
     emailPrompt: "Prefer to reach out directly? Email us at",
+    // The texting line under the scheduler (uses the number from brand above)
+    textPrompt: "Questions? Text us at",
   },
 
   /* =======================================================================
