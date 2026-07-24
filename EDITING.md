@@ -127,6 +127,7 @@ site. Here's the map:
 | `compare` | Everything on the **Compare page** (`/compare`): the headline, the six "what differs" cards, the side-by-side **table** (see the note above the table data for how the check / X / dash marks work), the per-platform notes, the checklist, and the closing call-to-action |
 | `book` | The "Book Your Visit" page — both booking options and the scheduler |
 | `footer` | The small headings in the footer |
+| `forPhysicians` | The whole "For Physicians" referral page (linked in the footer) |
 | `legalPages` | The words shown on the Privacy Policy and Terms of Service pages |
 | `placeholderPage` | The "Back to Home" button and "Questions?" email line on those legal pages |
 | `legalLinks` | The Privacy Policy and Terms links at the very bottom |
