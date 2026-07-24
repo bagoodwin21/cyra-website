@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import headshot from "@/images/dr-goodwin.jpeg";
 import { Section } from "@/components/ui/section";
 import { SectionLabel } from "@/components/ui/section-label";
 import { FadeUp } from "@/components/ui/fade-up";
@@ -24,17 +26,6 @@ export function generateMetadata(): Metadata {
   });
 }
 
-function initials(name: string) {
-  return name
-    .replace(/,.*$/, "")
-    .split(/\s+/)
-    .map((p) => p[0])
-    .filter(Boolean)
-    .slice(0, 2)
-    .join("")
-    .toUpperCase();
-}
-
 export default function AboutPage() {
   return (
     <>
@@ -53,16 +44,15 @@ export default function AboutPage() {
       <Section tone="surface">
         <div className="mx-auto grid max-w-5xl items-start gap-12 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
           <FadeUp>
-            {/* Professional headshot placeholder — replace with photography. */}
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-card bg-gradient-to-br from-warm via-white to-accent-light/50 shadow-card">
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 p-8 text-center">
-                <span className="flex h-20 w-20 items-center justify-center rounded-full bg-surface/60 font-heading text-2xl font-bold text-primary">
-                  {initials(about.name)}
-                </span>
-                <p className="text-small font-medium text-foreground-secondary/80">
-                  {about.photoCaption}
-                </p>
-              </div>
+            <div className="relative mx-auto aspect-square w-full max-w-sm overflow-hidden rounded-card shadow-card">
+              <Image
+                src={headshot}
+                alt={about.photoCaption}
+                fill
+                sizes="(max-width: 1024px) 90vw, 384px"
+                className="object-cover"
+                priority
+              />
             </div>
           </FadeUp>
           <FadeUp delay={0.12}>

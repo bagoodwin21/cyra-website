@@ -472,7 +472,8 @@ export const content = {
       "Licensed in California",
     ],
     // The label under the photo placeholder (replace the image later)
-    photoCaption: "Professional headshot placeholder — warm and approachable",
+    // Describes the photo for screen readers and search engines
+    photoCaption: "Dr. Mondona Goodwin, DO — founder of CYRA Wellness",
     // The bio paragraphs (Dr. Goodwin's own first-person voice)
     bio: [
       "I'm Dr. Mondona Goodwin, a board-certified Internal Medicine physician with more than ten years of clinical experience. I trained as a Doctor of Osteopathic Medicine — a path I chose because osteopathic medicine starts from the premise that the body is one interconnected system, not a collection of separate complaints.",
