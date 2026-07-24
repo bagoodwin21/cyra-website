@@ -38,7 +38,7 @@ export default function BookPage() {
       {/* The two booking paths, side by side */}
       <div className="mx-auto mt-12 grid max-w-4xl gap-6 sm:grid-cols-2">
         {[book.consult, book.discovery].map((option) => {
-          const isConsult = "calendlyUrl" in option;
+          const isConsult = "bookingUrl" in option;
           return (
             <div
               key={option.title}
@@ -57,10 +57,7 @@ export default function BookPage() {
               <p className="text-body-copy mt-3 flex-1">{option.body}</p>
               <div className="mt-6">
                 <a
-                  href={isConsult ? book.consult.calendlyUrl : "#discovery-scheduler"}
-                  {...(isConsult
-                    ? { target: "_blank", rel: "noopener noreferrer" }
-                    : {})}
+                  href={isConsult ? "#consult-scheduler" : "#discovery-scheduler"}
                   data-analytics-event="book_consult_click"
                   className="inline-flex w-full min-h-12 items-center justify-center rounded-[3px] bg-primary px-6 py-2.5 text-center font-body text-cta font-bold uppercase tracking-[0.12em] text-white transition-all duration-200 hover:bg-accent sm:tracking-[0.17em]"
                 >
@@ -71,12 +68,26 @@ export default function BookPage() {
           );
         })}
       </div>
+      {/* Consultation booking (OptiMantra patient access) */}
+      <div id="consult-scheduler" className="mx-auto mt-14 max-w-4xl scroll-mt-24">
+        <h2 className="text-center font-heading text-2xl font-semibold text-foreground">
+          {book.consult.schedulerHeading}
+        </h2>
+        <iframe
+          src={book.consult.bookingUrl}
+          title={book.consult.schedulerHeading}
+          className="mt-5 h-[950px] w-full rounded-[3px] border border-border bg-background shadow-card"
+        />
+      </div>
       {/* Discovery Call scheduler */}
-      <div id="discovery-scheduler" className="mx-auto mt-12 max-w-4xl scroll-mt-24">
+      <div id="discovery-scheduler" className="mx-auto mt-14 max-w-4xl scroll-mt-24">
+        <h2 className="text-center font-heading text-2xl font-semibold text-foreground">
+          {book.discovery.schedulerHeading}
+        </h2>
         <CalendlyEmbed
           url={book.calendlyUrl}
           fallbackLabel={book.schedulerLabel}
-          className="min-h-[700px]"
+          className="mt-5 min-h-[700px]"
         />
       </div>
       <p className="mt-8 text-center text-small text-foreground-muted">

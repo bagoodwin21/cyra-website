@@ -766,17 +766,20 @@ export const content = {
       meta: "15 minutes · Free",
       body: "A short call with our Patient Care Coordinator about how the practice, membership, and pricing work. It's about the practice — not a medical appointment, and no medical advice is given.",
       ctaLabel: "Schedule Your Call", // Jumps to the scheduler below
+      // Heading shown above the embedded Discovery Call scheduler
+      schedulerHeading: "Schedule your free Discovery Call",
     },
     consult: {
       title: "Comprehensive Consultation",
       meta: "60 minutes · $399",
       body: "Your full one-hour visit with Dr. Goodwin — history, symptoms, goals, and an evidence-based plan. Completely nonbinding, and credited toward membership when you enroll within 14 days.",
-      ctaLabel: "Book the Consultation",
-      // Direct Calendly link for booking the consultation. This currently
-      // points to the Calendly page listing all appointment types — replace
-      // it with the consultation event's own link (from Calendly, click the
-      // event > Copy Link) for one-click booking.
-      calendlyUrl: "https://calendly.com/hello-drmondona",
+      ctaLabel: "Book the Consultation", // Jumps to the booking widget below
+      // Heading shown above the embedded consultation booking widget
+      schedulerHeading: "Book your comprehensive consultation",
+      // The OptiMantra patient-access booking link, embedded on the page.
+      // Only change this if OptiMantra gives you a new link.
+      bookingUrl:
+        "https://www.optimantra.com/optimus/om/patientaccess/servicesallV2?pid=OXlDYzY1TWMxTjd1RVJva0JjeUkrZz09&lid=VWtUQmM4YTlJQjR0dFk5YzFQQTdoUT09",
     },
     // The live Calendly scheduling link embedded on this page (Discovery Call).
     calendlyUrl: "https://calendly.com/hello-drmondona/15min",
