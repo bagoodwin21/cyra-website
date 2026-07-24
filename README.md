@@ -50,7 +50,7 @@ npm run build                # production build
                        Medicine board certification, MSCP)
 /compare             How CYRA compares to other menopause/HRT platforms —
                        dimensions, side-by-side table, deeper dives, checklist
-/book                Distraction-free "Request More Information" page
+/book                Distraction-free "Book Your Visit" page (both booking paths)
                        (Calendly placeholder), own minimal layout
 /privacy-policy      Placeholder (content to be finalized)
 /terms-of-service    Placeholder (content to be finalized)
