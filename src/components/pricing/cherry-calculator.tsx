@@ -53,6 +53,19 @@ export function CherryCalculator() {
         {calculator.heading}
       </h3>
       <p className="text-body-copy mt-2">{calculator.subhead}</p>
+      <div className="mt-5">
+        <a
+          href={calculator.applyUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-analytics-event="financing_check_rate_click"
+          className="inline-flex min-h-12 items-center justify-center rounded-[3px] bg-primary px-6 py-2.5 text-center font-body text-cta font-bold uppercase tracking-[0.12em] text-white transition-all duration-200 hover:bg-accent sm:px-10 sm:tracking-[0.17em]"
+        >
+          {calculator.ctaLabel}
+        </a>
+      </div>
+      {/* Cherry's interactive widget renders below when its script loads;
+          the Apply button above always works regardless. */}
       {/* Only the two families the widget is styled with — not Cherry's full menu */}
       <link
         rel="stylesheet"
