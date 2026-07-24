@@ -115,7 +115,7 @@ export const content = {
       // Short trust points shown as a row under the buttons
       trustPoints: [
         "Women's Hormonal Health",
-        "Estrogen, Progesterone & Testosterone",
+        "Bioidentical Estrogen, Progesterone & Testosterone",
         "Longer Appointments",
         "California Telehealth",
       ],
