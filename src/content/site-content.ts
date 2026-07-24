@@ -842,11 +842,60 @@ export const content = {
   },
 
   /* =======================================================================
+     FOR PHYSICIANS PAGE (/for-physicians) — written doctor-to-doctor,
+     linked from the footer. For PCPs and OB/GYNs considering a referral.
+     ======================================================================= */
+  forPhysicians: {
+    label: "For Physicians & Referring Providers",
+    heading: "A hormone specialist for the women in your panel.",
+    // Opening, in Dr. Goodwin's first person (matches the referral letter)
+    intro: [
+      "I'm Dr. Mondona Goodwin, a board-certified Internal Medicine physician and Menopause Society Certified Practitioner (MSCP) practicing telemedicine across California. I founded CYRA Wellness to give women's hormonal health the time and depth it deserves — the disrupted sleep, the mood shifts, the weight that won't budge, the brain fog affecting her work and relationships.",
+      "In primary care and gynecology, you're often the first person a patient turns to when something feels \"off.\" These conversations deserve time that a busy schedule rarely allows. That's exactly the gap CYRA Wellness fills — and I'd welcome the chance to help.",
+    ],
+    // Who to refer — the conditions list, phrased clinically
+    referHeading: "Patients who are a good fit",
+    referrals: [
+      "Perimenopause and menopause evaluation and management",
+      "Hormone therapy — estrogen, progesterone, and testosterone, individually tailored",
+      "PMDD and severe PMS",
+      "Postpartum hormonal concerns, including postpartum depression",
+      "Vaginal dryness or pain, low libido, and sexual health",
+      "Midlife weight management, including GLP-1 support where clinically appropriate",
+      "Fatigue, sleep disturbance, and metabolic concerns with a suspected hormonal component",
+    ],
+    // The collaboration promise — the referring doctor keeps the patient
+    collaborationHeading: "We extend your care — we don't replace it",
+    collaboration: [
+      "Your patient stays yours. She continues seeing you for primary care or gynecologic care; CYRA adds focused hormone and midlife-health support alongside it.",
+      "With her consent, we send you a consultation summary and keep your office in the loop on her hormone care — medications, dosing, and monitoring.",
+      "We don't duplicate services: no routine primary care, no gynecologic procedures or screenings.",
+    ],
+    // Practical details referring offices need up front
+    logisticsHeading: "Practical details",
+    logistics: [
+      "100% telehealth, licensed in California — no travel for your patient",
+      "New patients are typically seen within days, not weeks",
+      "60-minute comprehensive initial consultation",
+      "Membership-based and cash-pay, with pricing published openly on this site; insurance is used for labs and most prescriptions",
+      "Labs drawn at Quest locations near the patient",
+    ],
+    // How to refer + who to contact (the practice's office manager)
+    contactHeading: "How to refer",
+    contactBody:
+      "Refer the simple way: have your patient visit drmondona.com/book, or have your office reach ours and we'll take it from there. Our office manager is happy to set up a brief call with Dr. Goodwin to introduce the practice and answer questions.",
+    // Contact methods shown as buttons/lines
+    contactEmailLabel: "Email our office",
+    contactPhoneLabel: "Call or text",
+  },
+
+  /* =======================================================================
      LEGAL LINKS (bottom of every page)
      ======================================================================= */
   legalLinks: [
     { label: "Privacy Policy", href: "/privacy-policy" },
     { label: "Terms of Service", href: "/terms-of-service" },
+    { label: "For Physicians", href: "/for-physicians" },
   ],
 } as const;
 
