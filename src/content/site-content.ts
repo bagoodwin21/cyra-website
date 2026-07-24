@@ -885,12 +885,61 @@ export const content = {
   },
 
   /* =======================================================================
+     RESOURCES PAGE (/resources) — trusted providers Dr. Goodwin partners
+     with and recommends: pelvic floor PTs, trainers, dietitians, etc.
+     ======================================================================= */
+  resources: {
+    label: "Trusted Resources",
+    heading: "Providers I trust and recommend.",
+    intro:
+      "Real, lasting change is a team effort. Alongside your care at CYRA, these are independent providers I partner with and personally recommend — each one chosen because they take women's health as seriously as I do.",
+    // Shown while the list below is still empty. Delete or reword once
+    // the first partners are added.
+    emptyNote:
+      "I'm assembling this list now. In the meantime, if you'd like a personal recommendation — a pelvic floor physical therapist, a trainer, a dietitian — just ask during your visit or text us.",
+    // Small print at the bottom of the page
+    disclaimer:
+      "These are independent providers, not employees or affiliates of CYRA Wellness. No provider pays to be listed here; recommendations reflect professional judgment only.",
+    /* HOW TO ADD A PARTNER — copy this pattern inside categories: [ ] below.
+       Each category has a "name" and a list of partners. Each partner needs
+       a name; credentials, location, url, and blurb are optional (leave the
+       ones you don't need out entirely).
+
+    categories: [
+      {
+        name: "Pelvic Floor Physical Therapy",
+        partners: [
+          {
+            name: "Jane Smith, DPT",
+            credentials: "Doctor of Physical Therapy",
+            location: "Ventura, CA — telehealth available",
+            url: "https://example.com",
+            blurb: "Specializes in postpartum recovery and pelvic pain.",
+          },
+        ],
+      },
+    ],
+    */
+    categories: [] as {
+      name: string;
+      partners: {
+        name: string;
+        credentials?: string;
+        location?: string;
+        url?: string;
+        blurb?: string;
+      }[];
+    }[],
+  },
+
+  /* =======================================================================
      LEGAL LINKS (bottom of every page)
      ======================================================================= */
   legalLinks: [
     { label: "Privacy Policy", href: "/privacy-policy" },
     { label: "Terms of Service", href: "/terms-of-service" },
     { label: "For Physicians", href: "/for-physicians" },
+    { label: "Resources", href: "/resources" },
   ],
 } as const;
 
