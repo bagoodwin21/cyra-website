@@ -361,28 +361,18 @@ export const content = {
     testimonials: {
       label: "Patient Stories",
       heading: "Women who finally felt heard.",
-      // Each quote: the words, the person's name, and their city.
-      // (These are examples — replace with real, approved testimonials.)
-      items: [
-        {
-          quote:
-            "After years of being told my symptoms were just part of getting older, Dr. Goodwin actually listened — and built a plan around me. I finally feel like myself again.",
-          name: "Sarah M.",
-          location: "Thousand Oaks, CA",
-        },
-        {
-          quote:
-            "The longer appointments changed everything. It was a real conversation about my body and a plan we made together, not fifteen rushed minutes.",
-          name: "Michelle R.",
-          location: "Los Angeles, CA",
-        },
-        {
-          quote:
-            "Having Dr. Goodwin a message away between visits made me feel genuinely cared for. The Cherry financing made it completely doable, too.",
-          name: "Jennifer K.",
-          location: "San Diego, CA",
-        },
-      ],
+      /* ONLY REAL, AUTHORIZED QUOTES GO HERE. Each patient must sign a
+         HIPAA marketing authorization before her words appear on the site
+         (keep the signed form on file). To add one, copy this pattern
+         inside items: [ ] below:
+
+          {
+            quote: "Her exact words.",
+            name: "First L.",
+            location: "City, CA",
+          },
+      */
+      items: [] as { quote: string; name: string; location: string }[],
       // The "read our reviews" button under the quotes — sends visitors to
       // Google, where reviews carry third-party credibility.
       googleCtaLabel: "Read our reviews on Google",
