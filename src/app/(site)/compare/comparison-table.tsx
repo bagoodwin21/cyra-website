@@ -196,7 +196,7 @@ export function ComparisonTable() {
       >
         <table className="w-full min-w-[880px] border-collapse">
           <caption className="sr-only">
-            Comparison of menopause telehealth platforms by provider type,
+            Comparison of hormone telehealth platforms by provider type,
             testosterone access, care structure, financing, and scope.
           </caption>
           <thead>

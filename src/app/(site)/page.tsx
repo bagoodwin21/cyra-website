@@ -3,6 +3,7 @@ import Link from "next/link";
 import {
   Activity,
   ArrowRight,
+  ArrowUpRight,
   Baby,
   Bone,
   Brain,
@@ -407,6 +408,17 @@ export default function HomePage() {
         </FadeUp>
         <FadeUp delay={0.15} className="mt-12">
           <TestimonialCarousel items={testimonials} />
+        </FadeUp>
+        <FadeUp delay={0.2} className="mt-10 text-center">
+          <a
+            href={home.testimonials.googleUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 font-body text-cta font-bold uppercase tracking-[0.15em] text-primary transition-colors hover:text-primary-light"
+          >
+            {home.testimonials.googleCtaLabel}
+            <ArrowUpRight className="h-4 w-4" aria-hidden />
+          </a>
         </FadeUp>
       </Section>
 
