@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: [
+    "bioidentical hormone therapy California",
     "women's hormonal health California",
     "perimenopause treatment",
     "menopause telehealth California",
@@ -24,6 +25,8 @@ export const metadata: Metadata = {
     "testosterone therapy women",
     "women's sexual health",
     "hormone doctor online California",
+    "GLP-1 weight loss California",
+    "semaglutide tirzepatide women",
   ],
   openGraph: {
     siteName: siteConfig.name,

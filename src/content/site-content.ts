@@ -62,7 +62,7 @@ export const content = {
     tagline: "Proactive, personalized care for women's hormonal health",
     // One-sentence description used by Google and social media previews
     description:
-      "CYRA Wellness is a California membership-based telemedicine practice for women's hormonal conditions throughout life — perimenopause, menopause, PMS/PMDD, postpartum depression, sexual health, and metabolic health — led by Dr. Mondona Goodwin, DO, a Menopause Society Certified Practitioner.",
+      "CYRA Wellness is a California membership-based telemedicine practice offering bioidentical hormone therapy for women's hormonal conditions throughout life — perimenopause, menopause, PMS/PMDD, postpartum depression, sexual health, and metabolic health — led by Dr. Mondona Goodwin, DO, a Menopause Society Certified Practitioner.",
     website: "https://drmondona.com", // Live website address (leave as-is unless the domain changes)
     physician: "Dr. Mondona Goodwin, DO", // Full name + credentials
     licensedStates: "Licensed in California", // Where care is offered — California only
@@ -188,11 +188,11 @@ export const content = {
         },
         {
           title: "Weight Gain",
-          body: "Root-cause care for hormonal and metabolic weight changes, not just calories.",
+          body: "Root-cause care for hormonal and metabolic weight changes — including GLP-1 medications when appropriate, not just calories.",
         },
         {
           title: "Metabolic Health",
-          body: "Insulin resistance, cholesterol, and long-term prevention as part of your whole picture.",
+          body: "Insulin resistance, cholesterol, GLP-1 medication management, and long-term prevention as part of your whole picture.",
         },
         {
           title: "Fatigue",
@@ -427,6 +427,11 @@ export const content = {
             "Yes. Full bioidentical hormone therapy centers on estrogen and progesterone when they're right for you, and women have testosterone too — it affects mood, energy, and libido. When your labs and symptoms support it, I include testosterone as a core part of your care, with careful dosing and monitoring.",
         },
         {
+          question: "Do you prescribe GLP-1 medications for weight loss?",
+          answer:
+            "Yes, when it's clinically appropriate. GLP-1 medications (like semaglutide and tirzepatide) can be a helpful tool for hormonal and metabolic weight changes, and I prescribe them as part of a personalized plan — alongside your hormone therapy, labs, and long-term metabolic health, not as a standalone quick fix.",
+        },
+        {
           question: "Do you treat PMDD?",
           answer:
             "Yes. PMDD (premenstrual dysphoric disorder) is a real, treatable condition — not “just PMS.” If severe mood symptoms like rage, despair, or anxiety show up in the week or two before your period and lift once it starts, that cyclical pattern is exactly what I evaluate and treat with a hormone-informed approach, rather than dismissing it.",
@@ -478,7 +483,7 @@ export const content = {
     bio: [
       "I'm Dr. Mondona Goodwin, a board-certified Internal Medicine physician with more than ten years of clinical experience. I trained as a Doctor of Osteopathic Medicine — a path I chose because osteopathic medicine starts from the premise that the body is one interconnected system, not a collection of separate complaints.",
       "Over the years I've pursued extensive additional training in perimenopause, menopause, hormone therapy, metabolic health, and women's midlife health, and I'm a Menopause Society Certified Practitioner (MSCP). One pattern kept repeating in my practice: women arriving with real, life-altering symptoms and leaving with a shrug, or the words 'that's just part of getting older.'",
-      "My approach is proactive and evidence-based. I don't treat a hot flash; I treat a woman — her metabolism and her mood alongside her hormones, her long-term risks alongside her symptoms, her goals alongside her labs. When it fits your health, that includes full hormone therapy — estrogen, progesterone, and testosterone when appropriate. And I work as your women's hormone specialist alongside your primary care physician and OB/GYN, coordinating with them so your care stays seamless.",
+      "My approach is proactive and evidence-based. I don't treat a hot flash; I treat a woman — her metabolism and her mood alongside her hormones, her long-term risks alongside her symptoms, her goals alongside her labs. When it fits your health, that includes full bioidentical hormone therapy — estrogen, progesterone, and testosterone when appropriate. And I work as your women's hormone specialist alongside your primary care physician and OB/GYN, coordinating with them so your care stays seamless.",
       "What I want every patient to feel when a visit ends is simple: heard, taken seriously, and clear on the plan — with a physician who will still be there at the next visit, and the one after that.",
     ],
     // The pull-quote and signature (Dr. Goodwin's personal story)
