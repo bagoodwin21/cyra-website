@@ -406,9 +406,11 @@ export default function HomePage() {
           <SectionLabel>{home.testimonials.label}</SectionLabel>
           <h2 className="heading-section">{home.testimonials.heading}</h2>
         </FadeUp>
-        <FadeUp delay={0.15} className="mt-12">
-          <TestimonialCarousel items={testimonials} />
-        </FadeUp>
+        {testimonials.length > 0 && (
+          <FadeUp delay={0.15} className="mt-12">
+            <TestimonialCarousel items={testimonials} />
+          </FadeUp>
+        )}
         <FadeUp delay={0.2} className="mt-10 text-center">
           <a
             href={home.testimonials.googleUrl}
