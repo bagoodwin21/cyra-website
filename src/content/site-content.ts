@@ -106,7 +106,7 @@ export const content = {
     hero: {
       // The big headline. The word(s) inside the *asterisks* are shown in
       // an italic accent color — keep the asterisks around them.
-      headline: "Personalized hormone care for women in *midlife*.",
+      headline: "Personalized hormone care for women at *every stage*.",
       // Supporting paragraph under the headline
       subheadline:
         "A membership-based practice for women navigating hormonal conditions throughout life — not just menopause. Longer appointments, a plan built around you, and a physician who follows closely, by secure video across California.",
@@ -383,6 +383,10 @@ export const content = {
           location: "San Diego, CA",
         },
       ],
+      // The "read our reviews" button under the quotes — sends visitors to
+      // Google, where reviews carry third-party credibility.
+      googleCtaLabel: "Read our reviews on Google",
+      googleUrl: "https://www.google.com/search?q=cyra+wellness",
     },
 
     // ---- FAQ: a short list of common questions ----
@@ -513,7 +517,7 @@ export const content = {
     hero: {
       label: "Compare", // Small label above the headline
       heading:
-        "Not all menopause telehealth is the same. Here's what to look for.",
+        "Not all hormone telehealth is the same. Here's what to look for.",
       subheadline:
         "The growth of online hormone care has been great for women. But there are meaningful differences in who delivers your care, what's included in your fees, and how your treatment is structured. Here's an honest look.",
       jumpCta: "Jump to comparison", // The button that scrolls down to the table
@@ -559,7 +563,7 @@ export const content = {
       label: "Side by Side",
       heading: "The comparison",
       intro:
-        "How CYRA Wellness compares with the major menopause telehealth platforms, criterion by criterion.",
+        "How CYRA Wellness compares with the major hormone telehealth platforms, criterion by criterion.",
       // The small print shown directly beneath the table
       footnote:
         "Table reflects publicly available information as of July 2026. Platform offerings change. We encourage you to verify directly with any provider before making your decision.",
