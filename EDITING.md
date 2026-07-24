@@ -136,8 +136,8 @@ site. Here's the map:
 ## A few notes specific to your practice
 
 - **Prices:** The membership pricing shown on the site is calculated from the
-  three numbers at the very top of the file (`monthlyPayment`, `paymentCount`,
-  `upfrontDiscountPercent`). Change the number there and every price on the site
+  numbers at the very top of the file (`monthlyPayment`, `paymentCount`,
+  `upfrontTotal`, `consultFee`). Change the number there and every price on the site
   updates automatically — you don't type dollar amounts anywhere else.
 - **Financing:** Cherry is the only financing partner mentioned. Please keep it
   that way in any copy you write. The savings programs in the "Insurance & cost

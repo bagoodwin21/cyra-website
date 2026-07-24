@@ -25,15 +25,18 @@
 export const carePlanPricing = {
   monthlyPayment: 175, // Membership: dollars per monthly Cherry payment
   paymentCount: 13, // Number of monthly payments (Cherry splits 12 months into 13)
-  upfrontDiscountPercent: 5, // Percent saved when the plan is paid in full upfront
+  upfrontTotal: 2160, // Flat price when the year is paid in full upfront
   consultFee: 399, // One-hour initial consult fee (charged once, before enrolling)
 } as const;
 
 // Derived totals — you do NOT need to edit these; they update on their own.
 export const carePlanTotal =
   carePlanPricing.monthlyPayment * carePlanPricing.paymentCount; // 2275
-export const carePlanUpfrontTotal =
-  carePlanTotal * (1 - carePlanPricing.upfrontDiscountPercent / 100); // 2161.25
+export const carePlanUpfrontTotal = carePlanPricing.upfrontTotal; // 2160
+// Percent saved by paying upfront, for display (rounds to a whole number)
+export const upfrontSavingsPercent = Math.round(
+  (1 - carePlanUpfrontTotal / carePlanTotal) * 100,
+); // 5
 
 /** Formats a number as US dollars, keeping cents only when non-zero. */
 export function formatUsd(amount: number): string {
@@ -293,9 +296,9 @@ export const content = {
         },
         upfront: {
           label: "Pay in full",
-          // e.g. "$2,161.25"
+          // e.g. "$2,160"
           price: formatUsd(carePlanUpfrontTotal),
-          detail: `Save ${carePlanPricing.upfrontDiscountPercent}% off the ${formatUsd(
+          detail: `Save ${upfrontSavingsPercent}% off the ${formatUsd(
             carePlanTotal,
           )} total when you pay upfront`,
         },
@@ -304,7 +307,7 @@ export const content = {
       // carePlanPricing.consultFee at the top of this file — change it there.
       note: `The comprehensive consultation is a separate, one-time fee of ${formatUsd(
         carePlanPricing.consultFee,
-      )} and is required before enrolling in membership — and it's credited toward your membership when you enroll within 14 days of your consultation. Medication and lab costs are billed separately. After your first year, most patients transition to a lower-cost maintenance membership to keep their results going.`,
+      )} and is required before enrolling in membership — and it's credited toward your membership when you enroll within 14 days of your consultation. Medications and labs aren't included in membership — most are covered through your insurance, and I work to keep any out-of-pocket costs low. After your first year, most patients transition to a lower-cost maintenance membership to keep their results going.`,
       // ---- Cherry payment calculator (interactive box under the pricing cards) ----
       calculator: {
         heading: "Financing through Cherry", // Title above the Cherry box
@@ -434,7 +437,7 @@ export const content = {
             carePlanPricing.monthlyPayment,
           )} per month for ${carePlanPricing.paymentCount} payments through Cherry with approved credit, or ${formatUsd(
             carePlanUpfrontTotal,
-          )} paid in full (a ${carePlanPricing.upfrontDiscountPercent}% savings). Cherry is our financing partner, and checking your rate doesn't affect your credit score. The comprehensive consultation is a separate, one-time ${formatUsd(
+          )} paid in full (a ${upfrontSavingsPercent}% savings). Cherry is our financing partner, and checking your rate doesn't affect your credit score. The comprehensive consultation is a separate, one-time ${formatUsd(
             carePlanPricing.consultFee,
           )} fee, credited toward your membership when you enroll within 14 days. Beyond membership, I work to keep your other costs low: I use your insurance whenever possible for labs and prescriptions — most labs are covered just as if your PCP ordered them, so they aren't an extra expense, and most hormone medications are covered too. Without insurance, hormones typically run about $20–30 per month each through GoodRx, and I can also send prescriptions through HRT Club, a pharmacy with affordable cash pricing. Blood draws happen at a Quest location near you, we accept HSA and FSA funds for membership, and we provide superbills for possible out-of-network reimbursement.`,
         },
