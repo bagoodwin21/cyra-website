@@ -37,7 +37,7 @@ export default function BookPage() {
       </div>
       {/* The two booking paths, side by side */}
       <div className="mx-auto mt-12 grid max-w-4xl gap-6 sm:grid-cols-2">
-        {[book.discovery, book.consult].map((option) => {
+        {[book.consult, book.discovery].map((option) => {
           const isConsult = "calendlyUrl" in option;
           return (
             <div
@@ -80,6 +80,14 @@ export default function BookPage() {
         />
       </div>
       <p className="mt-8 text-center text-small text-foreground-muted">
+        {book.textPrompt}{" "}
+        <a
+          href={`sms:${siteConfig.smsNumber}`}
+          className="font-medium text-primary hover:text-primary-light"
+        >
+          {siteConfig.smsDisplay}
+        </a>
+        {" · "}
         {book.emailPrompt}{" "}
         <a
           href={`mailto:${siteConfig.email}`}

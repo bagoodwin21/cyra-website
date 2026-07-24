@@ -27,9 +27,11 @@ export const siteConfig = {
   disclaimer: content.brand.disclaimer,
   /**
    * Practice SMS number for "text us" links (E.164, e.g. +18055551234).
-   * Set NEXT_PUBLIC_SMS_NUMBER; text-us UI stays hidden until it's real.
+   * Lives in the content file so Dr. Goodwin can edit it; the env var
+   * NEXT_PUBLIC_SMS_NUMBER still works as an override if ever needed.
    */
-  smsNumber: process.env.NEXT_PUBLIC_SMS_NUMBER ?? "",
+  smsNumber: process.env.NEXT_PUBLIC_SMS_NUMBER ?? content.brand.smsNumber ?? "",
+  smsDisplay: content.brand.smsDisplay ?? "",
 };
 
 export interface NavLink {

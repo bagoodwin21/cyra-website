@@ -65,6 +65,10 @@ export const content = {
     licensedStates: "Licensed in California", // Where care is offered — California only
     // Contact email shown in the footer and on the booking page
     email: "hello@drmondona.com",
+    // Practice texting number. smsNumber is the machine format (keep the +1
+    // and no spaces); smsDisplay is how it reads on the site.
+    smsNumber: "+18053879078",
+    smsDisplay: "805-387-9078",
     // Instagram profile link shown in the footer
     instagramUrl: "https://www.instagram.com/drmondona/",
     // Fine-print line at the bottom of the site
@@ -235,16 +239,16 @@ export const content = {
         "Joining is simple and unhurried. Here's exactly what to expect from your first conversation to lasting change.",
       steps: [
         {
-          title: "Start with a free Discovery Call",
+          title: "Book your consultation",
           // Optional short label shown next to the step title
-          meta: "Free — or book your consult directly",
-          body: "Book a free Discovery Call with our Patient Care Coordinator to learn how the practice, membership, and pricing work. It's a conversation about the practice — not a medical appointment, and no medical advice is given. If you have questions best answered by me personally, the coordinator can arrange that. Already know you're ready? You can book your consultation directly.",
+          meta: "Most patients start here",
+          body: "Book your 60-minute comprehensive consultation with me directly — most patients are seen within the same week. Want to learn about the practice, membership, or pricing first? Schedule a free Discovery Call with our Patient Care Coordinator, or text us at 805-387-9078. The Discovery Call is about the practice — not a medical appointment, and no medical advice is given.",
         },
         {
           title: "Your comprehensive consultation",
           // Shows the length and the one-time consult fee (from carePlanPricing.consultFee)
           meta: `60 minutes · ${formatUsd(carePlanPricing.consultFee)}`,
-          body: "A completely nonbinding 60-minute consultation with me — most patients are seen within the same week, with no obligation to join afterward. Together we'll review your medical history, current symptoms, previous treatments, lifestyle, goals, and lab history, answer your questions, and walk through evidence-based treatment options. You'll leave with a clear understanding of my recommendations and can then decide whether membership is right for you.",
+          body: "A completely nonbinding hour with me, with no obligation to join afterward. Together we'll review your medical history, current symptoms, previous treatments, lifestyle, goals, and lab history, answer your questions, and walk through evidence-based treatment options. You'll leave with a clear understanding of my recommendations — and the fee is credited toward your membership when you enroll within 14 days.",
         },
         {
           title: "Begin your membership",
@@ -746,7 +750,7 @@ export const content = {
   book: {
     heading: "Book Your Visit",
     subheadline:
-      "Two ways to start — whichever fits where you are. Schedule a free Discovery Call to learn about the practice, or book your comprehensive consultation with Dr. Goodwin directly.",
+      "Book your comprehensive consultation with Dr. Goodwin — or, if you'd like to learn about the practice first, start with a free Discovery Call or a text.",
     // Short reassurance points
     reassurances: [
       "No commitment required — the consultation is completely nonbinding",
@@ -755,7 +759,7 @@ export const content = {
     ],
     // ---- The two booking options shown side by side ----
     discovery: {
-      title: "Free Discovery Call",
+      title: "Not ready to book? Start with a free Discovery Call",
       meta: "15 minutes · Free",
       body: "A short call with our Patient Care Coordinator about how the practice, membership, and pricing work. It's about the practice — not a medical appointment, and no medical advice is given.",
       ctaLabel: "Schedule Your Call", // Jumps to the scheduler below
@@ -778,6 +782,8 @@ export const content = {
     schedulerLabel: "Scheduling embed — request info or book your consultation",
     // The line under the scheduler
     emailPrompt: "Prefer to reach out directly? Email us at",
+    // The texting line under the scheduler (uses the number from brand above)
+    textPrompt: "Questions? Text us at",
   },
 
   /* =======================================================================
