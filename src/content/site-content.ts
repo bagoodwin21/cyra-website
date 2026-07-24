@@ -303,10 +303,15 @@ export const content = {
       )} and is required before enrolling in membership — and it's credited toward your membership when you enroll within 14 days of your consultation. Medication and lab costs are billed separately. After your first year, most patients transition to a lower-cost maintenance membership to keep their results going.`,
       // ---- Cherry payment calculator (interactive box under the pricing cards) ----
       calculator: {
-        heading: "Estimate your monthly payment", // Title above the calculator
-        // Line under the title
-        subhead:
-          "See what membership looks like month to month with Cherry — checking your rate takes about a minute and doesn't affect your credit score.",
+        heading: "Financing through Cherry", // Title above the Cherry box
+        // Line under the title. The dollar amount and payment count come from
+        // the pricing numbers at the top of this file.
+        subhead: `Split your membership into ${carePlanPricing.paymentCount} monthly payments of ${formatUsd(
+          carePlanPricing.monthlyPayment,
+        )} with approved credit. Applying takes about a minute and won't affect your credit score.`,
+        // The button that takes patients to Cherry's application page
+        ctaLabel: "Apply with Cherry",
+        applyUrl: "https://pay.withcherry.com/cyra-wellness-pc",
         // Your practice's Cherry account ID (from the Cherry dashboard).
         // Only change these if Cherry gives you new account details.
         slug: "cyra-wellness-pc",
