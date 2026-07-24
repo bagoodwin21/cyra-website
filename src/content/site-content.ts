@@ -284,7 +284,7 @@ export const content = {
       // Pricing box heading
       pricingHeading: "Simple, transparent pricing",
       pricingSubhead:
-        "Your one-year membership, with two ways to pay. Financing is available through Cherry.",
+        "Your one-year membership after your initial consultation — two ways to pay. Financing is available through Cherry.",
       // The two payment options. The prices are calculated from the numbers
       // at the top of this file — you don't type them here.
       options: {
@@ -305,9 +305,9 @@ export const content = {
       },
       // Small print under the pricing box. The consult price is pulled from
       // carePlanPricing.consultFee at the top of this file — change it there.
-      note: `The comprehensive consultation is a separate, one-time fee of ${formatUsd(
+      note: `Your first step is the comprehensive consultation — a separate, one-time fee of ${formatUsd(
         carePlanPricing.consultFee,
-      )} and is required before enrolling in membership — and it's credited toward your membership when you enroll within 14 days of your consultation. Medications and labs aren't included in membership — most are covered through your insurance, and I work to keep any out-of-pocket costs low. After your first year, most patients transition to a lower-cost maintenance membership to keep their results going.`,
+      )}. Enroll within 14 days and it's credited toward your membership, so the prices above are everything you pay after your consultation. Medications and labs aren't included in membership — most are covered through your insurance, and I work to keep any out-of-pocket costs low. After your first year, most patients transition to a lower-cost maintenance membership to keep their results going.`,
       // ---- Cherry payment calculator (interactive box under the pricing cards) ----
       calculator: {
         heading: "Financing through Cherry", // Title above the Cherry box
@@ -439,7 +439,7 @@ export const content = {
             carePlanUpfrontTotal,
           )} paid in full (a ${upfrontSavingsPercent}% savings). Cherry is our financing partner, and checking your rate doesn't affect your credit score. The comprehensive consultation is a separate, one-time ${formatUsd(
             carePlanPricing.consultFee,
-          )} fee, credited toward your membership when you enroll within 14 days. Beyond membership, I work to keep your other costs low: I use your insurance whenever possible for labs and prescriptions — most labs are covered just as if your PCP ordered them, so they aren't an extra expense, and most hormone medications are covered too. Without insurance, hormones typically run about $20–30 per month each through GoodRx, and I can also send prescriptions through HRT Club, a pharmacy with affordable cash pricing. Blood draws happen at a Quest location near you, we accept HSA and FSA funds for membership, and we provide superbills for possible out-of-network reimbursement.`,
+          )} fee — enroll within 14 days and it's credited toward your membership, so the membership prices are everything you pay after the consultation. Beyond membership, I work to keep your other costs low: I use your insurance whenever possible for labs and prescriptions — most labs are covered just as if your PCP ordered them, so they aren't an extra expense, and most hormone medications are covered too. Without insurance, hormones typically run about $20–30 per month each through GoodRx, and I can also send prescriptions through HRT Club, a pharmacy with affordable cash pricing. Blood draws happen at a Quest location near you, we accept HSA and FSA funds for membership, and we provide superbills for possible out-of-network reimbursement.`,
         },
       ],
     },
