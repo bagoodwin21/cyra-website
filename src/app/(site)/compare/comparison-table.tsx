@@ -74,6 +74,110 @@ function CellContent({ cell, isCyra }: { cell: Cell; isCyra: boolean }) {
   );
 }
 
+/**
+ * Phone layout: the full six-column table can't fit, and a horizontal
+ * scroller hides the competitors entirely. Instead: Criteria | CYRA |
+ * one competitor at a time, picked from a dropdown.
+ */
+function MobileComparison() {
+  const [competitorIndex, setCompetitorIndex] = React.useState(1);
+  const interactionTracked = React.useRef(false);
+
+  const onSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setCompetitorIndex(Number(e.target.value));
+    if (!interactionTracked.current) {
+      interactionTracked.current = true;
+      trackEvent("compare_table_scroll");
+    }
+  };
+
+  return (
+    <div className="md:hidden">
+      <label
+        htmlFor="compare-competitor"
+        className="block text-small font-semibold uppercase tracking-wide text-foreground-muted"
+      >
+        Compare CYRA with
+      </label>
+      <select
+        id="compare-competitor"
+        value={competitorIndex}
+        onChange={onSelect}
+        className="mt-2 w-full rounded-[3px] border border-border bg-background p-3 font-body text-base font-semibold text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light"
+      >
+        {PLATFORMS.slice(1).map((platform, i) => (
+          <option key={platform} value={i + 1}>
+            {platform}
+          </option>
+        ))}
+      </select>
+      <div className="mt-4 overflow-hidden rounded-card border border-border bg-surface shadow-card">
+        <table className="w-full border-collapse">
+          <caption className="sr-only">
+            Comparison of CYRA Wellness with {PLATFORMS[competitorIndex]} by
+            provider type, testosterone access, care structure, financing, and
+            scope.
+          </caption>
+          <thead>
+            <tr className="border-b border-border">
+              <th
+                scope="col"
+                className="w-[34%] p-3 text-left text-[13px] font-semibold uppercase tracking-wide text-foreground-muted"
+              >
+                Criteria
+              </th>
+              <th
+                scope="col"
+                className={cn(
+                  "w-[33%] border-l-2 border-l-primary p-3 text-center font-heading text-sm font-bold text-primary",
+                  CYRA_BG,
+                )}
+              >
+                {PLATFORMS[0]}
+              </th>
+              <th
+                scope="col"
+                className="w-[33%] p-3 text-center text-[13px] font-semibold text-foreground"
+              >
+                {PLATFORMS[competitorIndex]}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {ROWS.map((row) => (
+              <tr
+                key={row.criterion}
+                className="border-b border-border last:border-b-0"
+              >
+                <th
+                  scope="row"
+                  className="p-3 text-left text-[13px] font-semibold leading-snug text-foreground"
+                >
+                  {row.criterion}
+                </th>
+                <td
+                  className={cn(
+                    "border-l-2 border-l-primary p-3 align-middle",
+                    CYRA_BG,
+                  )}
+                >
+                  <CellContent cell={row.cells[0]} isCyra />
+                </td>
+                <td className="p-3 align-middle">
+                  <CellContent
+                    cell={row.cells[competitorIndex]}
+                    isCyra={false}
+                  />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
 export function ComparisonTable() {
   const scrollTracked = React.useRef(false);
 
@@ -85,8 +189,9 @@ export function ComparisonTable() {
 
   return (
     <div>
+      <MobileComparison />
       <div
-        className="overflow-x-auto rounded-card border border-border bg-surface shadow-card"
+        className="hidden overflow-x-auto rounded-card border border-border bg-surface shadow-card md:block"
         onScroll={onScroll}
       >
         <table className="w-full min-w-[880px] border-collapse">
