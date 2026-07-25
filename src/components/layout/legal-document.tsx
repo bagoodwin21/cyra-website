@@ -14,6 +14,8 @@ interface LegalDocumentProps {
   effectiveDate: string;
   intro: string;
   sections: readonly LegalSection[];
+  /** Optional prominent link to a related document (e.g. the NPP PDF). */
+  documentLink?: { label: string; href: string };
 }
 
 /**
@@ -27,6 +29,7 @@ export function LegalDocument({
   effectiveDate,
   intro,
   sections,
+  documentLink,
 }: LegalDocumentProps) {
   return (
     <Section>
@@ -37,6 +40,18 @@ export function LegalDocument({
           Effective {effectiveDate}
         </p>
         <p className="text-subheadline mt-6">{intro}</p>
+        {documentLink && (
+          <p className="mt-4">
+            <a
+              href={documentLink.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-body text-cta font-bold uppercase tracking-[0.15em] text-primary underline-offset-2 hover:underline"
+            >
+              {documentLink.label}
+            </a>
+          </p>
+        )}
 
         <div className="mt-12 space-y-10">
           {sections.map((section) => (
