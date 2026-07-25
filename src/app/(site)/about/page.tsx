@@ -21,7 +21,7 @@ export function generateMetadata(): Metadata {
     title: "About Dr. Mondona Goodwin, DO | CYRA Wellness",
     absoluteTitle: true,
     description:
-      "Meet Dr. Mondona Goodwin, DO — a board-certified Internal Medicine physician and Menopause Society Certified Practitioner (MSCP) behind CYRA Wellness, a California membership-based practice for women's hormonal and metabolic health.",
+      "Meet Dr. Mondona Goodwin, DO, a board-certified Internal Medicine physician and Menopause Society Certified Practitioner (MSCP) behind CYRA Wellness, a California membership-based practice for women's hormonal and metabolic health.",
     path: "/about",
   });
 }

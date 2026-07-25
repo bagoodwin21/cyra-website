@@ -15,7 +15,7 @@ export function generateMetadata(): Metadata {
     title: "Trusted Resources | CYRA Wellness",
     absoluteTitle: true,
     description:
-      "Independent providers Dr. Goodwin partners with and recommends — pelvic floor physical therapists, trainers, dietitians, and more.",
+      "Independent providers Dr. Goodwin partners with and recommends: pelvic floor physical therapists, trainers, dietitians, and more.",
     path: "/resources",
   });
 }

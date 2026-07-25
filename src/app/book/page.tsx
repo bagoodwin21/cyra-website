@@ -13,7 +13,7 @@ export function generateMetadata(): Metadata {
     title: "Book Your Visit | CYRA Wellness",
     absoluteTitle: true,
     description:
-      "Request more information from CYRA Wellness — women's hormonal health telehealth in California. Book a free Discovery Call with our Patient Care Coordinator or your 60-minute comprehensive consultation.",
+      "Request more information from CYRA Wellness, women's hormonal health telehealth in California. Book a free Discovery Call with our Patient Care Coordinator or your 60-minute comprehensive consultation.",
     path: "/book",
   });
 }

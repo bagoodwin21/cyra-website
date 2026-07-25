@@ -14,7 +14,7 @@ export function generateMetadata(): Metadata {
     title: "For Physicians & Referring Providers | CYRA Wellness",
     absoluteTitle: true,
     description:
-      "Refer your patients to CYRA Wellness — physician-led hormone care for women across California. Board-certified Internal Medicine, MSCP. We extend your care, we don't replace it.",
+      "Refer your patients to CYRA Wellness, physician-led hormone care for women across California. Board-certified Internal Medicine, MSCP. We extend your care, we don't replace it.",
     path: "/for-physicians",
   });
 }
