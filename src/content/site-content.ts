@@ -627,13 +627,13 @@ export const content = {
           ],
         },
         {
-          criterion: "Membership vs. Subscription Model",
+          criterion: "How Care Is Structured",
           cells: [
-            { verdict: "yes", note: "12-month membership" },
-            { verdict: "no", note: "Monthly subscription" },
-            { verdict: "no", note: "Monthly subscription" },
-            { verdict: "no", note: "Monthly subscription" },
-            { verdict: "no", note: "Monthly subscription" },
+            { note: "12-month program, then lower-cost maintenance" },
+            { note: "Month-to-month subscription" },
+            { note: "Month-to-month subscription" },
+            { note: "Month-to-month subscription" },
+            { note: "Month-to-month subscription" },
           ],
         },
         {
