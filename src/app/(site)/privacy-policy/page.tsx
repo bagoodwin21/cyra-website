@@ -1,22 +1,27 @@
 import type { Metadata } from "next";
-import { PagePlaceholder } from "@/components/layout/page-placeholder";
+import { LegalDocument } from "@/components/layout/legal-document";
 import { content } from "@/content/site-content";
 import { buildMetadata } from "@/lib/seo";
 
+const { privacy } = content.legalPages;
+
 export function generateMetadata(): Metadata {
   return buildMetadata({
-    title: content.legalPages.privacy.title,
-    description: "CYRA Wellness privacy policy.",
+    title: privacy.title,
+    description:
+      "How CYRA Wellness handles information collected through this website, and where patient health information is covered instead by HIPAA and our Notice of Privacy Practices.",
     path: "/privacy-policy",
   });
 }
 
 export default function PrivacyPolicyPage() {
   return (
-    <PagePlaceholder
-      label={content.legalPages.privacy.label}
-      title={content.legalPages.privacy.title}
-      description={content.legalPages.privacy.description}
+    <LegalDocument
+      label={privacy.label}
+      title={privacy.title}
+      effectiveDate={privacy.effectiveDate}
+      intro={privacy.intro}
+      sections={privacy.sections}
     />
   );
 }
