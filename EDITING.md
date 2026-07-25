@@ -129,8 +129,7 @@ site. Here's the map:
 | `footer` | The small headings in the footer |
 | `forPhysicians` | The whole "For Physicians" referral page (linked in the footer) |
 | `resources` | The "Trusted Resources" partner directory page — add PTs, trainers, dietitians here (a copy-paste example is in the file's comments) |
-| `legalPages` | The words shown on the Privacy Policy and Terms of Service pages |
-| `placeholderPage` | The "Back to Home" button and "Questions?" email line on those legal pages |
+| `legalPages` | The full text of the Privacy Policy and Terms of Service pages. Each one has a `title`, an `effectiveDate` (update it whenever you change the wording), a short `intro`, and a list of `sections` — every section is a `heading` plus a `body` list where each item becomes its own paragraph. To add a paragraph, add a new "sentence in quotes," to that body list |
 | `legalLinks` | The Privacy Policy and Terms links at the very bottom |
 
 ---

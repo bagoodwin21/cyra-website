@@ -825,36 +825,244 @@ export const content = {
 
   /* =======================================================================
      LEGAL PAGES (the Privacy Policy and Terms of Service pages themselves)
-     The words shown on each legal page. These are placeholder pages until the
-     full policy text is finalized. Change the "title" and "description" here
-     to update what visitors see on those pages.
+
+     The full text of both documents lives here. Each page has:
+       label         - the small line above the page heading
+       title         - the page heading
+       effectiveDate - the "Effective ..." line under the heading. Update this
+                       whenever you change any wording below.
+       intro         - the short paragraph right under the effective date
+       sections      - the numbered body. Each one is a "heading" plus a
+                       "body" list, where every item in the list becomes its
+                       own paragraph on the page.
+
+     To edit: change the words inside the quotes. To add a paragraph, add a
+     new "sentence in quotes," to that section's body list. To add a whole
+     section, copy an existing { heading: ..., body: [...] } block, commas
+     and braces included.
+
+     Please keep these facts straight when editing: the website is marketing
+     only, patient health information is covered by the practice's Notice of
+     Privacy Practices (a separate document given at intake), and care is
+     offered to California residents only.
      ======================================================================= */
   legalPages: {
+    // The line at the bottom of both legal pages, before the email address
+    questionsPrompt: "Questions about this policy? Email",
+
     privacy: {
       label: "Legal", // Small label above the page heading
       title: "Privacy Policy", // The page heading
-      // The paragraph shown while the full policy is being written
-      description:
-        "Our privacy policy is being finalized and will be published here.",
+      effectiveDate: "July 25, 2026", // Shown as "Effective July 25, 2026"
+      intro:
+        "This policy explains how CYRA Wellness handles information in connection with this website.",
+      sections: [
+        {
+          heading: "Who we are",
+          body: [
+            "CYRA Wellness is the telemedicine practice of Dr. Mondona Goodwin, DO, serving patients located in California. You can reach us by email at hello@drmondona.com or by text at 805-387-9078.",
+          ],
+        },
+        {
+          heading: "What this policy covers",
+          body: [
+            "This policy covers this website, drmondona.com. The website is a marketing site: it describes the practice, publishes our pricing, and points you to ways to get in touch.",
+            "It does not cover your medical care. Once you become a patient, the health information created in the course of your care is held in the practice's clinical systems and is governed by HIPAA and by our Notice of Privacy Practices, which you receive during intake. That notice, not this page, governs your medical record.",
+          ],
+        },
+        {
+          heading: "Information collected automatically",
+          body: [
+            "Our site is hosted by Vercel. Like nearly every web host, Vercel keeps standard server logs: IP address, browser and device type, the pages requested, the referring page, and the date and time. These logs help keep the site running, secure, and reasonably fast.",
+            "We may also use Google Analytics through Google Tag Manager to see which pages people find useful. Analytics is switched off unless and until a measurement ID is configured for the site. If and when we turn it on, Google receives that usage information under its own privacy policy.",
+            "The website does not set any cookies of its own.",
+          ],
+        },
+        {
+          heading: "Information you choose to provide",
+          body: [
+            "The website itself has no forms and no accounts. What it offers are ways to reach the practice, and anything you enter goes to the service provider named below.",
+            "Appointment booking: our booking page embeds OptiMantra, the practice's electronic health record and patient portal. Whatever you enter there, including your name, contact details, appointment selection, and payment information, goes to OptiMantra as part of the practice's clinical systems.",
+            "Discovery Call scheduling: the free Discovery Call is scheduled through Calendly, which collects the name, email address, and phone number you type into it.",
+            "Financing: if you apply for financing, the application happens on Cherry's own systems at withcherry.com, under Cherry's terms and privacy policy. We do not receive or store your application details. The Cherry widget on our site also loads fonts from Google Fonts.",
+            "Texting and email: our text links open your own messaging app to write to the practice at 805-387-9078, and our email links open your mail app addressed to hello@drmondona.com.",
+          ],
+        },
+        {
+          heading: "How we use information",
+          body: [
+            "We use it to answer your questions, schedule and confirm appointments, operate and improve the website, and meet our legal and professional obligations. That is the entire list.",
+          ],
+        },
+        {
+          heading: "Who we share it with",
+          body: [
+            "We share information with the service providers named above (Vercel, OptiMantra, Calendly, Cherry, and Google), each only for the job it performs and each under its own privacy terms.",
+            "We do not sell or rent personal information, and we do not run third-party advertising on this site. We may disclose information when the law requires it, or when we need to protect the rights and safety of our patients, our staff, or the public.",
+          ],
+        },
+        {
+          heading: "A note about texting",
+          body: [
+            "Standard text messaging is not an encrypted or secure channel. Text us with scheduling and practice questions, and we will move any clinical conversation into the patient portal.",
+            "If you text us, you may receive replies from the practice at that number. Message and data rates may apply, and message frequency varies. Reply STOP at any time to opt out, or HELP for help.",
+          ],
+        },
+        {
+          heading: "Your health information",
+          body: [
+            "Please do not send detailed medical information, test results, or images through this website, by text, or by email. Those channels are not built to protect that kind of information.",
+            "Health information you share once you are a patient is handled in the practice's clinical systems and is protected under HIPAA and our Notice of Privacy Practices.",
+          ],
+        },
+        {
+          heading: "How long we keep information",
+          body: [
+            "We keep website and contact information only as long as we need it for the purposes described above, or as long as our records and legal obligations require. Hosting logs and any analytics records follow those providers' standard retention periods. Medical records are kept under the separate rules that apply to them.",
+          ],
+        },
+        {
+          heading: "Security",
+          body: [
+            "We use reasonable administrative and technical safeguards, and we choose service providers who do the same. No website or method of transmitting information over the internet is 100% secure, so we cannot guarantee absolute security.",
+          ],
+        },
+        {
+          heading: "Children",
+          body: [
+            "This site is meant for adults. It is not directed to anyone under 18, and we do not knowingly collect information from children.",
+          ],
+        },
+        {
+          heading: "Do Not Track",
+          body: [
+            "Some browsers can send a \"Do Not Track\" signal. There is no common industry standard for interpreting those signals, and this site does not respond to them.",
+          ],
+        },
+        {
+          heading: "California residents",
+          body: [
+            "Our services are offered only to people located in California. Whether or not we are legally required to, we will honor reasonable requests to access, correct, or delete the personal information we hold about you from the website. Email hello@drmondona.com and we will respond within a reasonable time.",
+            "If you are a patient, requests about your medical record follow the process described in our Notice of Privacy Practices.",
+          ],
+        },
+        {
+          heading: "Changes to this policy",
+          body: [
+            "If we change this policy, we will post the updated version on this page and revise the effective date shown above. Please check back from time to time.",
+          ],
+        },
+        {
+          heading: "Contact us",
+          body: [
+            "CYRA Wellness, California telehealth. Email hello@drmondona.com or text 805-387-9078.",
+          ],
+        },
+      ],
     },
+
     terms: {
       label: "Legal", // Small label above the page heading
       title: "Terms of Service", // The page heading
-      // The paragraph shown while the full terms are being written
-      description:
-        "Our terms of service are being finalized and will be published here.",
+      effectiveDate: "July 25, 2026", // Shown as "Effective July 25, 2026"
+      intro:
+        "These terms apply to your use of the CYRA Wellness website at drmondona.com.",
+      sections: [
+        {
+          heading: "Acceptance",
+          body: [
+            "By using this website you agree to these terms. If you do not agree with them, please do not use the site. These terms cover the website. If you become a patient, your care is governed by the agreements you sign with the practice.",
+          ],
+        },
+        {
+          heading: "This website is information, not medical advice",
+          body: [
+            "Everything published here is general educational and marketing information about CYRA Wellness and women's hormonal health. It is not medical advice, a diagnosis, or a treatment recommendation, and it is no substitute for a consultation with a qualified clinician.",
+            "Reading this site, texting us, or emailing us does not create a physician-patient relationship. That relationship begins only after you schedule a visit, complete intake, and are seen by Dr. Goodwin through the practice's clinical systems.",
+          ],
+        },
+        {
+          heading: "Emergencies",
+          body: [
+            "Do not use this website, text, or email for urgent or emergency medical needs. If you are having a medical emergency, call 911 or go to the nearest emergency room.",
+          ],
+        },
+        {
+          heading: "Who we can serve",
+          body: [
+            "Dr. Goodwin is licensed in California, and care through CYRA Wellness is available only to adults 18 and older who are located in California at the time of their visit. We cannot provide care to patients in other states.",
+          ],
+        },
+        {
+          heading: "Appointments and payment",
+          body: [
+            `The comprehensive consultation is ${formatUsd(
+              carePlanPricing.consultFee,
+            )} for a one-hour visit. A card is required to hold the appointment. Cancellations made less than 24 hours before the visit, and missed appointments, forfeit that payment. This policy is presented to you at the time you book.`,
+            `Membership is a one-year commitment, paid either as ${carePlanPricing.paymentCount} monthly payments of ${formatUsd(
+              carePlanPricing.monthlyPayment,
+            )} through Cherry at 0% interest to you, or ${formatUsd(
+              carePlanUpfrontTotal,
+            )} paid in full. Membership is cash-pay and is not billed to insurance.`,
+            "What membership includes, any credit of the consultation fee toward it, and every other membership term are set out in the care-plan agreement you sign. Where this website and that signed agreement differ, the agreement controls.",
+          ],
+        },
+        {
+          heading: "Financing through Cherry",
+          body: [
+            "Cherry is our financing partner. Applications are submitted and decided on Cherry's own systems, subject to Cherry's terms and to credit approval. We are not the lender and we do not make approval decisions.",
+          ],
+        },
+        {
+          heading: "Third-party services",
+          body: [
+            "This site embeds and links to services we do not control: OptiMantra for booking and the patient portal, Calendly for Discovery Call scheduling, Cherry for financing, and links to Google and Instagram. Your use of those services is governed by their own terms and privacy policies, and we are not responsible for their content or availability.",
+          ],
+        },
+        {
+          heading: "Texting",
+          body: [
+            "If you text the practice at 805-387-9078, you agree to receive replies from us at that number. Message and data rates may apply and message frequency varies. Reply STOP to stop messages or HELP for help. Standard text messaging is not encrypted, so please keep detailed health information out of it.",
+          ],
+        },
+        {
+          heading: "Intellectual property",
+          body: [
+            "The text, images, and design on this site belong to CYRA Wellness or are used with permission. You are welcome to read the site and share links to it. Please do not republish, sell, or reuse our medical and educational content without written permission.",
+          ],
+        },
+        {
+          heading: "No warranties",
+          body: [
+            "This site is provided as is. We work to keep it accurate and current, but we make no warranties, express or implied, that it will be error-free, uninterrupted, or suited to any particular purpose. Medical knowledge changes, and content here may not reflect the most recent developments.",
+          ],
+        },
+        {
+          heading: "Limitation of liability",
+          body: [
+            "To the fullest extent permitted by law, CYRA Wellness and Dr. Goodwin are not liable for indirect, incidental, or consequential damages arising out of your use of this website. Nothing in these terms limits any liability that cannot be limited by law, including liability connected to professional medical care.",
+          ],
+        },
+        {
+          heading: "Governing law",
+          body: [
+            "These terms are governed by the laws of the State of California, without regard to its conflict of laws rules. Any dispute about this website will be brought in the state or federal courts located in California.",
+          ],
+        },
+        {
+          heading: "Changes to these terms",
+          body: [
+            "We may update these terms. The current version is always posted on this page with its effective date. If you keep using the site after a change, you accept the updated terms.",
+          ],
+        },
+        {
+          heading: "Contact us",
+          body: [
+            "CYRA Wellness, California telehealth. Email hello@drmondona.com or text 805-387-9078.",
+          ],
+        },
+      ],
     },
-  },
-
-  /* =======================================================================
-     PLACEHOLDER PAGE (shared bits on the Privacy/Terms placeholder pages)
-     The "back to home" button and the "questions?" email line that appear at
-     the bottom of every placeholder legal page.
-     ======================================================================= */
-  placeholderPage: {
-    backToHome: "Back to Home", // The button that returns to the home page
-    // The text before the email address at the bottom of the page
-    questionsPrompt: "Questions? Email us at",
   },
 
   /* =======================================================================
