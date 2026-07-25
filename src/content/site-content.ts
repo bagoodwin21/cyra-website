@@ -475,12 +475,29 @@ export const content = {
       "Doctor of Osteopathic Medicine",
       "Licensed in California",
     ],
+    // Alt text for the certification badge images shown near the bio
+    badgeArt: {
+      abimAlt: "American Board of Internal Medicine, Board Certified",
+      mscpAlt: "Menopause Society Certified Practitioner",
+    },
+    // "Verify for yourself" links under the badges. These point to the
+    // official public lookups; no license number is shown on the site.
+    verifyLinks: [
+      {
+        label: "Verify her California medical license",
+        url: "https://search.dca.ca.gov/",
+      },
+      {
+        label: "Verify ABIM board certification",
+        url: "https://www.abim.org/verify-certification/",
+      },
+    ],
     // The label under the photo placeholder (replace the image later)
     // Describes the photo for screen readers and search engines
     photoCaption: "Dr. Mondona Goodwin, DO, founder of CYRA Wellness",
     // The bio paragraphs (Dr. Goodwin's own first-person voice)
     bio: [
-      "I'm Dr. Mondona Goodwin, a board-certified Internal Medicine physician with more than ten years of clinical experience. I trained as a Doctor of Osteopathic Medicine, a path I chose because osteopathic medicine starts from the premise that the body is one interconnected system, not a collection of separate complaints.",
+      "I'm Dr. Mondona Goodwin, a board-certified Internal Medicine physician with more than ten years of clinical experience. I trained as a Doctor of Osteopathic Medicine at LECOM (Lake Erie College of Osteopathic Medicine), a path I chose because osteopathic medicine starts from the premise that the body is one interconnected system, not a collection of separate complaints.",
       "Over the years I've pursued extensive additional training in perimenopause, menopause, hormone therapy, metabolic health, and women's midlife health, and I'm a Menopause Society Certified Practitioner (MSCP). And while menopause is in my certification's name, my patients span every stage: PMDD in your cycling years, the hormonal shifts that linger after a baby, perimenopause, and beyond. One pattern kept repeating in my practice: women arriving with real, life-altering symptoms and leaving with a shrug, or the words 'that's just part of getting older.'",
       "My approach is proactive and evidence-based. I don't treat a hot flash; I treat a woman — her metabolism and her mood alongside her hormones, her long-term risks alongside her symptoms, her goals alongside her labs. When it fits your health, that includes full bioidentical hormone therapy, with estrogen, progesterone, and testosterone when appropriate. And I work as your women's hormone specialist alongside your primary care physician and OB/GYN, coordinating with them so your care stays seamless.",
       "What I want every patient to feel when a visit ends is simple: heard, taken seriously, and clear on the plan, with a physician who will still be there at the next visit, and the one after that.",
