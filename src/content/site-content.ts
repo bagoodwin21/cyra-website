@@ -443,7 +443,7 @@ export const content = {
             carePlanUpfrontTotal,
           )} paid in full (a ${upfrontSavingsPercent}% savings). Cherry is our financing partner, and checking your rate doesn't affect your credit score. The comprehensive consultation is a separate, one-time ${formatUsd(
             carePlanPricing.consultFee,
-          )} fee, and the membership prices are everything you pay after the consultation. Beyond membership, I work to keep your other costs low: I use your insurance whenever possible for labs and prescriptions. Most labs are covered just as if your PCP ordered them, so they aren't an extra expense, and most hormone medications are covered too. Without insurance, hormones typically run about $20–30 per month each through GoodRx, and I can also send prescriptions through HRT Club, a pharmacy with affordable cash pricing. Blood draws happen at a Quest location near you, we accept HSA and FSA funds for membership, and we provide superbills for possible out-of-network reimbursement.`,
+          )} fee, and the membership prices are everything you pay after the consultation. Beyond membership, I work to keep your other costs low: I use your insurance whenever possible for labs and prescriptions. Most labs are covered just as if your PCP ordered them, so they aren't an extra expense, and most hormone medications are covered too. Without insurance, hormones typically run about $20–30 per month each through GoodRx, and I can also send prescriptions through HRT Club, a pharmacy with affordable cash pricing. Blood draws happen at a Quest location near you, we accept HSA and FSA funds for membership, and we provide superbills for possible out-of-network reimbursement. One important note: we are unable to accept patients who are eligible for Medicare.`,
         },
       ],
     },
@@ -856,6 +856,11 @@ export const content = {
       effectiveDate: "July 25, 2026", // Shown as "Effective July 25, 2026"
       intro:
         "This policy explains how CYRA Wellness handles information in connection with this website.",
+      // Prominent link to the HIPAA Notice of Privacy Practices PDF
+      documentLink: {
+        label: "Read our Notice of Privacy Practices (PDF)",
+        href: "/notice-of-privacy-practices.pdf",
+      },
       sections: [
         {
           heading: "Who we are",
@@ -991,6 +996,7 @@ export const content = {
           heading: "Who we can serve",
           body: [
             "Dr. Goodwin is licensed in California, and care through CYRA Wellness is available only to adults 18 and older who are located in California at the time of their visit. We cannot provide care to patients in other states.",
+            "We are unable to accept patients who are eligible for Medicare. If you become Medicare-eligible before a scheduled visit, please let us know.",
           ],
         },
         {
@@ -1167,6 +1173,12 @@ export const content = {
   legalLinks: [
     { label: "Privacy Policy", href: "/privacy-policy" },
     { label: "Terms of Service", href: "/terms-of-service" },
+    // The practice's HIPAA Notice of Privacy Practices (a PDF). To update it,
+    // replace the file public/notice-of-privacy-practices.pdf on GitHub.
+    {
+      label: "Notice of Privacy Practices",
+      href: "/notice-of-privacy-practices.pdf",
+    },
     { label: "For Physicians", href: "/for-physicians" },
     { label: "Resources", href: "/resources" },
   ],

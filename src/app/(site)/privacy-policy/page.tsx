@@ -22,6 +22,7 @@ export default function PrivacyPolicyPage() {
       effectiveDate={privacy.effectiveDate}
       intro={privacy.intro}
       sections={privacy.sections}
+      documentLink={privacy.documentLink}
     />
   );
 }

@@ -20,7 +20,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       ...navLinks.map((l) => l.href),
       ...legalLinks.map((l) => l.href),
     ]),
-  ).filter((path) => path.startsWith("/") && !path.includes("#"));
+  ).filter(
+    (path) =>
+      path.startsWith("/") && !path.includes("#") && !path.endsWith(".pdf"),
+  );
 
   return routes.map((path) => ({
     url: `${siteConfig.url}${path === "/" ? "" : path}`,
