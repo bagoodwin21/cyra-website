@@ -80,21 +80,6 @@ export default function AboutPage() {
                 className="h-20 w-20 rounded-full object-contain"
               />
             </div>
-            <p className="mt-4 text-small text-foreground-muted">
-              {about.verifyLinks.map((link, i) => (
-                <span key={link.label}>
-                  {i > 0 && " · "}
-                  <a
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-medium text-primary underline-offset-2 hover:underline"
-                  >
-                    {link.label}
-                  </a>
-                </span>
-              ))}
-            </p>
             <div className="mt-7 space-y-5">
               {about.bio.map((paragraph) => (
                 <p key={paragraph.slice(0, 40)} className="text-body-copy">

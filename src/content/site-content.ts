@@ -480,18 +480,6 @@ export const content = {
       abimAlt: "American Board of Internal Medicine, Board Certified",
       mscpAlt: "Menopause Society Certified Practitioner",
     },
-    // "Verify for yourself" links under the badges. These point to the
-    // official public lookups; no license number is shown on the site.
-    verifyLinks: [
-      {
-        label: "Verify her California medical license",
-        url: "https://search.dca.ca.gov/",
-      },
-      {
-        label: "Verify ABIM board certification",
-        url: "https://www.abim.org/verify-certification/",
-      },
-    ],
     // The label under the photo placeholder (replace the image later)
     // Describes the photo for screen readers and search engines
     photoCaption: "Dr. Mondona Goodwin, DO, founder of CYRA Wellness",
