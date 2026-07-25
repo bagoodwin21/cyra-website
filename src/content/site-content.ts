@@ -376,7 +376,7 @@ export const content = {
       // The "read our reviews" button under the quotes — sends visitors to
       // Google, where reviews carry third-party credibility.
       googleCtaLabel: "Read our reviews on Google",
-      googleUrl: "https://www.google.com/search?q=cyra+wellness",
+      googleUrl: "https://maps.app.goo.gl/BbqpKybfbemLE6p97",
     },
 
     // ---- FAQ: a short list of common questions ----

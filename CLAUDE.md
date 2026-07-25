@@ -54,6 +54,8 @@ the previous version), but do not push a broken build.
   Menopause Society Certified Practitioner (MSCP), 10+ years. No "MD".
 - Warm, evidence-informed tone in Dr. Goodwin's first person on the home
   and about pages. No cure claims.
+- Use em-dashes sparingly. Prefer commas, periods, or parentheses;
+  reach for an em-dash only when nothing else reads as well.
 
 ## Structure
 
