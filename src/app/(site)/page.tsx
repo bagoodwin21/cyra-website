@@ -372,7 +372,7 @@ export default function HomePage() {
       </Section>
 
       {/* Section 9 — Insurance & cost savings */}
-      <Section tone="surface">
+      <Section id="insurance" tone="surface" className="scroll-mt-24">
         <div className="mx-auto max-w-3xl">
           <FadeUp className="text-center">
             <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
@@ -401,7 +401,7 @@ export default function HomePage() {
       </Section>
 
       {/* Section 10 — Testimonials */}
-      <Section>
+      <Section id="reviews" className="scroll-mt-24">
         <FadeUp className="mx-auto max-w-3xl text-center">
           <SectionLabel>{home.testimonials.label}</SectionLabel>
           <h2 className="heading-section">{home.testimonials.heading}</h2>
@@ -425,7 +425,7 @@ export default function HomePage() {
       </Section>
 
       {/* Section 11 — FAQ */}
-      <Section tone="surface">
+      <Section id="faq" tone="surface" className="scroll-mt-24">
         <div className="mx-auto max-w-3xl">
           <FadeUp className="text-center">
             <SectionLabel>{home.faq.label}</SectionLabel>
