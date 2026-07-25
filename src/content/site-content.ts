@@ -78,7 +78,7 @@ export const content = {
     disclaimer:
       "CYRA Wellness is a membership-based, cash-pay practice serving patients located in California. Membership is not billed to insurance, though your insurance is used whenever possible for laboratory testing and prescriptions.",
     // Copyright line at the very bottom
-    copyright: "© 2025 CYRA Wellness",
+    copyright: "© 2026 CYRA Wellness",
   },
 
   /* =======================================================================
@@ -137,10 +137,10 @@ export const content = {
       // The grid of what hormone health touches (short labels)
       affects: [
         { title: "Bone strength", body: "Protecting bone density as hormones shift." },
-        { title: "Weight & metabolism", body: "Addressing the metabolic changes behind midlife weight gain." },
+        { title: "Weight & metabolism", body: "Addressing the hormonal and metabolic changes behind stubborn weight gain at any age." },
         { title: "Heart health", body: "Supporting cardiovascular health and healthy cholesterol." },
         { title: "Blood sugar", body: "Watching insulin resistance and diabetes risk early." },
-        { title: "Mood & cognition", body: "Steadier mood, energy, and mental clarity." },
+        { title: "Mood & cognition", body: "Lifting the brain fog: steadier mood, energy, and mental clarity." },
         { title: "Sexual health", body: "Comfort, libido, and intimacy addressed openly." },
       ],
     },
@@ -164,7 +164,7 @@ export const content = {
       items: [
         {
           title: "Perimenopause",
-          body: "The years of shifting hormones before your last period, caught early and managed with intention.",
+          body: "Night sweats, disrupted sleep, and shifting cycles in the years before your last period, caught early and managed with intention.",
         },
         {
           title: "Menopause",
@@ -292,7 +292,7 @@ export const content = {
           label: "Monthly with Cherry",
           // e.g. "$175/mo"
           price: `${formatUsd(carePlanPricing.monthlyPayment)}/mo`,
-          detail: `${carePlanPricing.paymentCount} monthly payments with approved credit, through Cherry`,
+          detail: `${carePlanPricing.paymentCount} monthly payments at 0% interest with approved credit, through Cherry`,
         },
         upfront: {
           label: "Pay in full",
@@ -307,13 +307,13 @@ export const content = {
       // carePlanPricing.consultFee at the top of this file; change it there.
       note: `Your first step is the comprehensive consultation, a separate, one-time fee of ${formatUsd(
         carePlanPricing.consultFee,
-      )}. Enroll within 14 days and it's credited toward your membership, so the prices above are everything you pay after your consultation. Medications and labs aren't included in membership. Most are covered through your insurance, and I work to keep any out-of-pocket costs low. After your first year, most patients transition to a lower-cost maintenance membership to keep their results going.`,
+      )}. The prices above are everything you pay after your consultation. Medications and labs aren't included in membership. Most are covered through your insurance, and I work to keep any out-of-pocket costs low. After your first year, most patients transition to a lower-cost maintenance membership to keep their results going.`,
       // ---- Cherry payment calculator (interactive box under the pricing cards) ----
       calculator: {
         heading: "Financing through Cherry", // Title above the Cherry box
         // Line under the title. The dollar amount and payment count come from
         // the pricing numbers at the top of this file.
-        subhead: `Split your membership into ${carePlanPricing.paymentCount} monthly payments of ${formatUsd(
+        subhead: `Split your membership into ${carePlanPricing.paymentCount} interest-free monthly payments of ${formatUsd(
           carePlanPricing.monthlyPayment,
         )} with approved credit. Applying takes about a minute and won't affect your credit score.`,
         // The button that takes patients to Cherry's application page
@@ -359,8 +359,8 @@ export const content = {
 
     // ---- TESTIMONIALS: short patient quotes ----
     testimonials: {
-      label: "Patient Stories",
-      heading: "Women who finally felt heard.",
+      label: "Patient Reviews",
+      heading: "Hear it from our patients.",
       /* ONLY REAL, AUTHORIZED QUOTES GO HERE. Each patient must sign a
          HIPAA marketing authorization before her words appear on the site
          (keep the signed form on file). To add one, copy this pattern
@@ -411,6 +411,11 @@ export const content = {
             "Most patients don't need that same intensity of visits forever. After your first year of close follow-up and fine-tuning, most transition to a lower-cost maintenance membership that keeps your results going with continued access and monitoring. We'll talk through the details as your first year wraps up, once we know what your ongoing care looks like.",
         },
         {
+          question: "What if I need to pause or cancel my membership?",
+          answer:
+            "Life happens. If your circumstances change mid-year, reach out and we'll work with you to find a fair path forward. Because your care plan is delivered continuously across the year, refunds aren't guaranteed, but you'll never be navigating it alone.",
+        },
+        {
           question: "Do I keep my primary care doctor and OB/GYN?",
           answer:
             "Yes, please do. Think of me as your women's hormone specialist, working alongside your PCP and OB/GYN, not replacing them. Your PCP continues your routine and preventive care, your OB/GYN continues your gynecologic care and screenings, and I'm glad to coordinate with them when it's helpful.",
@@ -438,7 +443,7 @@ export const content = {
             carePlanUpfrontTotal,
           )} paid in full (a ${upfrontSavingsPercent}% savings). Cherry is our financing partner, and checking your rate doesn't affect your credit score. The comprehensive consultation is a separate, one-time ${formatUsd(
             carePlanPricing.consultFee,
-          )} fee. Enroll within 14 days and it's credited toward your membership, so the membership prices are everything you pay after the consultation. Beyond membership, I work to keep your other costs low: I use your insurance whenever possible for labs and prescriptions. Most labs are covered just as if your PCP ordered them, so they aren't an extra expense, and most hormone medications are covered too. Without insurance, hormones typically run about $20–30 per month each through GoodRx, and I can also send prescriptions through HRT Club, a pharmacy with affordable cash pricing. Blood draws happen at a Quest location near you, we accept HSA and FSA funds for membership, and we provide superbills for possible out-of-network reimbursement.`,
+          )} fee, and the membership prices are everything you pay after the consultation. Beyond membership, I work to keep your other costs low: I use your insurance whenever possible for labs and prescriptions. Most labs are covered just as if your PCP ordered them, so they aren't an extra expense, and most hormone medications are covered too. Without insurance, hormones typically run about $20–30 per month each through GoodRx, and I can also send prescriptions through HRT Club, a pharmacy with affordable cash pricing. Blood draws happen at a Quest location near you, we accept HSA and FSA funds for membership, and we provide superbills for possible out-of-network reimbursement.`,
         },
       ],
     },
@@ -476,7 +481,7 @@ export const content = {
     // The bio paragraphs (Dr. Goodwin's own first-person voice)
     bio: [
       "I'm Dr. Mondona Goodwin, a board-certified Internal Medicine physician with more than ten years of clinical experience. I trained as a Doctor of Osteopathic Medicine, a path I chose because osteopathic medicine starts from the premise that the body is one interconnected system, not a collection of separate complaints.",
-      "Over the years I've pursued extensive additional training in perimenopause, menopause, hormone therapy, metabolic health, and women's midlife health, and I'm a Menopause Society Certified Practitioner (MSCP). One pattern kept repeating in my practice: women arriving with real, life-altering symptoms and leaving with a shrug, or the words 'that's just part of getting older.'",
+      "Over the years I've pursued extensive additional training in perimenopause, menopause, hormone therapy, metabolic health, and women's midlife health, and I'm a Menopause Society Certified Practitioner (MSCP). And while menopause is in my certification's name, my patients span every stage: PMDD in your cycling years, the hormonal shifts that linger after a baby, perimenopause, and beyond. One pattern kept repeating in my practice: women arriving with real, life-altering symptoms and leaving with a shrug, or the words 'that's just part of getting older.'",
       "My approach is proactive and evidence-based. I don't treat a hot flash; I treat a woman — her metabolism and her mood alongside her hormones, her long-term risks alongside her symptoms, her goals alongside her labs. When it fits your health, that includes full bioidentical hormone therapy, with estrogen, progesterone, and testosterone when appropriate. And I work as your women's hormone specialist alongside your primary care physician and OB/GYN, coordinating with them so your care stays seamless.",
       "What I want every patient to feel when a visit ends is simple: heard, taken seriously, and clear on the plan, with a physician who will still be there at the next visit, and the one after that.",
     ],

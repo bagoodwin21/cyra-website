@@ -63,7 +63,7 @@ function CellContent({ cell, isCyra }: { cell: Cell; isCyra: boolean }) {
       {cell.note && (
         <span
           className={cn(
-            "text-small leading-snug",
+            "break-words text-small leading-snug",
             isCyra ? "font-medium text-primary" : "text-foreground-secondary"
           )}
         >
@@ -112,7 +112,7 @@ function MobileComparison() {
         ))}
       </select>
       <div className="mt-4 overflow-hidden rounded-card border border-border bg-surface shadow-card">
-        <table className="w-full border-collapse">
+        <table className="w-full table-fixed border-collapse">
           <caption className="sr-only">
             Comparison of CYRA Wellness with {PLATFORMS[competitorIndex]} by
             provider type, testosterone access, care structure, financing, and

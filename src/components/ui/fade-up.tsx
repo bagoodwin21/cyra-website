@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 interface FadeUpProps {
   children: React.ReactNode;
@@ -15,6 +15,14 @@ interface FadeUpProps {
  * uses IntersectionObserver under the hood). Animates once.
  */
 export function FadeUp({ children, delay = 0, className }: FadeUpProps) {
+  // Honor the OS "reduce motion" setting: render content plainly instead
+  // of fading in, so nothing looks half-loaded to motion-sensitive users.
+  const reduceMotion = useReducedMotion();
+
+  if (reduceMotion) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 28 }}
