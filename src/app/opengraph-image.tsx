@@ -1,7 +1,9 @@
 import { ImageResponse } from "next/og";
 import { siteConfig } from "@/lib/site";
 
-export const runtime = "edge";
+// No `export const runtime = "edge"` on purpose: the OpenNext Cloudflare
+// adapter rejects edge-runtime routes (they must be split into a separate
+// function), and next/og renders fine on the default Node runtime.
 export const alt = `${siteConfig.name}: ${siteConfig.tagline}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";

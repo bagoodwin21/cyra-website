@@ -8,6 +8,10 @@
 # production
 /build
 
+# cloudflare (opennext adapter + wrangler)
+/.open-next/
+/.wrangler/
+
 # misc
 .DS_Store
 *.pem
