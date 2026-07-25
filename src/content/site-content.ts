@@ -627,16 +627,6 @@ export const content = {
           ],
         },
         {
-          criterion: "How Care Is Structured",
-          cells: [
-            { note: "12-month program, then lower-cost maintenance" },
-            { note: "Month-to-month subscription" },
-            { note: "Month-to-month subscription" },
-            { note: "Month-to-month subscription" },
-            { note: "Month-to-month subscription" },
-          ],
-        },
-        {
           criterion: "Financing Available (Cherry)",
           cells: [
             { verdict: "yes", note: "Cherry financing" },
