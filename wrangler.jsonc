@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "cyra-website",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2025-12-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  // next/image optimization runs through Cloudflare Images.
+  // See https://opennext.js.org/cloudflare/howtos/image
+  "images": {
+    "binding": "IMAGES"
+  }
+  // No R2 incremental cache / WORKER_SELF_REFERENCE binding: the site has no
+  // ISR routes. Add them alongside an incrementalCache override in
+  // open-next.config.ts if that changes.
+}

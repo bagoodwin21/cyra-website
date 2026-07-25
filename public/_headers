@@ -1,0 +1,8 @@
+# Cloudflare Workers Static Assets header rules.
+#
+# Assets under /_next/static are served straight from Cloudflare's asset
+# storage, which bypasses the Next.js headers() config in next.config.mjs.
+# This file restores the immutable caching for those content-hashed files.
+# Ignored by Vercel and by `next start` (it is just a static file there).
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
