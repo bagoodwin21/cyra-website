@@ -1,5 +1,5 @@
 /* =========================================================================
-   CYRA WELLNESS — SITE CONTENT (the one file you edit)
+   CYRA WELLNESS SITE CONTENT (the one file you edit)
    =========================================================================
 
    Dr. Goodwin: this is the ONLY file you need to change to update the words
@@ -29,7 +29,7 @@ export const carePlanPricing = {
   consultFee: 399, // One-hour initial consult fee (charged once, before enrolling)
 } as const;
 
-// Derived totals — you do NOT need to edit these; they update on their own.
+// Derived totals. You do NOT need to edit these; they update on their own.
 export const carePlanTotal =
   carePlanPricing.monthlyPayment * carePlanPricing.paymentCount; // 2275
 export const carePlanUpfrontTotal = carePlanPricing.upfrontTotal; // 2160
@@ -54,7 +54,7 @@ export function formatUsd(amount: number): string {
    ------------------------------------------------------------------------- */
 export const content = {
   /* =======================================================================
-     BRAND & GLOBAL — used in the browser tab, footer, and search results
+     BRAND & GLOBAL (used in the browser tab, footer, and search results)
      ======================================================================= */
   brand: {
     name: "CYRA Wellness", // Practice name (appears in the header and footer)
@@ -62,10 +62,10 @@ export const content = {
     tagline: "Proactive, personalized care for women's hormonal health",
     // One-sentence description used by Google and social media previews
     description:
-      "CYRA Wellness is a California membership-based telemedicine practice offering bioidentical hormone therapy for women's hormonal conditions throughout life — perimenopause, menopause, PMS/PMDD, postpartum depression, sexual health, and metabolic health — led by Dr. Mondona Goodwin, DO, a Menopause Society Certified Practitioner.",
+      "CYRA Wellness is a California membership-based telemedicine practice offering bioidentical hormone therapy for women's hormonal conditions throughout life: perimenopause, menopause, PMS/PMDD, postpartum depression, sexual health, and metabolic health. It is led by Dr. Mondona Goodwin, DO, a Menopause Society Certified Practitioner.",
     website: "https://drmondona.com", // Live website address (leave as-is unless the domain changes)
     physician: "Dr. Mondona Goodwin, DO", // Full name + credentials
-    licensedStates: "Licensed in California", // Where care is offered — California only
+    licensedStates: "Licensed in California", // Where care is offered (California only)
     // Contact email shown in the footer and on the booking page
     email: "hello@drmondona.com",
     // Practice texting number. smsNumber is the machine format (keep the +1
@@ -82,7 +82,7 @@ export const content = {
   },
 
   /* =======================================================================
-     NAVIGATION — the links in the top menu and the main button
+     NAVIGATION (the links in the top menu and the main button)
      ======================================================================= */
   nav: {
     // Menu links. "href" is where each one goes; the "#" links jump to a
@@ -105,11 +105,11 @@ export const content = {
     // ---- HERO: the very top of the home page ----
     hero: {
       // The big headline. The word(s) inside the *asterisks* are shown in
-      // an italic accent color — keep the asterisks around them.
+      // an italic accent color, so keep the asterisks around them.
       headline: "Personalized hormone care for women at *every stage*.",
       // Supporting paragraph under the headline
       subheadline:
-        "A membership-based practice for women navigating hormonal conditions throughout life — not just menopause. Longer appointments, a plan built around you, and a physician who follows closely, by secure video across California.",
+        "A membership-based practice for women navigating hormonal conditions throughout life, not just menopause. Longer appointments, a plan built around you, and a physician who follows closely, by secure video across California.",
       primaryCta: "Get Started", // Main button text
       secondaryCta: "How to Join", // Second button text (jumps to the steps)
       // Short trust points shown as a row under the buttons
@@ -127,9 +127,9 @@ export const content = {
       heading: "Hormone health is about far more than hot flashes.",
       // Main paragraphs of the philosophy section
       body: [
-        "Your hormones don't just affect how you feel day to day — they shape your bones, your weight, your heart health, your risk of insulin resistance and diabetes, your cholesterol, and even your memory and focus. My goal isn't simply to prescribe hormones; it's to help you feel better today while protecting your long-term health.",
-        "That's why I built CYRA around a proactive, evidence-based approach: longer appointments, careful follow-up, and a plan designed for your long-term cardiometabolic health, not just the symptom in front of us. I'm not just treating symptoms — together we take control of your whole health.",
-        "This is care for every stage of your hormonal life — your 30s, 40s, 50s, and beyond. Whether it's PMDD in your cycling years, the hormonal shifts that can linger after having a baby, perimenopause, or menopause, these are chapters of one story. When it's the right fit, that means full bioidentical hormone therapy — estrogen, progesterone, and testosterone when appropriate — tailored to you.",
+        "Your hormones don't just affect how you feel day to day. They shape your bones, your weight, your heart health, your risk of insulin resistance and diabetes, your cholesterol, and even your memory and focus. My goal isn't simply to prescribe hormones; it's to help you feel better today while protecting your long-term health.",
+        "That's why I built CYRA around a proactive, evidence-based approach: longer appointments, careful follow-up, and a plan designed for your long-term cardiometabolic health, not just the symptom in front of us. I'm not just treating symptoms; together we take control of your whole health.",
+        "This is care for every stage of your hormonal life: your 30s, 40s, 50s, and beyond. Whether it's PMDD in your cycling years, the hormonal shifts that can linger after having a baby, perimenopause, or menopause, these are chapters of one story. When it's the right fit, that means full bioidentical hormone therapy tailored to you, with estrogen, progesterone, and testosterone when appropriate.",
       ],
       // The pull-quote in larger text
       pullQuote:
@@ -151,7 +151,7 @@ export const content = {
       heading: "A collaborative approach to your care.",
       // First-person paragraphs from Dr. Goodwin
       body: [
-        "Think of me as your women's hormone specialist — someone who works alongside your primary care physician and OB/GYN, not in place of them. Your PCP remains essential for routine and preventive care and other conditions, and your OB/GYN continues your gynecologic care and screenings.",
+        "Think of me as your women's hormone specialist, someone who works alongside your primary care physician and OB/GYN rather than in place of them. Your PCP remains essential for routine and preventive care and other conditions, and your OB/GYN continues your gynecologic care and screenings.",
         "When it's helpful, I'm glad to communicate and coordinate directly with your physicians, so your care stays seamless, connected, and centered around you.",
       ],
     },
@@ -159,24 +159,24 @@ export const content = {
     // ---- WHAT WE TREAT: the simple grid of conditions ----
     whatWeTreat: {
       label: "What We Treat",
-      heading: "Care for hormonal conditions throughout life — not just menopause.",
+      heading: "Care for hormonal conditions throughout life, not just menopause.",
       // Each card: a title and a one-line description
       items: [
         {
           title: "Perimenopause",
-          body: "The years of shifting hormones before your last period — caught early and managed with intention.",
+          body: "The years of shifting hormones before your last period, caught early and managed with intention.",
         },
         {
           title: "Menopause",
-          body: "Personalized bioidentical hormone therapy — estrogen, progesterone, and testosterone when appropriate — for this next chapter of your health.",
+          body: "Personalized bioidentical hormone therapy for this next chapter of your health, with estrogen, progesterone, and testosterone when appropriate.",
         },
         {
           title: "PMS & PMDD",
-          body: "PMDD is a real, treatable condition — severe mood symptoms like rage, despair, or anxiety in the week or two before your period that lift once it starts. I treat it seriously, alongside the physical and cyclical symptoms that disrupt your month.",
+          body: "PMDD is a real, treatable condition: severe mood symptoms like rage, despair, or anxiety in the week or two before your period that lift once it starts. I treat it seriously, alongside the physical and cyclical symptoms that disrupt your month.",
         },
         {
           title: "Postpartum & Beyond",
-          body: "Postpartum depression and the hormonal changes that follow having a baby — shifts that can linger for months or even years. If you've never quite felt like yourself since the baby, you belong here.",
+          body: "Postpartum depression and the hormonal changes that follow having a baby, shifts that can linger for months or even years. If you've never quite felt like yourself since the baby, you belong here.",
         },
         {
           title: "Vaginal Dryness & Pain",
@@ -184,11 +184,11 @@ export const content = {
         },
         {
           title: "Sexual Health & Libido",
-          body: "Libido, energy, and intimacy — discussed openly and treated seriously.",
+          body: "Libido, energy, and intimacy: discussed openly and treated seriously.",
         },
         {
           title: "Weight Gain",
-          body: "Root-cause care for hormonal and metabolic weight changes — including GLP-1 medications when appropriate, not just calories.",
+          body: "Root-cause care for hormonal and metabolic weight changes, including GLP-1 medications when appropriate, not just calories.",
         },
         {
           title: "Metabolic Health",
@@ -196,7 +196,7 @@ export const content = {
         },
         {
           title: "Fatigue",
-          body: "Persistent low energy that hormones, sleep, and metabolism can all drive — evaluated as a whole, not dismissed.",
+          body: "Persistent low energy that hormones, sleep, and metabolism can all drive, evaluated as a whole and not dismissed.",
         },
         {
           title: "Sleep Issues",
@@ -214,7 +214,7 @@ export const content = {
       label: "Often Overlooked",
       heading: "Yes, women need testosterone too.",
       body: [
-        "Full bioidentical hormone therapy for women centers on estrogen and progesterone — and I use both as core parts of care when they're right for you. But there's a third hormone that's rarely discussed: women have testosterone too, and it matters. Levels decline steadily across a woman's lifetime, and that decline can quietly affect your mood, your energy, and your libido.",
+        "Full bioidentical hormone therapy for women centers on estrogen and progesterone, and I use both as core parts of care when they're right for you. But there's a third hormone that's rarely discussed: women have testosterone too, and it matters. Levels decline steadily across a woman's lifetime, and that decline can quietly affect your mood, your energy, and your libido.",
         "When your symptoms and labs support it, I include testosterone as a core part of your care, with careful dosing and monitoring. It's one of the most underused tools in women's hormone health.",
       ],
     },
@@ -228,7 +228,7 @@ export const content = {
         "Specialized expertise in women's hormone health",
         "Longer, thoughtful appointments",
         "Direct access to your physician",
-        "Personalized care — not one-size-fits-all protocols",
+        "Personalized care, not one-size-fits-all protocols",
         "Close follow-up throughout your treatment",
         "A focus on both symptom relief and long-term prevention",
       ],
@@ -237,7 +237,7 @@ export const content = {
     // ---- HOW TO JOIN: the 3 prominent steps ----
     howToJoin: {
       label: "Getting Started",
-      heading: "How to join CYRA — in three steps.",
+      heading: "How to join CYRA in three steps.",
       intro:
         "Joining is simple and unhurried. Here's exactly what to expect from your first conversation to lasting change.",
       steps: [
@@ -245,35 +245,35 @@ export const content = {
           title: "Book your consultation",
           // Optional short label shown next to the step title
           meta: "Most patients start here",
-          body: "Book your 60-minute comprehensive consultation with me directly — most patients are seen within the same week. Want to learn about the practice, membership, or pricing first? Schedule a free Discovery Call with our Patient Care Coordinator, or text us at 805-387-9078. The Discovery Call is about the practice — not a medical appointment, and no medical advice is given.",
+          body: "Book your 60-minute comprehensive consultation with me directly. Most patients are seen within the same week. Want to learn about the practice, membership, or pricing first? Schedule a free Discovery Call with our Patient Care Coordinator, or text us at 805-387-9078. The Discovery Call is about the practice. It isn't a medical appointment, and no medical advice is given.",
         },
         {
           title: "Your comprehensive consultation",
           // Shows the length and the one-time consult fee (from carePlanPricing.consultFee)
           meta: `60 minutes · ${formatUsd(carePlanPricing.consultFee)}`,
-          body: "A completely nonbinding hour with me, with no obligation to join afterward. Together we'll review your medical history, current symptoms, previous treatments, lifestyle, goals, and lab history, answer your questions, and walk through evidence-based treatment options. You'll leave with a clear understanding of my recommendations — and the fee is credited toward your membership when you enroll within 14 days.",
+          body: "A completely nonbinding hour with me, with no obligation to join afterward. Together we'll review your medical history, current symptoms, previous treatments, lifestyle, goals, and lab history, answer your questions, and walk through evidence-based treatment options. You'll leave with a clear understanding of my recommendations, and the fee is credited toward your membership when you enroll within 14 days.",
         },
         {
           title: "Begin your membership",
           meta: "1-year model",
-          body: "Hormone therapy is rarely fixed in one visit — most adjustments take 8 to 12 weeks to show their full effect — so membership follows a one-year model built for real, lasting change. You'll have follow-up appointments every 4 to 6 weeks (sooner if needed) and direct messaging with me between visits.",
+          body: "Hormone therapy is rarely fixed in one visit, and most adjustments take 8 to 12 weeks to show their full effect, so membership follows a one-year model built for real, lasting change. You'll have follow-up appointments every 4 to 6 weeks (sooner if needed) and direct messaging with me between visits.",
         },
       ],
     },
 
     // ---- MEMBERSHIP: what's included + pricing ----
     // (Section shows on the home page as "Membership" at the #membership anchor.
-    //  The key is still named "carePlan" in code — leave it; only the words matter.)
+    //  The key is still named "carePlan" in code; leave it, only the words matter.)
     carePlan: {
       label: "Membership",
       heading: "Everything your membership includes.",
       intro:
-        "Your membership is a full year of close, personalized support — direct access to me, not a subscription you have to think about. Here's what's included:",
+        "Your membership is a full year of close, personalized support: direct access to me, not a subscription you have to think about. Here's what's included:",
       // The checklist of what's included
       includes: [
         "A personalized hormone treatment plan tailored to you",
-        "Unlimited follow-up appointments — as many as you need",
-        "Direct messaging with me, not intermediate staff — I usually reply within a few hours",
+        "Unlimited follow-up appointments, as many as you need",
+        "Direct messaging with me, not intermediate staff (I usually reply within a few hours)",
         "Ongoing treatment adjustments as your body responds",
         "Support between visits",
         "Personalized nutrition counseling",
@@ -284,9 +284,9 @@ export const content = {
       // Pricing box heading
       pricingHeading: "Simple, transparent pricing",
       pricingSubhead:
-        "Your one-year membership after your initial consultation — two ways to pay. Financing is available through Cherry.",
+        "Your one-year membership after your initial consultation, with two ways to pay. Financing is available through Cherry.",
       // The two payment options. The prices are calculated from the numbers
-      // at the top of this file — you don't type them here.
+      // at the top of this file, so you don't type them here.
       options: {
         financing: {
           label: "Monthly with Cherry",
@@ -304,10 +304,10 @@ export const content = {
         },
       },
       // Small print under the pricing box. The consult price is pulled from
-      // carePlanPricing.consultFee at the top of this file — change it there.
-      note: `Your first step is the comprehensive consultation — a separate, one-time fee of ${formatUsd(
+      // carePlanPricing.consultFee at the top of this file; change it there.
+      note: `Your first step is the comprehensive consultation, a separate, one-time fee of ${formatUsd(
         carePlanPricing.consultFee,
-      )}. Enroll within 14 days and it's credited toward your membership, so the prices above are everything you pay after your consultation. Medications and labs aren't included in membership — most are covered through your insurance, and I work to keep any out-of-pocket costs low. After your first year, most patients transition to a lower-cost maintenance membership to keep their results going.`,
+      )}. Enroll within 14 days and it's credited toward your membership, so the prices above are everything you pay after your consultation. Medications and labs aren't included in membership. Most are covered through your insurance, and I work to keep any out-of-pocket costs low. After your first year, most patients transition to a lower-cost maintenance membership to keep their results going.`,
       // ---- Cherry payment calculator (interactive box under the pricing cards) ----
       calculator: {
         heading: "Financing through Cherry", // Title above the Cherry box
@@ -331,14 +331,14 @@ export const content = {
       label: "Insurance & Cost Savings",
       heading: "Membership is cash-pay — but I work to keep your other costs down.",
       intro:
-        "Membership itself is a flat, cash-pay fee, with financing available through Cherry. But whenever possible, I use your insurance for laboratory testing and prescriptions — most labs are covered just as they would be if your PCP ordered them, so they're not an extra expense to worry about, and most hormone medications are covered too. When something isn't, I look for every opportunity to lower the cost.",
-      // The savings tools (these reduce medication and supplement costs — they are
-      // NOT financing; Cherry remains the only way to finance membership itself)
+        "Membership itself is a flat, cash-pay fee, with financing available through Cherry. But whenever possible, I use your insurance for laboratory testing and prescriptions. Most labs are covered just as they would be if your PCP ordered them, so they're not an extra expense to worry about, and most hormone medications are covered too. When something isn't, I look for every opportunity to lower the cost.",
+      // The savings tools (these reduce medication and supplement costs, but they
+      // are NOT financing; Cherry remains the only way to finance membership itself)
       items: [
-        "Most labs covered by your insurance — the same cost as if your PCP ordered them, not an extra expense",
+        "Most labs covered by your insurance, at the same cost as if your PCP ordered them, not an extra expense",
         "Most hormone medications covered by insurance too",
         "About $20–30 per month per hormone through GoodRx if you're paying without insurance",
-        "HRT Club — an affordable pharmacy option with cash pricing that doesn't use insurance",
+        "HRT Club, an affordable pharmacy option with cash pricing that doesn't use insurance",
         "Convenient blood draws at Quest locations near you",
         "Manufacturer savings programs and pharmacy coupons",
         "35% off professional-grade supplements",
@@ -346,7 +346,7 @@ export const content = {
         "Superbills provided for possible out-of-network reimbursement",
       ],
       // Keeps the financing-vs-savings distinction clean
-      note: "Cherry finances your membership. GoodRx, HRT Club, coupons, and savings programs are pharmacy and cost-saving options that simply reduce what you pay for medications and supplements — they aren't financing.",
+      note: "Cherry finances your membership. GoodRx, HRT Club, coupons, and savings programs are pharmacy and cost-saving options that simply reduce what you pay for medications and supplements. They aren't financing.",
     },
 
     // ---- COMPARE TEASER: small link on the home page to the /compare page ----
@@ -373,10 +373,10 @@ export const content = {
           },
       */
       items: [] as { quote: string; name: string; location: string }[],
-      // The "read our reviews" button under the quotes — sends visitors to
+      // The "read our reviews" button under the quotes. It sends visitors to
       // Google, where reviews carry third-party credibility.
       googleCtaLabel: "Read our reviews on Google",
-      googleUrl: "https://www.google.com/search?q=cyra+wellness",
+      googleUrl: "https://maps.app.goo.gl/BbqpKybfbemLE6p97",
     },
 
     // ---- FAQ: a short list of common questions ----
@@ -388,22 +388,22 @@ export const content = {
         {
           question: "Where do you provide care?",
           answer:
-            "CYRA is a telemedicine practice serving women located in California. Every visit happens over secure video — from home, work, or anywhere private in the state.",
+            "CYRA is a telemedicine practice serving women located in California. Every visit happens over secure video, from home, work, or anywhere private in the state.",
         },
         {
           question: "How do I get started?",
           answer:
-            "Two ways: book a free Discovery Call with our Patient Care Coordinator to learn how the practice, membership, and pricing work, or book your comprehensive consultation with me directly. The Discovery Call is about the practice — it isn't a medical appointment and no medical advice is given, but the coordinator can arrange for practice-related questions to reach me.",
+            "Two ways: book a free Discovery Call with our Patient Care Coordinator to learn how the practice, membership, and pricing work, or book your comprehensive consultation with me directly. The Discovery Call is about the practice; it isn't a medical appointment and no medical advice is given, but the coordinator can arrange for practice-related questions to reach me.",
         },
         {
           question: "Is the consultation binding?",
           answer:
-            "No. The 60-minute comprehensive consultation is completely nonbinding, with no obligation to join afterward. I review your history, symptoms, and goals and walk through your options, and you'll leave with a clear understanding of my recommendations — then you decide whether membership is right for you.",
+            "No. The 60-minute comprehensive consultation is completely nonbinding, with no obligation to join afterward. I review your history, symptoms, and goals and walk through your options, and you'll leave with a clear understanding of my recommendations. Then you decide whether membership is right for you.",
         },
         {
           question: "Why does membership run a full year?",
           answer:
-            "Hormone therapy is rarely fixed in one visit — most adjustments take 8 to 12 weeks to show their full effect. A one-year membership gives your body the time it needs for real, lasting change, with close follow-up along the way: appointments every 4 to 6 weeks (sooner if needed) and direct messaging with me between visits.",
+            "Hormone therapy is rarely fixed in one visit, and most adjustments take 8 to 12 weeks to show their full effect. A one-year membership gives your body the time it needs for real, lasting change, with close follow-up along the way: appointments every 4 to 6 weeks (sooner if needed) and direct messaging with me between visits.",
         },
         {
           question: "What happens after my first year?",
@@ -413,32 +413,32 @@ export const content = {
         {
           question: "Do I keep my primary care doctor and OB/GYN?",
           answer:
-            "Yes — please do. Think of me as your women's hormone specialist, working alongside your PCP and OB/GYN, not replacing them. Your PCP continues your routine and preventive care, your OB/GYN continues your gynecologic care and screenings, and I'm glad to coordinate with them when it's helpful.",
+            "Yes, please do. Think of me as your women's hormone specialist, working alongside your PCP and OB/GYN, not replacing them. Your PCP continues your routine and preventive care, your OB/GYN continues your gynecologic care and screenings, and I'm glad to coordinate with them when it's helpful.",
         },
         {
           question: "Do you prescribe testosterone for women?",
           answer:
-            "Yes. Full bioidentical hormone therapy centers on estrogen and progesterone when they're right for you, and women have testosterone too — it affects mood, energy, and libido. When your labs and symptoms support it, I include testosterone as a core part of your care, with careful dosing and monitoring.",
+            "Yes. Full bioidentical hormone therapy centers on estrogen and progesterone when they're right for you, and women have testosterone too. It affects mood, energy, and libido. When your labs and symptoms support it, I include testosterone as a core part of your care, with careful dosing and monitoring.",
         },
         {
           question: "Do you prescribe GLP-1 medications for weight loss?",
           answer:
-            "Yes, when it's clinically appropriate. GLP-1 medications (like semaglutide and tirzepatide) can be a helpful tool for hormonal and metabolic weight changes, and I prescribe them as part of a personalized plan — alongside your hormone therapy, labs, and long-term metabolic health, not as a standalone quick fix.",
+            "Yes, when it's clinically appropriate. GLP-1 medications (like semaglutide and tirzepatide) can be a helpful tool for hormonal and metabolic weight changes, and I prescribe them as part of a personalized plan, alongside your hormone therapy, labs, and long-term metabolic health, not as a standalone quick fix.",
         },
         {
           question: "Do you treat PMDD?",
           answer:
-            "Yes. PMDD (premenstrual dysphoric disorder) is a real, treatable condition — not “just PMS.” If severe mood symptoms like rage, despair, or anxiety show up in the week or two before your period and lift once it starts, that cyclical pattern is exactly what I evaluate and treat with a hormone-informed approach, rather than dismissing it.",
+            "Yes. PMDD (premenstrual dysphoric disorder) is a real, treatable condition, not “just PMS.” If severe mood symptoms like rage, despair, or anxiety show up in the week or two before your period and lift once it starts, that cyclical pattern is exactly what I evaluate and treat with a hormone-informed approach, rather than dismissing it.",
         },
         {
           question: "What does it cost, and do you take insurance?",
-          answer: `Membership itself is cash-pay by design — that's what makes longer appointments and truly personalized care possible. It's ${formatUsd(
+          answer: `Membership itself is cash-pay by design, and that's what makes longer appointments and truly personalized care possible. It's ${formatUsd(
             carePlanPricing.monthlyPayment,
           )} per month for ${carePlanPricing.paymentCount} payments through Cherry with approved credit, or ${formatUsd(
             carePlanUpfrontTotal,
           )} paid in full (a ${upfrontSavingsPercent}% savings). Cherry is our financing partner, and checking your rate doesn't affect your credit score. The comprehensive consultation is a separate, one-time ${formatUsd(
             carePlanPricing.consultFee,
-          )} fee — enroll within 14 days and it's credited toward your membership, so the membership prices are everything you pay after the consultation. Beyond membership, I work to keep your other costs low: I use your insurance whenever possible for labs and prescriptions — most labs are covered just as if your PCP ordered them, so they aren't an extra expense, and most hormone medications are covered too. Without insurance, hormones typically run about $20–30 per month each through GoodRx, and I can also send prescriptions through HRT Club, a pharmacy with affordable cash pricing. Blood draws happen at a Quest location near you, we accept HSA and FSA funds for membership, and we provide superbills for possible out-of-network reimbursement.`,
+          )} fee. Enroll within 14 days and it's credited toward your membership, so the membership prices are everything you pay after the consultation. Beyond membership, I work to keep your other costs low: I use your insurance whenever possible for labs and prescriptions. Most labs are covered just as if your PCP ordered them, so they aren't an extra expense, and most hormone medications are covered too. Without insurance, hormones typically run about $20–30 per month each through GoodRx, and I can also send prescriptions through HRT Club, a pharmacy with affordable cash pricing. Blood draws happen at a Quest location near you, we accept HSA and FSA funds for membership, and we provide superbills for possible out-of-network reimbursement.`,
         },
       ],
     },
@@ -472,17 +472,17 @@ export const content = {
     ],
     // The label under the photo placeholder (replace the image later)
     // Describes the photo for screen readers and search engines
-    photoCaption: "Dr. Mondona Goodwin, DO — founder of CYRA Wellness",
+    photoCaption: "Dr. Mondona Goodwin, DO, founder of CYRA Wellness",
     // The bio paragraphs (Dr. Goodwin's own first-person voice)
     bio: [
-      "I'm Dr. Mondona Goodwin, a board-certified Internal Medicine physician with more than ten years of clinical experience. I trained as a Doctor of Osteopathic Medicine — a path I chose because osteopathic medicine starts from the premise that the body is one interconnected system, not a collection of separate complaints.",
+      "I'm Dr. Mondona Goodwin, a board-certified Internal Medicine physician with more than ten years of clinical experience. I trained as a Doctor of Osteopathic Medicine, a path I chose because osteopathic medicine starts from the premise that the body is one interconnected system, not a collection of separate complaints.",
       "Over the years I've pursued extensive additional training in perimenopause, menopause, hormone therapy, metabolic health, and women's midlife health, and I'm a Menopause Society Certified Practitioner (MSCP). One pattern kept repeating in my practice: women arriving with real, life-altering symptoms and leaving with a shrug, or the words 'that's just part of getting older.'",
-      "My approach is proactive and evidence-based. I don't treat a hot flash; I treat a woman — her metabolism and her mood alongside her hormones, her long-term risks alongside her symptoms, her goals alongside her labs. When it fits your health, that includes full bioidentical hormone therapy — estrogen, progesterone, and testosterone when appropriate. And I work as your women's hormone specialist alongside your primary care physician and OB/GYN, coordinating with them so your care stays seamless.",
-      "What I want every patient to feel when a visit ends is simple: heard, taken seriously, and clear on the plan — with a physician who will still be there at the next visit, and the one after that.",
+      "My approach is proactive and evidence-based. I don't treat a hot flash; I treat a woman — her metabolism and her mood alongside her hormones, her long-term risks alongside her symptoms, her goals alongside her labs. When it fits your health, that includes full bioidentical hormone therapy, with estrogen, progesterone, and testosterone when appropriate. And I work as your women's hormone specialist alongside your primary care physician and OB/GYN, coordinating with them so your care stays seamless.",
+      "What I want every patient to feel when a visit ends is simple: heard, taken seriously, and clear on the plan, with a physician who will still be there at the next visit, and the one after that.",
     ],
     // The pull-quote and signature (Dr. Goodwin's personal story)
     quote:
-      "Creating CYRA Wellness was deeply personal. My own hormonal and weight journey inspired me to build the practice I always wished existed — one centered on personalized, evidence-based care and long-term partnerships with patients. The name is a dedication to my two children — Cyrus and Lily Cyra — and to every woman I care for since.",
+      "Creating CYRA Wellness was deeply personal. My own hormonal and weight journey inspired me to build the practice I always wished existed, one centered on personalized, evidence-based care and long-term partnerships with patients. The name is a dedication to my two children, Cyrus and Lily Cyra, and to every woman I care for since.",
     signature: "Dr. Goodwin",
     // Credential chips shown in a row
     credentials: [
@@ -502,7 +502,7 @@ export const content = {
 
   /* =======================================================================
      COMPARE PAGE  (/compare)
-     The page that shows how CYRA differs from other providers — online HRT
+     The page that shows how CYRA differs from other providers: online HRT
      platforms, conventional OB/GYN, and the big menopause telehealth brands.
      Every word on that page is below. The little check / X / dash marks in the
      table come from the "verdict" values (see the note above the table data).
@@ -528,7 +528,7 @@ export const content = {
       items: [
         {
           title: "Who delivers your care",
-          body: "At CYRA Wellness, it's always the same Board-Certified physician and Menopause Society Certified Practitioner (MSCP) — one who gets to know your history, not a rotating cast of providers.",
+          body: "At CYRA Wellness, it's always the same Board-Certified physician and Menopause Society Certified Practitioner (MSCP), one who gets to know your history rather than a rotating cast of providers.",
         },
         {
           title: "Testosterone access",
@@ -566,7 +566,7 @@ export const content = {
 
     // ---- TABLE DATA ----
     // This is the grid itself. "platforms" is the row of column headings
-    // (CYRA must stay first — it's the highlighted column). "rows" is one entry
+    // (CYRA must stay first because it's the highlighted column). "rows" is one
     // per criterion; each has a "criterion" label and a "cells" list with one
     // cell PER PLATFORM, in the same left-to-right order as "platforms".
     //
@@ -691,7 +691,7 @@ export const content = {
         {
           name: "Midi Health",
           paragraphs: [
-            "Midi has built one of the largest menopause telehealth networks in the country, and their providers are focused specifically on this phase of life — that focus matters.",
+            "Midi has built one of the largest menopause telehealth networks in the country, and their providers are focused specifically on this phase of life. That focus matters.",
             "Where CYRA differs: your care at Midi may not be delivered by the same physician each visit, and you may see different providers across visits. For women who want a specific physician who knows their history and can draw on the full scope of a DO's training, that difference is worth considering.",
           ],
         },
@@ -699,21 +699,21 @@ export const content = {
           name: "Alloy Women's Health",
           paragraphs: [
             "Alloy offers physician-designed protocols at an accessible price point, making them a good entry point for women exploring HRT for the first time. Their approach is protocol-driven rather than fully individualized, which works well for straightforward presentations.",
-            "Where CYRA differs: if your situation is more complex — multiple symptoms, thyroid involvement, weight management alongside hormone care — CYRA's fully personalized approach and physician continuity offer more flexibility.",
+            "Where CYRA differs: if your situation is more complex (multiple symptoms, thyroid involvement, weight management alongside hormone care), CYRA's fully personalized approach and physician continuity offer more flexibility.",
           ],
         },
         {
           name: "Evernow",
           paragraphs: [
             "Evernow has invested heavily in their app experience and data-driven approach. For women who prefer a tech-forward, app-centric workflow, it's a solid option.",
-            "Where CYRA differs: Evernow's care is primarily delivered through providers rather than a physician, and is more algorithmically structured — which trades some personalization for scale and consistency.",
+            "Where CYRA differs: Evernow's care is primarily delivered through providers rather than a physician, and is more algorithmically structured, which trades some personalization for scale and consistency.",
           ],
         },
         {
           name: "Winona",
           paragraphs: [
             "Winona focuses specifically on compounded bioidentical hormone therapy and has developed a clear, streamlined process for women who already know they want BHRT.",
-            "Where CYRA differs: CYRA isn't compounded-only — Dr. Goodwin works with both FDA-approved and compounded options based on what's clinically appropriate for you, rather than defaulting to one category.",
+            "Where CYRA differs: CYRA isn't compounded-only. Dr. Goodwin works with both FDA-approved and compounded options based on what's clinically appropriate for you, rather than defaulting to one category.",
           ],
         },
       ],
@@ -724,7 +724,7 @@ export const content = {
       label: "Your Checklist",
       heading: "Before you choose any platform, ask these questions.",
       intro:
-        "Take this list to every consult — including ours. A platform that's confident in its care will welcome all of them.",
+        "Take this list to every consult, including ours. A platform that's confident in its care will welcome all of them.",
       items: [
         "Who will actually be delivering my care?",
         "Will I see the same provider at every visit?",
@@ -733,14 +733,14 @@ export const content = {
         "Can I get a superbill for potential insurance reimbursement?",
         "What happens if I want to pause or cancel?",
         "Who do I contact between visits if I have a question?",
-        "How are my labs reviewed — by my prescribing provider or a separate reviewer?",
+        "Are my labs reviewed by my prescribing provider or by a separate reviewer?",
       ],
     },
 
     // ---- FINAL CALL TO ACTION at the bottom of the Compare page ----
     finalCta: {
       heading: "Want to see if CYRA is the right fit?",
-      body: "Reach out to learn more about the practice — including how CYRA works alongside your existing PCP and OB/GYN — or book your consultation with Dr. Goodwin. No pressure to enroll.",
+      body: "Reach out to learn more about the practice, including how CYRA works alongside your existing PCP and OB/GYN, or book your consultation with Dr. Goodwin. No pressure to enroll.",
       cta: "Get Started", // Main button
       // The quieter link under the button (always points to the Membership section)
       secondaryLink: "Or read more about how membership works",
@@ -753,10 +753,10 @@ export const content = {
   book: {
     heading: "Book Your Visit",
     subheadline:
-      "Book your comprehensive consultation with Dr. Goodwin — or, if you'd like to learn about the practice first, start with a free Discovery Call or a text.",
+      "Book your comprehensive consultation with Dr. Goodwin. Or, if you'd like to learn about the practice first, start with a free Discovery Call or a text.",
     // Short reassurance points
     reassurances: [
-      "No commitment required — the consultation is completely nonbinding",
+      "No commitment required: the consultation is completely nonbinding",
       "Start with a free Discovery Call, or book your consultation directly",
       "Get your questions answered before enrolling",
     ],
@@ -764,7 +764,7 @@ export const content = {
     discovery: {
       title: "Not ready to book? Start with a free Discovery Call",
       meta: "15 minutes · Free",
-      body: "A short call with our Patient Care Coordinator about how the practice, membership, and pricing work. It's about the practice — not a medical appointment, and no medical advice is given.",
+      body: "A short call with our Patient Care Coordinator about how the practice, membership, and pricing work. It's about the practice, not a medical appointment, and no medical advice is given.",
       ctaLabel: "Schedule Your Call", // Jumps to the scheduler below
       // Heading shown above the embedded Discovery Call scheduler
       schedulerHeading: "Schedule your free Discovery Call",
@@ -772,7 +772,7 @@ export const content = {
     consult: {
       title: "Comprehensive Consultation",
       meta: "60 minutes · $399",
-      body: "Your full one-hour visit with Dr. Goodwin — history, symptoms, goals, and an evidence-based plan. Completely nonbinding, and credited toward membership when you enroll within 14 days.",
+      body: "Your full one-hour visit with Dr. Goodwin: history, symptoms, goals, and an evidence-based plan. Completely nonbinding, and credited toward membership when you enroll within 14 days.",
       ctaLabel: "Book the Consultation", // Jumps to the booking widget below
       // Heading shown above the embedded consultation booking widget
       schedulerHeading: "Book your comprehensive consultation",
@@ -785,7 +785,7 @@ export const content = {
     calendlyUrl: "https://calendly.com/hello-drmondona/15min",
     // The label inside the scheduling placeholder box (shown only if
     // calendlyUrl above is ever emptied out)
-    schedulerLabel: "Scheduling embed — request info or book your consultation",
+    schedulerLabel: "Scheduling embed: request info or book your consultation",
     // The line under the scheduler
     emailPrompt: "Prefer to reach out directly? Email us at",
     // The texting line under the scheduler (uses the number from brand above)
@@ -804,7 +804,7 @@ export const content = {
   /* =======================================================================
      LEGAL PAGES (the Privacy Policy and Terms of Service pages themselves)
      The words shown on each legal page. These are placeholder pages until the
-     full policy text is finalized — change the "title" and "description" here
+     full policy text is finalized. Change the "title" and "description" here
      to update what visitors see on those pages.
      ======================================================================= */
   legalPages: {
@@ -825,7 +825,7 @@ export const content = {
   },
 
   /* =======================================================================
-     PLACEHOLDER PAGE — shared bits on the Privacy/Terms placeholder pages
+     PLACEHOLDER PAGE (shared bits on the Privacy/Terms placeholder pages)
      The "back to home" button and the "questions?" email line that appear at
      the bottom of every placeholder legal page.
      ======================================================================= */
@@ -836,7 +836,7 @@ export const content = {
   },
 
   /* =======================================================================
-     FOR PHYSICIANS PAGE (/for-physicians) — written doctor-to-doctor,
+     FOR PHYSICIANS PAGE (/for-physicians), written doctor-to-doctor and
      linked from the footer. For PCPs and OB/GYNs considering a referral.
      ======================================================================= */
   forPhysicians: {
@@ -844,31 +844,31 @@ export const content = {
     heading: "A hormone specialist for the women in your panel.",
     // Opening, in Dr. Goodwin's first person (matches the referral letter)
     intro: [
-      "I'm Dr. Mondona Goodwin, a board-certified Internal Medicine physician and Menopause Society Certified Practitioner (MSCP) practicing telemedicine across California. I founded CYRA Wellness to give women's hormonal health the time and depth it deserves — the disrupted sleep, the mood shifts, the weight that won't budge, the brain fog affecting her work and relationships.",
-      "In primary care and gynecology, you're often the first person a patient turns to when something feels \"off.\" These conversations deserve time that a busy schedule rarely allows. That's exactly the gap CYRA Wellness fills — and I'd welcome the chance to help.",
+      "I'm Dr. Mondona Goodwin, a board-certified Internal Medicine physician and Menopause Society Certified Practitioner (MSCP) practicing telemedicine across California. I founded CYRA Wellness to give women's hormonal health the time and depth it deserves: the disrupted sleep, the mood shifts, the weight that won't budge, the brain fog affecting her work and relationships.",
+      "In primary care and gynecology, you're often the first person a patient turns to when something feels \"off.\" These conversations deserve time that a busy schedule rarely allows. That's exactly the gap CYRA Wellness fills, and I'd welcome the chance to help.",
     ],
-    // Who to refer — the conditions list, phrased clinically
+    // Who to refer: the conditions list, phrased clinically
     referHeading: "Patients who are a good fit",
     referrals: [
       "Perimenopause and menopause evaluation and management",
-      "Hormone therapy — estrogen, progesterone, and testosterone, individually tailored",
+      "Hormone therapy: estrogen, progesterone, and testosterone, individually tailored",
       "PMDD and severe PMS",
       "Postpartum hormonal concerns, including postpartum depression",
       "Vaginal dryness or pain, low libido, and sexual health",
       "Midlife weight management, including GLP-1 support where clinically appropriate",
       "Fatigue, sleep disturbance, and metabolic concerns with a suspected hormonal component",
     ],
-    // The collaboration promise — the referring doctor keeps the patient
-    collaborationHeading: "We extend your care — we don't replace it",
+    // The collaboration promise: the referring doctor keeps the patient
+    collaborationHeading: "We extend your care, we don't replace it",
     collaboration: [
       "Your patient stays yours. She continues seeing you for primary care or gynecologic care; CYRA adds focused hormone and midlife-health support alongside it.",
-      "With her consent, we send you a consultation summary and keep your office in the loop on her hormone care — medications, dosing, and monitoring.",
+      "With her consent, we send you a consultation summary and keep your office in the loop on her hormone care: medications, dosing, and monitoring.",
       "We don't duplicate services: no routine primary care, no gynecologic procedures or screenings.",
     ],
     // Practical details referring offices need up front
     logisticsHeading: "Practical details",
     logistics: [
-      "100% telehealth, licensed in California — no travel for your patient",
+      "100% telehealth, licensed in California, with no travel for your patient",
       "New patients are typically seen within days, not weeks",
       "60-minute comprehensive initial consultation",
       "Membership-based and cash-pay, with pricing published openly on this site; insurance is used for labs and most prescriptions",
@@ -884,22 +884,22 @@ export const content = {
   },
 
   /* =======================================================================
-     RESOURCES PAGE (/resources) — trusted providers Dr. Goodwin partners
+     RESOURCES PAGE (/resources). Trusted providers Dr. Goodwin partners
      with and recommends: pelvic floor PTs, trainers, dietitians, etc.
      ======================================================================= */
   resources: {
     label: "Trusted Resources",
     heading: "Providers I trust and recommend.",
     intro:
-      "Real, lasting change is a team effort. Alongside your care at CYRA, these are independent providers I partner with and personally recommend — each one chosen because they take women's health as seriously as I do.",
+      "Real, lasting change is a team effort. Alongside your care at CYRA, these are independent providers I partner with and personally recommend, each one chosen because they take women's health as seriously as I do.",
     // Shown while the list below is still empty. Delete or reword once
     // the first partners are added.
     emptyNote:
-      "I'm assembling this list now. In the meantime, if you'd like a personal recommendation — a pelvic floor physical therapist, a trainer, a dietitian — just ask during your visit or text us.",
+      "I'm assembling this list now. In the meantime, if you'd like a personal recommendation (a pelvic floor physical therapist, a trainer, a dietitian), just ask during your visit or text us.",
     // Small print at the bottom of the page
     disclaimer:
       "These are independent providers, not employees or affiliates of CYRA Wellness. No provider pays to be listed here; recommendations reflect professional judgment only.",
-    /* HOW TO ADD A PARTNER — copy this pattern inside categories: [ ] below.
+    /* HOW TO ADD A PARTNER. Copy this pattern inside categories: [ ] below.
        Each category has a "name" and a list of partners. Each partner needs
        a name; credentials, location, url, and blurb are optional (leave the
        ones you don't need out entirely).
@@ -911,7 +911,7 @@ export const content = {
           {
             name: "Jane Smith, DPT",
             credentials: "Doctor of Physical Therapy",
-            location: "Ventura, CA — telehealth available",
+            location: "Ventura, CA (telehealth available)",
             url: "https://example.com",
             blurb: "Specializes in postpartum recovery and pelvic pain.",
           },

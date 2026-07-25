@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import headshot from "@/images/dr-goodwin.jpeg";
+import headshot from "@/images/goodwin.jpeg";
 import { Section } from "@/components/ui/section";
 import { SectionLabel } from "@/components/ui/section-label";
 import { FadeUp } from "@/components/ui/fade-up";
@@ -21,7 +21,7 @@ export function generateMetadata(): Metadata {
     title: "About Dr. Mondona Goodwin, DO | CYRA Wellness",
     absoluteTitle: true,
     description:
-      "Meet Dr. Mondona Goodwin, DO — a board-certified Internal Medicine physician and Menopause Society Certified Practitioner (MSCP) behind CYRA Wellness, a California membership-based practice for women's hormonal and metabolic health.",
+      "Meet Dr. Mondona Goodwin, DO, a board-certified Internal Medicine physician and Menopause Society Certified Practitioner (MSCP) behind CYRA Wellness, a California membership-based practice for women's hormonal and metabolic health.",
     path: "/about",
   });
 }
@@ -44,13 +44,13 @@ export default function AboutPage() {
       <Section tone="surface">
         <div className="mx-auto grid max-w-5xl items-start gap-12 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
           <FadeUp>
-            <div className="relative mx-auto aspect-square w-full max-w-sm overflow-hidden rounded-card shadow-card">
+            <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-card shadow-card">
               <Image
                 src={headshot}
                 alt={about.photoCaption}
                 fill
                 sizes="(max-width: 1024px) 90vw, 384px"
-                className="object-cover"
+                className="object-cover object-top"
                 priority
               />
             </div>
