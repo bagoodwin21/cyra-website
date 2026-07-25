@@ -18,7 +18,7 @@ inclusions, pricing numbers, FAQ, testimonials, and contact info are all
 there. Pages only handle layout — they read their text from that file.
 
 If you're not a developer, read **[EDITING.md](EDITING.md)** — a plain-English
-guide to changing text on github.com and letting Vercel redeploy.
+guide to changing text on github.com and letting Cloudflare redeploy.
 
 ## Tech stack
 
@@ -111,29 +111,32 @@ horizontal scroll of the comparison table).
 
 ## Deployment
 
-**Vercel is the production host today.** The site is host-agnostic, though:
-all redirects and headers live in `next.config.mjs` (not in a host-specific
-config file), so the same repo also builds and runs on Cloudflare Workers.
+**Cloudflare Workers is the production host** (via
+[OpenNext](https://opennext.js.org/cloudflare)): the Worker `cyra-website`
+is connected to this GitHub repo in the Cloudflare dashboard, and every push
+to `main` builds and deploys automatically. `drmondona.com` and
+`www.drmondona.com` are attached to the Worker as custom domains;
+`next.config.mjs` 308-redirects www → apex, redirects the 12 retired URLs
+from the old Squarespace site, and sets the security/cache headers.
 
-### Vercel (primary)
+The site is host-agnostic, though: all redirects and headers live in
+`next.config.mjs` (not in a host-specific config file), so the same repo
+also builds and runs on Vercel unchanged (there is no `vercel.json`).
 
-1. Import the GitHub repo in Vercel (framework: Next.js, root directory `/`).
-2. Set the environment variables from `.env.example` in Project Settings.
-3. Point `drmondona.com` and `www.drmondona.com` at the project;
-   `next.config.mjs` 308-redirects www → apex, redirects the 12 retired
-   URLs from the old site, and sets the security/cache headers.
-4. Every push to the production branch deploys automatically; PRs get preview URLs.
+### Cloudflare Workers (production)
 
-There is no `vercel.json` — it is not needed, and removing it is what makes
-those rules portable.
+The OpenNext scaffolding: `open-next.config.ts`, `wrangler.jsonc` (Worker
+name `cyra-website`), and `public/_headers` (restores immutable caching on
+`/_next/static/*`, which Cloudflare serves outside of Next.js).
 
-### Cloudflare Workers (test path, optional)
+Dashboard build settings (Workers → Import a repository):
 
-The repo carries [OpenNext](https://opennext.js.org/cloudflare) scaffolding so
-the site can be deployed to Cloudflare Workers without changing any code:
-`open-next.config.ts`, `wrangler.jsonc` (Worker name `cyra-website`), and
-`public/_headers` (restores immutable caching on `/_next/static/*`, which
-Cloudflare serves outside of Next.js). None of it affects the Vercel build.
+- Build command: `npx opennextjs-cloudflare build`
+- Deploy command: `npx wrangler deploy`
+
+Environment variables from `.env.example` go under the Worker's settings;
+build-time `NEXT_PUBLIC_*` values must be set for the *build*, not just the
+runtime.
 
 Locally:
 
@@ -142,17 +145,6 @@ npm run cf:build      # next build + adapt to a Cloudflare Worker (.open-next/)
 npm run cf:preview    # build, then serve the Worker locally via wrangler dev
 npm run cf:deploy     # build, then wrangler deploy
 ```
-
-From the Cloudflare dashboard (no local tooling needed): **Workers & Pages →
-Create → Workers → Import a repository**, pick this repo, and either accept
-the Next.js / OpenNext preset or set the commands manually:
-
-- Build command: `npx opennextjs-cloudflare build`
-- Deploy command: `npx wrangler deploy`
-
-Then add the environment variables from `.env.example` under the Worker's
-settings (build-time `NEXT_PUBLIC_*` values must be set for the *build*, not
-just the runtime), and attach the domain if this ever becomes the live host.
 
 > `@opennextjs/cloudflare` is pinned to `~1.15.1` — the last line that supports
 > Next.js 14. Version 1.16+ requires Next.js 15 or newer, so bump Next first if
