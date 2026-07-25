@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import headshot from "@/images/goodwin.jpeg";
+import abimBadge from "@/images/abim.png";
+import mscpBadge from "@/images/mscp.webp";
 import { Section } from "@/components/ui/section";
 import { SectionLabel } from "@/components/ui/section-label";
 import { FadeUp } from "@/components/ui/fade-up";
@@ -66,6 +68,33 @@ export default function AboutPage() {
                 </Badge>
               ))}
             </div>
+            <div className="mt-6 flex flex-wrap items-center gap-4">
+              <Image
+                src={abimBadge}
+                alt={about.badgeArt.abimAlt}
+                className="h-20 w-20 rounded-[6px] object-contain"
+              />
+              <Image
+                src={mscpBadge}
+                alt={about.badgeArt.mscpAlt}
+                className="h-20 w-20 rounded-full object-contain"
+              />
+            </div>
+            <p className="mt-4 text-small text-foreground-muted">
+              {about.verifyLinks.map((link, i) => (
+                <span key={link.label}>
+                  {i > 0 && " · "}
+                  <a
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-primary underline-offset-2 hover:underline"
+                  >
+                    {link.label}
+                  </a>
+                </span>
+              ))}
+            </p>
             <div className="mt-7 space-y-5">
               {about.bio.map((paragraph) => (
                 <p key={paragraph.slice(0, 40)} className="text-body-copy">
