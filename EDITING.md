@@ -25,8 +25,8 @@ ever need to change words.
 1. Open the file on github.com and click the pencil ✏️ to edit.
 2. Change the text **between the quotation marks**.
 3. Save (GitHub calls this "Commit changes").
-4. Vercel automatically rebuilds your live site — usually within a couple of
-   minutes.
+4. Cloudflare automatically rebuilds your live site — usually within a
+   couple of minutes.
 
 That's the whole loop. Let's walk through it slowly the first time.
 

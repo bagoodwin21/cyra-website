@@ -2,8 +2,8 @@
 
 Marketing site for CYRA Wellness (drmondona.com), Dr. Mondona Goodwin's
 California telemedicine practice for women's hormonal health. Next.js 14
-(App Router) + TypeScript + Tailwind. Deployed on Vercel — every push to
-`main` goes live automatically.
+(App Router) + TypeScript + Tailwind. Deployed on Cloudflare Workers via
+OpenNext — every push to `main` goes live automatically.
 
 ## Editing content (most common task)
 
@@ -23,8 +23,8 @@ verify, and push. Keep her wording and meaning; polish lightly for the web.
 ## Verify before pushing
 
 Run `npm install` (first time) and `npm run build`. The build must pass
-with no errors. A failed build never reaches the live site (Vercel keeps
-the previous version), but do not push a broken build.
+with no errors. A failed build never reaches the live site (Cloudflare
+keeps the previous version), but do not push a broken build.
 
 ## Standing content rules — never violate these
 
