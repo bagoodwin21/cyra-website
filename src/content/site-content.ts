@@ -332,8 +332,8 @@ export const content = {
       heading: "Membership is cash-pay — but I work to keep your other costs down.",
       intro:
         "Membership itself is a flat, cash-pay fee, with financing available through Cherry. But whenever possible, I use your insurance for laboratory testing and prescriptions. Most labs are covered just as they would be if your PCP ordered them, so they're not an extra expense to worry about, and most hormone medications are covered too. When something isn't, I look for every opportunity to lower the cost.",
-      // The savings tools (these reduce medication and supplement costs; they are
-      // NOT financing; Cherry remains the only way to finance membership itself)
+      // The savings tools (these reduce medication and supplement costs, but they
+      // are NOT financing; Cherry remains the only way to finance membership itself)
       items: [
         "Most labs covered by your insurance, at the same cost as if your PCP ordered them, not an extra expense",
         "Most hormone medications covered by insurance too",
