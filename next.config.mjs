@@ -14,10 +14,19 @@ const nextConfig = {
   async redirects() {
     return [
       // Canonical host: www.drmondona.com -> drmondona.com
+      // The bare root needs its own rule: when :path* matches zero
+      // segments, the OpenNext runtime leaves the token unsubstituted
+      // and redirects to a literal "/:path*".
       {
-        source: "/:path*",
+        source: "/",
         has: [{ type: "host", value: "www.drmondona.com" }],
-        destination: "https://drmondona.com/:path*",
+        destination: "https://drmondona.com/",
+        permanent: true,
+      },
+      {
+        source: "/:path+",
+        has: [{ type: "host", value: "www.drmondona.com" }],
+        destination: "https://drmondona.com/:path+",
         permanent: true,
       },
 
