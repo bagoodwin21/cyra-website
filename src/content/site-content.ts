@@ -411,11 +411,6 @@ export const content = {
             "Most patients don't need that same intensity of visits forever. After your first year of close follow-up and fine-tuning, most transition to a lower-cost maintenance membership that keeps your results going with continued access and monitoring. We'll talk through the details as your first year wraps up, once we know what your ongoing care looks like.",
         },
         {
-          question: "What if I need to cancel my membership?",
-          answer:
-            "Life happens. If your circumstances change mid-year, reach out and we'll work with you to find a fair path forward. Because your care plan is delivered continuously across the year, refunds aren't guaranteed, but you'll never be navigating it alone.",
-        },
-        {
           question: "Do I keep my primary care doctor and OB/GYN?",
           answer:
             "Yes, please do. Think of me as your women's hormone specialist, working alongside your PCP and OB/GYN, not replacing them. Your PCP continues your routine and preventive care, your OB/GYN continues your gynecologic care and screenings, and I'm glad to coordinate with them when it's helpful.",
@@ -731,7 +726,6 @@ export const content = {
         "Is testosterone included or is it an add-on?",
         "What's the total monthly cost including labs and medications?",
         "Can I get a superbill for potential insurance reimbursement?",
-        "What happens if I want to cancel?",
         "Who do I contact between visits if I have a question?",
         "Are my labs reviewed by my prescribing provider or by a separate reviewer?",
       ],
