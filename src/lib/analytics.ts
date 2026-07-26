@@ -1,7 +1,8 @@
 /**
- * Thin wrapper over the GTM dataLayer. Events fired here are picked up
- * by the Google Tag Manager container configured in
- * src/components/analytics/google-tag-manager.tsx.
+ * Event tracking that works with either tag setup configured in
+ * src/components/analytics/google-tag-manager.tsx: sends through
+ * gtag() when GA4 is loaded directly (G- measurement ID), otherwise
+ * pushes to the GTM dataLayer.
  *
  * Event names in use:
  * - book_consult_click        (any CTA leading to /book; auto-tracked)
@@ -14,7 +15,14 @@ export function trackEvent(
   params: Record<string, string | number> = {}
 ) {
   if (typeof window === "undefined") return;
-  const w = window as typeof window & { dataLayer?: unknown[] };
+  const w = window as typeof window & {
+    dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
+  };
+  if (typeof w.gtag === "function") {
+    w.gtag("event", event, params);
+    return;
+  }
   w.dataLayer = w.dataLayer ?? [];
   w.dataLayer.push({ event, ...params });
 }
