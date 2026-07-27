@@ -251,7 +251,7 @@ export const content = {
           title: "Your comprehensive consultation",
           // Shows the length and the one-time consult fee (from carePlanPricing.consultFee)
           meta: `60 minutes · ${formatUsd(carePlanPricing.consultFee)}`,
-          body: "A completely nonbinding hour with me, with no obligation to join afterward. Together we'll review your medical history, current symptoms, previous treatments, lifestyle, goals, and lab history, answer your questions, and walk through evidence-based treatment options. You'll leave with a clear understanding of my recommendations, and the fee is credited toward your membership when you enroll within 14 days.",
+          body: "A completely nonbinding hour with me, with no obligation to join afterward. Together we'll review your medical history, current symptoms, previous treatments, lifestyle, goals, and lab history, answer your questions, and walk through evidence-based treatment options. You'll leave with a clear understanding of my recommendations.",
         },
         {
           title: "Begin your membership",
@@ -766,7 +766,7 @@ export const content = {
     consult: {
       title: "Comprehensive Consultation",
       meta: "60 minutes · $399",
-      body: "Your full one-hour visit with Dr. Goodwin: history, symptoms, goals, and an evidence-based plan. Completely nonbinding, and credited toward membership when you enroll within 14 days.",
+      body: "Your full one-hour visit with Dr. Goodwin: history, symptoms, goals, and an evidence-based plan. Completely nonbinding, with no obligation to join afterward.",
       ctaLabel: "Book the Consultation", // Jumps to the booking widget below
       // Heading shown above the embedded consultation booking widget
       schedulerHeading: "Book your comprehensive consultation",
