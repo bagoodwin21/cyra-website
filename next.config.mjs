@@ -37,7 +37,7 @@ const nextConfig = {
       { source: "/info", destination: "/", permanent: true },
       { source: "/faq", destination: "/#faq", permanent: true },
       { source: "/insurance", destination: "/#insurance", permanent: true },
-      { source: "/testimonials", destination: "/#reviews", permanent: true },
+      { source: "/testimonials", destination: "/reviews", permanent: true },
       { source: "/contact", destination: "/book", permanent: true },
       { source: "/schedule", destination: "/book", permanent: true },
       { source: "/insurancecompare", destination: "/compare", permanent: true },

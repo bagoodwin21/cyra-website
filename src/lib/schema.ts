@@ -28,6 +28,11 @@ const physicianEntity = {
     },
   ],
   url: `${siteConfig.url}/about`,
+  // Public profiles that belong to Dr. Goodwin / the practice — helps
+  // search engines connect her name to the CYRA Google Business Profile.
+  sameAs: [content.home.testimonials.googleUrl, siteConfig.instagramUrl].filter(
+    Boolean,
+  ),
   worksFor: {
     "@type": "MedicalBusiness",
     name: siteConfig.name,
