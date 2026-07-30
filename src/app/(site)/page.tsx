@@ -421,6 +421,14 @@ export default function HomePage() {
             {home.testimonials.googleCtaLabel}
             <ArrowUpRight className="h-4 w-4" aria-hidden />
           </a>
+          <p className="mt-4">
+            <Link
+              href="/reviews"
+              className="text-small font-medium text-foreground-muted underline-offset-4 transition-colors hover:text-foreground hover:underline"
+            >
+              {home.testimonials.pageLinkLabel}
+            </Link>
+          </p>
         </FadeUp>
       </Section>
 

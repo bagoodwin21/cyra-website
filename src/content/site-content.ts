@@ -377,6 +377,8 @@ export const content = {
       // Google, where reviews carry third-party credibility.
       googleCtaLabel: "Read our reviews on Google",
       googleUrl: "https://maps.app.goo.gl/BbqpKybfbemLE6p97",
+      // Quiet link under the Google button, to the /reviews page
+      pageLinkLabel: "More about patient reviews",
     },
 
     // ---- FAQ: a short list of common questions ----
@@ -1089,6 +1091,39 @@ export const content = {
     // Contact methods shown as buttons/lines
     contactEmailLabel: "Email our office",
     contactPhoneLabel: "Call or text",
+  },
+
+  /* =======================================================================
+     REVIEWS PAGE (/reviews). Sends visitors to our Google reviews, where
+     they carry third-party credibility, and invites patients to add one.
+     No review text is ever copied onto the site itself (HIPAA: a signed
+     marketing authorization would be required, even for public reviews).
+     ======================================================================= */
+  reviewsPage: {
+    label: "Patient Reviews",
+    heading: "Dr. Mondona Goodwin Reviews",
+    intro:
+      "What patients say about working with Dr. Mondona Goodwin, DO, and CYRA Wellness, her California telemedicine practice for women's hormonal health.",
+    body: [
+      "Reviews of the practice live on Google, written and published directly by patients rather than curated by us. That's the best place to hear, in their own words, what care at CYRA Wellness is like.",
+      "One thing you won't find here: patient reviews republished on our own site. As a medical practice we hold privacy to a higher standard, so we never repost or quote a patient's words without her signed permission, even when a review is already public.",
+    ],
+    googleCtaLabel: "Read our reviews on Google",
+    // Small credential line under the buttons (also helps search engines
+    // connect Dr. Goodwin's name with the practice).
+    credentialLine:
+      "Dr. Mondona Goodwin, DO, is board-certified in Internal Medicine and a Menopause Society Certified Practitioner (MSCP), caring for women across California by secure video.",
+    // The card inviting current patients to leave a review
+    forPatients: {
+      heading: "Are you a current patient?",
+      body: "If your care at CYRA has made a difference, sharing a Google review is the most helpful thing you can do for other women looking for this kind of care. Share only what you're comfortable making public.",
+      cta: "Leave a Google review",
+    },
+    // The closing prompts for people researching the practice
+    closing: {
+      aboutLabel: "New here? Meet Dr. Goodwin",
+      bookLabel: "Get Started",
+    },
   },
 
   /* =======================================================================
