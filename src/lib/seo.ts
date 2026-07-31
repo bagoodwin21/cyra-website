@@ -11,6 +11,8 @@ interface PageSeo {
    * title doesn't lead with the brand name.
    */
   absoluteTitle?: boolean;
+  /** Keep the page out of search results (confirmation pages, etc.). */
+  noindex?: boolean;
 }
 
 /**
@@ -23,6 +25,7 @@ export function buildMetadata({
   description,
   path = "/",
   absoluteTitle = false,
+  noindex = false,
 }: PageSeo): Metadata {
   const desc = description ?? siteConfig.description;
   const socialTitle = absoluteTitle ? title : `${siteConfig.name} | ${title}`;
@@ -30,6 +33,7 @@ export function buildMetadata({
     title: absoluteTitle ? { absolute: title } : title,
     description: desc,
     alternates: { canonical: path },
+    ...(noindex ? { robots: { index: false, follow: true } } : {}),
     openGraph: {
       title: socialTitle,
       description: desc,

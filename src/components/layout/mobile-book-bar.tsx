@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
@@ -14,10 +15,12 @@ import { cn } from "@/lib/utils";
  * "text us" shortcut when the practice SMS number is configured).
  * Appears once the visitor scrolls past the hero so it never covers
  * above-the-fold CTAs. /book is excluded automatically (it has its own
- * layout outside the (site) group).
+ * layout outside the (site) group), and /thankyou is excluded because
+ * the visitor has just booked.
  */
 export function MobileBookBar() {
   const [visible, setVisible] = React.useState(false);
+  const pathname = usePathname();
 
   React.useEffect(() => {
     const onScroll = () => setVisible(window.scrollY > 480);
@@ -30,7 +33,7 @@ export function MobileBookBar() {
 
   return (
     <AnimatePresence>
-      {visible && (
+      {visible && pathname !== "/thankyou" && (
         <motion.div
           initial={{ y: 88 }}
           animate={{ y: 0 }}

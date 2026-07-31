@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { CalendlyPlaceholder } from "./calendly-placeholder";
+import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
 interface CalendlyEmbedProps {
@@ -18,6 +19,25 @@ export function CalendlyEmbed({ url, fallbackLabel, className }: CalendlyEmbedPr
     script.src = "https://assets.calendly.com/assets/external/widget.js";
     script.async = true;
     document.body.appendChild(script);
+  }, [url]);
+
+  // Calendly posts a message to the parent window when a booking is
+  // completed inside its iframe — the only signal we get, since we can't
+  // see into a cross-origin frame. Turn it into a booking_confirmed event
+  // so discovery calls are counted alongside consultations.
+  useEffect(() => {
+    if (!url) return;
+    function onMessage(e: MessageEvent) {
+      if (typeof e.origin !== "string" || !e.origin.includes("calendly.com")) {
+        return;
+      }
+      const name = (e.data as { event?: string } | null)?.event;
+      if (name === "calendly.event_scheduled") {
+        trackEvent("booking_confirmed", { method: "discovery_call" });
+      }
+    }
+    window.addEventListener("message", onMessage);
+    return () => window.removeEventListener("message", onMessage);
   }, [url]);
 
   if (!url) {

@@ -1094,6 +1094,31 @@ export const content = {
   },
 
   /* =======================================================================
+     BOOKING CONFIRMATION PAGE (/thankyou). Patients land here right after
+     they book, so keep it short, warm, and free of anything that sounds
+     like a bill. This is also the page that records a booking in Google
+     Analytics, so do not delete it or change its web address.
+     ======================================================================= */
+  thankYou: {
+    label: "You're Booked",
+    heading: "Your visit is booked.",
+    intro:
+      "Thank you for trusting me with your care. I'm looking forward to meeting you.",
+    // The short "what happens next" list
+    nextStepsHeading: "What happens next",
+    nextSteps: [
+      "Check your email for your confirmation, including the details of your appointment time.",
+      "That email also invites you to set up your patient portal, where you'll complete your intake and consent forms before we meet. Filling those out ahead of time means we can spend your visit on you, not on paperwork.",
+      "Your visit takes place by secure video, so you can join from anywhere in California.",
+    ],
+    // The closing line above the text-us button
+    questionsHeading: "Questions before your visit?",
+    questionsBody:
+      "If anything comes up before we meet, or you need to change your appointment time, just text us. We usually reply within a few hours during office hours.",
+    homeLinkLabel: "Back to the home page",
+  },
+
+  /* =======================================================================
      REVIEWS PAGE (/reviews). Sends visitors to our Google reviews, where
      they carry third-party credibility, and invites patients to add one.
      No review text is ever copied onto the site itself (HIPAA: a signed
