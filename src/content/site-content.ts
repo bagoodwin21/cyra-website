@@ -251,12 +251,18 @@ export const content = {
           title: "Your comprehensive consultation",
           // Shows the length and the one-time consult fee (from carePlanPricing.consultFee)
           meta: `60 minutes · ${formatUsd(carePlanPricing.consultFee)}`,
-          body: "A completely nonbinding hour with me, with no obligation to join afterward. Together we'll review your medical history, current symptoms, previous treatments, lifestyle, goals, and lab history, answer your questions, and walk through evidence-based treatment options. You'll leave with a clear understanding of my recommendations.",
+          body: "A nonbinding hour with me. Together we'll review your medical history, current symptoms, previous treatments, lifestyle, goals, and lab history, answer your questions, and walk through evidence-based treatment options. You'll leave with a clear understanding of my recommendations. Continuing with treatment afterward is a separate decision, and a separate cost.",
         },
         {
           title: "Begin your membership",
-          meta: "1-year model",
-          body: "Hormone therapy is rarely fixed in one visit, and most adjustments take 8 to 12 weeks to show their full effect, so membership follows a one-year model built for real, lasting change. You'll have follow-up appointments every 4 to 6 weeks (sooner if needed) and direct messaging with me between visits.",
+          // Shows the length and the membership total (from the pricing
+          // numbers at the top of this file)
+          meta: `1 year · ${formatUsd(carePlanTotal)}`,
+          body: `Membership is a full year of care: ${formatUsd(
+            carePlanTotal,
+          )}, or ${carePlanPricing.paymentCount} monthly payments of ${formatUsd(
+            carePlanPricing.monthlyPayment,
+          )} through Cherry. Hormone therapy is rarely settled in one visit, so you'll have follow-up appointments every 4 to 6 weeks (sooner if needed) and direct messaging with me between visits.`,
         },
       ],
     },
@@ -400,7 +406,7 @@ export const content = {
         {
           question: "Is the consultation binding?",
           answer:
-            "No. The 60-minute comprehensive consultation is completely nonbinding, with no obligation to join afterward. I review your history, symptoms, and goals and walk through your options, and you'll leave with a clear understanding of my recommendations. Then you decide whether membership is right for you.",
+            "No. The 60-minute comprehensive consultation is nonbinding. I review your history, symptoms, and goals and walk through your options, and you'll leave with a clear understanding of my recommendations. Continuing with treatment afterward is a separate decision, and a separate cost: membership is a full year of care, and you'll find the price in the membership section above.",
         },
         {
           question: "Why does membership run a full year?",
@@ -752,10 +758,27 @@ export const content = {
       "Book your comprehensive consultation with Dr. Goodwin. Or, if you'd like to hear how the practice works first, start with a free Discovery Call or a text.",
     // Short reassurance points
     reassurances: [
-      "No commitment required: the consultation is completely nonbinding",
+      "The consultation is nonbinding: continuing with treatment afterward is a separate decision, and a separate cost",
       "Start with a free Discovery Call, or book your consultation directly",
       "Get your questions answered before enrolling",
     ],
+    /* ---- WHAT IT COSTS. The box above the two booking options, so nobody
+       pays for the consultation thinking it includes treatment. Every
+       dollar amount comes from the pricing numbers at the top of this
+       file, so change them there and this updates itself. ---- */
+    costs: {
+      consultHeading: `The consultation is ${formatUsd(carePlanPricing.consultFee)}.`,
+      consultBody:
+        "It's a complete visit on its own: your full hour with Dr. Goodwin, your evaluation, and her recommendations. It does not include treatment.",
+      membershipHeading: "Ongoing care is separate.",
+      membershipBody: `If you decide to continue afterward, membership is a full year of care: ${formatUsd(
+        carePlanTotal,
+      )}, paid as ${carePlanPricing.paymentCount} monthly payments of ${formatUsd(
+        carePlanPricing.monthlyPayment,
+      )} through Cherry, or ${formatUsd(
+        carePlanUpfrontTotal,
+      )} upfront. Medications and labs aren't included.`,
+    },
     // ---- The two booking options shown side by side ----
     discovery: {
       title: "Not ready to book? Start with a free Discovery Call",
@@ -770,7 +793,7 @@ export const content = {
     consult: {
       title: "Comprehensive Consultation",
       meta: "60 minutes · $399",
-      body: "Your full one-hour visit with Dr. Goodwin: history, symptoms, goals, and an evidence-based plan. Completely nonbinding, with no obligation to join afterward.",
+      body: "Your full one-hour visit with Dr. Goodwin: history, symptoms, goals, and an evidence-based plan. If you choose to continue afterward, ongoing care is a separate one-year membership.",
       ctaLabel: "Book the Consultation", // Jumps to the booking widget below
       // Heading shown above the embedded consultation booking widget
       schedulerHeading: "Book your comprehensive consultation",

@@ -35,6 +35,21 @@ export default function BookPage() {
           ))}
         </ul>
       </div>
+      {/* What it costs, before either booking option */}
+      <div className="mx-auto mt-10 max-w-2xl rounded-[3px] border border-border bg-surface p-6 md:p-7">
+        <p className="text-body-copy">
+          <span className="font-semibold text-foreground">
+            {book.costs.consultHeading}
+          </span>{" "}
+          {book.costs.consultBody}
+        </p>
+        <p className="text-body-copy mt-4">
+          <span className="font-semibold text-foreground">
+            {book.costs.membershipHeading}
+          </span>{" "}
+          {book.costs.membershipBody}
+        </p>
+      </div>
       {/* The two booking paths, side by side */}
       <div className="mx-auto mt-12 grid max-w-4xl gap-6 sm:grid-cols-2">
         {[book.consult, book.discovery].map((option) => {
