@@ -1160,6 +1160,38 @@ export const content = {
   },
 
   /* =======================================================================
+     DISCOVERY CALL CONFIRMATION (/thankyou/discovery-call). Calendly sends
+     people here after they book, and passes their name and call time in
+     the web address. Do not change this page's web address without also
+     updating the redirect in Calendly.
+     ======================================================================= */
+  thankYouDiscovery: {
+    label: "You're Booked",
+    heading: "Your Discovery Call is booked.",
+    // A first name is added to this greeting when Calendly passes one
+    intro:
+      "Thanks for reaching out. We're looking forward to talking with you.",
+    whenLabel: "Your call",
+    // The callout with the number the call comes from
+    callFrom: {
+      heading: "We'll call you from",
+      body: "Save this number so you know it's us when we call.",
+    },
+    expectHeading: "What to expect",
+    expect: [
+      "About 15 minutes with our Patient Care Coordinator.",
+      "We'll cover what Dr. Goodwin treats, what the consultation involves, and what care costs.",
+      "It's a conversation about the practice, not a medical appointment, and no medical advice is given.",
+      "If you have questions only Dr. Goodwin can answer, the coordinator will get them to her.",
+    ],
+    rescheduleHeading: "Need to change your time?",
+    rescheduleBody:
+      "Your confirmation email has a link to reschedule or cancel. You're also welcome to text us.",
+    // Quiet link for anyone ready to go straight ahead
+    readyLabel: "Ready to move forward? Book your consultation",
+  },
+
+  /* =======================================================================
      REVIEWS PAGE (/reviews). Sends visitors to our Google reviews, where
      they carry third-party credibility, and invites patients to add one.
      No review text is ever copied onto the site itself (HIPAA: a signed
