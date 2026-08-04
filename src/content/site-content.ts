@@ -112,8 +112,11 @@ export const content = {
       // Supporting paragraph under the headline
       subheadline:
         "A membership-based practice for women navigating hormonal conditions throughout life, not just menopause. Longer appointments, a plan built around you, and a physician who follows closely, by secure video across California.",
-      primaryCta: "Get Started", // Main button text
-      secondaryCta: "How to Join", // Second button text (jumps to the steps)
+      primaryCta: "Get Started", // Main button, goes to the booking page
+      // Second button. Goes straight to the free Discovery Call scheduler,
+      // skipping the booking page, so someone who wants to talk to a person
+      // first isn't routed past the pricing on the way there.
+      secondaryCta: "Free Discovery Call",
       // Short trust points shown as a row under the buttons
       trustPoints: [
         "Women's Hormonal Health",
@@ -242,6 +245,8 @@ export const content = {
       heading: "How to join CYRA in three steps.",
       intro:
         "Joining is simple and unhurried. Here's exactly what to expect from your first conversation to lasting change.",
+      // The quieter link under the button at the end of the steps
+      ctaSecondary: "Or start with a free Discovery Call",
       steps: [
         {
           title: "Book your consultation",
@@ -463,6 +468,8 @@ export const content = {
       heading: "Your best health starts with one conversation.",
       body: "Reach out to learn more about the practice, or book your consultation with me.",
       cta: "Get Started",
+      // The quieter link under the button, straight to the free call
+      ctaSecondary: "Or start with a free Discovery Call",
       // Small line beneath the button
       footnote:
         "California | Membership-Based Telehealth | Menopause Society Certified Practitioner (MSCP)",
@@ -796,9 +803,11 @@ export const content = {
       ctaLabel: "Schedule Your Call", // Goes to the Discovery Call page
       // Heading shown above the embedded Discovery Call scheduler
       schedulerHeading: "Schedule your free Discovery Call",
-      // Short line under that heading on the scheduler page
+      // The pitch on the Discovery Call page. People now arrive here
+      // straight from the home page, so this has to explain the call, not
+      // just sit above the calendar.
       schedulerIntro:
-        "Pick any time that works for you. The call takes about 15 minutes, and there's nothing to prepare.",
+        "Fifteen minutes with our Patient Care Coordinator: what's been going on, what you've already tried, how the practice works, and what care costs. It's free, there's nothing to prepare, and there's no obligation. Anything only Dr. Goodwin can answer, we'll take to her and come back to you.",
     },
     consult: {
       title: "Comprehensive Consultation",

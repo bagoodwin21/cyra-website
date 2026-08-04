@@ -111,7 +111,8 @@ export default function HomePage() {
                 {home.hero.primaryCta}
               </Link>
               <Link
-                href="/#how-to-join"
+                href="/book/discovery-call"
+                data-analytics-event="book_discovery_call_click"
                 className={cn(buttonVariants({ variant: "secondary" }))}
               >
                 {home.hero.secondaryCta}
@@ -289,6 +290,15 @@ export default function HomePage() {
           <Link href="/book" className={cn(buttonVariants({ variant: "accent" }))}>
             {content.nav.cta}
           </Link>
+          <p className="mt-4">
+            <Link
+              href="/book/discovery-call"
+              data-analytics-event="book_discovery_call_click"
+              className="text-small font-medium text-foreground-muted underline-offset-4 transition-colors hover:text-foreground hover:underline"
+            >
+              {home.howToJoin.ctaSecondary}
+            </Link>
+          </p>
         </FadeUp>
       </Section>
 
@@ -456,6 +466,15 @@ export default function HomePage() {
               {home.finalCta.cta}
             </Link>
           </div>
+          <p className="mt-5">
+            <Link
+              href="/book/discovery-call"
+              data-analytics-event="book_discovery_call_click"
+              className="font-body text-cta font-bold uppercase tracking-[0.15em] text-white/85 underline-offset-4 transition-colors hover:text-white hover:underline"
+            >
+              {home.finalCta.ctaSecondary}
+            </Link>
+          </p>
           <p className="mt-8 text-small text-white/70">{home.finalCta.footnote}</p>
         </FadeUp>
       </Section>
