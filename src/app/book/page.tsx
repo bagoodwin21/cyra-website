@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Check } from "lucide-react";
 import { Section } from "@/components/ui/section";
-import { CalendlyEmbed } from "@/components/ui/calendly-embed";
 import { buildMetadata } from "@/lib/seo";
 import { content } from "@/content/site-content";
 import { siteConfig } from "@/lib/site";
@@ -71,41 +71,25 @@ export default function BookPage() {
               </h2>
               <p className="text-body-copy mt-3 flex-1">{option.body}</p>
               <div className="mt-6">
-                <a
-                  href={isConsult ? "#consult-scheduler" : "#discovery-scheduler"}
-                  data-analytics-event="book_consult_click"
+                <Link
+                  href={isConsult ? "/book/consultation" : "/book/discovery-call"}
+                  data-analytics-event={
+                    isConsult
+                      ? "book_consult_click"
+                      : "book_discovery_call_click"
+                  }
                   className="inline-flex w-full min-h-12 items-center justify-center rounded-[3px] bg-primary px-6 py-2.5 text-center font-body text-cta font-bold uppercase tracking-[0.12em] text-white transition-all duration-200 hover:bg-accent sm:tracking-[0.17em]"
                 >
                   {option.ctaLabel}
-                </a>
+                </Link>
               </div>
             </div>
           );
         })}
       </div>
-      {/* Consultation booking (OptiMantra patient access) */}
-      <div id="consult-scheduler" className="mx-auto mt-14 max-w-4xl scroll-mt-24">
-        <h2 className="text-center font-heading text-2xl font-semibold text-foreground">
-          {book.consult.schedulerHeading}
-        </h2>
-        <iframe
-          src={book.consult.bookingUrl}
-          title={book.consult.schedulerHeading}
-          className="mt-5 h-[950px] w-full rounded-[3px] border border-border bg-background shadow-card"
-        />
-      </div>
-      {/* Discovery Call scheduler */}
-      <div id="discovery-scheduler" className="mx-auto mt-14 max-w-4xl scroll-mt-24">
-        <h2 className="text-center font-heading text-2xl font-semibold text-foreground">
-          {book.discovery.schedulerHeading}
-        </h2>
-        <CalendlyEmbed
-          url={book.calendlyUrl}
-          fallbackLabel={book.schedulerLabel}
-          className="mt-5 min-h-[700px]"
-        />
-      </div>
-      <p className="mt-8 text-center text-small text-foreground-muted">
+      {/* The schedulers live on their own pages: one embed per page keeps
+          this page fast, and each choice shows up as its own page view. */}
+      <p className="mt-12 text-center text-small text-foreground-muted">
         {book.textPrompt}{" "}
         <a
           href={`sms:${siteConfig.smsNumber}`}

@@ -792,17 +792,25 @@ export const content = {
       // scheduling instead, where it reassures rather than rations.
       meta: "Free",
       body: "A short call with our Patient Care Coordinator about how the practice works: what Dr. Goodwin treats, what the consultation involves, and what care costs. If you have questions only Dr. Goodwin can answer, the coordinator will get them to her. Not a medical appointment; no medical advice is given.",
-      ctaLabel: "Schedule Your Call", // Jumps to the scheduler below
+      ctaLabel: "Schedule Your Call", // Goes to the Discovery Call page
       // Heading shown above the embedded Discovery Call scheduler
       schedulerHeading: "Schedule your free Discovery Call",
+      // Short line under that heading on the scheduler page
+      schedulerIntro:
+        "Pick any time that works for you. The call takes about 15 minutes, and there's nothing to prepare.",
     },
     consult: {
       title: "Comprehensive Consultation",
       meta: "60 minutes · $399",
       body: "Your full one-hour visit with Dr. Goodwin: history, symptoms, goals, and an evidence-based plan. If you choose to continue afterward, ongoing care is a separate one-year membership.",
-      ctaLabel: "Book the Consultation", // Jumps to the booking widget below
+      ctaLabel: "Book the Consultation", // Goes to the consultation page
       // Heading shown above the embedded consultation booking widget
       schedulerHeading: "Book your comprehensive consultation",
+      // Short line under that heading on the scheduler page. Repeats the
+      // cost, because someone can land here without seeing the booking page.
+      schedulerIntro: `Your 60-minute visit with Dr. Goodwin, ${formatUsd(
+        carePlanPricing.consultFee,
+      )}. This covers the visit itself and does not include treatment. Ongoing care is a separate one-year membership.`,
       // The OptiMantra patient-access booking link, embedded on the page.
       // Only change this if OptiMantra gives you a new link.
       bookingUrl:
@@ -813,6 +821,8 @@ export const content = {
     // The label inside the scheduling placeholder box (shown only if
     // calendlyUrl above is ever emptied out)
     schedulerLabel: "Scheduling embed: request info or book your consultation",
+    // Link back from a scheduler page to the two booking options
+    backLabel: "Back to booking options",
     // The line under the scheduler
     emailPrompt: "Prefer to reach out directly? Email us at",
     // The texting line under the scheduler (uses the number from brand above)
