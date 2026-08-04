@@ -384,7 +384,10 @@ export const content = {
     // ---- TESTIMONIALS: short patient quotes ----
     testimonials: {
       label: "Patient Reviews",
-      heading: "Hear it from our patients.",
+      // The heading is itself a link to our Google reviews. It names where
+      // the reviews are, so the section doesn't promise quotes on this page
+      // that we can't publish without each patient's written permission.
+      heading: "Hear it from our patients on Google.",
       /* ONLY REAL, AUTHORIZED QUOTES GO HERE. Each patient must sign a
          HIPAA marketing authorization before her words appear on the site
          (keep the signed form on file). To add one, copy this pattern

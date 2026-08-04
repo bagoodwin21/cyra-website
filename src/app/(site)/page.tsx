@@ -406,7 +406,16 @@ export default function HomePage() {
       <Section id="reviews" className="scroll-mt-24">
         <FadeUp className="mx-auto max-w-3xl text-center">
           <SectionLabel>{home.testimonials.label}</SectionLabel>
-          <h2 className="heading-section">{home.testimonials.heading}</h2>
+          <h2 className="heading-section">
+            <a
+              href={home.testimonials.googleUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline-offset-8 transition-colors hover:text-primary hover:underline"
+            >
+              {home.testimonials.heading}
+            </a>
+          </h2>
         </FadeUp>
         {testimonials.length > 0 && (
           <FadeUp delay={0.15} className="mt-12">
