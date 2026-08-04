@@ -50,9 +50,20 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: "/(.*)",
+        // Everything except the Discovery Call confirmation page. Calendly
+        // may run its post-booking redirect inside its own embedded frame,
+        // and DENY would block the page outright instead of letting its
+        // frame-buster jump the visitor out to the full window.
+        source: "/((?!thankyou/discovery-call).*)",
         headers: [
           { key: "X-Frame-Options", value: "DENY" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+        ],
+      },
+      {
+        source: "/thankyou/discovery-call",
+        headers: [
           { key: "X-Content-Type-Options", value: "nosniff" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
         ],

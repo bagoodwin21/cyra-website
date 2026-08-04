@@ -33,7 +33,7 @@ export function MobileBookBar() {
 
   return (
     <AnimatePresence>
-      {visible && pathname !== "/thankyou" && (
+      {visible && !pathname.startsWith("/thankyou") && (
         <motion.div
           initial={{ y: 88 }}
           animate={{ y: 0 }}
