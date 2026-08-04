@@ -759,8 +759,10 @@ export const content = {
     // ---- The two booking options shown side by side ----
     discovery: {
       title: "Not ready to book? Start with a free Discovery Call",
-      meta: "15 minutes · Free",
-      body: "A short call with our Patient Care Coordinator about how the practice, membership, and pricing work. It's about the practice, not a medical appointment, and no medical advice is given.",
+      // The call length isn't shown here on purpose: it appears at
+      // scheduling instead, where it reassures rather than rations.
+      meta: "Free",
+      body: "A short call with our Patient Care Coordinator about how the practice works: what Dr. Goodwin treats, what the consultation involves, and what care costs. If you have questions only Dr. Goodwin can answer, the coordinator will get them to her. Not a medical appointment; no medical advice is given.",
       ctaLabel: "Schedule Your Call", // Jumps to the scheduler below
       // Heading shown above the embedded Discovery Call scheduler
       schedulerHeading: "Schedule your free Discovery Call",
