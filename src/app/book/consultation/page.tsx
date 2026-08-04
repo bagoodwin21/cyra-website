@@ -1,0 +1,60 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
+import { Section } from "@/components/ui/section";
+import { buildMetadata } from "@/lib/seo";
+import { content } from "@/content/site-content";
+import { siteConfig } from "@/lib/site";
+
+const { book } = content;
+
+export function generateMetadata(): Metadata {
+  return buildMetadata({
+    title: "Book your comprehensive consultation | CYRA Wellness",
+    absoluteTitle: true,
+    description:
+      "Book your 60-minute comprehensive consultation with Dr. Mondona Goodwin, DO.",
+    path: "/book/consultation",
+    // A scheduler step, not a page for search results. /book is the
+    // page that should rank.
+    noindex: true,
+  });
+}
+
+export default function ConsultationSchedulerPage() {
+  return (
+    <Section>
+      <div className="mx-auto max-w-3xl text-center">
+        <h1 className="heading-section">{book.consult.schedulerHeading}</h1>
+        <p className="text-body-copy mx-auto mt-4 max-w-xl">
+          {book.consult.schedulerIntro}
+        </p>
+      </div>
+      <div className="mx-auto mt-8 max-w-4xl">
+        <iframe
+          src={book.consult.bookingUrl}
+          title={book.consult.schedulerHeading}
+          className="h-[950px] w-full rounded-[3px] border border-border bg-background shadow-card"
+        />
+      </div>
+      <p className="mt-8 text-center text-small text-foreground-muted">
+        {book.textPrompt}{" "}
+        <a
+          href={`sms:${siteConfig.smsNumber}`}
+          className="font-medium text-primary hover:text-primary-light"
+        >
+          {siteConfig.smsDisplay}
+        </a>
+      </p>
+      <p className="mt-6 text-center">
+        <Link
+          href="/book"
+          className="inline-flex items-center gap-1.5 text-small font-medium text-foreground-muted underline-offset-4 transition-colors hover:text-foreground hover:underline"
+        >
+          <ArrowLeft className="h-3.5 w-3.5" aria-hidden />
+          {book.backLabel}
+        </Link>
+      </p>
+    </Section>
+  );
+}

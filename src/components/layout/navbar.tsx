@@ -22,10 +22,20 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close the overlay when navigating to a new page.
+  // Close the overlay when navigating to a new page. This alone is not
+  // enough: "How to Join" and "Membership" are anchors on the home page,
+  // so tapping them from the home page never changes the pathname.
   React.useEffect(() => {
     setMenuOpen(false);
   }, [pathname]);
+
+  // Every link in the overlay closes it. The scroll lock is released
+  // synchronously here rather than waiting for the effect below, so the
+  // browser can scroll to an anchor as soon as the link is followed.
+  const closeMenu = React.useCallback(() => {
+    document.body.style.overflow = "";
+    setMenuOpen(false);
+  }, []);
 
   // Lock body scroll while the mobile overlay is open.
   React.useEffect(() => {
@@ -111,7 +121,7 @@ export function Navbar() {
               <button
                 type="button"
                 className="text-primary"
-                onClick={() => setMenuOpen(false)}
+                onClick={closeMenu}
                 aria-label="Close menu"
               >
                 <X className="h-7 w-7" />
@@ -132,6 +142,7 @@ export function Navbar() {
                   >
                     <Link
                       href={link.href}
+                      onClick={closeMenu}
                       aria-current={active ? "page" : undefined}
                       className={cn(
                         "font-heading text-2xl font-semibold",
@@ -152,6 +163,7 @@ export function Navbar() {
               >
                 <Link
                   href="/book"
+                  onClick={closeMenu}
                   className={buttonVariants({ variant: "accent" })}
                 >
                   {content.nav.cta}
