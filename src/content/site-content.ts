@@ -24,7 +24,9 @@
    ------------------------------------------------------------------------- */
 export const carePlanPricing = {
   monthlyPayment: 175, // Membership: dollars per monthly Cherry payment
-  paymentCount: 13, // Number of monthly payments (Cherry splits 12 months into 13)
+  // Total number of Cherry payments: one at signing, then 12 monthly.
+  // Say "13 payments", not "13 months" or "13 monthly payments".
+  paymentCount: 13,
   upfrontTotal: 2160, // Flat price when the year is paid in full upfront
   consultFee: 399, // One-hour initial consult fee (charged once, before enrolling)
 } as const;
@@ -260,7 +262,7 @@ export const content = {
           meta: `1 year · ${formatUsd(carePlanTotal)}`,
           body: `Membership is a full year of care: ${formatUsd(
             carePlanTotal,
-          )}, or ${carePlanPricing.paymentCount} monthly payments of ${formatUsd(
+          )}, or ${carePlanPricing.paymentCount} payments of ${formatUsd(
             carePlanPricing.monthlyPayment,
           )} through Cherry. Hormone therapy is rarely settled in one visit, so you'll have follow-up appointments every 4 to 6 weeks (sooner if needed) and direct messaging with me between visits.`,
         },
@@ -298,7 +300,9 @@ export const content = {
           label: "Monthly with Cherry",
           // e.g. "$175/mo"
           price: `${formatUsd(carePlanPricing.monthlyPayment)}/mo`,
-          detail: `${carePlanPricing.paymentCount} monthly payments at 0% interest with approved credit, through Cherry`,
+          detail: `${carePlanPricing.paymentCount} payments of ${formatUsd(
+            carePlanPricing.monthlyPayment,
+          )}: one at signing, then 12 monthly, at 0% interest with approved credit through Cherry`,
         },
         upfront: {
           label: "Pay in full",
@@ -319,9 +323,9 @@ export const content = {
         heading: "Financing through Cherry", // Title above the Cherry box
         // Line under the title. The dollar amount and payment count come from
         // the pricing numbers at the top of this file.
-        subhead: `Split your membership into ${carePlanPricing.paymentCount} interest-free monthly payments of ${formatUsd(
+        subhead: `Split your membership into ${carePlanPricing.paymentCount} interest-free payments of ${formatUsd(
           carePlanPricing.monthlyPayment,
-        )} with approved credit. Applying takes about a minute and won't affect your credit score.`,
+        )} with approved credit: one at signing, then 12 monthly. Applying takes about a minute and won't affect your credit score.`,
         // The button that takes patients to Cherry's application page
         ctaLabel: "Apply with Cherry",
         applyUrl: "https://pay.withcherry.com/cyra-wellness-pc",
@@ -440,9 +444,11 @@ export const content = {
         },
         {
           question: "What does it cost, and do you take insurance?",
-          answer: `Membership itself is cash-pay by design, and that's what makes longer appointments and truly personalized care possible. It's ${formatUsd(
+          answer: `Membership itself is cash-pay by design, and that's what makes longer appointments and truly personalized care possible. It's ${
+            carePlanPricing.paymentCount
+          } payments of ${formatUsd(
             carePlanPricing.monthlyPayment,
-          )} per month for ${carePlanPricing.paymentCount} payments through Cherry with approved credit, or ${formatUsd(
+          )} through Cherry with approved credit, or ${formatUsd(
             carePlanUpfrontTotal,
           )} paid in full (a ${upfrontSavingsPercent}% savings). Cherry is our financing partner, and checking your rate doesn't affect your credit score. The comprehensive consultation is a separate, one-time ${formatUsd(
             carePlanPricing.consultFee,
@@ -773,7 +779,7 @@ export const content = {
       membershipHeading: "Ongoing care is separate.",
       membershipBody: `If you decide to continue afterward, membership is a full year of care: ${formatUsd(
         carePlanTotal,
-      )}, paid as ${carePlanPricing.paymentCount} monthly payments of ${formatUsd(
+      )}, paid as ${carePlanPricing.paymentCount} payments of ${formatUsd(
         carePlanPricing.monthlyPayment,
       )} through Cherry, or ${formatUsd(
         carePlanUpfrontTotal,
@@ -1004,9 +1010,9 @@ export const content = {
             `The comprehensive consultation is ${formatUsd(
               carePlanPricing.consultFee,
             )} for a one-hour visit. A card is required to hold the appointment. Cancellations made less than 24 hours before the visit, and missed appointments, forfeit that payment. This policy is presented to you at the time you book.`,
-            `Membership is a one-year commitment, paid either as ${carePlanPricing.paymentCount} monthly payments of ${formatUsd(
+            `Membership is a one-year commitment, paid either as ${carePlanPricing.paymentCount} payments of ${formatUsd(
               carePlanPricing.monthlyPayment,
-            )} through Cherry at 0% interest to you, or ${formatUsd(
+            )} through Cherry (one at signing, then 12 monthly) at 0% interest to you, or ${formatUsd(
               carePlanUpfrontTotal,
             )} paid in full. Membership is cash-pay and is not billed to insurance.`,
             "What membership includes, any credit of the consultation fee toward it, and every other membership term are set out in the care-plan agreement you sign. Where this website and that signed agreement differ, the agreement controls.",
