@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Check } from "lucide-react";
 import { Section } from "@/components/ui/section";
+import { CherryCalculator } from "@/components/pricing/cherry-calculator";
 import { buildMetadata } from "@/lib/seo";
 import { content } from "@/content/site-content";
 import { siteConfig } from "@/lib/site";
@@ -49,6 +50,10 @@ export default function BookPage() {
           </span>{" "}
           {book.costs.membershipBody}
         </p>
+      </div>
+      {/* Financing sits with the price it applies to. */}
+      <div className="mx-auto mt-6 max-w-2xl">
+        <CherryCalculator />
       </div>
       {/* The two booking paths, side by side */}
       <div className="mx-auto mt-12 grid max-w-4xl gap-6 sm:grid-cols-2">

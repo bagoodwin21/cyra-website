@@ -314,51 +314,43 @@ export default function HomePage() {
             </ul>
           </FadeUp>
 
-          {/* Pricing */}
+          {/* How membership works. The cost itself lives on /book. */}
           <FadeUp delay={0.12}>
             <div className="flex h-full flex-col rounded-[3px] border-2 border-primary bg-background p-6 shadow-card md:p-8">
               <h3 className="font-heading text-2xl font-semibold text-foreground">
                 {home.carePlan.pricingHeading}
               </h3>
-              <p className="text-body-copy mt-2">{home.carePlan.pricingSubhead}</p>
-              <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                {[home.carePlan.options.financing, home.carePlan.options.upfront].map(
-                  (option) => (
-                    <div
-                      key={option.label}
-                      className="rounded-[3px] border border-border bg-surface/60 p-4"
-                    >
-                      <p className="text-small font-semibold uppercase tracking-[0.1em] text-primary">
-                        {option.label}
-                      </p>
-                      <p className="mt-2 font-heading text-2xl font-bold text-foreground">
-                        {option.price}
-                      </p>
-                      <p className="mt-1 text-small text-foreground-muted">
-                        {option.detail}
-                      </p>
-                    </div>
-                  ),
-                )}
-              </div>
-              <p className="mt-6 border-t border-border pt-5 text-small text-foreground-muted">
-                {home.carePlan.note}
-              </p>
-              <div className="mt-6">
+              <p className="text-body-copy mt-3">{home.carePlan.pricingSubhead}</p>
+              <ul className="mt-6 space-y-3.5">
+                {home.carePlan.pricingPoints.map((point) => (
+                  <li key={point} className="flex items-start gap-3">
+                    <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                      <Check className="h-3.5 w-3.5" strokeWidth={3} aria-hidden />
+                    </span>
+                    <span className="text-body-copy">{point}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-auto pt-7">
                 <Link
                   href="/book"
                   data-analytics-event="financing_check_rate_click"
                   className={cn(buttonVariants({ variant: "accent" }), "w-full")}
                 >
-                  {content.nav.cta}
+                  {home.carePlan.pricingCtaLabel}
                 </Link>
+                <p className="mt-4 text-center">
+                  <Link
+                    href="/book/discovery-call"
+                    className="text-small font-medium text-foreground-muted underline-offset-4 transition-colors hover:text-foreground hover:underline"
+                  >
+                    {home.carePlan.pricingSecondary}
+                  </Link>
+                </p>
               </div>
             </div>
           </FadeUp>
         </div>
-        <FadeUp delay={0.16} className="mx-auto mt-8 max-w-5xl">
-          <CherryCalculator />
-        </FadeUp>
         <FadeUp delay={0.2} className="mt-12 text-center">
           <p className="text-body-copy">{home.compareTeaser.text}</p>
           <Link
