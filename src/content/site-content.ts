@@ -257,14 +257,8 @@ export const content = {
         },
         {
           title: "Begin your membership",
-          // Shows the length and the membership total (from the pricing
-          // numbers at the top of this file)
-          meta: `1 year · ${formatUsd(carePlanTotal)}`,
-          body: `Membership is a full year of care: ${formatUsd(
-            carePlanTotal,
-          )}, or ${carePlanPricing.paymentCount} payments of ${formatUsd(
-            carePlanPricing.monthlyPayment,
-          )} through Cherry. Hormone therapy is rarely settled in one visit, so you'll have follow-up appointments every 4 to 6 weeks (sooner if needed) and direct messaging with me between visits.`,
+          meta: "1 year",
+          body: "Membership is a full year of care. Hormone therapy is rarely settled in one visit, so you'll have follow-up appointments every 4 to 6 weeks (sooner if needed) and direct messaging with me between visits. You'll find what membership costs on the booking page.",
         },
       ],
     },
@@ -289,10 +283,25 @@ export const content = {
         "Personalized exercise recommendations",
         "35% off professional-grade supplements",
       ],
-      // Pricing box heading
-      pricingHeading: "Simple, transparent pricing",
+      /* ---- The box beside the inclusions list. ----
+         Dollar amounts deliberately live on the booking page rather than
+         here, so people meet the cost once they've seen what membership
+         is. The button below must keep saying what it leads to: one
+         clearly labelled tap is relocating the price, silence is hiding
+         it, and hiding it is what made the old site frustrating. */
+      pricingHeading: "How membership works",
       pricingSubhead:
-        "Your one-year membership after your initial consultation, with two ways to pay. Financing is available through Cherry.",
+        "Membership is a one-year commitment, cash-pay, and it begins after your comprehensive consultation. You can pay monthly through Cherry at 0% interest with approved credit, or pay in full at a discount.",
+      // The bulleted reassurances under that paragraph
+      pricingPoints: [
+        "No hidden fees and nothing billed to insurance",
+        "Medications and labs aren't included, and most are covered by your insurance",
+        "After your first year, most patients move to a lower-cost maintenance membership",
+      ],
+      // The button. Say what it leads to.
+      pricingCtaLabel: "See what membership costs",
+      // The quieter line under the button
+      pricingSecondary: "Or talk it through on a free Discovery Call",
       // The two payment options. The prices are calculated from the numbers
       // at the top of this file, so you don't type them here.
       options: {
@@ -444,15 +453,7 @@ export const content = {
         },
         {
           question: "What does it cost, and do you take insurance?",
-          answer: `Membership itself is cash-pay by design, and that's what makes longer appointments and truly personalized care possible. It's ${
-            carePlanPricing.paymentCount
-          } payments of ${formatUsd(
-            carePlanPricing.monthlyPayment,
-          )} through Cherry with approved credit, or ${formatUsd(
-            carePlanUpfrontTotal,
-          )} paid in full (a ${upfrontSavingsPercent}% savings). Cherry is our financing partner, and checking your rate doesn't affect your credit score. The comprehensive consultation is a separate, one-time ${formatUsd(
-            carePlanPricing.consultFee,
-          )} fee, and the membership prices are everything you pay after the consultation. Beyond membership, I work to keep your other costs low: I use your insurance whenever possible for labs and prescriptions. Most labs are covered just as if your PCP ordered them, so they aren't an extra expense, and most hormone medications are covered too. Without insurance, hormones typically run about $20–30 per month each through GoodRx, and I can also send prescriptions through HRT Club, a pharmacy with affordable cash pricing. Blood draws happen at a Quest location near you, we accept HSA and FSA funds for membership, and we provide superbills for possible out-of-network reimbursement. One important note: we are unable to accept patients who are eligible for Medicare.`,
+          answer: `Membership is cash-pay by design, and that's what makes longer appointments and truly personalized care possible. You'll find the full cost, both the consultation fee and membership, on our booking page, and we're glad to walk through all of it on a free Discovery Call. Membership can be paid monthly through Cherry at 0% interest with approved credit, or in full at a discount, and checking your rate with Cherry doesn't affect your credit score. Beyond membership, I work to keep your other costs low: I use your insurance whenever possible for labs and prescriptions. Most labs are covered just as if your PCP ordered them, so they aren't an extra expense, and most hormone medications are covered too. Without insurance, hormones typically run about $20–30 per month each through GoodRx, and I can also send prescriptions through HRT Club, a pharmacy with affordable cash pricing. Blood draws happen at a Quest location near you, we accept HSA and FSA funds for membership, and we provide superbills for possible out-of-network reimbursement. One important note: we are unable to accept patients who are eligible for Medicare.`,
         },
       ],
     },
