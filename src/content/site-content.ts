@@ -245,7 +245,7 @@ export const content = {
           title: "Book your consultation",
           // Optional short label shown next to the step title
           meta: "Most patients start here",
-          body: "Book your 60-minute comprehensive consultation with me directly. Most patients are seen within the same week. Want to learn about the practice, membership, or pricing first? Schedule a free Discovery Call with our Patient Care Coordinator, or text us at 805-387-9078. The Discovery Call is about the practice. It isn't a medical appointment, and no medical advice is given.",
+          body: "Book your 60-minute comprehensive consultation with me directly. Most patients are seen within the same week. Want to hear how the practice works first? Schedule a free Discovery Call with our Patient Care Coordinator, or text us at 805-387-9078. The call covers what I treat, what the consultation involves, and what care costs, and if you have questions only I can answer, the coordinator will get them to me. Not a medical appointment; no medical advice is given.",
         },
         {
           title: "Your comprehensive consultation",
@@ -395,7 +395,7 @@ export const content = {
         {
           question: "How do I get started?",
           answer:
-            "Two ways: book a free Discovery Call with our Patient Care Coordinator to learn how the practice, membership, and pricing work, or book your comprehensive consultation with me directly. The Discovery Call is about the practice; it isn't a medical appointment and no medical advice is given, but the coordinator can arrange for practice-related questions to reach me.",
+            "Two ways: book your comprehensive consultation with me directly, or start with a free Discovery Call with our Patient Care Coordinator. The call covers what I treat, what the consultation involves, and what care costs, and if you have questions only I can answer, the coordinator will get them to me. Not a medical appointment; no medical advice is given.",
         },
         {
           question: "Is the consultation binding?",
@@ -749,7 +749,7 @@ export const content = {
   book: {
     heading: "Book Your Visit",
     subheadline:
-      "Book your comprehensive consultation with Dr. Goodwin. Or, if you'd like to learn about the practice first, start with a free Discovery Call or a text.",
+      "Book your comprehensive consultation with Dr. Goodwin. Or, if you'd like to hear how the practice works first, start with a free Discovery Call or a text.",
     // Short reassurance points
     reassurances: [
       "No commitment required: the consultation is completely nonbinding",
