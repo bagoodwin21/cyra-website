@@ -53,6 +53,12 @@ export default function ThankYouPage() {
               </li>
             ))}
           </ul>
+          <div className="mt-8 rounded-[3px] border border-border bg-background p-6 shadow-card">
+            <h3 className="font-heading text-xl font-semibold text-foreground md:text-2xl">
+              {thankYou.firstVisit.heading}
+            </h3>
+            <p className="text-body-copy mt-3">{thankYou.firstVisit.body}</p>
+          </div>
         </FadeUp>
       </Section>
 
