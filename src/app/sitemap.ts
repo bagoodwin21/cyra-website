@@ -8,6 +8,7 @@ function priorityFor(path: string): number {
     path === "/about" ||
     path === "/book" ||
     path === "/compare" ||
+    path === "/quiz" ||
     path === "/reviews"
   )
     return 0.7;
@@ -23,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       "/about",
       "/book",
       "/compare",
+      "/quiz",
       "/reviews",
       ...navLinks.map((l) => l.href),
       ...legalLinks.map((l) => l.href),
