@@ -1157,15 +1157,21 @@ export const content = {
   thankYou: {
     label: "You're Booked",
     heading: "Your visit is booked.",
-    intro:
-      "Thank you for trusting me with your care. I'm looking forward to meeting you.",
-    // The short "what happens next" list
+    // Every OptiMantra booking lands here: new consultations AND
+    // follow-ups from existing patients. Keep the main copy right for
+    // both; anything new-patient-only goes in the firstVisit block below.
+    intro: "Thank you for trusting me with your care.",
+    // The short "what happens next" list (applies to everyone)
     nextStepsHeading: "What happens next",
     nextSteps: [
       "Check your email for your confirmation, including the details of your appointment time.",
-      "That email also invites you to set up your patient portal, where you'll complete your intake and consent forms before we meet. Filling those out ahead of time means we can spend your visit on you, not on paperwork.",
       "Your visit takes place by secure video, so you can join from anywhere in California.",
     ],
+    // Shown to everyone, but written for first-timers
+    firstVisit: {
+      heading: "First visit with us?",
+      body: "Your confirmation email also invites you to set up your patient portal, where you'll complete your intake and consent forms before we meet. Filling those out ahead of time means we can spend your visit on you, not on paperwork.",
+    },
     // The closing line above the text-us button
     questionsHeading: "Questions before your visit?",
     questionsBody:
