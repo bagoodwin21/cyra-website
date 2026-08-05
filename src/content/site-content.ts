@@ -92,6 +92,7 @@ export const content = {
     links: [
       { label: "Home", href: "/" },
       { label: "About", href: "/about" },
+      { label: "Symptom Quiz", href: "/quiz" },
       { label: "How to Join", href: "/#how-to-join" },
       { label: "Membership", href: "/#membership" },
       { label: "Compare", href: "/compare" },
@@ -1170,6 +1171,204 @@ export const content = {
     questionsBody:
       "If anything comes up before we meet, or you need to change your appointment time, just text us. We usually reply within a few hours during office hours.",
     homeLinkLabel: "Back to the home page",
+  },
+
+  /* =======================================================================
+     SYMPTOM QUIZ (/quiz). A two-minute direction-finder: answers score
+     against five patterns (PMS, PMDD, perimenopause, menopause, low
+     testosterone) and the result routes to booking. It is educational
+     only and never diagnoses.
+     EDITING NOTES: you can freely edit any question text ("q"), option
+     text ("t"), and all result copy. Do NOT change the short code values
+     ("v" and the result keys like PERI/MENO) — the scoring logic uses
+     them. Don't delete questions or options without asking a developer.
+     ======================================================================= */
+  quiz: {
+    label: "A two-minute symptom check",
+    heading: "What might be behind how you've been feeling?",
+    intro:
+      "Night sweats, mood swings before your period, weight that won't move, a libido that disappeared: these have causes, and the causes are treatable. Answer a few questions and we'll point you toward the pattern your symptoms most resemble, and what to do next.",
+    startNote:
+      "Nine quick questions, or fewer depending on your answers. Nothing is stored, and no sign-up is asked for.",
+    startCta: "Start the quiz",
+    backLabel: "Back",
+    restartLabel: "Start over",
+    resultKicker: "Your result",
+    alsoWorthLabel: "Also worth discussing",
+    // Questions. Some are skipped automatically based on earlier answers
+    // (for example, cycle-timing questions are skipped when periods have
+    // stopped). That logic lives in code, keyed to the "id" values.
+    questions: [
+      {
+        id: "age",
+        q: "How old are you?",
+        opts: [
+          { t: "Under 35", v: "u35" },
+          { t: "35 to 44", v: "a3544" },
+          { t: "45 to 55", v: "a4555" },
+          { t: "Over 55", v: "o55" },
+        ],
+      },
+      {
+        id: "baby",
+        q: "Have you given birth within the past year?",
+        opts: [
+          { t: "Yes", v: "yes" },
+          { t: "No", v: "no" },
+        ],
+      },
+      {
+        id: "period",
+        q: "Which best describes your periods right now?",
+        opts: [
+          { t: "Regular and predictable", v: "regular" },
+          {
+            t: "Still coming, but changing: heavier, lighter, closer together, or farther apart",
+            v: "changing",
+          },
+          { t: "Irregular: I skip months", v: "irregular" },
+          { t: "Stopped: none for 12 months or more", v: "stopped" },
+          {
+            t: "I can't track them (hysterectomy, ablation, or hormonal IUD)",
+            v: "cant",
+          },
+        ],
+      },
+      {
+        id: "timing",
+        q: "Do your hardest days cluster in the week or two before your period, then ease within a few days of it starting?",
+        opts: [
+          { t: "Yes, clearly", v: "yes" },
+          { t: "Somewhat", v: "some" },
+          { t: "No clear pattern", v: "no" },
+        ],
+      },
+      {
+        id: "intensity",
+        q: "In those days before your period, how intense do the mood symptoms get: irritability, anger, anxiety, tearfulness, or despair?",
+        opts: [
+          { t: "Severe: they strain my work or my relationships", v: "severe" },
+          { t: "Noticeable, but I manage", v: "manage" },
+          {
+            t: "My symptoms are mostly physical: bloating, cramps, breast tenderness",
+            v: "physical",
+          },
+          { t: "Mood isn't really part of it", v: "none" },
+        ],
+      },
+      {
+        id: "heat",
+        q: "Hot flashes or night sweats?",
+        opts: [
+          { t: "Often: most days or nights", v: "often" },
+          { t: "Sometimes", v: "some" },
+          { t: "Rarely or never", v: "no" },
+        ],
+      },
+      {
+        id: "sleep",
+        q: "Broken sleep, 3 a.m. waking, or brain fog that affects your day?",
+        opts: [
+          { t: "Often", v: "often" },
+          { t: "Sometimes", v: "some" },
+          { t: "Rarely or never", v: "no" },
+        ],
+      },
+      {
+        id: "weight",
+        q: "Is weight settling around your middle even though your habits haven't changed?",
+        opts: [
+          { t: "Yes", v: "yes" },
+          { t: "Somewhat", v: "some" },
+          { t: "No", v: "no" },
+        ],
+      },
+      {
+        id: "drive",
+        q: "Low or absent libido. Flat energy or motivation. Workouts that no longer build strength. How many of these sound like you?",
+        opts: [
+          { t: "Several of them", v: "several" },
+          { t: "One or two", v: "onetwo" },
+          { t: "Not really", v: "no" },
+        ],
+      },
+      {
+        id: "comfort",
+        q: "Vaginal dryness, irritation, or pain with intimacy?",
+        opts: [
+          { t: "Yes", v: "yes" },
+          { t: "Sometimes", v: "some" },
+          { t: "No", v: "no" },
+        ],
+      },
+    ],
+    // Result copy. The keys (PERI, MENO, PMDD, PMS, LOWT, UNCLEAR) must
+    // not change; everything inside them can be edited freely.
+    results: {
+      PERI: {
+        name: "Perimenopause",
+        title: "Your answers point toward a perimenopause pattern.",
+        body: [
+          "Cycles that are changing while sleep, temperature regulation, mood, or weight shift underneath them is the signature of perimenopause. It can begin years before a last period, and it is often dismissed precisely because periods are “still coming.”",
+          "This stage responds well to care. Depending on your history and labs, that can include bioidentical hormone therapy alongside targeted support for sleep, mood, and metabolism.",
+        ],
+      },
+      MENO: {
+        name: "Menopause",
+        title: "Your answers point toward a menopause pattern.",
+        body: [
+          "Twelve months or more without a period, together with symptoms like the ones you described, points to menopause. And menopause care is about far more than hot flashes: bones, heart, sleep, mood, comfort, and long-term metabolic health all deserve attention now.",
+          "The symptoms you checked are treatable. An evaluation of your history and labs is how care gets tailored to you rather than to an average.",
+        ],
+      },
+      PMDD: {
+        name: "PMDD",
+        title: "Your answers point toward a PMDD pattern.",
+        body: [
+          "Severe mood symptoms that arrive before your period and lift once it starts, strong enough to strain work or relationships, are the signature of PMDD (premenstrual dysphoric disorder). It is real, it is physiological, and it is not “just PMS.”",
+          "PMDD is treatable, and a hormone-informed evaluation looks at the cyclical pattern your answers describe rather than dismissing it.",
+        ],
+        crisis: true,
+      },
+      PMS: {
+        name: "PMS",
+        title: "Your answers point toward a PMS pattern.",
+        body: [
+          "A clear monthly pattern of symptoms before your period that eases once it starts points to PMS. Manageable is not the same as fine: a pattern that returns every single month is worth addressing rather than enduring.",
+          "An evaluation looks at how your symptoms track your cycle and what would actually move the needle for you.",
+        ],
+      },
+      LOWT: {
+        name: "Low testosterone",
+        title: "Your answers point toward a low-testosterone pattern.",
+        body: [
+          "Low or absent desire, flat energy and motivation, and workouts that stopped paying off can point toward low testosterone. Women have testosterone too, and it declines gradually across a lifetime, which is easy to miss because nothing changes suddenly.",
+          "Labs plus your history tell the real story, and when levels and symptoms line up, carefully dosed and monitored treatment is an option.",
+        ],
+      },
+      UNCLEAR: {
+        name: "No single pattern",
+        title: "Your answers don't sort neatly into one pattern.",
+        body: [
+          "That is genuinely common. Hormonal conditions overlap, symptoms share causes, and a quiz can only see so much. Not fitting a tidy bucket does not mean nothing is going on.",
+          "Untangling exactly this is what a consultation is for: your full history, your labs, and enough time to actually connect them.",
+        ],
+      },
+    },
+    // Extra notes that can appear on a result
+    postpartumNote:
+      "One more thing: you mentioned a baby in the past year. Hormonal shifts after birth can drive mood and energy changes of their own, including postpartum depression, and they deserve prompt, real care. Please bring this up at your visit.",
+    cantTrackNote:
+      "A note on your answers: without a trackable monthly cycle, timing-based patterns like PMS and PMDD are hard for a quiz to read. Labs and your history do that work instead, which is exactly what an evaluation is for.",
+    crisisNote:
+      "If you ever have thoughts of harming yourself, call or text 988 (the Suicide & Crisis Lifeline) right away. It is free and available around the clock.",
+    // Buttons and closing text on the result screen
+    consultCta: "Book Your Comprehensive Consultation",
+    discoveryCta: "Or start with a free Discovery Call",
+    textLine: "Questions first? Text us at",
+    screenshotHint: "Screenshot your result and bring it to your visit.",
+    disclaimer:
+      "This quiz is educational. It is not a diagnosis, and it is not medical advice. Symptoms overlap between conditions, and only an evaluation of your history, your symptoms, and your labs can say what is actually going on. Dr. Mondona Goodwin, DO, is board-certified in Internal Medicine and a Menopause Society Certified Practitioner (MSCP), caring for women across California by secure video.",
   },
 
   /* =======================================================================

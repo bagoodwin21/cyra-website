@@ -33,7 +33,6 @@ const nextConfig = {
       // Retired pages from the previous site.
       { source: "/home", destination: "/", permanent: true },
       { source: "/services", destination: "/", permanent: true },
-      { source: "/quiz", destination: "/", permanent: true },
       { source: "/info", destination: "/", permanent: true },
       { source: "/faq", destination: "/#faq", permanent: true },
       { source: "/insurance", destination: "/#insurance", permanent: true },
