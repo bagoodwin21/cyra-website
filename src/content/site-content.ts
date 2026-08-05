@@ -1185,7 +1185,7 @@ export const content = {
      ======================================================================= */
   quiz: {
     label: "A two-minute symptom check",
-    heading: "What might be behind how you've been feeling?",
+    heading: "Are your symptoms hormonal?",
     intro:
       "Night sweats, mood swings before your period, weight that won't move, a libido that disappeared: these have causes, and the causes are treatable. Answer a few questions and we'll point you toward the pattern your symptoms most resemble, and what to do next.",
     startNote:
