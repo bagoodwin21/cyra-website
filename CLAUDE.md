@@ -33,9 +33,19 @@ keeps the previous version), but do not push a broken build.
   programs, and HRT Club are medication cost savings or pharmacy options —
   never call them financing.
 - Confirmed pricing: $399 one-hour consultation (credited toward
-  membership if enrolling within 14 days); membership $175 × 13 monthly
-  Cherry payments, or 5% off paid upfront. Never phrase pricing as
-  "from $X/month".
+  membership if enrolling within 14 days); membership $2,275, paid as
+  13 payments of $175 through Cherry (one at signing, then 12 monthly)
+  or $2,160 upfront. Never phrase pricing as "from $X/month", and say
+  "13 payments", never "13 months" or "13 monthly payments".
+- **Membership dollar amounts stay OFF public marketing pages**
+  (Dr. Goodwin's decision, Aug 2026). Pricing is discussed on the free
+  Discovery Call or by text. The numbers appear in exactly three
+  places: the /book/consultation scheduler disclosure (immediately
+  before payment — never remove it), the Terms of Service, and the
+  signed agreement. The pricing-visible copy is kept in comments
+  marked BACKUP in site-content.ts in case she reverses this. Do not
+  put dollar amounts back on marketing pages without her explicit
+  direction.
 - Primary booking CTAs say **"Get Started"** (the /book page heading is
   "Book Your Visit"). Both booking paths — free Discovery Call and the
   $399 consultation — must stay visible on /book.
@@ -43,8 +53,12 @@ keeps the previous version), but do not push a broken build.
   start here"); the free Discovery Call is the optional, secondary
   on-ramp — never frame it as a required first step.
 - The free Discovery Call is about the practice — it is NOT a medical
-  appointment and no medical advice is given. It is with the Patient
-  Care Coordinator, never Dr. Goodwin. Keep that framing.
+  appointment and no medical advice is given (that line always stays).
+  It is run by the Patient Care Coordinator, never Dr. Goodwin. The
+  site copy says "our team" / "my team" rather than naming the
+  coordinator's title (Dr. Goodwin's decision, Aug 2026) — but never
+  state or imply that Dr. Goodwin is on the call. The explicit
+  coordinator disclosure lives in the Calendly booking form checkbox.
 - Practice texting number: 805-387-9078 (editable in the content file
   as brand.smsNumber/smsDisplay).
 - **Never invent facts**: no made-up prices, phone numbers, addresses,

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Check } from "lucide-react";
 import { Section } from "@/components/ui/section";
-import { CherryCalculator } from "@/components/pricing/cherry-calculator";
 import { buildMetadata } from "@/lib/seo";
 import { content } from "@/content/site-content";
 import { siteConfig } from "@/lib/site";
@@ -14,7 +13,7 @@ export function generateMetadata(): Metadata {
     title: "Book Your Visit | CYRA Wellness",
     absoluteTitle: true,
     description:
-      "Request more information from CYRA Wellness, women's hormonal health telehealth in California. Book a free Discovery Call with our Patient Care Coordinator or your 60-minute comprehensive consultation.",
+      "Request more information from CYRA Wellness, women's hormonal health telehealth in California. Book a free Discovery Call with our team or your 60-minute comprehensive consultation.",
     path: "/book",
   });
 }
@@ -75,25 +74,10 @@ export default function BookPage() {
           );
         })}
       </div>
-      {/* What it costs, below the choice and above financing */}
-      <div className="mx-auto mt-10 max-w-2xl rounded-[3px] border border-border bg-surface p-6 md:p-7">
-        <p className="text-body-copy">
-          <span className="font-semibold text-foreground">
-            {book.costs.consultHeading}
-          </span>{" "}
-          {book.costs.consultBody}
-        </p>
-        <p className="text-body-copy mt-4">
-          <span className="font-semibold text-foreground">
-            {book.costs.membershipHeading}
-          </span>{" "}
-          {book.costs.membershipBody}
-        </p>
-      </div>
-      {/* Financing, below the price it applies to */}
-      <div className="mx-auto mt-8 max-w-2xl">
-        <CherryCalculator />
-      </div>
+      {/* Membership pricing is deliberately not shown here: it's covered
+          on the free Discovery Call or by text, and stated in full on the
+          consultation scheduler page right before payment. The old cost
+          box is kept as a backup in site-content.ts (book.costs). */}
       {/* The schedulers live on their own pages: one embed per page keeps
           this page fast, and each choice shows up as its own page view. */}
       <p className="mt-12 text-center text-small text-foreground-muted">

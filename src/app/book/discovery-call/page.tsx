@@ -14,7 +14,7 @@ export function generateMetadata(): Metadata {
     title: "Schedule your free Discovery Call | CYRA Wellness",
     absoluteTitle: true,
     description:
-      "Schedule a free Discovery Call with the CYRA Wellness Patient Care Coordinator.",
+      "Schedule a free Discovery Call with the CYRA Wellness team.",
     path: "/book/discovery-call",
     // A scheduler step, not a page for search results. /book is the
     // page that should rank.
