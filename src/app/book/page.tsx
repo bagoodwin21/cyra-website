@@ -51,12 +51,8 @@ export default function BookPage() {
           {book.costs.membershipBody}
         </p>
       </div>
-      {/* Financing sits with the price it applies to. */}
-      <div className="mx-auto mt-6 max-w-2xl">
-        <CherryCalculator />
-      </div>
       {/* The two booking paths, side by side */}
-      <div className="mx-auto mt-12 grid max-w-4xl gap-6 sm:grid-cols-2">
+      <div className="mx-auto mt-10 grid max-w-4xl gap-6 sm:grid-cols-2">
         {[book.consult, book.discovery].map((option) => {
           const isConsult = "bookingUrl" in option;
           return (
@@ -91,6 +87,11 @@ export default function BookPage() {
             </div>
           );
         })}
+      </div>
+      {/* Financing, below the booking choice so it never pushes the two
+          options out of view. */}
+      <div className="mx-auto mt-10 max-w-2xl">
+        <CherryCalculator />
       </div>
       {/* The schedulers live on their own pages: one embed per page keeps
           this page fast, and each choice shows up as its own page view. */}
