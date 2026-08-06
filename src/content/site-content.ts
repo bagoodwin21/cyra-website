@@ -374,7 +374,6 @@ export const content = {
         "HRT Club, an affordable pharmacy option with cash pricing that doesn't use insurance",
         "Convenient blood draws at Quest locations near you",
         "Manufacturer savings programs and pharmacy coupons",
-        "35% off professional-grade supplements",
         "HSA and FSA funds accepted for membership",
         "Superbills provided for possible out-of-network reimbursement",
       ],
@@ -587,7 +586,7 @@ export const content = {
         },
         {
           title: "Financing options",
-          body: "If a membership or subscription is a financial stretch, does the platform offer financing? A Cherry integration matters for accessibility.",
+          body: "If a membership or subscription is a financial stretch, does the platform offer financing or flexible payment options, and at what cost?",
         },
         {
           title: "Continuity of care",
@@ -657,16 +656,6 @@ export const content = {
             { verdict: "partial", note: "Not guaranteed" },
             { verdict: "no", note: "Rotating" },
             { verdict: "partial", note: "Not guaranteed" },
-          ],
-        },
-        {
-          criterion: "Financing Available (Cherry)",
-          cells: [
-            { verdict: "yes", note: "Cherry financing" },
-            { verdict: "no" },
-            { verdict: "no" },
-            { verdict: "no" },
-            { verdict: "no" },
           ],
         },
         {
@@ -1391,8 +1380,14 @@ export const content = {
     // Buttons and closing text on the result screen
     consultCta: "Book Your Comprehensive Consultation",
     discoveryCta: "Or start with a free Discovery Call",
-    textLine: "Questions first? Text us at",
-    screenshotHint: "Screenshot your result and bring it to your visit.",
+    // The text button: one tap opens Messages with this already typed.
+    // {result} is replaced with the result name (e.g. "PMDD"). Keep the
+    // prefilled question one our team can actually answer (next steps,
+    // how the practice works) — not a clinical question about treatment.
+    textCta: "Text us your result",
+    textBodyTemplate:
+      "Hi! I just took the symptom quiz on your site and my result was {result}. What would my next step be?",
+    screenshotHint: "Or screenshot your result and bring it to your visit.",
     disclaimer:
       "This quiz is educational. It is not a diagnosis, and it is not medical advice. Symptoms overlap between conditions, and only an evaluation of your history, your symptoms, and your labs can say what is actually going on. Dr. Mondona Goodwin, DO, is board-certified in Internal Medicine and a Menopause Society Certified Practitioner (MSCP), caring for women across California by secure video.",
   },

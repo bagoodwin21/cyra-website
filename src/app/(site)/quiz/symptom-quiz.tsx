@@ -110,6 +110,7 @@ export function SymptomQuiz() {
   const finished = started && !current;
 
   const completedRef = React.useRef(false);
+  const cardRef = React.useRef<HTMLDivElement>(null);
   const result = finished ? computeResult(answers) : null;
   React.useEffect(() => {
     if (result && !completedRef.current) {
@@ -118,6 +119,9 @@ export function SymptomQuiz() {
         result: result.primary,
         secondary: result.secondaries.join(",") || "none",
       });
+      // The result renders below the page hero; bring it into view so the
+      // payoff moment isn't half-buried.
+      cardRef.current?.scrollIntoView({ block: "start" });
     }
     if (!finished) completedRef.current = false;
   }, [finished, result]);
@@ -150,8 +154,14 @@ export function SymptomQuiz() {
     const res = RESULTS[result.primary];
     const showCrisis =
       res.crisis || (answers.baby === "yes" && answers.intensity === "severe");
+    const textBody = encodeURIComponent(
+      quiz.textBodyTemplate.replace("{result}", res.name),
+    );
     return (
-      <div className="mx-auto max-w-xl rounded-[3px] border border-border bg-background p-7 shadow-card md:p-8">
+      <div
+        ref={cardRef}
+        className="mx-auto max-w-xl scroll-mt-24 rounded-[3px] border border-border bg-background p-7 shadow-card md:p-8"
+      >
         <p className="text-small font-semibold uppercase tracking-[0.18em] text-primary">
           {quiz.resultKicker}
         </p>
@@ -215,16 +225,16 @@ export function SymptomQuiz() {
           >
             {quiz.discoveryCta}
           </Link>
+          <a
+            href={`sms:${siteConfig.smsNumber}?&body=${textBody}`}
+            data-analytics-event="quiz_text_result_click"
+            className={cn(buttonVariants({ variant: "ghost" }), "w-full")}
+          >
+            {quiz.textCta}: {siteConfig.smsDisplay}
+          </a>
         </div>
         <p className="mt-5 text-center text-small text-foreground-muted">
-          {quiz.textLine}{" "}
-          <a
-            href={`sms:${siteConfig.smsNumber}`}
-            className="font-semibold text-primary hover:text-primary-light"
-          >
-            {siteConfig.smsDisplay}
-          </a>
-          . {quiz.screenshotHint}
+          {quiz.screenshotHint}
         </p>
 
         <p className="mt-7 border-t border-border pt-5 text-small leading-relaxed text-foreground-muted">
@@ -250,8 +260,10 @@ export function SymptomQuiz() {
   return (
     <div className="mx-auto max-w-xl rounded-[3px] border border-border bg-background p-7 shadow-card md:p-8">
       <div className="flex items-center gap-4">
+        {/* No denominator: branching adds questions mid-quiz, and a total
+            that grows while you answer reads as moving the goalposts. */}
         <span className="whitespace-nowrap text-small font-semibold uppercase tracking-[0.14em] text-foreground-muted">
-          {index + 1} of {vis.length}
+          Question {index + 1}
         </span>
         <div className="h-1 flex-1 overflow-hidden rounded-full bg-surface">
           <span
