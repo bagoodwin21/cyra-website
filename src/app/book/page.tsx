@@ -36,22 +36,9 @@ export default function BookPage() {
           ))}
         </ul>
       </div>
-      {/* What it costs, before either booking option */}
-      <div className="mx-auto mt-10 max-w-2xl rounded-[3px] border border-border bg-surface p-6 md:p-7">
-        <p className="text-body-copy">
-          <span className="font-semibold text-foreground">
-            {book.costs.consultHeading}
-          </span>{" "}
-          {book.costs.consultBody}
-        </p>
-        <p className="text-body-copy mt-4">
-          <span className="font-semibold text-foreground">
-            {book.costs.membershipHeading}
-          </span>{" "}
-          {book.costs.membershipBody}
-        </p>
-      </div>
-      {/* The two booking paths, side by side */}
+      {/* The two booking paths come first: this page's job is choosing a
+          visit. The cost details sit right below, and the consultation
+          scheduler page repeats the full disclosure before payment. */}
       <div className="mx-auto mt-10 grid max-w-4xl gap-6 sm:grid-cols-2">
         {[book.consult, book.discovery].map((option) => {
           const isConsult = "bookingUrl" in option;
@@ -88,9 +75,23 @@ export default function BookPage() {
           );
         })}
       </div>
-      {/* Financing, below the booking choice so it never pushes the two
-          options out of view. */}
-      <div className="mx-auto mt-10 max-w-2xl">
+      {/* What it costs, below the choice and above financing */}
+      <div className="mx-auto mt-10 max-w-2xl rounded-[3px] border border-border bg-surface p-6 md:p-7">
+        <p className="text-body-copy">
+          <span className="font-semibold text-foreground">
+            {book.costs.consultHeading}
+          </span>{" "}
+          {book.costs.consultBody}
+        </p>
+        <p className="text-body-copy mt-4">
+          <span className="font-semibold text-foreground">
+            {book.costs.membershipHeading}
+          </span>{" "}
+          {book.costs.membershipBody}
+        </p>
+      </div>
+      {/* Financing, below the price it applies to */}
+      <div className="mx-auto mt-8 max-w-2xl">
         <CherryCalculator />
       </div>
       {/* The schedulers live on their own pages: one embed per page keeps

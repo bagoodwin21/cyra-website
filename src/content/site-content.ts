@@ -820,11 +820,15 @@ export const content = {
       ctaLabel: "Book the Consultation", // Goes to the consultation page
       // Heading shown above the embedded consultation booking widget
       schedulerHeading: "Book your comprehensive consultation",
-      // Short line under that heading on the scheduler page. Repeats the
-      // cost, because someone can land here without seeing the booking page.
+      // Short line under that heading on the scheduler page. This is the
+      // last thing every consultation booker reads before the payment
+      // screen, so it carries the full cost disclosure: someone can reach
+      // this page without having read the cost box on /book.
       schedulerIntro: `Your 60-minute visit with Dr. Goodwin, ${formatUsd(
         carePlanPricing.consultFee,
-      )}. This covers the visit itself and does not include treatment. Ongoing care is a separate one-year membership.`,
+      )}. This covers the visit itself and does not include treatment. Ongoing care is a separate one-year membership: ${formatUsd(
+        carePlanTotal,
+      )}, with 0% financing available through Cherry.`,
       // The OptiMantra patient-access booking link, embedded on the page.
       // Only change this if OptiMantra gives you a new link.
       bookingUrl:
