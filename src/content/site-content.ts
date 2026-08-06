@@ -253,7 +253,7 @@ export const content = {
           title: "Book your consultation",
           // Optional short label shown next to the step title
           meta: "Most patients start here",
-          body: "Book your 60-minute comprehensive consultation with me directly. Most patients are seen within the same week. Want to hear how the practice works first? Schedule a free Discovery Call with our Patient Care Coordinator, or text us at 805-387-9078. The call covers what I treat, what the consultation involves, and what care costs, and if you have questions only I can answer, the coordinator will get them to me. Not a medical appointment; no medical advice is given.",
+          body: "Book your 60-minute comprehensive consultation with me directly. Most patients are seen within the same week. Want to hear how the practice works first? Schedule a free Discovery Call with my team, or text us at 805-387-9078. The call covers what I treat, what the consultation involves, and what care costs, and if you have questions only I can answer, my team will get them to me. Not a medical appointment; no medical advice is given.",
         },
         {
           title: "Your comprehensive consultation",
@@ -264,7 +264,9 @@ export const content = {
         {
           title: "Begin your membership",
           meta: "1 year",
-          body: "Membership is a full year of care. Hormone therapy is rarely settled in one visit, so you'll have follow-up appointments every 4 to 6 weeks (sooner if needed) and direct messaging with me between visits. You'll find what membership costs on the booking page.",
+          /* BACKUP (pricing-visible version of the last sentence):
+             "You'll find what membership costs on the booking page." */
+          body: "Membership is a full year of care. Hormone therapy is rarely settled in one visit, so you'll have follow-up appointments every 4 to 6 weeks (sooner if needed) and direct messaging with me between visits. We'll go over exactly what membership costs on your free Discovery Call, or text us anytime.",
         },
       ],
     },
@@ -290,11 +292,11 @@ export const content = {
         "35% off professional-grade supplements",
       ],
       /* ---- The box beside the inclusions list. ----
-         Dollar amounts deliberately live on the booking page rather than
-         here, so people meet the cost once they've seen what membership
-         is. The button below must keep saying what it leads to: one
-         clearly labelled tap is relocating the price, silence is hiding
-         it, and hiding it is what made the old site frustrating. */
+         Dollar amounts don't appear on public pages (Dr. Goodwin's
+         decision, Aug 2026): pricing is discussed on the free Discovery
+         Call or by text, and the exact numbers appear on the
+         consultation scheduler page right before payment, in the
+         signed agreement, and in the Terms of Service. */
       pricingHeading: "How membership works",
       pricingSubhead:
         "Membership is a one-year commitment, cash-pay, and it begins after your comprehensive consultation. You can pay monthly through Cherry at 0% interest with approved credit, or pay in full at a discount.",
@@ -304,8 +306,9 @@ export const content = {
         "Medications and labs aren't included, and most are covered by your insurance",
         "After your first year, most patients move to a lower-cost maintenance membership",
       ],
-      // The button. Say what it leads to.
-      pricingCtaLabel: "See what membership costs",
+      // The button under the box.
+      // BACKUP (pricing-visible version): "See what membership costs"
+      pricingCtaLabel: "Get Started",
       // The quieter line under the button
       pricingSecondary: "Or talk it through on a free Discovery Call",
       // The two payment options. The prices are calculated from the numbers
@@ -333,7 +336,12 @@ export const content = {
       note: `Your first step is the comprehensive consultation, a separate, one-time fee of ${formatUsd(
         carePlanPricing.consultFee,
       )}. The prices above are everything you pay after your consultation. Medications and labs aren't included in membership. Most are covered through your insurance, and I work to keep any out-of-pocket costs low. After your first year, most patients transition to a lower-cost maintenance membership to keep their results going.`,
-      // ---- Cherry payment calculator (interactive box under the pricing cards) ----
+      /* ---- Cherry payment calculator ----
+         BACKUP: not displayed anywhere right now (removed Aug 2026;
+         patients reach Cherry through the OptiMantra scheduler link and
+         the booking email instead). The widget component still exists at
+         src/components/pricing/cherry-calculator.tsx; ask a developer to
+         re-add it to a page to bring it back. */
       calculator: {
         heading: "Financing through Cherry", // Title above the Cherry box
         // Line under the title. The dollar amount and payment count come from
@@ -423,12 +431,12 @@ export const content = {
         {
           question: "How do I get started?",
           answer:
-            "Two ways: book your comprehensive consultation with me directly, or start with a free Discovery Call with our Patient Care Coordinator. The call covers what I treat, what the consultation involves, and what care costs, and if you have questions only I can answer, the coordinator will get them to me. Not a medical appointment; no medical advice is given.",
+            "Two ways: book your comprehensive consultation with me directly, or start with a free Discovery Call with my team. The call covers what I treat, what the consultation involves, and what care costs, and if you have questions only I can answer, my team will get them to me. Not a medical appointment; no medical advice is given.",
         },
         {
           question: "Is the consultation binding?",
           answer:
-            "No. The 60-minute comprehensive consultation is nonbinding. I review your history, symptoms, and goals and walk through your options, and you'll leave with a clear understanding of my recommendations. Continuing with treatment afterward is a separate decision, and a separate cost: membership is a full year of care, and you'll find the price in the membership section above.",
+            "No. The 60-minute comprehensive consultation is nonbinding. I review your history, symptoms, and goals and walk through your options, and you'll leave with a clear understanding of my recommendations. Continuing with treatment afterward is a separate decision, and a separate cost: membership is a full year of care, and we'll go over pricing on a free Discovery Call or by text, whichever you prefer.",
         },
         {
           question: "Why does membership run a full year?",
@@ -462,7 +470,11 @@ export const content = {
         },
         {
           question: "What does it cost, and do you take insurance?",
-          answer: `Membership is cash-pay by design, and that's what makes longer appointments and truly personalized care possible. You'll find the full cost, both the consultation fee and membership, on our booking page, and we're glad to walk through all of it on a free Discovery Call. Membership can be paid monthly through Cherry at 0% interest with approved credit, or in full at a discount, and checking your rate with Cherry doesn't affect your credit score. Beyond membership, I work to keep your other costs low: I use your insurance whenever possible for labs and prescriptions. Most labs are covered just as if your PCP ordered them, so they aren't an extra expense, and most hormone medications are covered too. Without insurance, hormones typically run about $20–30 per month each through GoodRx, and I can also send prescriptions through HRT Club, a pharmacy with affordable cash pricing. Blood draws happen at a Quest location near you, we accept HSA and FSA funds for membership, and we provide superbills for possible out-of-network reimbursement. One important note: we are unable to accept patients who are eligible for Medicare.`,
+          /* BACKUP (pricing-visible version of the second sentence):
+             "You'll find the full cost, both the consultation fee and
+             membership, on our booking page, and we're glad to walk
+             through all of it on a free Discovery Call." */
+          answer: `Membership is cash-pay by design, and that's what makes longer appointments and truly personalized care possible. We go over the exact numbers on a free Discovery Call, and you're always welcome to text us at 805-387-9078 for a straight answer. Membership can be paid monthly through Cherry at 0% interest with approved credit, or in full at a discount, and checking your rate with Cherry doesn't affect your credit score. Beyond membership, I work to keep your other costs low: I use your insurance whenever possible for labs and prescriptions. Most labs are covered just as if your PCP ordered them, so they aren't an extra expense, and most hormone medications are covered too. Without insurance, hormones typically run about $20–30 per month each through GoodRx, and I can also send prescriptions through HRT Club, a pharmacy with affordable cash pricing. Blood draws happen at a Quest location near you, we accept HSA and FSA funds for membership, and we provide superbills for possible out-of-network reimbursement. One important note: we are unable to accept patients who are eligible for Medicare.`,
         },
       ],
     },
@@ -784,6 +796,10 @@ export const content = {
        pays for the consultation thinking it includes treatment. Every
        dollar amount comes from the pricing numbers at the top of this
        file, so change them there and this updates itself. ---- */
+    /* BACKUP: the cost box that used to render on the booking page.
+       Not displayed anywhere right now (pricing moved off public pages,
+       Aug 2026). To restore it, ask a developer to re-add the cost box
+       to src/app/book/page.tsx — the words below are ready to go. */
     costs: {
       consultHeading: `The consultation is ${formatUsd(carePlanPricing.consultFee)}.`,
       consultBody:
@@ -803,7 +819,7 @@ export const content = {
       // The call length isn't shown here on purpose: it appears at
       // scheduling instead, where it reassures rather than rations.
       meta: "Free",
-      body: "A short call with our Patient Care Coordinator about how the practice works: what Dr. Goodwin treats, what the consultation involves, and what care costs. If you have questions only Dr. Goodwin can answer, the coordinator will get them to her. Not a medical appointment; no medical advice is given.",
+      body: "A free call with our team about how the practice works: what Dr. Goodwin treats, what the consultation involves, and what care costs. If you have questions only Dr. Goodwin can answer, we'll get them to her. Not a medical appointment; no medical advice is given.",
       ctaLabel: "Schedule Your Call", // Goes to the Discovery Call page
       // Heading shown above the embedded Discovery Call scheduler
       schedulerHeading: "Schedule your free Discovery Call",
@@ -811,7 +827,7 @@ export const content = {
       // straight from the home page, so this has to explain the call, not
       // just sit above the calendar.
       schedulerIntro:
-        "Fifteen minutes with our Patient Care Coordinator: what's been going on, what you've already tried, how the practice works, and what care costs. It's free, there's nothing to prepare, and there's no obligation. Anything only Dr. Goodwin can answer, we'll take to her and come back to you.",
+        "Fifteen minutes with our team: what's been going on, what you've already tried, how the practice works, and what care costs. It's free, there's nothing to prepare, and there's no obligation. Anything only Dr. Goodwin can answer, we'll take to her and come back to you.",
     },
     consult: {
       title: "Comprehensive Consultation",
@@ -1401,10 +1417,10 @@ export const content = {
     },
     expectHeading: "What to expect",
     expect: [
-      "About 15 minutes with our Patient Care Coordinator.",
+      "About 15 minutes with our team.",
       "We'll cover what Dr. Goodwin treats, what the consultation involves, and what care costs.",
       "It's a conversation about the practice, not a medical appointment, and no medical advice is given.",
-      "If you have questions only Dr. Goodwin can answer, the coordinator will get them to her.",
+      "If you have questions only Dr. Goodwin can answer, we'll get them to her.",
     ],
     rescheduleHeading: "Need to change your time?",
     rescheduleBody:

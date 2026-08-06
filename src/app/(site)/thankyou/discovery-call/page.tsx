@@ -16,7 +16,7 @@ export function generateMetadata(): Metadata {
     title: "Your Discovery Call is booked | CYRA Wellness",
     absoluteTitle: true,
     description:
-      "Your free Discovery Call with the CYRA Wellness Patient Care Coordinator is confirmed.",
+      "Your free Discovery Call with the CYRA Wellness team is confirmed.",
     path: "/thankyou/discovery-call",
     noindex: true,
   });
