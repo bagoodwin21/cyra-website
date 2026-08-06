@@ -831,9 +831,9 @@ export const content = {
       // this page without having read the cost box on /book.
       schedulerIntro: `Your 60-minute visit with Dr. Goodwin, ${formatUsd(
         carePlanPricing.consultFee,
-      )}. This covers the visit itself and does not include treatment. Ongoing care is a separate one-year membership: ${formatUsd(
-        carePlanTotal,
-      )}, with 0% financing available through Cherry.`,
+      )}. This covers the visit itself and does not include treatment. Ongoing care is a separate one-year membership: ${carePlanPricing.paymentCount} payments of ${formatUsd(
+        carePlanPricing.monthlyPayment,
+      )} through Cherry at 0% interest, or save ${upfrontSavingsPercent}% by paying in full.`,
       // The OptiMantra patient-access booking link, embedded on the page.
       // Only change this if OptiMantra gives you a new link.
       bookingUrl:
