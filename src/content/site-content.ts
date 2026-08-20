@@ -118,6 +118,8 @@ export const content = {
       // skipping the booking page, so someone who wants to talk to a person
       // first isn't routed past the pricing on the way there.
       secondaryCta: "Free Discovery Call",
+      // Quiet line under the hero buttons for first-time visitors
+      quizPrompt: "New here? Take the free 2-minute symptom quiz →",
       // Short trust points shown as a row under the buttons
       trustPoints: [
         "Women's Hormonal Health",
@@ -1186,6 +1188,19 @@ export const content = {
     questionsBody:
       "If anything comes up before we meet, or you need to change your appointment time, just text us. We usually reply within a few hours during office hours.",
     homeLinkLabel: "Back to the home page",
+  },
+
+  /* =======================================================================
+     NOT-FOUND PAGE. Shown for any web address that doesn't exist (old
+     links, typos). Warm, and offers the ways forward.
+     ======================================================================= */
+  notFound: {
+    label: "Page not found",
+    heading: "That page doesn't exist.",
+    body: "The link may be old, or a letter got mistyped. No worries. Here's where you might be headed:",
+    quizCta: "Take the free 2-minute symptom quiz",
+    bookCta: "Book a visit",
+    homeCta: "Back to the home page",
   },
 
   /* =======================================================================

@@ -118,6 +118,15 @@ export default function HomePage() {
                 {home.hero.secondaryCta}
               </Link>
             </div>
+            <div className="mt-5">
+              <Link
+                href="/quiz"
+                data-analytics-event="quiz_strip_click"
+                className="text-small font-semibold text-primary underline-offset-4 transition-colors hover:text-primary-light hover:underline"
+              >
+                {home.hero.quizPrompt}
+              </Link>
+            </div>
             <ul className="mt-12 flex flex-wrap justify-center gap-x-7 gap-y-3">
               {home.hero.trustPoints.map((label, i) => {
                 const Icon = trustIcons[i % trustIcons.length];
