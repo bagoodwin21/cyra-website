@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
+import headshot from "@/images/goodwin.jpeg";
 import {
   Activity,
   ArrowRight,
@@ -166,6 +168,54 @@ export default function HomePage() {
               </FadeUp>
             );
           })}
+        </div>
+      </Section>
+
+      {/* Meet Dr. Goodwin — her face on the page all cold traffic lands on */}
+      <Section tone="surface">
+        <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
+          <FadeUp>
+            <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-card shadow-card">
+              <Image
+                src={headshot}
+                alt={content.about.photoCaption}
+                fill
+                sizes="(max-width: 1024px) 90vw, 384px"
+                className="object-cover object-top"
+              />
+            </div>
+          </FadeUp>
+          <FadeUp delay={0.12}>
+            <SectionLabel>{home.meetDoctor.label}</SectionLabel>
+            <h2 className="heading-section">{home.meetDoctor.name}</h2>
+            <p className="mt-3 text-small font-semibold uppercase tracking-[0.14em] text-primary">
+              {home.meetDoctor.credentials}
+            </p>
+            <div className="mt-6 space-y-4">
+              {home.meetDoctor.body.map((paragraph) => (
+                <p key={paragraph.slice(0, 40)} className="text-body-copy">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+            <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-4">
+              <Link
+                href="/about"
+                className={cn(buttonVariants({ variant: "secondary" }))}
+              >
+                {home.meetDoctor.cta}
+              </Link>
+              <a
+                href={content.brand.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-body text-small font-semibold text-primary underline-offset-4 transition-colors hover:text-primary-light hover:underline"
+              >
+                {home.meetDoctor.instagramLine}{" "}
+                {home.meetDoctor.instagramHandle} →
+              </a>
+            </div>
+          </FadeUp>
         </div>
       </Section>
 

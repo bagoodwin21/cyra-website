@@ -129,6 +129,22 @@ export const content = {
       ],
     },
 
+    // ---- MEET DR. GOODWIN: her photo and a short intro on the home page ----
+    meetDoctor: {
+      label: "Meet Your Physician",
+      name: "Dr. Mondona Goodwin, DO",
+      credentials:
+        "Board-certified in Internal Medicine · Menopause Society Certified Practitioner (MSCP)",
+      body: [
+        "I'm a board-certified Internal Medicine physician and Menopause Society Certified Practitioner, caring for women across California by telemedicine. I founded CYRA Wellness to give women's hormonal health the time and depth it deserves.",
+        "Too many women arrive with real, life-altering symptoms and leave with a shrug, or the words “that's just part of getting older.” I built this practice to be the opposite of that.",
+      ],
+      cta: "More about me",
+      // The Instagram line under the button
+      instagramLine: "Follow along on Instagram",
+      instagramHandle: "@drmondona",
+    },
+
     // ---- PHILOSOPHY: "more than hot flashes" ----
     philosophy: {
       label: "Our Approach", // Small label above the heading
